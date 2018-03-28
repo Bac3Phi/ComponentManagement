@@ -1,0 +1,55 @@
+/* font sizes
+ */
+.fn-14{
+    -fx-font-size: 14px;
+}
+.fn-16{
+    -fx-font-size: 16px;
+}
+.fn-18{
+    -fx-font-size: 18px;
+}
+.fn-24{
+    -fx-font-size: 24px;
+}
+.fn-32{
+    -fx-font-size: 32px;
+}
+.fn-48{
+    -fx-font-size: 48px;
+}
+.fn-64{
+    -fx-font-size: 64px;
+}
+
+/*text-alignments
+ */
+.txt-center{
+    -fx-text-alignment: center;
+}
+.txt-justify{
+    -fx-text-alignment: justify;
+}
+.txt-left{
+    -fx-text-alignment: left;
+}
+.txt-right{
+    -fx-text-alignment: right;
+}
+
+/*text colors
+ */
+.fill-light-grey{
+    -fx-fill: rgba(14, 14, 14, 0);
+    -fx-text-fill: black;
+}
+.fill-white{
+    -fx-text-fill: white;
+    -fx-fill: white;
+}
+
+/*background color
+ */
+.bg-white{
+    -fx-background-color: white;
+}
