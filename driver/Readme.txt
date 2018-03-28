@@ -1,0 +1,1 @@
+copy file *.jar to C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext
