@@ -53,3 +53,11 @@
 .bg-white{
     -fx-background-color: white;
 }
+.bg-transparent{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+.bg-light-grey{
+    -fx-background-color: #ececec;
+}
+/*margin */

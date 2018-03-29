@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.EmployeesController">
+   <children>
+      <Text layoutX="155.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phi Đẹp trai">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
