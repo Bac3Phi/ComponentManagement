@@ -1,0 +1,11 @@
+
+.bg-black-logo{
+    -fx-background-color: #242a2a;
+}
+.bg-black-header{
+    -fx-background-color: #2b3131;
+}
+.bg-transparent{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
