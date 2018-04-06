@@ -33,7 +33,7 @@ public class Main extends Application {
         try {
             //FXMLLoader fxmlLoader = new FXMLLoader();
             Parent parent = FXMLLoader.load(getClass().getResource("Views/LogIn.fxml"));
-            Scene scene = new Scene(parent, 365, 212);
+            Scene scene = new Scene(parent, 365, 259);
             window.setTitle("SMILE - Log In");
             window.setScene(scene);
             window.show();

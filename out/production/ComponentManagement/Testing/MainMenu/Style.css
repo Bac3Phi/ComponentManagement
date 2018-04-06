@@ -1,9 +1,18 @@
 
 .bg-black-logo{
-    -fx-background-color: #242a2a;
+    -fx-background-color: #171515;
 }
 .bg-black-header{
     -fx-background-color: #2b3131;
+}
+.bg-black-orange{
+    -fx-background-color: #34291f;
+}
+.bg-left-border{
+    -fx-background-color: #221f1f;
+}
+.bg-white{
+    -fx-background-color: #white;
 }
 .bg-transparent{
     -fx-background-color: transparent;

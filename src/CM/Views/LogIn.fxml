@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="loginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="212.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.LogInController">
+<AnchorPane fx:id="loginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.LogInController">
     <children>
-        <Button fx:id="btnLogIn" layoutX="185.0" layoutY="155.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="25.0" prefWidth="83.0" text="Login">
+        <Button fx:id="btnLogIn" layoutX="183.0" layoutY="198.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="25.0" prefWidth="83.0" text="Login">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <TextField fx:id="txtEmail" layoutX="146.0" layoutY="79.0" />
-      <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="115.0" />
-        <Label fx:id="lbEmail" layoutX="31.0" layoutY="82.0" prefHeight="25.0" prefWidth="63.0" text="Email:" />
-        <Label fx:id="lbPwd" layoutX="28.0" layoutY="118.0" prefHeight="25.0" prefWidth="83.0" text="Password:" />
-        <Hyperlink fx:id="hplFPwd" layoutX="45.0" layoutY="156.0" text="Forgot password?" />
+        <TextField fx:id="txtEmail" layoutX="146.0" layoutY="114.0" />
+      <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="151.0" />
+        <Label fx:id="lbEmail" layoutX="31.0" layoutY="117.0" prefHeight="25.0" prefWidth="63.0" text="Email:" />
+        <Label fx:id="lbPwd" layoutX="31.0" layoutY="154.0" prefHeight="25.0" prefWidth="83.0" text="Password:" />
+        <Hyperlink fx:id="hplFPwd" layoutX="47.0" layoutY="199.0" text="Forgot password?" />
         <Label fx:id="lbSignIn" alignment="TOP_CENTER" layoutX="62.0" layoutY="25.0" prefHeight="17.0" prefWidth="222.0" text="SIGN IN" textAlignment="CENTER" textOverrun="CLIP">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
+      <ComboBox fx:id="cbPermission" layoutX="28.0" layoutY="70.0" prefHeight="31.0" prefWidth="302.0" promptText="admin" />
     </children>
 </AnchorPane>
