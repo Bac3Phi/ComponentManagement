@@ -35,7 +35,7 @@ public class LogInController implements Initializable{
 
             if (email.equals("abc") && password.equals("123"))
             {
-                Parent root = FXMLLoader.load(getClass().getResource("/CM/Views/MainView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/CM/Views/CustomerView.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root, 1280, 720);
                 stage.setScene(scene);

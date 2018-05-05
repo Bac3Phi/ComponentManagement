@@ -9,113 +9,56 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
+<AnchorPane fx:id="paneQLKH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
    <children>
-      <HBox>
-         <children>
-            <HBox alignment="TOP_CENTER">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <children>
-                  <VBox alignment="TOP_CENTER">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Client" />
-                        <HBox alignment="CENTER_RIGHT" styleClass="fn-14">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Button mnemonicParsing="false" styleClass="bg-transparent" text="Nani" />
-                                 </children>
-                              </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gâu-&gt;" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0">
-               <children>
-                  <VBox alignment="TOP_CENTER">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Client" />
-                        <HBox alignment="CENTER_RIGHT" styleClass="fn-14">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Button mnemonicParsing="false" styleClass="bg-transparent" text="Nani" />
-                                 </children>
-                              </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gâu-&gt;" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="TOP_CENTER" layoutX="139.0" layoutY="10.0">
-               <children>
-                  <VBox alignment="TOP_CENTER">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Client" />
-                        <HBox alignment="CENTER_RIGHT" styleClass="fn-14">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Button mnemonicParsing="false" styleClass="bg-transparent" text="Nani" />
-                                 </children>
-                              </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gâu-&gt;" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="TOP_CENTER" layoutX="268.0" layoutY="10.0">
-               <children>
-                  <VBox alignment="TOP_CENTER">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Client" />
-                        <HBox alignment="CENTER_RIGHT" styleClass="fn-14">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Button mnemonicParsing="false" styleClass="bg-transparent" text="Nani" />
-                                 </children>
-                              </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gâu-&gt;" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </HBox>
-         </children>
-      </HBox>
-      <HBox>
-         <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
+      <Label fx:id="lbFormKH" layoutX="413.0" layoutY="26.0" text="QUẢN LÝ KHÁCH HÀNG">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbKHID" layoutX="16.0" layoutY="102.0" text="Mã Khách hàng">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtKHID" layoutX="175.0" layoutY="101.0" />
+      <Label fx:id="lbTenKH" layoutX="14.0" layoutY="149.0" text="Tên Khách hàng">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTenKH" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Label fx:id="lbDiaChi" layoutX="14.0" layoutY="194.0" text="Địa chỉ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDiaChi" layoutX="175.0" layoutY="193.0" prefHeight="31.0" prefWidth="1004.0" />
+      <Label fx:id="lbEmail" layoutX="419.0" layoutY="102.0" text="Email">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
+      <Label fx:id="lbSoDT" layoutX="633.0" layoutY="149.0" text="Số điện thoại">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSoDT" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Button fx:id="btnADD" layoutX="585.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="ADD" />
+      <Button fx:id="btnDELETE" layoutX="817.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
+      <Button fx:id="btnUPDATE" layoutX="1028.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
+      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
+         <columns>
+            <TableColumn fx:id="colKHID" prefWidth="83.0" text="MaKH" />
+            <TableColumn fx:id="colTenKH" prefWidth="240.0" text="TenKH" />
+            <TableColumn fx:id="colDiaChi" prefWidth="312.0" text="DiaChi" />
+            <TableColumn fx:id="colEmail" prefWidth="256.0" text="Email" />
+            <TableColumn fx:id="colSoDT" prefWidth="196.0" text="SoDT" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnSAVE" layoutX="817.0" layoutY="713.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="SAVE" />
+      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="713.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
    </children>
-   <stylesheets>
-      <URL value="@../Stytlesheet/customer.css" />
-      <URL value="@../Stytlesheet/main.css" />
-   </stylesheets>
-</VBox>
+</AnchorPane>
