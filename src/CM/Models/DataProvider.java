@@ -15,7 +15,7 @@ public class DataProvider {
     public DataProvider() {
         try {
             //Tạo một connection tới dtb
-            myConn = DriverManager.getConnection(myPath, "root", "YES");
+            myConn = DriverManager.getConnection(myPath, "root", "");
         }
         catch (SQLException e){
             Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);
@@ -34,9 +34,10 @@ public class DataProvider {
     }
 
     //Hàm INSERT
-    public int ExecuteSQLInsert(String[] strInsert, String query) {
+    public int ExecuteSQLInsert(String[] strInsert, String tableName) {
         int rowInserted = 0;
-//        String query = "INSERT INTO KHACHHANG(KHID, TENKH, DIACHI, EMAIL, SODIENTHOAI) VALUES(?,?,?,?,?)";
+        //String id = "", ten = "", dc = "", email = "", sodt = "";
+        String query = "INSERT INTO " + tableName + " VALUES(?,?,?,?,?);";
 
         try {
             //Tạo một connection tới dtb
@@ -47,7 +48,8 @@ public class DataProvider {
             myPrep.setString(4, strInsert[3]);
             myPrep.setString(5, strInsert[4]);
 
-            rowInserted = myPrep.executeUpdate(query);
+            myPrep.executeUpdate();
+            rowInserted = 1;
         }
         catch (SQLException e){
             Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);
@@ -55,22 +57,22 @@ public class DataProvider {
         return rowInserted;
     }
 
-    //Hàm UPDATE
-    public int ExecuteSQLUpdate(String[] strUpdate, String query) {
+    //Hàm UPDATE toàn bộ
+    public int ExecuteSQLUpdate(String[] strUpdate, String tableName) {
         int rowUpdated = 0;
-        //String query = "UPDATE KHACHHANG SET KHID = ?, TENKH = ?, DIACHI = ?, EMAIL = ?, SODIENTHOAI = ? WHERE KHID = ?";
-
+        String query = "UPDATE " + tableName + " SET TENKH = ?, DIACHI = ?, EMAIL = ?, SODIENTHOAI = ? WHERE KHID = ?";
 
         try {
             //Tạo một connection tới dtb
             myPrep = myConn.prepareStatement(query);
-            myPrep.setString(1, strUpdate[0]);
-            myPrep.setString(2, strUpdate[1]);
-            myPrep.setString(3, strUpdate[2]);
-            myPrep.setString(4, strUpdate[3]);
-            myPrep.setString(5, strUpdate[4]);
+            myPrep.setString(1, strUpdate[1]);
+            myPrep.setString(2, strUpdate[2]);
+            myPrep.setString(3, strUpdate[3]);
+            myPrep.setString(4, strUpdate[4]);
+            myPrep.setString(5, strUpdate[0]);
 
-            rowUpdated = myPrep.executeUpdate(query);
+            myPrep.executeUpdate();
+            rowUpdated = 1;
         }
         catch (SQLException e){
             Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);
@@ -79,10 +81,34 @@ public class DataProvider {
         return rowUpdated;
     }
 
+//    //Hàm UPDATE 1 hoặc nhiều cột
+//    public int ExecuteSQLUpdate(String[] strUpdate, String tableName, String[] colName) {
+//        int rowUpdated = 0;
+//        String query = "UPDATE " + tableName + " SET "+ colName + "= ? WHERE KHID = ?";
+//
+//        try {
+//            //Tạo một connection tới dtb
+//            myPrep = myConn.prepareStatement(query);
+//            myPrep.setString(1, strUpdate[1]);
+//            myPrep.setString(2, strUpdate[2]);
+//            myPrep.setString(3, strUpdate[3]);
+//            myPrep.setString(4, strUpdate[4]);
+//            myPrep.setString(5, strUpdate[0]);
+//
+//            myPrep.executeUpdate();
+//            rowUpdated = 1;
+//        }
+//        catch (SQLException e){
+//            Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//
+//        return rowUpdated;
+//    }
+
     //Hàm DELETE
-    public int ExecuteSQLDelete(String[] strDelete, String query) {
+    public int ExecuteSQLDelete(String[] strDelete, String tableName) {
         int rowDeleted = 0;
-        //String query = "DELETE FROM KHACHHANG WHERE KHID = ?";
+        String query = "DELETE FROM " + tableName + " WHERE KHID = ?";
         //đây là đối tượng như Statement nhưng được cải thiện để nhanh hơn
         PreparedStatement myPrep = null;
 
@@ -91,7 +117,8 @@ public class DataProvider {
             myPrep = myConn.prepareStatement(query);
             myPrep.setString(1, strDelete[0]);
 
-            rowDeleted = myPrep.executeUpdate(query);
+            myPrep.executeUpdate();
+            rowDeleted = 1;
         }
         catch (SQLException e){
             Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);

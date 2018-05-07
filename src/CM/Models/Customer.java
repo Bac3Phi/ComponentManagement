@@ -50,8 +50,8 @@ public class Customer {
     }
 
 
-    public Customer(String KHID, String tenKH, String diaChi, String email, String sodienthoai) {
-        this.KHID = KHID;
+    public Customer(String khID, String tenKH, String diaChi, String email, String sodienthoai) {
+        KHID = khID;
         TenKH = tenKH;
         DiaChi = diaChi;
         Email = email;

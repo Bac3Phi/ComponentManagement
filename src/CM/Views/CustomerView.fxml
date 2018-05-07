@@ -46,19 +46,19 @@
          </font>
       </Label>
       <TextField fx:id="txtSoDT" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Button fx:id="btnADD" layoutX="585.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="ADD" />
-      <Button fx:id="btnDELETE" layoutX="817.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
-      <Button fx:id="btnUPDATE" layoutX="1028.0" layoutY="237.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
+      <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="ADD" />
+      <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
+      <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
       <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
          <columns>
-            <TableColumn fx:id="colKHID" prefWidth="83.0" text="MaKH" />
-            <TableColumn fx:id="colTenKH" prefWidth="240.0" text="TenKH" />
-            <TableColumn fx:id="colDiaChi" prefWidth="312.0" text="DiaChi" />
-            <TableColumn fx:id="colEmail" prefWidth="256.0" text="Email" />
-            <TableColumn fx:id="colSoDT" prefWidth="196.0" text="SoDT" />
+            <TableColumn fx:id="colKHID" prefWidth="109.0" text="MaKH" />
+            <TableColumn fx:id="colTenKH" prefWidth="264.0" text="TenKH" />
+            <TableColumn fx:id="colDiaChi" prefWidth="300.0" text="DiaChi" />
+            <TableColumn fx:id="colEmail" prefWidth="263.0" text="Email" />
+            <TableColumn fx:id="colSoDT" prefWidth="226.0" text="SoDT" />
          </columns>
       </TableView>
-      <Button fx:id="btnSAVE" layoutX="817.0" layoutY="713.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="SAVE" />
-      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="713.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
+      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnCANCEL" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
+      <Button fx:id="btnUPDATE1" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
    </children>
 </AnchorPane>

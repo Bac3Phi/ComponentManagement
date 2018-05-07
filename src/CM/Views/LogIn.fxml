@@ -13,7 +13,7 @@
             </font>
         </Button>
         <TextField fx:id="txtEmail" layoutX="146.0" layoutY="114.0" />
-      <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="151.0" />
+      <PasswordField fx:id="txtPwd" layoutX="146.0" layoutY="151.0" onAction="#txtLogIn" />
         <Label fx:id="lbEmail" layoutX="31.0" layoutY="117.0" prefHeight="25.0" prefWidth="63.0" text="Email:" />
         <Label fx:id="lbPwd" layoutX="31.0" layoutY="154.0" prefHeight="25.0" prefWidth="83.0" text="Password:" />
         <Hyperlink fx:id="hplFPwd" layoutX="47.0" layoutY="199.0" text="Forgot password?" />
