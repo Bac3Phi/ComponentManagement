@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerController.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Customer.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Customer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerView.fxml" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" afterPath="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" afterPath="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Models/Customer.java" afterPath="$PROJECT_DIR$/src/CM/Models/Customer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Models/DataProvider.java" afterPath="$PROJECT_DIR$/src/CM/Models/DataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" afterPath="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CM/Views/LogIn.fxml" afterPath="$PROJECT_DIR$/src/CM/Views/LogIn.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -507,7 +500,7 @@
       <workItem from="1525529265003" duration="6840000" />
       <workItem from="1525599501038" duration="13266000" />
       <workItem from="1525654656130" duration="623000" />
-      <workItem from="1525673320959" duration="5597000" />
+      <workItem from="1525673320959" duration="6497000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -544,11 +537,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525513433304</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Xong thêm, xóa, sửa (toàn bộ cột trong dtb).&#10;Chưa xử lý sự kiện nút search và cancel.&#10;Cần thêm hàm cho nút sửa khi sửa một cột trong dtb.">
+      <created>1525679032619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525679032619</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93253000" />
+    <option name="totallyTimeSpent" value="94153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -628,7 +628,8 @@
     <MESSAGE value="Xong màn hình login" />
     <MESSAGE value="Tesing Sence" />
     <MESSAGE value="Xong load data lên bảng khách hàng." />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong load data lên bảng khách hàng." />
+    <MESSAGE value="Xong thêm, xóa, sửa (toàn bộ cột trong dtb).&#10;Chưa xử lý sự kiện nút search và cancel.&#10;Cần thêm hàm cho nút sửa khi sửa một cột trong dtb." />
+    <option name="LAST_COMMIT_MESSAGE" value="Xong thêm, xóa, sửa (toàn bộ cột trong dtb).&#10;Chưa xử lý sự kiện nút search và cancel.&#10;Cần thêm hàm cho nút sửa khi sửa một cột trong dtb." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
