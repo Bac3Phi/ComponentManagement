@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,6 +16,17 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
   </component>
   <component name="DebuggerManager">
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
@@ -65,8 +74,8 @@
       <file leaf-file-name="LogInController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/LogInController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="1134">
+              <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#LogIn#0;class#LogInController#0" expanded="false" />
@@ -78,39 +87,37 @@
       </file>
       <file leaf-file-name="CustomerView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Views/CustomerView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-498">
+            <state relative-caret-position="621">
               <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="31" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DataProvider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="-81">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DataProvider#0;class#DataProvider#0" expanded="false" />
                 <element signature="method#getData#0;class#DataProvider#0" expanded="false" />
                 <element signature="method#ExecuteSQLInsert#0;class#DataProvider#0" expanded="false" />
-                <element signature="method#ExecuteSQLUpdate#0;class#DataProvider#0" expanded="false" />
-                <element signature="e#2715#2750#0" expanded="false" />
-                <element signature="method#ExecuteSQLDelete#0;class#DataProvider#0" expanded="false" />
-                <element signature="method#close#0;class#DataProvider#0" expanded="false" />
-                <marker date="1525674025673" expanded="true" signature="1252:1264" ph="INSERT INTO missingValue... " />
-                <marker date="1525674025673" expanded="true" signature="1252:1299" ph="INSERT INTO KHACHHANG... " />
-                <marker date="1525674025673" expanded="true" signature="1282:1299" ph="VALUES('KH01... " />
-                <marker date="1525674025673" expanded="true" signature="2036:2129" ph="UPDATE KHACH... " />
-                <marker date="1525674025673" expanded="true" signature="2899:2927" ph="UPDATE missi... " />
-                <marker date="1525674025673" expanded="true" signature="2899:2928" ph="UPDATE missi... " />
-                <marker date="1525674025673" expanded="true" signature="2899:2960" ph="UPDATE missi... " />
-                <marker date="1525674025673" expanded="true" signature="3725:3769" ph="DELETE FROM " />
+                <marker date="1525753908812" expanded="true" signature="1252:1264" ph="INSERT INTO missingValue... " />
+                <marker date="1525753908812" expanded="true" signature="1252:1299" ph="INSERT INTO KHACHHANG... " />
+                <marker date="1525753908812" expanded="true" signature="1282:1299" ph="VALUES('KH01... " />
+                <marker date="1525753908812" expanded="true" signature="2036:2129" ph="UPDATE missi... " />
+                <marker date="1525753908812" expanded="false" signature="2715:3582" ph="//..." />
+                <marker date="1525753908812" expanded="true" signature="2899:2927" ph="UPDATE missi... " />
+                <marker date="1525753908812" expanded="true" signature="2899:2928" ph="UPDATE missi... " />
+                <marker date="1525753908812" expanded="true" signature="2899:2960" ph="UPDATE missi... " />
+                <marker date="1525753908812" expanded="true" signature="3725:3769" ph="DELETE FROM " />
+                <marker date="1525753908812" expanded="false" signature="4353:4406" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -119,13 +126,12 @@
       <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+            <state relative-caret-position="1093">
+              <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#refresh#0;class#CustomerController#0" expanded="false" />
                 <element signature="method#insertData#0;class#CustomerController#0" expanded="false" />
-                <element signature="method#updateData#0;class#CustomerController#0" expanded="false" />
                 <element signature="method#deleteData#0;class#CustomerController#0" expanded="false" />
                 <element signature="method#setBtnADD#0;class#CustomerController#0" expanded="false" />
                 <element signature="method#setBtnUPDATE#0;class#CustomerController#0" expanded="false" />
@@ -212,10 +218,10 @@
         <option value="$PROJECT_DIR$/src/Testing/MainMenu/Main.java" />
         <option value="C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/reflect/NativeConstructorAccessorImpl.class" />
         <option value="$PROJECT_DIR$/src/CM/Models/Customer.java" />
-        <option value="$PROJECT_DIR$/src/CM/Models/DataProvider.java" />
         <option value="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" />
+        <option value="$PROJECT_DIR$/src/CM/Models/DataProvider.java" />
       </list>
     </option>
   </component>
@@ -254,8 +260,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,7 +318,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,7 +506,8 @@
       <workItem from="1525529265003" duration="6840000" />
       <workItem from="1525599501038" duration="13266000" />
       <workItem from="1525654656130" duration="623000" />
-      <workItem from="1525673320959" duration="6497000" />
+      <workItem from="1525673320959" duration="6981000" />
+      <workItem from="1525751009730" duration="3604000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -544,11 +551,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525679032619</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Xong thêm, xóa, sửa basic.">
+      <created>1525680583998</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525680583998</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94153000" />
+    <option name="totallyTimeSpent" value="98241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -562,13 +576,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29977375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29977375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19871107" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20139635" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -629,11 +643,12 @@
     <MESSAGE value="Tesing Sence" />
     <MESSAGE value="Xong load data lên bảng khách hàng." />
     <MESSAGE value="Xong thêm, xóa, sửa (toàn bộ cột trong dtb).&#10;Chưa xử lý sự kiện nút search và cancel.&#10;Cần thêm hàm cho nút sửa khi sửa một cột trong dtb." />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong thêm, xóa, sửa (toàn bộ cột trong dtb).&#10;Chưa xử lý sự kiện nút search và cancel.&#10;Cần thêm hàm cho nút sửa khi sửa một cột trong dtb." />
+    <MESSAGE value="Xong thêm, xóa, sửa basic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Xong thêm, xóa, sửa basic." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -643,14 +658,14 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CM/Views/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Main.java">
@@ -661,14 +676,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Views/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/MainController.java">
@@ -695,14 +710,14 @@
     <entry file="file://$PROJECT_DIR$/src/CM/Assets/icons8_Add_File_48px.png" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/CM/Views/EmployeesView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Receipt.java">
@@ -806,14 +821,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/MainMenu.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="628">
           <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/Style.css">
@@ -831,14 +846,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Views/LogIn.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Functions/CustomerFunction.java">
@@ -937,14 +952,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Views/MainView.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-804">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Customer.java">
@@ -955,15 +970,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/LogInController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#LogIn#0;class#LogInController#0" expanded="false" />
+            <element signature="method#txtLogIn#0;class#LogInController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Views/CustomerView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        <state relative-caret-position="1093">
+          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#refresh#0;class#CustomerController#0" expanded="false" />
             <element signature="method#insertData#0;class#CustomerController#0" expanded="false" />
-            <element signature="method#updateData#0;class#CustomerController#0" expanded="false" />
             <element signature="method#deleteData#0;class#CustomerController#0" expanded="false" />
             <element signature="method#setBtnADD#0;class#CustomerController#0" expanded="false" />
             <element signature="method#setBtnUPDATE#0;class#CustomerController#0" expanded="false" />
@@ -974,50 +1011,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/LogInController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#LogIn#0;class#LogInController#0" expanded="false" />
-            <element signature="method#txtLogIn#0;class#LogInController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/CustomerView.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-498">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="-81">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#DataProvider#0;class#DataProvider#0" expanded="false" />
             <element signature="method#getData#0;class#DataProvider#0" expanded="false" />
             <element signature="method#ExecuteSQLInsert#0;class#DataProvider#0" expanded="false" />
-            <element signature="method#ExecuteSQLUpdate#0;class#DataProvider#0" expanded="false" />
-            <element signature="e#2715#2750#0" expanded="false" />
-            <element signature="method#ExecuteSQLDelete#0;class#DataProvider#0" expanded="false" />
-            <element signature="method#close#0;class#DataProvider#0" expanded="false" />
-            <marker date="1525674025673" expanded="true" signature="1252:1264" ph="INSERT INTO missingValue... " />
-            <marker date="1525674025673" expanded="true" signature="1252:1299" ph="INSERT INTO KHACHHANG... " />
-            <marker date="1525674025673" expanded="true" signature="1282:1299" ph="VALUES('KH01... " />
-            <marker date="1525674025673" expanded="true" signature="2036:2129" ph="UPDATE KHACH... " />
-            <marker date="1525674025673" expanded="true" signature="2899:2927" ph="UPDATE missi... " />
-            <marker date="1525674025673" expanded="true" signature="2899:2928" ph="UPDATE missi... " />
-            <marker date="1525674025673" expanded="true" signature="2899:2960" ph="UPDATE missi... " />
-            <marker date="1525674025673" expanded="true" signature="3725:3769" ph="DELETE FROM " />
+            <marker date="1525753908812" expanded="true" signature="1252:1264" ph="INSERT INTO missingValue... " />
+            <marker date="1525753908812" expanded="true" signature="1252:1299" ph="INSERT INTO KHACHHANG... " />
+            <marker date="1525753908812" expanded="true" signature="1282:1299" ph="VALUES('KH01... " />
+            <marker date="1525753908812" expanded="true" signature="2036:2129" ph="UPDATE missi... " />
+            <marker date="1525753908812" expanded="false" signature="2715:3582" ph="//..." />
+            <marker date="1525753908812" expanded="true" signature="2899:2927" ph="UPDATE missi... " />
+            <marker date="1525753908812" expanded="true" signature="2899:2928" ph="UPDATE missi... " />
+            <marker date="1525753908812" expanded="true" signature="2899:2960" ph="UPDATE missi... " />
+            <marker date="1525753908812" expanded="true" signature="3725:3769" ph="DELETE FROM " />
+            <marker date="1525753908812" expanded="false" signature="4353:4406" ph="{...}" />
           </folding>
         </state>
       </provider>
