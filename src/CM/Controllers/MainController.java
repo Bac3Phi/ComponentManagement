@@ -1,6 +1,6 @@
 package CM.Controllers;
 
-        import CM.Functions.DynamicViews;
+        import CM.Models.Functions.DynamicViews;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
         import javafx.scene.layout.BorderPane;

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #221f1f;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Testing.MainMenu.login.LoginController">
+   <children>
+      <ImageView fitHeight="130.0" fitWidth="340.0" layoutX="52.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CM/Assets/images/logo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="445.0" layoutY="61.0" prefHeight="329.0" prefWidth="290.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXTextField focusColor="#f99e1f" labelFloat="true" layoutX="28.0" layoutY="88.0" prefHeight="25.0" prefWidth="238.0" promptText="Tên đăng nhập" unFocusColor="#f99e1f" />
+            <JFXPasswordField focusColor="#f99e1f" labelFloat="true" layoutX="28.0" layoutY="141.0" prefHeight="25.0" prefWidth="238.0" promptText="Mật khẩu" unFocusColor="#f99e1f" />
+            <JFXButton layoutX="25.0" layoutY="192.0" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #f99e1f;" text="Đăng Nhập" textFill="WHITE" />
+            <Label layoutX="62.0" layoutY="32.0" prefHeight="38.0" prefWidth="170.0" text="Đăng Nhập">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="88.0" layoutY="281.0" text="Thay đổi mật khẩu?" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,4 +1,4 @@
-package CM.Functions;
+package CM.Models.Functions;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
