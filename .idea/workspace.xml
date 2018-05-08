@@ -507,7 +507,7 @@
       <workItem from="1525599501038" duration="13266000" />
       <workItem from="1525654656130" duration="623000" />
       <workItem from="1525673320959" duration="6981000" />
-      <workItem from="1525751009730" duration="3604000" />
+      <workItem from="1525751009730" duration="3713000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -558,15 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525680583998</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Xong thêm, xóa, sửa basic.">
+      <created>1525763059735</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525763059735</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98241000" />
+    <option name="totallyTimeSpent" value="98350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
