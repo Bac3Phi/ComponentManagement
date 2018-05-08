@@ -24,7 +24,7 @@
 .side-buttons{
     -fx-background-color: transparent;
     -fx-background-radius: 0;
-    -fx-alignment: CENTER_LEFT;
+    -fx-alignment: CENTER;
 }
 .side-buttons:active{
     -fx-background-color: #F3F3F3;
@@ -186,8 +186,6 @@
 .menu-item:focused {
     -fx-background-color: -swatch-light-grey;
 }
-
-
 
 
 

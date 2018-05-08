@@ -38,29 +38,24 @@ public class LoginController  implements Initializable {
 
     public void btnSignIn_MousePressed(MouseEvent mouseEvent) {
        // if ( txtUsername.getText()== "abc" && txtPassword.getText()=="123"){
-//            imgLoading.setVisible(true);
-//            PauseTransition pauseTransition = new PauseTransition();
-//            pauseTransition.setDuration(Duration.seconds(3));
-//            pauseTransition.setOnFinished(ev -> {
-//                completeLogin();
-//            });
-//            pauseTransition.play();
-        //}
-        completeLogin();
+            imgLoading.setVisible(true);
+            PauseTransition pauseTransition = new PauseTransition();
+            pauseTransition.setDuration(Duration.seconds(3));
+            pauseTransition.setOnFinished(ev -> {
+                completeLogin();
+            });
+            pauseTransition.play();
+     //   }
+
     }
     private void completeLogin(){
         btn_SignIn.getScene().getWindow().hide();
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("MainMenu/MainMenu.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             * fxmlLoader.setController(NewWindowController);
-             */
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../MainMenu/MainMenu.fxml")); // DMMMMM dau ..
+            Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("New Window");
-            stage.setScene(scene);
+            stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
             Logger logger = Logger.getLogger(getClass().getName());
@@ -72,5 +67,9 @@ public class LoginController  implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         imgLoading.setVisible(false);
+    }
+
+    public void handleButtonAction(ActionEvent actionEvent) {
+    //completeLogin();
     }
 }

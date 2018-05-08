@@ -16,8 +16,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<StackPane fx:controller="Testing.MainMenu.MainMenu.MainMenuController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@Default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@Default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -43,12 +44,12 @@
             </JFXToolbar>
             <HBox prefHeight="825.0" prefWidth="1600.0">
                <children>
-                  <AnchorPane styleClass="side-bar">
+                  <AnchorPane prefWidth="200.0" styleClass="side-bar">
                      <effect>
                         <DropShadow />
                      </effect>
                      <children>
-                        <GridPane prefHeight="450.0" prefWidth="200.0">
+                        <GridPane prefHeight="300.0" prefWidth="200.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
@@ -59,10 +60,13 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton prefHeight="97.0" prefWidth="195.0" styleClass="side-buttons" text="Home">
+                              <JFXButton prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Mặt Hàng">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="DASHBOARD" size="16" />
-                                 </graphic></JFXButton>
+                                 </graphic>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></JFXButton>
                            </children>
                         </GridPane>
                      </children>
