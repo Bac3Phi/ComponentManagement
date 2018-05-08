@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="jfoenix-8.0.4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/jfoenix-8.0.4.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/fontawesomefx-8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/driver/fontawesomefx-8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/driver/jfoenix-8.0.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
