@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/login/LoginController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/Default.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_4.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ComponentManagement.iml" afterPath="$PROJECT_DIR$/ComponentManagement.iml" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/MainController.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/MainController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/CustomerFunction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/DbConnection.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/DynamicViews.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Main.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/LogIn.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/Main.class" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/Main.class" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/MainController.java" afterPath="$PROJECT_DIR$/src/CM/Controllers/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Functions/CustomerFunction.java" afterPath="$PROJECT_DIR$/src/CM/Models/Functions/CustomerFunction.java" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Functions/DbConnection.java" afterPath="$PROJECT_DIR$/src/CM/Models/Functions/DbConnection.java" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Functions/DynamicViews.java" afterPath="$PROJECT_DIR$/src/CM/Models/Functions/DynamicViews.java" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Main.java" afterPath="$PROJECT_DIR$/src/CM/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/LogIn.fxml" afterPath="$PROJECT_DIR$/src/CM/Views/LogIn.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/Main.java" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu.fxml" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenuController.java" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenuController.java" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml" afterPath="$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,16 +89,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LogInController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/LogInController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,16 +103,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Default.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/Default.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="15" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -181,7 +163,7 @@
         <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="30" column="82" lean-forward="false" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
+              <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -208,9 +190,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -218,6 +200,7 @@
     <findStrings>
       <find>controller</find>
       <find>show</find>
+      <find>wi</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -274,6 +257,7 @@
         <option value="$PROJECT_DIR$/src/Testing/MainMenu/Main.java" />
         <option value="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml" />
         <option value="$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml" />
+        <option value="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/Default.css" />
       </list>
     </option>
   </component>
@@ -428,7 +412,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../student-fx" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/fontawesomefx-8.8.jar!/" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -630,7 +614,7 @@
       <workItem from="1525535808474" duration="625000" />
       <workItem from="1525611862673" duration="3370000" />
       <workItem from="1525685299124" duration="1604000" />
-      <workItem from="1525700914991" duration="8097000" />
+      <workItem from="1525700914991" duration="12191000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -664,7 +648,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75793000" />
+    <option name="totallyTimeSpent" value="79887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -730,17 +714,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/MainView.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Functions/DbConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1075,7 +1048,7 @@
     <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/login/Login.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="30" column="82" lean-forward="false" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
+          <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -1084,14 +1057,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/MainMenu.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Testing/MainMenu/MainMenu/Default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="15" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
