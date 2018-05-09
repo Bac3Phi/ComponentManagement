@@ -22,9 +22,9 @@
             <JFXTextField fx:id="txtUsername" focusColor="#f99e1f" labelFloat="true" layoutX="28.0" layoutY="88.0" prefHeight="25.0" prefWidth="238.0" promptText="Tên đăng nhập" unFocusColor="#f99e1f" />
             <JFXPasswordField fx:id="txtPassword" focusColor="#f99e1f" labelFloat="true" layoutX="28.0" layoutY="141.0" prefHeight="25.0" prefWidth="238.0" promptText="Mật khẩu" unFocusColor="#f99e1f" />
             <JFXButton fx:id="btn_SignIn" layoutX="25.0" layoutY="192.0" onAction="#handleButtonAction" onMousePressed="#btnSignIn_MousePressed" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #f99e1f;" text="Đăng Nhập" textFill="WHITE" />
-            <Label layoutX="62.0" layoutY="32.0" prefHeight="38.0" prefWidth="170.0" text="Đăng Nhập">
+            <Label layoutX="62.0" layoutY="34.0" prefHeight="38.0" prefWidth="170.0" text="Đăng Nhập">
                <font>
-                  <Font size="26.0" />
+                  <Font name="System Bold" size="26.0" />
                </font>
             </Label>
             <ImageView fx:id="imgLoading" fitHeight="63.0" fitWidth="72.0" layoutX="114.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">

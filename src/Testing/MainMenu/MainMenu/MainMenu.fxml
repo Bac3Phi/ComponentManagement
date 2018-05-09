@@ -17,13 +17,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@Default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Testing.MainMenu.MainMenu.MainMenuController">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@Default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Testing.MainMenu.MainMenu.MainMenuController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <VBox fx:id="overflowContainer" prefHeight="104.0" prefWidth="164.0" styleClass="card-white">
                <children>
-                  <JFXButton fx:id="btnLogOut" onAction="#logOff" prefHeight="52.0" prefWidth="163.0" style="-fx-alignment: left;" text="Log out">
+                  <JFXButton fx:id="btnLogOut" onAction="#logOff" prefHeight="52.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Log out">
                      <font>
                         <Font name="Roboto Medium" size="13.0" />
                      </font>
@@ -31,7 +31,7 @@
                         <MaterialDesignIconView fill="#838080" glyphName="LOGOUT" size="16.0" wrappingWidth="36.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnExit" layoutX="10.0" layoutY="10.0" onAction="#exit" prefHeight="53.0" prefWidth="163.0" style="-fx-alignment: left;" text="Exit">
+                  <JFXButton fx:id="btnExit" layoutX="10.0" layoutY="10.0" onAction="#exit" prefHeight="53.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Exit">
                      <font>
                         <Font name="Roboto Medium" size="13.0" />
                      </font>
@@ -45,7 +45,7 @@
       </AnchorPane>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <JFXToolbar styleClass="toolbar">
+            <JFXToolbar fx:id="toolBar" styleClass="toolbar">
                <center>
                   <ImageView fitHeight="45.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
@@ -54,9 +54,9 @@
                   </ImageView>
                </center>
                <right>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="26.0" BorderPane.alignment="CENTER">
+                  <HBox fx:id="toolBarRight" alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="26.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label>
+                        <Label fx:id="lblMenu">
                            <graphic>
                               <MaterialDesignIconView fill="WHITE" glyphName="DOTS_VERTICAL" size="22" />
                            </graphic>
@@ -84,7 +84,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Hàng Hóa">
+                              <JFXButton fx:id="btnComponent" layoutX="10.0" layoutY="10.0" onAction="#openComponent" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Hàng Hóa">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -96,7 +96,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton layoutX="10.0" layoutY="85.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Khách Hàng" GridPane.rowIndex="1">
+                              <JFXButton fx:id="btnCustomer" layoutX="10.0" layoutY="85.0" onAction="#openCustomer" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Khách Hàng" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -108,7 +108,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Nhà Cung Cấp" GridPane.rowIndex="2">
+                              <JFXButton fx:id="btnProvider" onAction="#openProvider" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Nhà Cung Cấp" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -120,7 +120,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton layoutX="10.0" layoutY="160.0" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Nhân Viên" GridPane.rowIndex="3">
+                              <JFXButton fx:id="btnEmployee" layoutX="10.0" layoutY="160.0" onAction="#openEmployee" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Nhân Viên" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -132,7 +132,7 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <JFXButton prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Báo Cáo" GridPane.rowIndex="4">
+                              <JFXButton fx:id="btnReport" onAction="#openReport" prefHeight="100.0" prefWidth="200.0" styleClass="side-buttons" text="Báo Cáo" GridPane.rowIndex="4">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -148,7 +148,7 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="825.0" prefWidth="1400.0" />
+                  <AnchorPane fx:id="holderPane" prefHeight="825.0" prefWidth="1400.0" />
                </children>
             </HBox>
          </children>

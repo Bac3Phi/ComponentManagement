@@ -40,7 +40,7 @@ public class LoginController  implements Initializable {
        // if ( txtUsername.getText()== "abc" && txtPassword.getText()=="123"){
             imgLoading.setVisible(true);
             PauseTransition pauseTransition = new PauseTransition();
-            pauseTransition.setDuration(Duration.seconds(3));
+            pauseTransition.setDuration(Duration.seconds(1.5));
             pauseTransition.setOnFinished(ev -> {
                 completeLogin();
             });
