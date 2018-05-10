@@ -167,17 +167,7 @@
                      </content>
                   </Tab>
                   <Tab text="Linh Kiện">
-                     <content>
-                        <AnchorPane>
-                           <children>
-                              <Label text="Trai" textFill="WHITE">
-                                 <font>
-                                    <Font size="51.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </content>
+                     <fx:include fx:id="fooTabPage" source="../SubMenu/XuatHang.fxml"/>
                   </Tab>
                </tabs>
             </JFXTabPane>
