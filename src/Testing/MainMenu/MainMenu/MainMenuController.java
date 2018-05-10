@@ -124,6 +124,10 @@ public class MainMenuController extends Application implements Initializable {
     private void setNode(Node node) {
         holderPane.getChildren().clear();
         holderPane.getChildren().add((Node) node);
+        AnchorPane.setBottomAnchor(node, 0.0);
+        AnchorPane.setTopAnchor(node, 0.0);
+        AnchorPane.setLeftAnchor(node, 0.0);
+        AnchorPane.setRightAnchor(node, 0.0);
 
         FadeTransition ft = new FadeTransition(Duration.millis(1500));
         ft.setNode(node);
