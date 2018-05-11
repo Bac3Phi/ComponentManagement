@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneQLKH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
+<AnchorPane fx:id="paneQLKH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
    <children>
       <Label fx:id="lbFormKH" layoutX="413.0" layoutY="26.0" text="QUẢN LÝ KHÁCH HÀNG">
          <font>
@@ -59,6 +58,6 @@
          </columns>
       </TableView>
       <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnCANCEL" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
-      <Button fx:id="btnUPDATE1" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
+      <Button fx:id="btnSEARCH" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
    </children>
 </AnchorPane>
