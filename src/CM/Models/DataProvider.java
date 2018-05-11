@@ -57,7 +57,7 @@ public class DataProvider {
         return rowInserted;
     }
 
-    //Hàm UPDATE toàn bộ
+    //Hàm UPDATE
     public int ExecuteSQLUpdate(String[] strUpdate, String tableName) {
         int rowUpdated = 0;
         String query = "UPDATE " + tableName + " SET TENKH = ?, DIACHI = ?, EMAIL = ?, SODIENTHOAI = ? WHERE KHID = ?";
@@ -80,30 +80,6 @@ public class DataProvider {
 
         return rowUpdated;
     }
-
-//    //Hàm UPDATE 1 hoặc nhiều cột
-//    public int ExecuteSQLUpdate(String[] strUpdate, String tableName, String[] colName) {
-//        int rowUpdated = 0;
-//        String query = "UPDATE " + tableName + " SET "+ colName + "= ? WHERE KHID = ?";
-//
-//        try {
-//            //Tạo một connection tới dtb
-//            myPrep = myConn.prepareStatement(query);
-//            myPrep.setString(1, strUpdate[1]);
-//            myPrep.setString(2, strUpdate[2]);
-//            myPrep.setString(3, strUpdate[3]);
-//            myPrep.setString(4, strUpdate[4]);
-//            myPrep.setString(5, strUpdate[0]);
-//
-//            myPrep.executeUpdate();
-//            rowUpdated = 1;
-//        }
-//        catch (SQLException e){
-//            Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);
-//        }
-//
-//        return rowUpdated;
-//    }
 
     //Hàm DELETE
     public int ExecuteSQLDelete(String[] strDelete, String tableName) {

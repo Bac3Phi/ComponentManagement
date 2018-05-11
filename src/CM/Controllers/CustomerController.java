@@ -1,6 +1,5 @@
 package CM.Controllers;
 
-import CM.Main;
 import CM.Models.Customer;
 import CM.Models.DataProvider;
 import javafx.collections.FXCollections;
@@ -80,6 +79,28 @@ public class CustomerController implements Initializable {
         txtTenKH.setText("");
         txtEmail.setText("");
         txtDiaChi.setText("");
+    }
+
+    //lay thong tin du lieu duoc
+    public void getSelectedData() {
+        Customer selectedRow = tbvKH.getSelectionModel().getSelectedItem();
+        if(txtKHID.getText().isEmpty())
+            txtKHID.setText(selectedRow.getKHID());
+        if(txtTenKH.getText().isEmpty())
+            txtTenKH.setText(selectedRow.getTenKH());
+        if(txtDiaChi.getText().isEmpty())
+            txtDiaChi.setText(selectedRow.getDiaChi());
+        if(txtEmail.getText().isEmpty())
+            txtEmail.setText(selectedRow.getEmail());
+        if(txtSoDT.getText().isEmpty())
+            txtSoDT.setText(selectedRow.getSodienthoai());
+    }
+
+    @FXML
+    //su kien click chuot lay selected data
+    public void handle(javafx.scene.input.MouseEvent event)
+    {
+        getSelectedData();
     }
 
     @FXML

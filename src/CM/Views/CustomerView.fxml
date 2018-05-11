@@ -49,7 +49,7 @@
       <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="ADD" />
       <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
       <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
-      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
+      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" onMouseClicked="#handle" prefHeight="401.0" prefWidth="1163.0">
          <columns>
             <TableColumn fx:id="colKHID" prefWidth="109.0" text="MaKH" />
             <TableColumn fx:id="colTenKH" prefWidth="264.0" text="TenKH" />
