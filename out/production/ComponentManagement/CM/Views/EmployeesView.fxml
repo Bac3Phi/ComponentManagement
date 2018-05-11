@@ -12,49 +12,43 @@
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="lbKHID" layoutX="16.0" layoutY="102.0" text="Mã Khách hàng">
+      <Label fx:id="lbNVID" layoutX="16.0" layoutY="102.0" text="Mã Nhân viên">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtKHID" layoutX="175.0" layoutY="101.0" />
-      <Label fx:id="lbTenKH" layoutX="14.0" layoutY="149.0" text="Tên Khách hàng">
+      <TextField fx:id="txtNVID" layoutX="175.0" layoutY="101.0" />
+      <Label fx:id="lbTenNV" layoutX="14.0" layoutY="149.0" text="Tên Nhân viên">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTenKH" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Label fx:id="lbDiaChi" layoutX="14.0" layoutY="194.0" text="Địa chỉ">
+      <TextField fx:id="txtTenNV" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Label fx:id="lbGender" layoutX="484.0" layoutY="102.0" text="Gender">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDiaChi" layoutX="175.0" layoutY="193.0" prefHeight="31.0" prefWidth="1004.0" />
-      <Label fx:id="lbEmail" layoutX="419.0" layoutY="102.0" text="Email">
+      <RadioButton fx:id="rbMALE" layoutX="571.0" layoutY="106.0" mnemonicParsing="false" text="Male" />
+      <RadioButton fx:id="rbFEMALE" layoutX="755.0" layoutY="106.0" mnemonicParsing="false" text="Female" />
+      <Label fx:id="lbPBID" layoutX="633.0" layoutY="149.0" text="Phòng ban">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
-      <Label fx:id="lbSoDT" layoutX="633.0" layoutY="149.0" text="Số điện thoại">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtSoDT" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="ADD" />
-      <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
-      <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
-      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" onMouseClicked="#handle" prefHeight="401.0" prefWidth="1163.0">
+      <TextField fx:id="txtPBID" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Button fx:id="btnADD" layoutX="19.0" layoutY="195.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="ADD" />
+      <Button fx:id="btnDELETE" layoutX="224.0" layoutY="195.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
+      <Button fx:id="btnUPDATE" layoutX="433.0" layoutY="195.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
+      <TableView fx:id="tbvNV" layoutX="19.0" layoutY="257.0" prefHeight="492.0" prefWidth="1163.0">
          <columns>
-            <TableColumn fx:id="colKHID" prefWidth="109.0" text="MaKH" />
-            <TableColumn fx:id="colTenKH" prefWidth="264.0" text="TenKH" />
-            <TableColumn fx:id="colDiaChi" prefWidth="300.0" text="DiaChi" />
-            <TableColumn fx:id="colEmail" prefWidth="263.0" text="Email" />
-            <TableColumn fx:id="colSoDT" prefWidth="226.0" text="SoDT" />
+            <TableColumn fx:id="colNVID" prefWidth="213.0" text="MaNV" />
+            <TableColumn fx:id="colTenNV" prefWidth="564.0" text="TenNV" />
+            <TableColumn fx:id="colGender" prefWidth="170.0" text="Gender" />
+            <TableColumn fx:id="colPBID" prefWidth="215.0" text="PhongBan" />
          </columns>
       </TableView>
-      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnCANCEL" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
-      <Button fx:id="btnUPDATE1" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
+      <Button fx:id="btnCANCEL" layoutX="1029.0" layoutY="195.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
+      <Button fx:id="btnSEARCH" layoutX="830.0" layoutY="195.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
    </children>
 </AnchorPane>
