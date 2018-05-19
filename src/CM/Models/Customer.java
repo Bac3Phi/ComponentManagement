@@ -1,20 +1,18 @@
 package CM.Models;
 
 public class Customer {
-
-
-    String KHID;
+    String MaKH;
     String TenKH;
     String DiaChi;
     String Email;
-    String Sodienthoai;
+    String SoDT;
 
-    public String getKHID() {
-        return KHID;
+    public String getMaKH() {
+        return MaKH;
     }
 
-    public void setKHID(String KHID) {
-        this.KHID = KHID;
+    public void setMaKH(String MaKH) {
+        this.MaKH = MaKH;
     }
 
     public String getTenKH() {
@@ -41,20 +39,20 @@ public class Customer {
         Email = email;
     }
 
-    public String getSodienthoai() {
-        return Sodienthoai;
+    public String getSoDT() {
+        return SoDT;
     }
 
-    public void setSodienthoai(String sodienthoai) {
-        Sodienthoai = sodienthoai;
+    public void setSoDT(String sodienthoai) {
+        SoDT = sodienthoai;
     }
 
 
     public Customer(String khID, String tenKH, String diaChi, String email, String sodienthoai) {
-        KHID = khID;
+        MaKH = khID;
         TenKH = tenKH;
         DiaChi = diaChi;
         Email = email;
-        Sodienthoai = sodienthoai;
+        SoDT = sodienthoai;
     }
 }

@@ -5,16 +5,20 @@ import CM.Models.DataProvider;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -24,7 +28,7 @@ public class CustomerController implements Initializable {
     public TextField txtKHID, txtTenKH, txtDiaChi, txtEmail, txtSoDT;
     public Button btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
     public TableView<Customer> tbvKH;
-    public TableColumn<Customer, String> colKHID, colTenKH, colDiaChi, colEmail, colSoDT;
+    public TableColumn<Customer, String> colMaKH, colTenKH, colDiaChi, colEmail, colSoDT;
     public AnchorPane paneQLKH;
 
     DataProvider dbConn;
@@ -38,11 +42,11 @@ public class CustomerController implements Initializable {
         data = FXCollections.observableArrayList();
         tbvKH.setEditable(false);
 
-        colKHID.setCellValueFactory(new PropertyValueFactory<>("KHID"));
+        colMaKH.setCellValueFactory(new PropertyValueFactory<>("MaKH"));
         colTenKH.setCellValueFactory(new PropertyValueFactory<>("TenKH"));
         colDiaChi.setCellValueFactory(new PropertyValueFactory<>("DiaChi"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-        colSoDT.setCellValueFactory(new PropertyValueFactory<>("sodienthoai"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        colSoDT.setCellValueFactory(new PropertyValueFactory<>("SoDT"));
 
         try {
             showData();
@@ -51,6 +55,12 @@ public class CustomerController implements Initializable {
         catch (SQLException e) {}
 
         tbvKH.setItems(data);
+        tbvKH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                getSelectedData();
+            }
+        });
     }
 
     @FXML
@@ -60,11 +70,11 @@ public class CustomerController implements Initializable {
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Customer(
-                    resultSet.getString("KHID"),
-                    resultSet.getString("TENKH"),
-                    resultSet.getString("DIACHI"),
-                    resultSet.getString("email"),
-                    resultSet.getString("SODIENTHOAI")
+                    resultSet.getString("MaKH"),
+                    resultSet.getString("TenKH"),
+                    resultSet.getString("DiaChi"),
+                    resultSet.getString("Email"),
+                    resultSet.getString("SoDT")
             ));
         }
         resultSet.close();
@@ -84,24 +94,26 @@ public class CustomerController implements Initializable {
     //lay thong tin du lieu duoc
     public void getSelectedData() {
         Customer selectedRow = tbvKH.getSelectionModel().getSelectedItem();
-        if(txtKHID.getText().isEmpty())
-            txtKHID.setText(selectedRow.getKHID());
-        if(txtTenKH.getText().isEmpty())
-            txtTenKH.setText(selectedRow.getTenKH());
-        if(txtDiaChi.getText().isEmpty())
-            txtDiaChi.setText(selectedRow.getDiaChi());
-        if(txtEmail.getText().isEmpty())
-            txtEmail.setText(selectedRow.getEmail());
-        if(txtSoDT.getText().isEmpty())
-            txtSoDT.setText(selectedRow.getSodienthoai());
+        txtKHID.setText(selectedRow.getMaKH());
+        txtTenKH.setText(selectedRow.getTenKH());
+        txtDiaChi.setText(selectedRow.getDiaChi());
+        txtEmail.setText(selectedRow.getEmail());
+        txtSoDT.setText(selectedRow.getSoDT());
     }
 
-    @FXML
-    //su kien click chuot lay selected data
-    public void handle(javafx.scene.input.MouseEvent event)
-    {
-        getSelectedData();
-    }
+//    @FXML
+//    //su kien click chuot lay selected data
+//    public void handle()
+//    {
+////        tbvKH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+////            @Override
+////            public void handle(MouseEvent event) {
+////
+////
+////            }
+////        });
+//        getSelectedData();
+//    }
 
     @FXML
     //Thêm dữ liệu vào bảng

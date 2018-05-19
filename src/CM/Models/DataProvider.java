@@ -60,7 +60,7 @@ public class DataProvider {
     //Hàm UPDATE
     public int ExecuteSQLUpdate(String[] strUpdate, String tableName) {
         int rowUpdated = 0;
-        String query = "UPDATE " + tableName + " SET TENKH = ?, DIACHI = ?, EMAIL = ?, SODIENTHOAI = ? WHERE KHID = ?";
+        String query = "UPDATE " + tableName + " SET TenKH = ?, DiaChi = ?, Email = ?, SoDT = ? WHERE MaKH = ?";
 
         try {
             //Tạo một connection tới dtb
@@ -84,7 +84,7 @@ public class DataProvider {
     //Hàm DELETE
     public int ExecuteSQLDelete(String[] strDelete, String tableName) {
         int rowDeleted = 0;
-        String query = "DELETE FROM " + tableName + " WHERE KHID = ?";
+        String query = "DELETE FROM " + tableName + " WHERE MaKH = ?";
         //đây là đối tượng như Statement nhưng được cải thiện để nhanh hơn
         PreparedStatement myPrep = null;
 

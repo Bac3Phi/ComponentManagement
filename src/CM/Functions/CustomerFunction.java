@@ -20,11 +20,11 @@ public class CustomerFunction {
 
         try {
             ptmt = conn.prepareStatement(sql);
-            ptmt.setString(1,customer.getKHID());
+            ptmt.setString(1,customer.getMaKH());
             ptmt.setString(2,customer.getTenKH());
             ptmt.setString(3,customer.getDiaChi());
             ptmt.setString(4,customer.getEmail());
-            ptmt.setString(5,customer.getSodienthoai());
+            ptmt.setString(5,customer.getSoDT());
 
             int checkUpdate = ptmt.executeUpdate();
             if (checkUpdate!=0)
