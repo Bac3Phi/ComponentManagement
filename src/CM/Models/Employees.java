@@ -1,16 +1,17 @@
 package CM.Models;
 
 public class Employees {
-    private String NVID;
-    private String PBID;
+    private String MaNV;
     private String TenNV;
+    private String Phai;
+    private String MaPhong;
 
-    public String getNVID() {
-        return NVID;
+    public String getMaNV() {
+        return MaNV;
     }
 
-    public void setNVID(String NVID) {
-        this.NVID = NVID;
+    public void setMaNV(String NVID) {
+        this.MaNV = NVID;
     }
 
     public String getTenNV() {
@@ -21,19 +22,28 @@ public class Employees {
         this.TenNV = tenNV;
     }
 
-    public String getPBID() {
-        return PBID;
+    public String getMaPhong() {
+        return MaPhong;
     }
 
-    public void setPBID(String PBID) {
-        this.PBID = PBID;
+    public void setMaPhong(String PBID) {
+        this.MaPhong = PBID;
+    }
+
+    public String getPhai() {
+        return Phai;
+    }
+
+    public void setPhai(String phai) {
+        this.Phai = phai;
     }
 
     public Employees() {}
 
-    public Employees(String NVID, String PBID, String TenNV) {
-        this.TenNV = TenNV;
-        this.NVID = NVID;
-        this.PBID = PBID;
+    public Employees(String maNV, String tenNV, String phai, String maPhong) {
+        MaNV = maNV;
+        TenNV = tenNV;
+        Phai = phai;
+        MaPhong = maPhong;
     }
 }

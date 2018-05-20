@@ -3,69 +3,74 @@ package CM.Models;
 import java.util.Date;
 
 public class Receipt {
-    private String HDID;
-    private String KHID;
-    private Date ngaylap;
-    private String NVID;
-    private String masothue;
-    private String sotientt;
+    private String MaHD;
+    private String MaKH;
+    private Date NgayLap;
+    private String MaNV;
+    private String MaSoThue;
+    private String TienThanhToan;
+    private String LoaiHD;
 
     public Receipt() {}
 
-    public Receipt(String hdid, String khid, Date ngl, String nvid, String mst, String tientt) {
-        this.HDID = hdid;
-        this.KHID = khid;
-        this.ngaylap = ngl;
-        this.NVID = nvid;
-        this.masothue = mst;
-        this.sotientt = tientt;
+    public Receipt(String hdid, Date ngl, String mst, String tientt, String loaihd, String nvid, String khid) {
+        this.MaHD = hdid;
+        this.MaKH = khid;
+        this.NgayLap = ngl;
+        this.MaNV = nvid;
+        this.MaSoThue = mst;
+        this.TienThanhToan = tientt;
     }
 
-    public String getHDID() {
-        return HDID;
+    public String getMaHD() {
+        return MaHD;
     }
 
-    public void setHDID(String HDID) {
-        this.HDID = HDID;
+    public void setMaHD(String maHD) {
+        this.MaHD = maHD;
     }
 
-    public String getKHID() {
-        return KHID;
+    public String getMaKH() {
+        return MaKH;
     }
 
-    public void setKHID(String KHID) {
-        this.KHID = KHID;
+    public void setMaKH(String maKH) {
+        this.MaKH = maKH;
     }
 
-    public Date getNgaylap() {
-        return ngaylap;
+    public Date getNgayLap() {
+        return NgayLap;
     }
 
-    public void setNgaylap(Date ngl) {
-        this.ngaylap = ngl;
+    public void setNgayLap(Date ngl) {
+        this.NgayLap = ngl;
     }
 
-    public String getNVID() {
-        return NVID;
+    public String getMaNV() {
+        return MaNV;
     }
 
-    public void setNVID(String nvid) {
-        this.NVID = nvid;
+    public void setMaNV(String nvid) {
+        this.MaNV = nvid;
     }
 
-    public String getMasothue() {
-        return masothue;
+    public String getMaSoThue() {
+        return MaSoThue;
     }
 
-    public void setMasothue(String masothue) {
-        this.masothue = masothue;
+    public void setMaSoThue(String maSoThue) {
+        this.MaSoThue = maSoThue;
     }
 
-    public String getSotientt() {
-        return sotientt;
+    public String getTienThanhToan() {
+        return TienThanhToan;
     }
 
-    public void setSotientt(String sotientt) {
-        this.sotientt = sotientt;
+    public void setTienThanhToan(String tienThanhToan) {
+        this.TienThanhToan = tienThanhToan;
     }
+
+    public String getLoaiHD() { return LoaiHD; }
+
+    public void setLoaiHD(String loaiHD) { LoaiHD = loaiHD; }
 }
