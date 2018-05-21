@@ -101,20 +101,6 @@ public class CustomerController implements Initializable {
         txtSoDT.setText(selectedRow.getSoDT());
     }
 
-//    @FXML
-//    //su kien click chuot lay selected data
-//    public void handle()
-//    {
-////        tbvKH.setOnMouseClicked(new EventHandler<MouseEvent>() {
-////            @Override
-////            public void handle(MouseEvent event) {
-////
-////
-////            }
-////        });
-//        getSelectedData();
-//    }
-
     @FXML
     //Thêm dữ liệu vào bảng
     public void insertData() {
@@ -181,7 +167,8 @@ public class CustomerController implements Initializable {
             e.printStackTrace();
         }
         String[] dataUpdate = {id, ten, diachi, email, sodt};
-        int isUpdated = dbConn.ExecuteSQLUpdate(dataUpdate, "KHACHHANG");
+        String[] colLabel = {"MaKH", "TenKH", "DiaChi", "Email", "SoDT"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "KHACHHANG");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully updated !!!");
@@ -210,7 +197,7 @@ public class CustomerController implements Initializable {
             alert.show();
         }
         String[] dataDelete = {txtKHID.getText()};
-        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG");
+        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG", "MaKH");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully deleted !!!");

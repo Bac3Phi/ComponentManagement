@@ -1,49 +1,71 @@
 package CM.Models;
 
 public class Goods {
-    private String MHID;
-    private String TenMH;
-    private String donvitinh;
-    private String dongia;
+    private String MaMH;
+    private String TenHang;
+    private String DonViTinh;
+    private String HangSX;
+    private String ThoiGianBaoHanh;
+    private String HinhMinhHoa;
+    private String MaLoai;
 
     public Goods(){}
 
-    public Goods(String MHID, String tenMH, String donvitinh, String dongia){
-        this.MHID = MHID;
-        this.TenMH = tenMH;
-        this.donvitinh = donvitinh;
-        this.dongia = dongia;
+    public Goods(String MHID, String tenMH, String donvitinh, String hangsx, String tgbh, String hinh, String maloai){
+        this.MaMH = MHID;
+        this.TenHang = tenMH;
+        this.DonViTinh = donvitinh;
+        this.HangSX = hangsx;
+        this.ThoiGianBaoHanh = tgbh;
+        this.HinhMinhHoa = hinh;
+        this.MaLoai = maloai;
     }
 
-    public String getMHID() {
-        return MHID;
+    public String getMaMH() {
+        return MaMH;
     }
 
-    public void setMHID(String MHID) {
-        this.MHID = MHID;
+    public void setMaMH(String MHID) {
+        this.MaMH = MHID;
     }
 
-    public String getTenMH() {
-        return TenMH;
+    public String getTenHang() {
+        return TenHang;
     }
 
-    public void setTenMH(String tenMH) {
-        this.TenMH = tenMH;
+    public void setTenHang(String tenMH) {
+        this.TenHang = tenMH;
     }
 
-    public String getDonvitinh() {
-        return donvitinh;
+    public String getDonViTinh() {
+        return DonViTinh;
     }
 
-    public void setDonvitinh(String donvitinh) {
-        this.donvitinh = donvitinh;
+    public void setDonViTinh(String donvitinh) {
+        this.DonViTinh = donvitinh;
     }
 
-    public String getDongia() {
-        return dongia;
+    public String getHangSX() {
+        return HangSX;
     }
 
-    public void setDongia(String dongia) {
-        this.dongia = dongia;
+    public void setHangSX(String hangsx) {
+        this.HangSX = hangsx;
     }
+
+    public String getThoiGianBaoHanh() { return ThoiGianBaoHanh; }
+
+    public void setThoiGianBaoHanh(String thoiGianBaoHanh) {
+        ThoiGianBaoHanh = thoiGianBaoHanh;
+    }
+
+    public String getHinhMinhHoa() { return HinhMinhHoa; }
+
+    public void setHinhMinhHoa(String hinhMinhHoa) {
+        HinhMinhHoa = hinhMinhHoa;
+    }
+
+    public String getMaLoai() { return MaLoai; }
+
+    public void setMaLoai(String maLoai) { MaLoai = maLoai; }
 }

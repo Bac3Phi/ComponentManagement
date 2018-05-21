@@ -1,28 +1,28 @@
 package CM.Models;
 
-public class Provider {
-    private String NCCID;
+public class Supplier {
+    private String MaNCC;
     private String TenNCC;
     private String DiaChiNCC;
     private String EmailNCC;
-    private String sdtNCC;
+    private String SoDTNCC;
 
-    public Provider() {}
+    public Supplier() {}
 
-    public Provider(String nccID, String tenNCC, String diaChiNCC, String emailNCC, String sdtNCC) {
-        this.NCCID = nccID;
+    public Supplier(String nccID, String tenNCC, String diaChiNCC, String emailNCC, String sdtNCC) {
+        this.MaNCC = nccID;
         this.TenNCC = tenNCC;
         this.DiaChiNCC = diaChiNCC;
         this.EmailNCC = emailNCC;
-        this.sdtNCC = sdtNCC;
+        this.SoDTNCC = sdtNCC;
     }
 
-    public String getNCCID() {
-        return NCCID;
+    public String getMaNCC() {
+        return MaNCC;
     }
 
-    public void setNCCID(String nccID) {
-        this.NCCID = nccID;
+    public void setMaNCC(String nccID) {
+        this.MaNCC = nccID;
     }
 
     public String getTenNCC() {
@@ -49,11 +49,11 @@ public class Provider {
         this.EmailNCC = emailNCC;
     }
 
-    public String getSdtNCC() {
-        return sdtNCC;
+    public String getSoDTNCC() {
+        return SoDTNCC;
     }
 
-    public void setSdtNCC(String sdtNCC) {
-        this.sdtNCC = sdtNCC;
+    public void setSoDTNCC(String soDTNCC) {
+        this.SoDTNCC = soDTNCC;
     }
 }

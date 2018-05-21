@@ -84,6 +84,18 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3840">
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+=======
+>>>>>>> customer
       <file leaf-file-name="CustomerView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Views/CustomerView.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -98,7 +110,11 @@
         <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="552">
+<<<<<<< HEAD
+              <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
+=======
               <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+>>>>>>> customer
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DataProvider#0;class#DataProvider#0" />
@@ -111,7 +127,13 @@
       <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="24">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+=======
             <state relative-caret-position="288">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+>>>>>>> customer
             </state>
           </provider>
         </entry>
@@ -119,7 +141,11 @@
       <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="74304">
+=======
             <state relative-caret-position="70416">
+>>>>>>> customer
               <caret line="3096" selection-start-line="3096" selection-end-line="3096" />
             </state>
           </provider>
@@ -234,6 +260,10 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+<<<<<<< HEAD
+      <pane id="AndroidView" />
+=======
+>>>>>>> customer
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -441,9 +471,12 @@
       <workItem from="1526055295584" duration="2683000" />
       <workItem from="1526655938954" duration="1285000" />
       <workItem from="1526709747260" duration="10600000" />
-
+<<<<<<< HEAD
+      <workItem from="1526791201225" duration="439000" />
+=======
       <workItem from="1526791201225" duration="1045000" />
       <workItem from="1526792280259" duration="16494000" />
+>>>>>>> customer
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -515,6 +548,13 @@
       <option name="project" value="LOCAL" />
       <updated>1526734517245</updated>
     </task>
+<<<<<<< HEAD
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="113407000" />
+=======
     <task id="LOCAL-00011" summary="Cập nhật toàn bộ Model.">
       <created>1526798399280</created>
       <option name="number" value="00011" />
@@ -527,6 +567,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="132065000" />
+>>>>>>> customer
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
@@ -545,7 +586,11 @@
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21208054" />
+=======
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2147651" />
+>>>>>>> customer
       <window_info anchor="right" id="Database" order="5" weight="0.32975295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -553,6 +598,19 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45762712" />
+<<<<<<< HEAD
+      <window_info anchor="right" id="JetGradle" order="6" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32768363" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Profiler" order="9" />
+      <window_info anchor="bottom" id="Problems" order="12" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
+>>>>>>> customer
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -632,8 +690,12 @@
     <MESSAGE value="Xong thêm, xóa, sửa basic." />
     <MESSAGE value="Test push" />
     <MESSAGE value="Cập nhật database và fix bug getSelectedData." />
+<<<<<<< HEAD
+    <option name="LAST_COMMIT_MESSAGE" value="Cập nhật database và fix bug getSelectedData." />
+=======
     <MESSAGE value="Cập nhật toàn bộ Model." />
     <option name="LAST_COMMIT_MESSAGE" value="Cập nhật toàn bộ Model." />
+>>>>>>> customer
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -839,15 +901,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Department.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1224">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+=======
         <state relative-caret-position="312">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="22" selection-end-column="26" />
+>>>>>>> customer
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Goods.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="552">
+          <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
+=======
         <state relative-caret-position="984">
           <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+>>>>>>> customer
           <folding>
             <element signature="e#1369#1370#0" expanded="true" />
           </folding>
@@ -856,6 +928,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/LogIn.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="74304">
+          <caret line="3096" selection-start-line="3096" selection-end-line="3096" />
+=======
         <state relative-caret-position="408">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
@@ -964,6 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+>>>>>>> customer
         </state>
       </provider>
     </entry>
@@ -980,13 +1057,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="3840">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+=======
         <state relative-caret-position="288">
           <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+>>>>>>> customer
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="24">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+=======
         <state relative-caret-position="552">
           <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
           <folding>
@@ -1013,6 +1099,7 @@
             <element signature="method#setBtnSEARCH#0;class#EmployeesController#0" />
             <element signature="method#setBtnCANCEL#0;class#EmployeesController#0" />
           </folding>
+>>>>>>> customer
         </state>
       </provider>
     </entry>

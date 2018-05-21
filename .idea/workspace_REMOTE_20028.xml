@@ -112,6 +112,7 @@
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -441,7 +442,6 @@
       <workItem from="1526055295584" duration="2683000" />
       <workItem from="1526655938954" duration="1285000" />
       <workItem from="1526709747260" duration="10600000" />
-
       <workItem from="1526791201225" duration="1045000" />
       <workItem from="1526792280259" duration="16494000" />
     </task>

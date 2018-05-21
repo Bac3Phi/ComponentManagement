@@ -36,17 +36,26 @@ public class DataProvider {
     //Hàm INSERT
     public int ExecuteSQLInsert(String[] strInsert, String tableName) {
         int rowInserted = 0;
-        //String id = "", ten = "", dc = "", email = "", sodt = "";
-        String query = "INSERT INTO " + tableName + " VALUES(?,?,?,?,?);";
+        String param = "";
+        int iLen = strInsert.length + (strInsert.length - 1);
+        String[] str = new String[iLen];
+
+        for (int i = 0; i < iLen; i++) {
+            if (i % 2 == 0)
+                str[i] = "?";
+            else if (i % 2 != 0)
+                str[i] = ",";
+            param += str[i];
+        }
+
+        String query = "INSERT INTO " + tableName + " VALUES("+ param + ");";
 
         try {
             //Tạo một connection tới dtb
             myPrep = myConn.prepareStatement(query);
-            myPrep.setString(1, strInsert[0]);
-            myPrep.setString(2, strInsert[1]);
-            myPrep.setString(3, strInsert[2]);
-            myPrep.setString(4, strInsert[3]);
-            myPrep.setString(5, strInsert[4]);
+            for (int i = 0; i < strInsert.length; i++) {
+                myPrep.setString(i + 1, strInsert[i]);
+            }
 
             myPrep.executeUpdate();
             rowInserted = 1;
@@ -58,18 +67,25 @@ public class DataProvider {
     }
 
     //Hàm UPDATE
-    public int ExecuteSQLUpdate(String[] strUpdate, String tableName) {
+    public int ExecuteSQLUpdate(String[] colLabel, String[] strUpdate, String tableName) {
         int rowUpdated = 0;
-        String query = "UPDATE " + tableName + " SET TenKH = ?, DiaChi = ?, Email = ?, SoDT = ? WHERE MaKH = ?";
+        String res = "=?,";
+        String param = "";
+
+        for (int j = 1; j < colLabel.length; j++) {
+            param += (colLabel[j] + res);
+        }
+        String output =  param.substring(0, param.length()-1);
+
+        String query = "UPDATE " + tableName + " SET " + output + " WHERE " + colLabel[0] + " = ?";
 
         try {
             //Tạo một connection tới dtb
             myPrep = myConn.prepareStatement(query);
-            myPrep.setString(1, strUpdate[1]);
-            myPrep.setString(2, strUpdate[2]);
-            myPrep.setString(3, strUpdate[3]);
-            myPrep.setString(4, strUpdate[4]);
-            myPrep.setString(5, strUpdate[0]);
+            for (int i = 1; i <= strUpdate.length - 1; i++) {
+                myPrep.setString(i, strUpdate[i]);
+            }
+            myPrep.setString(strUpdate.length, strUpdate[0]);
 
             myPrep.executeUpdate();
             rowUpdated = 1;
@@ -82,9 +98,9 @@ public class DataProvider {
     }
 
     //Hàm DELETE
-    public int ExecuteSQLDelete(String[] strDelete, String tableName) {
+    public int ExecuteSQLDelete(String[] strDelete, String tableName, String col) {
         int rowDeleted = 0;
-        String query = "DELETE FROM " + tableName + " WHERE MaKH = ?";
+        String query = "DELETE FROM " + tableName + " WHERE " + col +" = ?";
         //đây là đối tượng như Statement nhưng được cải thiện để nhanh hơn
         PreparedStatement myPrep = null;
 

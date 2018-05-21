@@ -10,24 +10,24 @@
 
 <AnchorPane fx:id="paneQLKH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
    <children>
-      <Label fx:id="lbFormKH" layoutX="413.0" layoutY="26.0" text="QUẢN LÝ KHÁCH HÀNG">
+      <Label fx:id="lbFormKH" layoutX="413.0" layoutY="26.0" text="CUSTOMERS MANAGEMENT">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="lbKHID" layoutX="16.0" layoutY="102.0" text="Mã Khách hàng">
+      <Label fx:id="lbKHID" layoutX="16.0" layoutY="102.0" text="CustomersID">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <TextField fx:id="txtKHID" layoutX="175.0" layoutY="101.0" />
-      <Label fx:id="lbTenKH" layoutX="14.0" layoutY="149.0" text="Tên Khách hàng">
+      <Label fx:id="lbTenKH" layoutX="14.0" layoutY="149.0" text="Name">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <TextField fx:id="txtTenKH" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Label fx:id="lbDiaChi" layoutX="14.0" layoutY="194.0" text="Địa chỉ">
+      <Label fx:id="lbDiaChi" layoutX="14.0" layoutY="194.0" text="Address">
          <font>
             <Font size="20.0" />
          </font>
@@ -39,7 +39,7 @@
          </font>
       </Label>
       <TextField fx:id="txtEmail" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
-      <Label fx:id="lbSoDT" layoutX="633.0" layoutY="149.0" text="Số điện thoại">
+      <Label fx:id="lbSoDT" layoutX="633.0" layoutY="149.0" text="Phone Num">
          <font>
             <Font size="20.0" />
          </font>
@@ -48,9 +48,9 @@
       <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="ADD" />
       <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
       <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
-      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" onMouseClicked="#handle" prefHeight="401.0" prefWidth="1163.0">
+      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
          <columns>
-            <TableColumn fx:id="colKHID" prefWidth="109.0" text="MaKH" />
+            <TableColumn fx:id="colMaKH" prefWidth="109.0" text="MaKH" />
             <TableColumn fx:id="colTenKH" prefWidth="264.0" text="TenKH" />
             <TableColumn fx:id="colDiaChi" prefWidth="300.0" text="DiaChi" />
             <TableColumn fx:id="colEmail" prefWidth="263.0" text="Email" />

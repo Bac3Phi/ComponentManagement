@@ -1,39 +1,35 @@
 package CM.Models;
 
+import java.util.Date;
+
 public class Order {
-    private String DHID;
-    private String MHID;
-    private int soluong;
+    private String MaDDH;
+    private String MaNCC;
+    private String MaNV;
+    private Date NgayLap;
 
     public Order() {}
 
-    public Order(String dhid, String mhid, int sl) {
-        this.DHID = dhid;
-        this.MHID = mhid;
-        this.soluong = sl;
+    public Order(String maDDH, Date ngayLap, String maNV, String maNCC) {
+        MaDDH = maDDH;
+        MaNCC = maNCC;
+        MaNV = maNV;
+        NgayLap = ngayLap;
     }
 
-    public String getDHID() {
-        return DHID;
-    }
+    public String getMaDDH() { return MaDDH; }
 
-    public void setDHID(String DHID) {
-        this.DHID = DHID;
-    }
+    public void setMaDDH(String maDDH) { MaDDH = maDDH; }
 
-    public String getMHID() {
-        return MHID;
-    }
+    public String getMaNCC() { return MaNCC; }
 
-    public void setMHID(String MHID) {
-        this.MHID = MHID;
-    }
+    public void setMaNCC(String maNCC) { MaNCC = maNCC; }
 
-    public int getSoluong() {
-        return soluong;
-    }
+    public String getMaNV() { return MaNV; }
 
-    public void setSoluong(int sl) {
-        this.soluong = sl;
-    }
+    public void setMaNV(String maNV) {  MaNV = maNV; }
+
+    public Date getNgayLap() { return NgayLap; }
+
+    public void setNgayLap(Date ngayLap) { NgayLap = ngayLap; }
 }
