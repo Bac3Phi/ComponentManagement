@@ -1,6 +1,6 @@
 package CM.Models;
 
-public class Goods {
+public class Component {
     private String MaMH;
     private String TenHang;
     private String DonViTinh;
@@ -9,9 +9,9 @@ public class Goods {
     private String HinhMinhHoa;
     private String MaLoai;
 
-    public Goods(){}
+    public Component(){}
 
-    public Goods(String MHID, String tenMH, String donvitinh, String hangsx, String tgbh, String hinh, String maloai){
+    public Component(String MHID, String tenMH, String donvitinh, String hangsx, String tgbh, String hinh, String maloai){
         this.MaMH = MHID;
         this.TenHang = tenMH;
         this.DonViTinh = donvitinh;
