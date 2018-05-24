@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import CM.Controllers.LogInController;
+import CM.Controllers.SignInController;
 
 import java.io.IOException;
 import java.util.function.Function;
