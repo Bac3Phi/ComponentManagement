@@ -1,29 +1,29 @@
 package CM.Models;
 
 public class Department {
-    private String MaPhong;
-    private String TenPhong;
+    private String DepartmentID;
+    private String DepartmentName;
 
-    public String getMaPhong() {
-        return MaPhong;
+    public String getDepartmentID() {
+        return DepartmentID;
     }
 
-    public void setMaPhong(String PBID) {
-        this.MaPhong = PBID;
+    public void setDepartmentID(String PBID) {
+        this.DepartmentID = PBID;
     }
 
-    public String getTenPhong() {
-        return TenPhong;
+    public String getDepartmentName() {
+        return DepartmentName;
     }
 
-    public void setTenPhong(String tenPB) {
-        this.TenPhong = tenPB;
+    public void setDepartmentName(String tenPB) {
+        this.DepartmentName = tenPB;
     }
 
     public Department() {}
 
     public Department(String PBID, String tenPB) {
-        this.MaPhong = PBID;
-        this.TenPhong = tenPB;
+        this.DepartmentID = PBID;
+        this.DepartmentName = tenPB;
     }
 }

@@ -8,56 +8,56 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneQLKH" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
+<AnchorPane fx:id="paneCustomerManagement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerController">
    <children>
-      <Label fx:id="lbFormKH" layoutX="413.0" layoutY="26.0" text="CUSTOMERS MANAGEMENT">
+      <Label fx:id="lbCustomerForm" layoutX="413.0" layoutY="26.0" text="QUẢN LÝ KHÁCH HÀNG">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="lbKHID" layoutX="16.0" layoutY="102.0" text="CustomersID">
+      <Label fx:id="lbCustomerID" layoutX="16.0" layoutY="102.0" text="Mã Khách hàng">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtKHID" layoutX="175.0" layoutY="101.0" />
-      <Label fx:id="lbTenKH" layoutX="14.0" layoutY="149.0" text="Name">
+      <TextField fx:id="txtCustomerID" layoutX="175.0" layoutY="101.0" />
+      <Label fx:id="lbCustomerName" layoutX="14.0" layoutY="149.0" text="Tên Khách hàng">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTenKH" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Label fx:id="lbDiaChi" layoutX="14.0" layoutY="194.0" text="Address">
+      <TextField fx:id="txtCustomerName" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Label fx:id="lbCustomerAddress" layoutX="14.0" layoutY="194.0" text="Địa Chỉ">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDiaChi" layoutX="175.0" layoutY="193.0" prefHeight="31.0" prefWidth="1004.0" />
-      <Label fx:id="lbEmail" layoutX="419.0" layoutY="102.0" text="Email">
+      <TextField fx:id="txtCustomerAddress" layoutX="175.0" layoutY="193.0" prefHeight="31.0" prefWidth="1004.0" />
+      <Label fx:id="lbCustomerEmail" layoutX="419.0" layoutY="102.0" text="Email">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
-      <Label fx:id="lbSoDT" layoutX="633.0" layoutY="149.0" text="Phone Num">
+      <TextField fx:id="txtCustomerEmail" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
+      <Label fx:id="lbCustomerPhone" layoutX="633.0" layoutY="149.0" text="Số ĐT">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSoDT" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
-      <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="ADD" />
-      <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="DELETE" />
-      <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="UPDATE" />
-      <TableView fx:id="tbvKH" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
+      <TextField fx:id="txtCustomerPhone" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+      <Button fx:id="btnADD" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="THÊM" />
+      <Button fx:id="btnDELETE" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="XÓA" />
+      <Button fx:id="btnUPDATE" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="SỬA" />
+      <TableView fx:id="tbvCustomer" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
          <columns>
-            <TableColumn fx:id="colMaKH" prefWidth="109.0" text="MaKH" />
-            <TableColumn fx:id="colTenKH" prefWidth="264.0" text="TenKH" />
-            <TableColumn fx:id="colDiaChi" prefWidth="300.0" text="DiaChi" />
-            <TableColumn fx:id="colEmail" prefWidth="263.0" text="Email" />
-            <TableColumn fx:id="colSoDT" prefWidth="226.0" text="SoDT" />
+            <TableColumn fx:id="colCustomerID" prefWidth="109.0" text="MaKH" />
+            <TableColumn fx:id="colCustomerName" prefWidth="264.0" text="TenKH" />
+            <TableColumn fx:id="colCustomerAddress" prefWidth="300.0" text="DiaChi" />
+            <TableColumn fx:id="colCustomerEmail" prefWidth="263.0" text="Email" />
+            <TableColumn fx:id="colCustomerPhone" prefWidth="226.0" text="SoDT" />
          </columns>
       </TableView>
-      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnCANCEL" prefHeight="42.0" prefWidth="151.0" text="CANCEL" />
-      <Button fx:id="btnSEARCH" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="SEARCH" />
+      <Button fx:id="btnCANCEL" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnCANCEL" prefHeight="42.0" prefWidth="151.0" text="THOÁT" />
+      <Button fx:id="btnSEARCH" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="TÌM KIẾM" />
    </children>
 </AnchorPane>

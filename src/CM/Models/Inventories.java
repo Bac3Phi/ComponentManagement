@@ -1,25 +1,25 @@
 package CM.Models;
 
 public class Inventories {
-    private String MaKhu;
-    private int SoLuongTon;
-    private String MaMH;
+    private String StockID;
+    private int InvenQuantities;
+    private String ComponentID;
 
-    public Inventories(String maKhu, int soLuongTon, String maMH) {
-        MaKhu = maKhu;
-        SoLuongTon = soLuongTon;
-        MaMH = maMH;
+    public Inventories(String stockID, int invenQuantities, String componentID) {
+        StockID = stockID;
+        InvenQuantities = invenQuantities;
+        ComponentID = componentID;
     }
 
-    public String getMaKhu() { return MaKhu; }
+    public String getStockID() { return StockID; }
 
-    public void setMaKhu(String maKhu) { MaKhu = maKhu; }
+    public void setStockID(String stockID) { StockID = stockID; }
 
-    public int getSoLuongTon() { return SoLuongTon; }
+    public int getInvenQuantities() { return InvenQuantities; }
 
-    public void setSoLuongTon(int soLuongTon) { SoLuongTon = soLuongTon; }
+    public void setInvenQuantities(int invenQuantities) { InvenQuantities = invenQuantities; }
 
-    public String getMaMH() { return MaMH; }
+    public String getComponentID() { return ComponentID; }
 
-    public void setMaMH(String maMH) { MaMH = maMH; }
+    public void setComponentID(String componentID) { ComponentID = componentID; }
 }
