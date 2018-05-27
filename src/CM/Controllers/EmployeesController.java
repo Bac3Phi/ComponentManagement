@@ -1,6 +1,5 @@
 package CM.Controllers;
 
-import CM.Models.Customer;
 import CM.Models.DataProvider;
 import CM.Models.Employees;
 import javafx.collections.FXCollections;
@@ -24,12 +23,12 @@ import java.util.ResourceBundle;
 public class EmployeesController implements Initializable {
     Alert alert;
     @FXML
-    public TextField txtNVID, txtTenNV, txtPBID;
+    public TextField txtEmployeeID, txtEmployeeName, txtDepartmentID;
     public RadioButton rbMALE, rbFEMALE;
     public Button btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
-    public TableView<Employees> tbvNV;
-    public TableColumn<Employees, String> colNVID, colTenNV, colGender, colPBID;
-    public AnchorPane paneQLNV;
+    public TableView<Employees> tbvEmployees;
+    public TableColumn<Employees, String> colEmployeeID, colEmployeeName, colEmployeeGender, colDepartmentID;
+    public AnchorPane paneEmployeesManagement;
     public ToggleGroup group;
 
     DataProvider dbConn;
@@ -39,15 +38,15 @@ public class EmployeesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConn = new DataProvider();
-        paneQLNV = new AnchorPane();
+        paneEmployeesManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
-        tbvNV.setEditable(false);
+        tbvEmployees.setEditable(false);
         group = new ToggleGroup();
 
-        colNVID.setCellValueFactory(new PropertyValueFactory<>("MaNV"));
-        colTenNV.setCellValueFactory(new PropertyValueFactory<>("TenNV"));
-        colGender.setCellValueFactory(new PropertyValueFactory<>("Phai"));
-        colPBID.setCellValueFactory(new PropertyValueFactory<>("MaPhong"));
+        colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colEmployeeGender.setCellValueFactory(new PropertyValueFactory<>("EmployeeGender"));
+        colDepartmentID.setCellValueFactory(new PropertyValueFactory<>("DepartmentID"));
 
         rbMALE.setToggleGroup(group);
         rbMALE.setSelected(true);
@@ -59,8 +58,8 @@ public class EmployeesController implements Initializable {
         catch (IOException io){}
         catch (SQLException e) {}
 
-        tbvNV.setItems(data);
-        tbvNV.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        tbvEmployees.setItems(data);
+        tbvEmployees.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedData();
@@ -85,40 +84,38 @@ public class EmployeesController implements Initializable {
         dbConn.close();
     }
 
-    @FXML
     //Hàm refresh xóa text
     public void refresh() {
-        txtNVID.setText("");
-        txtTenNV.setText("");
+        txtEmployeeID.setText("");
+        txtEmployeeName.setText("");
         rbFEMALE.setSelected(false);
         rbMALE.setSelected(true);
-        txtPBID.setText("");
+        txtDepartmentID.setText("");
     }
 
     //lay thong tin du lieu duoc
     public void getSelectedData() {
-        Employees selectedRow = tbvNV.getSelectionModel().getSelectedItem();
-        txtNVID.setText(selectedRow.getMaNV());
-        txtTenNV.setText(selectedRow.getTenNV());
-        if (selectedRow.getPhai().contains("Nam"))
+        Employees selectedRow = tbvEmployees.getSelectionModel().getSelectedItem();
+        txtEmployeeID.setText(selectedRow.getEmployeeID());
+        txtEmployeeName.setText(selectedRow.getEmployeeName());
+        if (selectedRow.getEmployeeGender().contains("Nam"))
         {
             rbMALE.setSelected(true);
             rbFEMALE.setSelected(false);
         }
-        else if (selectedRow.getPhai().contains("Nữ")) {
+        else if (selectedRow.getEmployeeGender().contains("Nữ")) {
             rbMALE.setSelected(false);
             rbFEMALE.setSelected(true);
         }
-        txtPBID.setText(selectedRow.getMaPhong());
+        txtDepartmentID.setText(selectedRow.getDepartmentID());
     }
 
-    @FXML
     //Thêm dữ liệu vào bảng
     public void insertData() {
         String id = "", ten = "", phai = "", phong = "";
         try {
-            id = txtNVID.getText();
-            ten = txtTenNV.getText();
+            id = txtEmployeeID.getText();
+            ten = txtEmployeeName.getText();
             if (rbMALE.isSelected())
             {
                 phai = "Nam";
@@ -128,9 +125,9 @@ public class EmployeesController implements Initializable {
                 phai = "Nữ";
                 rbMALE.setSelected(false);
             }
-            phong = txtPBID.getText();
-            if (txtNVID.getText().isEmpty() || txtTenNV.getText().isEmpty()
-                    || txtPBID.getText().isEmpty() || (rbFEMALE.isSelected() == false
+            phong = txtDepartmentID.getText();
+            if (txtEmployeeID.getText().isEmpty() || txtEmployeeName.getText().isEmpty()
+                    || txtDepartmentID.getText().isEmpty() || (rbFEMALE.isSelected() == false
                     && rbMALE.isSelected() == false))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
@@ -166,8 +163,8 @@ public class EmployeesController implements Initializable {
     public void updateData() {
         String id = "", ten = "", phai = "", phong = "";
         try {
-            id = txtNVID.getText();
-            ten = txtTenNV.getText();
+            id = txtEmployeeID.getText();
+            ten = txtEmployeeName.getText();
             if (rbMALE.isSelected()) {
                 phai = "Nam";
                 rbFEMALE.setSelected(false);
@@ -176,9 +173,9 @@ public class EmployeesController implements Initializable {
                 phai = "Nữ";
                 rbMALE.setSelected(false);
             }
-            phong = txtPBID.getText();
-            if (txtNVID.getText().isEmpty() || txtTenNV.getText().isEmpty()
-                    || txtPBID.getText().isEmpty() || (rbFEMALE.isSelected() == false
+            phong = txtDepartmentID.getText();
+            if (txtEmployeeID.getText().isEmpty() || txtEmployeeName.getText().isEmpty()
+                    || txtDepartmentID.getText().isEmpty() || (rbFEMALE.isSelected() == false
                     && rbMALE.isSelected() == false))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
@@ -214,13 +211,13 @@ public class EmployeesController implements Initializable {
 
     //Delete dữ liệu
     public void deleteData() {
-        if (txtNVID.getText().isEmpty())
+        if (txtEmployeeID.getText().isEmpty())
         {
             alert = new Alert(Alert.AlertType.WARNING,
                     "Please fill in the blank!!!", ButtonType.OK);
             alert.show();
         }
-        String[] dataDelete = {txtNVID.getText()};
+        String[] dataDelete = {txtDepartmentID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "NHANVIEN", "MaNV");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);

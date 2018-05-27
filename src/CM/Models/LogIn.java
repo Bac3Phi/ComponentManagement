@@ -3,18 +3,18 @@ package CM.Models;
 public class LogIn {
     private String Username;
     private String Password;
-    private String MaDN;
-    private String TenHienThi;
-    private String MaPQ;
+    private String SignInID;
+    private String DisplayName;
+    private String AuthID;
 
     public LogIn() {}
 
-    public LogIn(String maDN, String tenHienThi, String username, String password, String maPQ) {
+    public LogIn(String signInID, String displayName, String username, String password, String authID) {
         Username = username;
         Password = password;
-        MaDN = maDN;
-        TenHienThi = tenHienThi;
-        MaPQ = maPQ;
+        SignInID = signInID;
+        DisplayName = displayName;
+        AuthID = authID;
     }
 
     public String getUsername() { return Username; }
@@ -25,15 +25,15 @@ public class LogIn {
 
     public void setPassword(String password) { Password = password; }
 
-    public String getMaDN() { return MaDN; }
+    public String getSignInID() { return SignInID; }
 
-    public void setMaDN(String maDN) { MaDN = maDN; }
+    public void setSignInID(String signInID) { SignInID = signInID; }
 
-    public String getTenHienThi() { return TenHienThi; }
+    public String getDisplayName() { return DisplayName; }
 
-    public void setTenHienThi(String tenHienThi) { TenHienThi = tenHienThi; }
+    public void setDisplayName(String displayName) { DisplayName = displayName; }
 
-    public String getMaPQ() { return MaPQ; }
+    public String getAuthID() { return AuthID; }
 
-    public void setMaPQ(String maPQ) { MaPQ = maPQ; }
+    public void setAuthID(String authID) { AuthID = authID; }
 }
