@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/InventoriesReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComponentManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ComponentManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/DepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/DepartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Input.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InputInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/OrderInFo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Output.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/OutputInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Receipt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ReceiptInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Supplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Warranty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/EmployeesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/EmployeesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Functions/CustomerFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Functions/CustomerFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Employees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Employees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Components.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/InputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentImportInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Inventories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Inventories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/OrderInFo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentOrderInFo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentExport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/OutputInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentExportInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Bills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ReceiptInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Suppliers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/TypeOfGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/TypeOfGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Warranty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/EmployeesView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -125,9 +84,10 @@
       <file leaf-file-name="EmployeesController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/EmployeesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+            <state relative-caret-position="672">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
               <folding>
+                <element signature="method#initialize#0;class#EmployeesController#0" />
                 <element signature="method#showData#0;class#EmployeesController#0" />
                 <element signature="method#refresh#0;class#EmployeesController#0" />
                 <element signature="method#getSelectedData#0;class#EmployeesController#0" />
@@ -275,27 +235,6 @@
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -454,7 +393,7 @@
       <workItem from="1526709747260" duration="10600000" />
       <workItem from="1526791201225" duration="1045000" />
       <workItem from="1526792280259" duration="16494000" />
-      <workItem from="1527417632289" duration="8105000" />
+      <workItem from="1527417632289" duration="8652000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -540,11 +479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527148637473</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cập nhật database và các lớp trong model lần 2.&#10;Thay đổi tên biến để thống nhất.">
+      <created>1527429880585</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1527429880585</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141220000" />
+    <option name="totallyTimeSpent" value="141767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -560,11 +506,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32768363" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29943502" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29943502" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21744967" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21744967" />
       <window_info anchor="right" id="Database" order="5" weight="0.32975295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -666,7 +612,8 @@
     <MESSAGE value="Cập nhật database và fix bug getSelectedData." />
     <MESSAGE value="Cập nhật toàn bộ Model." />
     <MESSAGE value="Test thử" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test thử" />
+    <MESSAGE value="Cập nhật database và các lớp trong model lần 2.&#10;Thay đổi tên biến để thống nhất." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cập nhật database và các lớp trong model lần 2.&#10;Thay đổi tên biến để thống nhất." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1048,9 +995,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/EmployeesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+        <state relative-caret-position="672">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
           <folding>
+            <element signature="method#initialize#0;class#EmployeesController#0" />
             <element signature="method#showData#0;class#EmployeesController#0" />
             <element signature="method#refresh#0;class#EmployeesController#0" />
             <element signature="method#getSelectedData#0;class#EmployeesController#0" />
