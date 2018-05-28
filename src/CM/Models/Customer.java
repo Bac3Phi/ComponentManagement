@@ -1,58 +1,58 @@
 package CM.Models;
 
 public class Customer {
-    String MaKH;
-    String TenKH;
-    String DiaChi;
-    String Email;
-    String SoDT;
+    String CustomerID;
+    String CustomerName;
+    String CustomerAddress;
+    String CustomerEmail;
+    String CustomerPhoneNo;
 
-    public String getMaKH() {
-        return MaKH;
+    public String getCustomerID() {
+        return CustomerID;
     }
 
-    public void setMaKH(String MaKH) {
-        this.MaKH = MaKH;
+    public void setCustomerID(String MaKH) {
+        this.CustomerID = MaKH;
     }
 
-    public String getTenKH() {
-        return TenKH;
+    public String getCustomerName() {
+        return CustomerName;
     }
 
-    public void setTenKH(String tenKH) {
-        TenKH = tenKH;
+    public void setCustomerName(String customerName) {
+        CustomerName = customerName;
     }
 
-    public String getDiaChi() {
-        return DiaChi;
+    public String getCustomerAddress() {
+        return CustomerAddress;
     }
 
-    public void setDiaChi(String diaChi) {
-        DiaChi = diaChi;
+    public void setCustomerAddress(String customerAddress) {
+        CustomerAddress = customerAddress;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getCustomerEmail() {
+        return CustomerEmail;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setCustomerEmail(String customerEmail) {
+        CustomerEmail = customerEmail;
     }
 
-    public String getSoDT() {
-        return SoDT;
+    public String getCustomerPhoneNo() {
+        return CustomerPhoneNo;
     }
 
-    public void setSoDT(String sodienthoai) {
-        SoDT = sodienthoai;
+    public void setCustomerPhoneNo(String sodienthoai) {
+        CustomerPhoneNo = sodienthoai;
     }
 
 
-    public Customer(String khID, String tenKH, String diaChi, String email, String sodienthoai) {
-        MaKH = khID;
-        TenKH = tenKH;
-        DiaChi = diaChi;
-        Email = email;
-        SoDT = sodienthoai;
+    public Customer(String khID, String customerName, String customerAddress, String customerEmail, String sodienthoai) {
+        CustomerID = khID;
+        CustomerName = customerName;
+        CustomerAddress = customerAddress;
+        CustomerEmail = customerEmail;
+        CustomerPhoneNo = sodienthoai;
     }
 }

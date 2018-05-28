@@ -17,19 +17,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class CustomerController implements Initializable {
     Alert alert;
     @FXML
-    public TextField txtKHID, txtTenKH, txtDiaChi, txtEmail, txtSoDT;
+    public TextField txtCustomerID, txtCustomerName, txtCustomerAddress, txtCustomerEmail, txtCustomerPhone;
     public Button btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
-    public TableView<Customer> tbvKH;
-    public TableColumn<Customer, String> colMaKH, colTenKH, colDiaChi, colEmail, colSoDT;
-    public AnchorPane paneQLKH;
+    public TableView<Customer> tbvCustomer;
+    public TableColumn<Customer, String> colCustomerID, colCustomerName, colCustomerAddress, colCustomerEmail, colCustomerPhone;
+    public AnchorPane paneCustomerManagement;
 
     DataProvider dbConn;
     ObservableList<Customer> data;
@@ -38,15 +36,15 @@ public class CustomerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resource) {
         dbConn = new DataProvider();
-        paneQLKH = new AnchorPane();
+        paneCustomerManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
-        tbvKH.setEditable(false);
+        tbvCustomer.setEditable(false);
 
-        colMaKH.setCellValueFactory(new PropertyValueFactory<>("MaKH"));
-        colTenKH.setCellValueFactory(new PropertyValueFactory<>("TenKH"));
-        colDiaChi.setCellValueFactory(new PropertyValueFactory<>("DiaChi"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        colSoDT.setCellValueFactory(new PropertyValueFactory<>("SoDT"));
+        colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
+        colCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("CustomerAddress"));
+        colCustomerEmail.setCellValueFactory(new PropertyValueFactory<>("CustomerEmail"));
+        colCustomerPhone.setCellValueFactory(new PropertyValueFactory<>("CustomerPhoneNo"));
 
         try {
             showData();
@@ -54,8 +52,8 @@ public class CustomerController implements Initializable {
         catch (IOException io){}
         catch (SQLException e) {}
 
-        tbvKH.setItems(data);
-        tbvKH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        tbvCustomer.setItems(data);
+        tbvCustomer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedData();
@@ -84,21 +82,21 @@ public class CustomerController implements Initializable {
     @FXML
     //Hàm refresh xóa text
     public void refresh() {
-        txtSoDT.setText("");
-        txtKHID.setText("");
-        txtTenKH.setText("");
-        txtEmail.setText("");
-        txtDiaChi.setText("");
+        txtCustomerPhone.setText("");
+        txtCustomerID.setText("");
+        txtCustomerName.setText("");
+        txtCustomerEmail.setText("");
+        txtCustomerAddress.setText("");
     }
 
     //lay thong tin du lieu duoc
     public void getSelectedData() {
-        Customer selectedRow = tbvKH.getSelectionModel().getSelectedItem();
-        txtKHID.setText(selectedRow.getMaKH());
-        txtTenKH.setText(selectedRow.getTenKH());
-        txtDiaChi.setText(selectedRow.getDiaChi());
-        txtEmail.setText(selectedRow.getEmail());
-        txtSoDT.setText(selectedRow.getSoDT());
+        Customer selectedRow = tbvCustomer.getSelectionModel().getSelectedItem();
+        txtCustomerID.setText(selectedRow.getCustomerID());
+        txtCustomerName.setText(selectedRow.getCustomerName());
+        txtCustomerAddress.setText(selectedRow.getCustomerAddress());
+        txtCustomerEmail.setText(selectedRow.getCustomerEmail());
+        txtCustomerPhone.setText(selectedRow.getCustomerPhoneNo());
     }
 
     @FXML
@@ -106,14 +104,14 @@ public class CustomerController implements Initializable {
     public void insertData() {
         String id = "", ten = "", email = "", diachi = "", sodt = "";
         try {
-            id = txtKHID.getText();
-            ten = txtTenKH.getText();
-            diachi = txtDiaChi.getText();
-            email = txtEmail.getText();
-            sodt = txtSoDT.getText();
-            if (txtKHID.getText().isEmpty() || txtTenKH.getText().isEmpty()
-                    || txtDiaChi.getText().isEmpty() || txtEmail.getText().isEmpty()
-                    || txtSoDT.getText().isEmpty())
+            id = txtCustomerID.getText();
+            ten = txtCustomerName.getText();
+            diachi = txtCustomerAddress.getText();
+            email = txtCustomerEmail.getText();
+            sodt = txtCustomerPhone.getText();
+            if (txtCustomerID.getText().isEmpty() || txtCustomerName.getText().isEmpty()
+                    || txtCustomerAddress.getText().isEmpty() || txtCustomerEmail.getText().isEmpty()
+                    || txtCustomerPhone.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -148,14 +146,14 @@ public class CustomerController implements Initializable {
     public void updateData() {
         String id = "", ten = "", email = "", diachi = "", sodt = "";
         try {
-            id = txtKHID.getText();
-            ten = txtTenKH.getText();
-            diachi = txtDiaChi.getText();
-            email = txtEmail.getText();
-            sodt = txtSoDT.getText();
-            if (txtKHID.getText().isEmpty() || txtTenKH.getText().isEmpty()
-                    || txtDiaChi.getText().isEmpty() || txtEmail.getText().isEmpty()
-                    || txtSoDT.getText().isEmpty())
+            id = txtCustomerID.getText();
+            ten = txtCustomerName.getText();
+            diachi = txtCustomerAddress.getText();
+            email = txtCustomerEmail.getText();
+            sodt = txtCustomerPhone.getText();
+            if (txtCustomerID.getText().isEmpty() || txtCustomerName.getText().isEmpty()
+                    || txtCustomerAddress.getText().isEmpty() || txtCustomerEmail.getText().isEmpty()
+                    || txtCustomerPhone.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -190,13 +188,13 @@ public class CustomerController implements Initializable {
 
     //Delete dữ liệu
     public void deleteData() {
-        if (txtKHID.getText().isEmpty())
+        if (txtCustomerID.getText().isEmpty())
         {
             alert = new Alert(Alert.AlertType.WARNING,
                     "Plese fill in the blank!!!", ButtonType.OK);
             alert.show();
         }
-        String[] dataDelete = {txtKHID.getText()};
+        String[] dataDelete = {txtCustomerID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG", "MaKH");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);

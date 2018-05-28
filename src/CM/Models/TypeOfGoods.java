@@ -1,19 +1,19 @@
 package CM.Models;
 
 public class TypeOfGoods {
-    private String MaLoai;
-    private String TenLoai;
+    private String TypesOfCompID;
+    private String TypesOfCompName;
 
-    public String getMaLoai() { return MaLoai; }
+    public String getTypesOfCompID() { return TypesOfCompID; }
 
-    public void setMaLoai(String maLoai) { MaLoai = maLoai; }
+    public void setTypesOfCompID(String typesOfCompID) { TypesOfCompID = typesOfCompID; }
 
-    public String getTenLoai() { return TenLoai; }
+    public String getTypesOfCompName() { return TypesOfCompName; }
 
-    public void setTenLoai(String tenLoai) { TenLoai = tenLoai; }
+    public void setTypesOfCompName(String typesOfCompName) { TypesOfCompName = typesOfCompName; }
 
-    public TypeOfGoods(String maLoai, String tenLoai) {
-        MaLoai = maLoai;
-        TenLoai = tenLoai;
+    public TypeOfGoods(String maLoai, String typesOfCompName) {
+        TypesOfCompID = maLoai;
+        TypesOfCompName = typesOfCompName;
     }
 }

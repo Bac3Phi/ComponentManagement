@@ -1,49 +1,49 @@
 package CM.Models;
 
 public class Employees {
-    private String MaNV;
-    private String TenNV;
-    private String Phai;
-    private String MaPhong;
+    private String EmployeeID;
+    private String EmployeeName;
+    private String EmployeeGender;
+    private String DepartmentID;
 
-    public String getMaNV() {
-        return MaNV;
+    public String getEmployeeID() {
+        return EmployeeID;
     }
 
-    public void setMaNV(String NVID) {
-        this.MaNV = NVID;
+    public void setEmployeeID(String NVID) {
+        this.EmployeeID = NVID;
     }
 
-    public String getTenNV() {
-        return TenNV;
+    public String getEmployeeName() {
+        return EmployeeName;
     }
 
-    public void setTenNV(String tenNV) {
-        this.TenNV = tenNV;
+    public void setEmployeeName(String employeeName) {
+        this.EmployeeName = employeeName;
     }
 
-    public String getMaPhong() {
-        return MaPhong;
+    public String getDepartmentID() {
+        return DepartmentID;
     }
 
-    public void setMaPhong(String PBID) {
-        this.MaPhong = PBID;
+    public void setDepartmentID(String PBID) {
+        this.DepartmentID = PBID;
     }
 
-    public String getPhai() {
-        return Phai;
+    public String getEmployeeGender() {
+        return EmployeeGender;
     }
 
-    public void setPhai(String phai) {
-        this.Phai = phai;
+    public void setEmployeeGender(String employeeGender) {
+        this.EmployeeGender = employeeGender;
     }
 
     public Employees() {}
 
-    public Employees(String maNV, String tenNV, String phai, String maPhong) {
-        MaNV = maNV;
-        TenNV = tenNV;
-        Phai = phai;
-        MaPhong = maPhong;
+    public Employees(String employeeID, String employeeName, String employeeGender, String departmentID) {
+        EmployeeID = employeeID;
+        EmployeeName = employeeName;
+        EmployeeGender = employeeGender;
+        DepartmentID = departmentID;
     }
 }

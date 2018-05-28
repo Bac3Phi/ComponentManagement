@@ -1,19 +1,19 @@
 package CM.Models;
 
 public class Authority {
-    private String MaPQ;
-    private String TenPQ;
+    private String AuthID;
+    private String AuthName;
 
-    public Authority(String maPQ, String tenPQ) {
-        MaPQ = maPQ;
-        TenPQ = tenPQ;
+    public Authority(String authID, String authName) {
+        AuthID = authID;
+        AuthName = authName;
     }
 
-    public String getMaPQ() { return MaPQ; }
+    public String getAuthID() { return AuthID; }
 
-    public void setMaPQ(String maPQ) { MaPQ = maPQ; }
+    public void setAuthID(String authID) { AuthID = authID; }
 
-    public String getTenPQ() { return TenPQ; }
+    public String getAuthName() { return AuthName; }
 
-    public void setTenPQ(String tenPQ) { TenPQ = tenPQ; }
+    public void setAuthName(String authName) { AuthName = authName; }
 }
