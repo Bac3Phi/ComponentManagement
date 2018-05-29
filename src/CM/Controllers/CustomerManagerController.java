@@ -2,6 +2,10 @@ package CM.Controllers;
 
 import CM.Models.Customer;
 import CM.Models.DataProvider;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,20 +18,46 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class CustomerController implements Initializable {
+import static CM.Controllers.CustomerViewController.tabPaneEx;
+
+public class CustomerManagerController implements Initializable {
     Alert alert;
     @FXML
-    public TextField txtCustomerID, txtCustomerName, txtCustomerAddress, txtCustomerEmail, txtCustomerPhone;
-    public Button btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
+    private JFXTextField txtCustomerID;
+
+    @FXML
+    private JFXTextField txtCustomerName;
+
+    @FXML
+    private JFXTextField txtCustomerAddress;
+
+    @FXML
+    private JFXTextField txtCustomerEmail;
+
+    @FXML
+    private JFXTextField txtCustomerPhone;
+    @FXML
+    private JFXButton btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
     public TableView<Customer> tbvCustomer;
     public TableColumn<Customer, String> colCustomerID, colCustomerName, colCustomerAddress, colCustomerEmail, colCustomerPhone;
     public AnchorPane paneCustomerManagement;
+    @FXML
+    private ProgressBar progressPersonal;
+    private static double progress1 = 0;
+    private static double progress2 = 0;
+    private static double progress3 = 0;
+    private static double progress4 = 0;
+    private static double progress5 = 0;
+    @FXML
+    private Label lblComplete;
 
     DataProvider dbConn;
     ObservableList<Customer> data;
@@ -57,6 +87,99 @@ public class CustomerController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedData();
+            }
+        });
+        updateProgress();
+    }
+
+    private void updateProgress() {
+        DecimalFormat decimalFormat = new DecimalFormat("###.#");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+
+        //progressPersonal.setProgress(0.00);
+        double sum_progress = progress1 + progress2 + progress3 + progress4 + progress5 ;
+        txtCustomerID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress1 = 0.2;
+
+                } else {
+                    progress1 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtCustomerName.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress2 = 0.2;
+
+                } else {
+                    progress2 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtCustomerAddress.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress3 = 0.2;
+
+                } else {
+                    progress3 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtCustomerEmail.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress4 = 0.2;
+
+                } else {
+                    progress4 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtCustomerPhone.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress5 = 0.2;
+
+                } else {
+                    progress5 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
     }
@@ -217,6 +340,9 @@ public class CustomerController implements Initializable {
 
     @FXML
     public void setBtnADD (ActionEvent event)throws Exception{
+        if (progressPersonal.getProgress() < 0.9) {
+            return;
+        }
         insertData();
         if (btnADD.isPressed()) {
             refresh();
@@ -241,7 +367,7 @@ public class CustomerController implements Initializable {
 
     @FXML
     public void setBtnSEARCH (ActionEvent event)throws Exception{
-
+        tabPaneEx.getSelectionModel().select(1);
     }
 
     @FXML

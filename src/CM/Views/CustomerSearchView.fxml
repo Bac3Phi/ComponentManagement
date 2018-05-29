@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerSearchController">
+   <children>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <AnchorPane prefHeight="53.0" prefWidth="1400.0" styleClass="card-footer" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="53.0" prefWidth="668.0" style="-fx-background-color: #fe8131;">
+                     <children>
+                        <ProgressBar fx:id="progressPersonal" layoutX="86.0" layoutY="18.0" prefHeight="18.0" prefWidth="248.0" progress="0.0" />
+                        <Label fx:id="lblComplete" alignment="CENTER" layoutX="348.0" layoutY="18.0" prefHeight="18.0" prefWidth="129.0" text="0% Hoàn thành" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="879.0" layoutY="9.0" prefHeight="35.0" prefWidth="507.0" spacing="6.0" AnchorPane.rightAnchor="14.0">
+                     <children>
+                        <JFXButton fx:id="btnClear12" buttonType="RAISED" prefHeight="35.0" prefWidth="90.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text="In" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="29.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnSEARCH" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text="Tìm Kiếm" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnADD" buttonType="RAISED" prefHeight="35.0" prefWidth="138.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_DOWN" size="16.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnSEARCH1" buttonType="RAISED" prefHeight="35.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="84.0" layoutY="59.0" prefHeight="94.0" prefWidth="1227.0" styleClass="card-white">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Tìm Kiếm Khách Hàng" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextArea focusColor="#f75d5d" layoutX="14.0" layoutY="39.0" prefHeight="31.0" prefWidth="651.0" promptText="Gõ từ khóa cần tìm kiếm" />
+                        <GridPane layoutX="691.0" layoutY="12.0" prefHeight="71.0" prefWidth="302.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="124.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="92.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXRadioButton fx:id="rdbtnCustomerID" styleClass="jfx-radio-button" text="Mã khách Hàng" />
+                              <JFXRadioButton fx:id="rdbtnCustomerName" text="Tên Khách Hàng" GridPane.rowIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnCustomerAddress" text="Địa Chỉ" GridPane.columnIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnCustomerEmail" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnCustomerPhone" text="Số điện thoại" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+               <padding>
+                  <Insets left="16.0" right="16.0" />
+               </padding>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

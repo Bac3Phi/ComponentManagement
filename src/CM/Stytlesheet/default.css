@@ -27,7 +27,7 @@
  *                                                                             *
  **************************************************************************************************************************/
 
-.root{
+.root > *{
     -fx-text-control-title-color: rgb(130.0, 130.0, 130.0);
     -swatch-grey: rgb(200.0, 200.0, 200.0);
     -swatch-dark-grey: rgb(150.0, 150.0, 150.0);
@@ -54,9 +54,6 @@
     -fx-background-radius: 0;
     -fx-alignment: CENTER;
 }
-.side-buttons:active{
-    -fx-background-color: #F3F3F3;
-}
 
 
 .fab{
@@ -73,6 +70,11 @@
 .card-white{
     -fx-background-color: rgb(255.0, 255.0, 255.0);
     -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);
+}
+
+.card-footer{
+    -fx-background-color: rgb(255.0, 255.0, 255.0);
     -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);
 }
 /*Toogle buttons for sideboard*/
@@ -157,7 +159,7 @@
 }
 
 .progress-bar>.bar {
-    -fx-background-color:  #F87951;
+    -fx-background-color: #f85552;
     -fx-background-radius: 2.0;
     -fx-background-insets: 0.0;
     -fx-border-width: 0.0;
@@ -231,3 +233,9 @@
     -fx-background-color: #F87951;
 }
 .tab .tab-header-background { -fx-background-color: #221f1f;}
+
+
+.jfx-radio-button{
+    -jfx-selected-color: #F87951;
+    -jfx-unselected-color: #F87951;
+}

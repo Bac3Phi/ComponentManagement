@@ -100,7 +100,7 @@ public class MainController extends Application implements Initializable {
         try {
             component = FXMLLoader.load(getClass().getResource("../Views/ComponentView.fxml"));
             customer = FXMLLoader.load(getClass().getResource("../Views/CustomerView.fxml"));
-
+            employee = FXMLLoader.load(getClass().getResource("../Views/EmployeesView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -149,6 +149,7 @@ public class MainController extends Application implements Initializable {
 
     @FXML
     void openEmployee(ActionEvent event) {
+        setNode(employee);
 
     }
 
