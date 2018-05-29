@@ -98,8 +98,8 @@ public class MainController extends Application implements Initializable {
 
     private void createPages() {
         try {
-            component = FXMLLoader.load(getClass().getResource("../SildeSence/Component.fxml"));
-            customer = FXMLLoader.load(getClass().getResource("../SildeSence/Customer.fxml"));
+            component = FXMLLoader.load(getClass().getResource("../Views/ComponentView.fxml"));
+            customer = FXMLLoader.load(getClass().getResource("../Views/CustomerView.fxml"));
 
             //set up default node on page load
             setNode(component);

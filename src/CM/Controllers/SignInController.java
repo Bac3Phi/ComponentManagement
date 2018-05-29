@@ -51,7 +51,7 @@ public class SignInController  implements Initializable {
     private void completeLogin(){
         btn_SignIn.getScene().getWindow().hide();
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../MainMenu/MainMenu.fxml")); // DMMMMM dau ..
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/MainView.fxml")); // DMMMMM dau ..
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("New Window");
