@@ -64,6 +64,9 @@ public class MainController extends Application implements Initializable {
     private JFXButton btnEmployee;
 
     @FXML
+    private JFXButton btnSetting;
+
+    @FXML
     private JFXButton btnReport;
 
     @FXML
@@ -101,6 +104,7 @@ public class MainController extends Application implements Initializable {
             component = FXMLLoader.load(getClass().getResource("../Views/ComponentView.fxml"));
             customer = FXMLLoader.load(getClass().getResource("../Views/CustomerView.fxml"));
             employee = FXMLLoader.load(getClass().getResource("../Views/EmployeesView.fxml"));
+            provider = FXMLLoader.load(getClass().getResource("../Views/ProviderView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -155,11 +159,15 @@ public class MainController extends Application implements Initializable {
 
     @FXML
     void openProvider(ActionEvent event) {
-
+        setNode(provider);
     }
 
     @FXML
     void openReport(ActionEvent event) {
+
+    }
+    @FXML
+    void openSetting(ActionEvent event) {
 
     }
 }

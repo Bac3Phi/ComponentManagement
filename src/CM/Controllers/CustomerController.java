@@ -7,9 +7,9 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeesViewController implements Initializable {
+public class CustomerController implements Initializable {
     @FXML
-    private JFXTabPane tabPane;
+    public JFXTabPane tabPane;
 
     public static JFXTabPane tabPaneEx;
     @Override

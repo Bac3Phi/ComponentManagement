@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import static CM.Controllers.EmployeesViewController.tabPaneEx;
+import static CM.Controllers.EmployeesController.tabPaneEx;
 
 public class EmployeesManagerController implements Initializable {
     Alert alert;

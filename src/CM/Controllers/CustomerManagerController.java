@@ -26,7 +26,7 @@ import java.text.DecimalFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import static CM.Controllers.CustomerViewController.tabPaneEx;
+import static CM.Controllers.CustomerController.tabPaneEx;
 
 public class CustomerManagerController implements Initializable {
     Alert alert;
