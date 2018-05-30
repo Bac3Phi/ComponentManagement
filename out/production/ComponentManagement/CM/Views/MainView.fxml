@@ -23,7 +23,7 @@
          <children>
             <VBox fx:id="overflowContainer" prefHeight="104.0" prefWidth="164.0" styleClass="card-white">
                <children>
-                  <JFXButton fx:id="btnLogOut" onAction="#logOff" prefHeight="52.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Log out">
+                  <JFXButton fx:id="btnLogOut" onAction="#logOff" prefHeight="52.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Đăng Xuất">
                      <font>
                         <Font name="Roboto Medium" size="13.0" />
                      </font>
@@ -31,7 +31,7 @@
                         <MaterialDesignIconView fill="#838080" glyphName="LOGOUT" size="16.0" wrappingWidth="36.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btnExit" layoutX="10.0" layoutY="10.0" onAction="#exit" prefHeight="53.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Exit">
+                  <JFXButton fx:id="btnExit" layoutX="10.0" layoutY="10.0" onAction="#exit" prefHeight="53.0" prefWidth="163.0" style="-fx-alignment: center-left;" text="Thoát">
                      <font>
                         <Font name="Roboto Medium" size="13.0" />
                      </font>

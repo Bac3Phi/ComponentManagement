@@ -2,6 +2,10 @@ package CM.Controllers;
 
 import CM.Models.DataProvider;
 import CM.Models.Employees;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,14 +24,67 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class EmployeesController implements Initializable {
+import static CM.Controllers.EmployeesViewController.tabPaneEx;
+
+public class EmployeesManagerController implements Initializable {
     Alert alert;
     @FXML
-    public TextField txtEmployeeID, txtEmployeeName, txtDepartmentID;
-    public RadioButton rbMALE, rbFEMALE;
-    public Button btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
-    public TableView<Employees> tbvEmployees;
-    public TableColumn<Employees, String> colEmployeeID, colEmployeeName, colEmployeeGender, colDepartmentID;
+    private JFXTextField txtEmployeeID;
+
+    @FXML
+    private JFXTextField txtEmployeeName;
+
+    @FXML
+    private JFXRadioButton rbMALE;
+
+    @FXML
+    private JFXRadioButton rbFEMALE;
+
+    @FXML
+    private TableView<Employees> tbvEmployees;
+
+    @FXML
+    private TableColumn<Employees, String> colEmployeeID;
+
+    @FXML
+    private TableColumn<Employees, String> colEmployeeName;
+
+    @FXML
+    private TableColumn<Employees, String> colEmployeeGender;
+
+    @FXML
+    private TableColumn<Employees, String> colDepartmentID;
+
+    @FXML
+    private JFXTextField txtDepartmentID;
+
+    @FXML
+    private JFXComboBox<?> cbxDepartmentName;
+
+    @FXML
+    private ProgressBar progressPersonal;
+
+    @FXML
+    private Label lblComplete;
+
+    @FXML
+    private JFXButton btnPRINT;
+
+    @FXML
+    private JFXButton btnSEARCH;
+
+    @FXML
+    private JFXButton btnDELETE;
+
+    @FXML
+    private JFXButton btnUPDATE;
+
+    @FXML
+    private JFXButton btnADD;
+
+    @FXML
+    private JFXButton btnREFRESH;
+
     public AnchorPane paneEmployeesManagement;
     public ToggleGroup group;
 
@@ -264,7 +321,7 @@ public class EmployeesController implements Initializable {
 
     @FXML
     public void setBtnSEARCH (ActionEvent event)throws Exception{
-
+        tabPaneEx.getSelectionModel().select(1);
     }
 
     @FXML
@@ -277,5 +334,9 @@ public class EmployeesController implements Initializable {
         if (result.get() == ButtonType.YES) {
 
         }
+    }
+
+    public void setBtnREFRESH(ActionEvent actionEvent) {
+        refresh();
     }
 }

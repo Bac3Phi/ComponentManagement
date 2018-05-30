@@ -45,7 +45,22 @@ public class CustomerManagerController implements Initializable {
     @FXML
     private JFXTextField txtCustomerPhone;
     @FXML
-    private JFXButton btnCANCEL, btnSEARCH, btnADD, btnUPDATE, btnDELETE;
+    private JFXButton btnPRINT;
+
+    @FXML
+    private JFXButton btnSEARCH;
+
+    @FXML
+    private JFXButton btnDELETE;
+
+    @FXML
+    private JFXButton btnUPDATE;
+
+    @FXML
+    private JFXButton btnADD;
+
+    @FXML
+    private JFXButton btnREFRESH;
     public TableView<Customer> tbvCustomer;
     public TableColumn<Customer, String> colCustomerID, colCustomerName, colCustomerAddress, colCustomerEmail, colCustomerPhone;
     public AnchorPane paneCustomerManagement;
@@ -380,5 +395,9 @@ public class CustomerManagerController implements Initializable {
         if (result.get() == ButtonType.YES) {
 
         }
+    }
+
+    public void setBtnRefresh(ActionEvent actionEvent) {
+        refresh();
     }
 }

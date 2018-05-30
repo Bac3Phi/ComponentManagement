@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerSearchController">
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.EmployeesSearchController">
    <children>
       <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -81,7 +81,7 @@
                      <children>
                         <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
                            <children>
-                              <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Tìm Kiếm Khách Hàng" textFill="WHITE">
+                              <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Tìm Kiếm Nhân Viên" textFill="WHITE">
                                  <font>
                                     <Font name="Roboto Medium" size="14.0" />
                                  </font>
@@ -90,21 +90,19 @@
                         </Pane>
                         <JFXTextArea focusColor="#f75d5d" layoutX="14.0" layoutY="39.0" prefHeight="31.0" prefWidth="651.0" promptText="Gõ từ khóa cần tìm kiếm" />
                         <GridPane layoutX="708.0" layoutY="17.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="148.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="84.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="71.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="148.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="84.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <JFXRadioButton fx:id="rdbtnCustomerID" styleClass="jfx-radio-button" text="Mã khách Hàng" />
-                              <JFXRadioButton fx:id="rdbtnCustomerName" text="Tên Khách Hàng" GridPane.rowIndex="1" />
-                              <JFXRadioButton fx:id="rdbtnCustomerAddress" text="Địa Chỉ" GridPane.columnIndex="1" />
-                              <JFXRadioButton fx:id="rdbtnCustomerEmail" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXRadioButton fx:id="rdbtnCustomerPhone" prefHeight="14.0" prefWidth="100.0" text="Số điện thoại" GridPane.columnIndex="2" />
+                              <JFXRadioButton fx:id="rdbtnEmployeesID" styleClass="jfx-radio-button" text="Mã Nhân Viên" />
+                              <JFXRadioButton fx:id="rdbtnEmployeesName" text="Tên Nhân Viên" GridPane.rowIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnDepartmentID" prefHeight="16.0" prefWidth="144.0" text="Mã Phòng Ban" GridPane.columnIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnDepartmentName" text="Tên Phòng Ban" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -114,10 +112,10 @@
          </top>
          <center>
             <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
+               <columns>
+                  <TableColumn prefWidth="75.0" text="C1" />
+                  <TableColumn prefWidth="75.0" text="C2" />
+               </columns>
                <padding>
                   <Insets left="16.0" right="16.0" />
                </padding>
