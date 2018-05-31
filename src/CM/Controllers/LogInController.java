@@ -44,7 +44,7 @@ public class LogInController implements Initializable{
 
             if (email.equals("abc") && password.equals("123"))
             {
-                root = FXMLLoader.load(getClass().getResource("/CM/Views/DepartmentView.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/CM/Views/ComponentView.fxml"));
                 stage = new Stage();
                 scene = new Scene(root, 1280, 720);
                 stage.setTitle("SMILE Application");
@@ -72,7 +72,7 @@ public class LogInController implements Initializable{
                     try {
                         if (email.equals("abc") && password.equals("123"))
                         {
-                            root = FXMLLoader.load(getClass().getResource("/CM/Views/EmployeesView.fxml"));
+                            root = FXMLLoader.load(getClass().getResource("/CM/Views/ComponentView.fxml"));
                             stage = new Stage();
                             scene = new Scene(root, 1280, 720);
                             stage.setTitle("SMILE Application");

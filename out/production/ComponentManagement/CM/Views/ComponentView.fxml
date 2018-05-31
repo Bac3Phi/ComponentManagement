@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneComponentManagement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentViewController">
+    <children>
+        <Label layoutX="413.0" layoutY="26.0" text="QUẢN LÝ MẶT HÀNG">
+            <font>
+                <Font name="System Bold" size="35.0" />
+            </font>
+        </Label>
+        <Label layoutX="16.0" layoutY="102.0" text="Mã Mặt Hàng">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtComponentID" layoutX="175.0" layoutY="101.0" prefHeight="31.0" prefWidth="183.0" />
+        <Label layoutX="14.0" layoutY="149.0" text="Tên Mặt Hàng">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtComponentName" layoutX="175.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+        <Label layoutX="14.0" layoutY="194.0" text="Tên Loại">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="419.0" layoutY="102.0" text="Cấu Hình">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtComponentConfig" layoutX="507.0" layoutY="102.0" prefHeight="31.0" prefWidth="674.0" />
+        <Label layoutX="633.0" layoutY="149.0" text="Hãng Sản Xuất">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtComponentMaker" layoutX="781.0" layoutY="148.0" prefHeight="31.0" prefWidth="399.0" />
+        <Button fx:id="btnAdd" layoutX="19.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnADD" prefHeight="42.0" prefWidth="151.0" text="THÊM" />
+        <Button fx:id="btnDelete" layoutX="224.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnDELETE" prefHeight="42.0" prefWidth="151.0" text="XÓA" />
+        <Button fx:id="btnUpdate" layoutX="432.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnUPDATE" prefHeight="42.0" prefWidth="151.0" text="SỬA" />
+        <TableView fx:id="tbvComponent" layoutX="19.0" layoutY="297.0" prefHeight="401.0" prefWidth="1163.0">
+            <columns>
+                <TableColumn fx:id="colComponentD" prefWidth="109.0" text="Mã Mặt Hàng" />
+                <TableColumn fx:id="colComponentName" prefWidth="192.0" text="Tên Mặt Hàng" />
+                <TableColumn fx:id="colComponentConfig" prefWidth="297.0" text="Cấu Hình" />
+                <TableColumn fx:id="colTypeName" prefWidth="338.0" text="Loại Mặt Hàng" />
+                <TableColumn fx:id="colComponentMaker" minWidth="0.0" prefWidth="162.0" text="Hãng Sản Xuất" />
+            <TableColumn fx:id="colNumOfComp" prefWidth="290.0" text="Số Lượng" />
+                <TableColumn fx:id="colAreaName" prefWidth="290.0" text="Tên Khu" />
+                <TableColumn fx:id="colUnit" prefWidth="226.0" text="Đơn Vị Tính" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnRefresh" layoutX="1031.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnREFRESH" prefHeight="42.0" prefWidth="151.0" text="LÀM MỚI" />
+        <Button fx:id="btnSearch" layoutX="830.0" layoutY="237.0" mnemonicParsing="false" onAction="#setBtnSEARCH" prefHeight="42.0" prefWidth="151.0" text="TÌM KIẾM" />
+      <Label layoutX="413.0" layoutY="194.0" prefHeight="30.0" prefWidth="82.0" text="Tên Khu">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="917.0" layoutY="194.0" text="Đơn Vị Tính">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="685.0" layoutY="194.0" prefHeight="30.0" prefWidth="93.0" text="Số Lượng">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNumOfComp" disable="true" editable="false" layoutX="778.0" layoutY="194.0" prefHeight="31.0" prefWidth="122.0" />
+      <ComboBox fx:id="cbTypeName" layoutX="175.0" layoutY="192.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbAreaName" layoutX="495.0" layoutY="194.0" prefHeight="31.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbUnit" layoutX="1032.0" layoutY="192.0" prefHeight="31.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

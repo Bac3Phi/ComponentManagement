@@ -6,27 +6,31 @@ public class Components {
     private String Unit;
     private String CompMaker;
     private String Photos;
-    private String TypesOfCompID;
+    private String TypesOfComp;
     private String CompInfo;
+    private String AreaName;
+    private String NumOfComp;
 
     public Components(){}
 
-    public Components(String MHID, String componentName, String hangsx, String donvitinh, String cauhinh, String hinh, String maloai){
-        this.ComponentID = MHID;
-        this.ComponentName = componentName;
-        this.CompMaker = hangsx;
-        this.Unit = donvitinh;
-        this.CompInfo = cauhinh;
-        this.Photos = hinh;
-        this.TypesOfCompID = maloai;
+    public Components(String componentID, String componentName, String unit, String compMaker, String photos, String typesOfComp, String compInfo, String areaName, String numOfComp) {
+        ComponentID = componentID;
+        ComponentName = componentName;
+        Unit = unit;
+        CompMaker = compMaker;
+        Photos = photos;
+        TypesOfComp = typesOfComp;
+        CompInfo = compInfo;
+        AreaName = areaName;
+        NumOfComp = numOfComp;
     }
 
     public String getComponentID() {
         return ComponentID;
     }
 
-    public void setComponentID(String MHID) {
-        this.ComponentID = MHID;
+    public void setComponentID(String componentID) {
+        ComponentID = componentID;
     }
 
     public String getComponentName() {
@@ -34,36 +38,62 @@ public class Components {
     }
 
     public void setComponentName(String componentName) {
-        this.ComponentName = componentName;
+        ComponentName = componentName;
     }
 
     public String getUnit() {
         return Unit;
     }
 
-    public void setUnit(String donvitinh) {
-        this.Unit = donvitinh;
+    public void setUnit(String unit) {
+        Unit = unit;
     }
 
     public String getCompMaker() {
         return CompMaker;
     }
 
-    public void setCompMaker(String hangsx) {
-        this.CompMaker = hangsx;
+    public void setCompMaker(String compMaker) {
+        CompMaker = compMaker;
     }
 
-    public String getPhotos() { return Photos; }
+    public String getPhotos() {
+        return Photos;
+    }
 
     public void setPhotos(String photos) {
         Photos = photos;
     }
 
-    public String getTypesOfCompID() { return TypesOfCompID; }
+    public String getTypesOfComp() {
+        return TypesOfComp;
+    }
 
-    public void setTypesOfCompID(String typesOfCompID) { TypesOfCompID = typesOfCompID; }
+    public void setTypesOfComp(String typesOfComp) {
+        TypesOfComp = typesOfComp;
+    }
 
-    public String getCompInfo() { return CompInfo; }
+    public String getCompInfo() {
+        return CompInfo;
+    }
 
-    public void setCompInfo(String compInfo) { CompInfo = compInfo; }
+    public void setCompInfo(String compInfo) {
+        CompInfo = compInfo;
+    }
+
+    public String getAreaName() {
+        return AreaName;
+    }
+
+    public void setAreaName(String areaName) {
+        AreaName = areaName;
+    }
+
+    public String getNumOfComp() {
+        return NumOfComp;
+    }
+
+    public void setNumOfComp(String numOfComp) {
+        NumOfComp = numOfComp;
+    }
 }
