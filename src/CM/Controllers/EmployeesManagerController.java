@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
 import CM.Models.Employees;
 import com.jfoenix.controls.JFXButton;
@@ -16,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import tray.notification.NotificationType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -59,7 +61,7 @@ public class EmployeesManagerController implements Initializable {
     private JFXTextField txtDepartmentID;
 
     @FXML
-    private JFXComboBox<?> cbxDepartmentName;
+    private JFXComboBox<String> cbxDepartmentName;
 
     @FXML
     private ProgressBar progressPersonal;
@@ -94,6 +96,10 @@ public class EmployeesManagerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        cbxDepartmentName.getItems().add("Phi");
+        cbxDepartmentName.getItems().add("poz");
+        cbxDepartmentName.getItems().add("Fifi");
         dbConn = new DataProvider();
         paneEmployeesManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
@@ -187,8 +193,7 @@ public class EmployeesManagerController implements Initializable {
                     || txtDepartmentID.getText().isEmpty() || (rbFEMALE.isSelected() == false
                     && rbMALE.isSelected() == false))
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -198,15 +203,11 @@ public class EmployeesManagerController implements Initializable {
         String[] dataInsert = {id, ten, phai, phong};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "NHANVIEN");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -235,9 +236,7 @@ public class EmployeesManagerController implements Initializable {
                     || txtDepartmentID.getText().isEmpty() || (rbFEMALE.isSelected() == false
                     && rbMALE.isSelected() == false))
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -248,15 +247,11 @@ public class EmployeesManagerController implements Initializable {
         String[] colLabel = {"MaNV", "TenNV", "Phai", "MaPhong"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "NHANVIEN");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
