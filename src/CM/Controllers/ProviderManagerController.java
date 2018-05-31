@@ -1,9 +1,13 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
 import CM.Models.Providers;
+import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,11 +18,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import tray.notification.NotificationType;
 
+import javax.management.Notification;
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ProviderManagerController implements Initializable {
@@ -72,11 +80,13 @@ public class ProviderManagerController implements Initializable {
     ObservableList<Providers> data;
     ResultSet resultSet;
 
+
     @FXML
     void setBtnADD(ActionEvent event) {
-//        if (progressPersonal.getProgress() < 0.9) {
-//            return;
-//        }
+        if (progressPersonal.getProgress() < 0.9) {
+            SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
+            return;
+       }
         insertData();
         if (btnADD.isPressed()) {
             refresh();
@@ -85,6 +95,10 @@ public class ProviderManagerController implements Initializable {
 
     @FXML
     void setBtnDELETE(ActionEvent event) {
+        if (progressPersonal.getProgress() < 0.9) {
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+            return;
+        }
         deleteData();
         if (btnDELETE.isPressed()) {
             refresh();
@@ -108,6 +122,10 @@ public class ProviderManagerController implements Initializable {
 
     @FXML
     void setBtnUPDATE(ActionEvent event) {
+        if (progressPersonal.getProgress() < 0.9) {
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+            return;
+        }
         updateData();
         if (btnUPDATE.isPressed()) {
             refresh();
@@ -116,6 +134,9 @@ public class ProviderManagerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        btnDELETE.setDisable(true);
+        btnUPDATE.setDisable(true);
+
         dbConn = new DataProvider();
         paneProviderManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
@@ -140,8 +161,108 @@ public class ProviderManagerController implements Initializable {
                 getSelectedData();
             }
         });
-        //updateProgress();
+        updateProgress();
+
+
     }
+    private static double progress1 = 0;
+    private static double progress2 = 0;
+    private static double progress3 = 0;
+    private static double progress4 = 0;
+    private static double progress5 = 0;
+    private void updateProgress() {
+
+        DecimalFormat decimalFormat = new DecimalFormat("###.#");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+
+        //progressPersonal.setProgress(0.00);
+        double sum_progress = progress1 + progress2 + progress3 + progress4 + progress5 ;
+        txtProviderID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress1 = 0.2;
+
+                } else {
+                    progress1 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtProviderName.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress2 = 0.2;
+
+                } else {
+                    progress2 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtProviderAddress.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress3 = 0.2;
+
+                } else {
+                    progress3 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtProviderEmail.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress4 = 0.2;
+
+                } else {
+                    progress4 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtProviderPhone.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress5 = 0.2;
+
+                } else {
+                    progress5 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+    }
+
 
     @FXML
     //Đổ dữ liệu vào bảng
@@ -164,6 +285,8 @@ public class ProviderManagerController implements Initializable {
     @FXML
     //Hàm refresh xóa text
     public void refresh() {
+        btnDELETE.setDisable(true);
+        btnUPDATE.setDisable(true);
         txtProviderAddress.setText("");
         txtProviderID.setText("");
         txtProviderName.setText("");
@@ -173,7 +296,11 @@ public class ProviderManagerController implements Initializable {
 
     //lay thong tin du lieu duoc
     public void getSelectedData() {
+        btnDELETE.setDisable(false);
+        btnUPDATE.setDisable(false);
+
         Providers selectedRow = tbvProviders.getSelectionModel().getSelectedItem();
+
         txtProviderID.setText(selectedRow.getProvidersID());
         txtProviderName.setText(selectedRow.getProvidersName());
         txtProviderAddress.setText(selectedRow.getProvidersAddress());
@@ -195,8 +322,7 @@ public class ProviderManagerController implements Initializable {
                     || txtProviderAddress.getText().isEmpty() || txtProviderEmail.getText().isEmpty()
                     || txtProviderPhone.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -206,15 +332,11 @@ public class ProviderManagerController implements Initializable {
         String[] dataInsert = {id, ten, diachi, email, sodt};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "NHACUNGCAP");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm Dữ Liệu Thành Công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu không thành công",NotificationType.ERROR);
         }
         try {
             showData();
@@ -237,9 +359,7 @@ public class ProviderManagerController implements Initializable {
                     || txtProviderAddress.getText().isEmpty() || txtProviderEmail.getText().isEmpty()
                     || txtProviderPhone.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -250,15 +370,11 @@ public class ProviderManagerController implements Initializable {
         String[] colLabel = {"MaNCC", "TenNCC", "DiaChiNCC", "EmailNCC", "SoDTNCC"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "NHACUNGCAP");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -272,22 +388,16 @@ public class ProviderManagerController implements Initializable {
     public void deleteData() {
         if (txtProviderID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Plese fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtProviderID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "NHACUNGCAP", "MaNCC");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();

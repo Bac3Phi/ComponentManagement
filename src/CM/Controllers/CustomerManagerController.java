@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.Customer;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
@@ -16,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import tray.notification.NotificationType;
 
 import java.io.IOException;
 import java.math.RoundingMode;
@@ -81,6 +83,8 @@ public class CustomerManagerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resource) {
+        btnDELETE.setDisable(true);
+        btnUPDATE.setDisable(true);
         dbConn = new DataProvider();
         paneCustomerManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
@@ -221,6 +225,8 @@ public class CustomerManagerController implements Initializable {
     @FXML
     //Hàm refresh xóa text
     public void refresh() {
+        btnDELETE.setDisable(true);
+        btnUPDATE.setDisable(true);
         txtCustomerPhone.setText("");
         txtCustomerID.setText("");
         txtCustomerName.setText("");
@@ -230,6 +236,9 @@ public class CustomerManagerController implements Initializable {
 
     //lay thong tin du lieu duoc
     public void getSelectedData() {
+        btnDELETE.setDisable(false);
+        btnUPDATE.setDisable(false);
+
         Customer selectedRow = tbvCustomer.getSelectionModel().getSelectedItem();
         txtCustomerID.setText(selectedRow.getCustomerID());
         txtCustomerName.setText(selectedRow.getCustomerName());
@@ -252,8 +261,7 @@ public class CustomerManagerController implements Initializable {
                     || txtCustomerAddress.getText().isEmpty() || txtCustomerEmail.getText().isEmpty()
                     || txtCustomerPhone.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -263,15 +271,11 @@ public class CustomerManagerController implements Initializable {
         String[] dataInsert = {id, ten, diachi, email, sodt};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "KHACHHANG");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -294,9 +298,7 @@ public class CustomerManagerController implements Initializable {
                     || txtCustomerAddress.getText().isEmpty() || txtCustomerEmail.getText().isEmpty()
                     || txtCustomerPhone.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -307,15 +309,11 @@ public class CustomerManagerController implements Initializable {
         String[] colLabel = {"MaKH", "TenKH", "DiaChi", "Email", "SoDT"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "KHACHHANG");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -329,22 +327,16 @@ public class CustomerManagerController implements Initializable {
     public void deleteData() {
         if (txtCustomerID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Plese fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtCustomerID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG", "MaKH");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -357,6 +349,7 @@ public class CustomerManagerController implements Initializable {
     @FXML
     public void setBtnADD (ActionEvent event)throws Exception{
         if (progressPersonal.getProgress() < 0.9) {
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
             return;
         }
         insertData();

@@ -86,7 +86,7 @@ public class MainController extends Application implements Initializable {
     }
 
     private Label lblDash;
-    private AnchorPane component, customer,provider,employee,report;
+    private AnchorPane component, customer,provider,employee,report,setting;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -105,6 +105,7 @@ public class MainController extends Application implements Initializable {
             customer = FXMLLoader.load(getClass().getResource("../Views/CustomerView.fxml"));
             employee = FXMLLoader.load(getClass().getResource("../Views/EmployeesView.fxml"));
             provider = FXMLLoader.load(getClass().getResource("../Views/ProviderView.fxml"));
+            setting = FXMLLoader.load(getClass().getResource("../Views/SettingView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -132,7 +133,7 @@ public class MainController extends Application implements Initializable {
         AnchorPane.setLeftAnchor(node, 0.0);
         AnchorPane.setRightAnchor(node, 0.0);
 
-        FadeTransition ft = new FadeTransition(Duration.millis(1500));
+        FadeTransition ft = new FadeTransition(Duration.millis(1000));
         ft.setNode(node);
         ft.setFromValue(0.1);
         ft.setToValue(1);
@@ -154,7 +155,6 @@ public class MainController extends Application implements Initializable {
     @FXML
     void openEmployee(ActionEvent event) {
         setNode(employee);
-
     }
 
     @FXML
@@ -168,6 +168,6 @@ public class MainController extends Application implements Initializable {
     }
     @FXML
     void openSetting(ActionEvent event) {
-
+        setNode(setting);
     }
 }

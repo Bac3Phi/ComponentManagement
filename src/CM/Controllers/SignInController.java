@@ -54,9 +54,10 @@ public class SignInController  implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/MainView.fxml")); // DMMMMM dau ..
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setTitle("New Window");
+            stage.setTitle("GAMEON : Quản Lý Linh Kiện");
             stage.setScene(new Scene(root));
             stage.show();
+
         } catch (IOException e) {
             Logger logger = Logger.getLogger(getClass().getName());
             logger.log(Level.SEVERE, "Failed to create new Window.", e);
