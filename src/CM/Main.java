@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import CM.Controllers.LogInController;
+import CM.Controllers.SignInController;
 
 import java.io.IOException;
 import java.util.function.Function;
@@ -32,10 +32,11 @@ public class Main extends Application {
         //Scene login
         try {
             //FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent parent = FXMLLoader.load(getClass().getResource("Views/LogIn.fxml"));
-            Scene scene = new Scene(parent, 365, 259);
+            Parent parent = FXMLLoader.load(getClass().getResource("Views/SignInView.fxml"));
+            Scene scene = new Scene(parent, 800, 450);
             window.setTitle("SMILE - Log In");
             window.setScene(scene);
+            window.setResizable(false);
             window.show();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomerManagerController">
+   <children>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="401.0" prefWidth="332.0" styleClass="card-white">
+                     <children>
+                        <GridPane layoutX="17.0" layoutY="40.0" prefHeight="322.0" prefWidth="299.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="txtCustomerID" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Mã Khách Hàng" />
+                              <JFXTextField fx:id="txtCustomerName" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Tên Khách Hàng" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="txtCustomerAddress" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Địa Chỉ" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="txtCustomerEmail" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Email" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="txtCustomerPhone" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Số Điện Thoại" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Thông Tin Khách Hàng" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="658.0" prefWidth="992.0" styleClass="card-footer" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="56.0">
+                     <children>
+                         <TableView fx:id="tbvCustomer" layoutX="19.0" layoutY="297.0" prefHeight="697.0" prefWidth="1183.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                             <columns>
+                                 <TableColumn fx:id="colCustomerID" prefWidth="109.0" text="MaKH" />
+                                 <TableColumn fx:id="colCustomerName" prefWidth="264.0" text="TenKH" />
+                                 <TableColumn fx:id="colCustomerAddress" prefWidth="300.0" text="DiaChi" />
+                                 <TableColumn fx:id="colCustomerEmail" prefWidth="263.0" text="Email" />
+                                 <TableColumn fx:id="colCustomerPhone" prefWidth="226.0" text="SoDT" />
+                             </columns>
+                         </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="53.0" prefWidth="1400.0" styleClass="card-footer" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="53.0" prefWidth="668.0" style="-fx-background-color: #fe8131;">
+                     <children>
+                        <ProgressBar fx:id="progressPersonal" layoutX="86.0" layoutY="18.0" prefHeight="18.0" prefWidth="248.0" progress="0.0" />
+                        <Label fx:id="lblComplete" alignment="CENTER" layoutX="348.0" layoutY="18.0" prefHeight="18.0" prefWidth="129.0" text="0% Hoàn thành" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="784.0" layoutY="9.0" spacing="6.0" AnchorPane.rightAnchor="16.0">
+                     <children>
+                        <JFXButton fx:id="btnPRINT" buttonType="RAISED" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text="In" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="29.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnSEARCH" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#setBtnSEARCH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text="Tìm Kiếm" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDELETE" buttonType="RAISED" onAction="#setBtnDELETE" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text="Xóa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="18.0" wrappingWidth="29.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUPDATE" buttonType="RAISED" onAction="#setBtnUPDATE" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #fec425;" text="Sửa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="BORDER_COLOR" size="18.0" wrappingWidth="29.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnADD" buttonType="RAISED" onAction="#setBtnADD" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Thêm" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="18.0" wrappingWidth="22.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnREFRESH" buttonType="RAISED" onAction="#setBtnRefresh" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
