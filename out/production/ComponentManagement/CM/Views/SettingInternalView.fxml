@@ -1,13 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.SettingInternalController">
+   <children>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane fx:id="deptStackPane" layoutX="83.0" layoutY="43.0">
+                     <children>
+                        <AnchorPane prefHeight="308.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
+                           <children>
+                              <Pane layoutY="-1.0" prefHeight="60.0" prefWidth="570.0" style="-fx-background-color: #E55D87; -fx-background-radius: 5 5 0 0;">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Kho" textFill="#fffefe">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox layoutX="463.0" layoutY="14.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" style="-fx-background-color: #e54e4e;">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="24.0" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btnAddStock" mnemonicParsing="false" onAction="#setBtnAddStock" style="-fx-background-color: #F87951;">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="24.0" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                              <JFXListView fx:id="departmentList" layoutX="8.0" layoutY="63.0" opacity="0.95" prefHeight="229.0" prefWidth="552.0" style="-fx-font-size: 14; -fx-font-family: 'Roboto Medium'; -fx-border-width: 0; -fx-border-color: null;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <AnchorPane layoutX="733.0" layoutY="49.0" prefHeight="308.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
+                     <children>
+                        <Pane layoutY="-1.0" prefHeight="60.0" prefWidth="570.0" style="-fx-background-color: #8fd4fc; -fx-background-radius: 5 5 0 0;">
+                           <children>
+                              <Label layoutX="16.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Phòng ban" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="463.0" layoutY="14.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #e54e4e;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #F87951;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <JFXListView fx:id="departmentList1" layoutX="8.0" layoutY="63.0" opacity="0.95" prefHeight="229.0" prefWidth="552.0" style="-fx-font-size: 14; -fx-font-family: 'Roboto Medium'; -fx-border-width: 0; -fx-border-color: null;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="89.0" layoutY="419.0" prefHeight="308.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
+                     <children>
+                        <Pane layoutY="-1.0" prefHeight="60.0" prefWidth="570.0" style="-fx-background-color: #614385; -fx-background-radius: 5 5 0 0;">
+                           <children>
+                              <Label layoutX="16.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Loại mặt hàng" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="463.0" layoutY="14.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #e54e4e;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #F87951;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <JFXListView fx:id="departmentList11" layoutX="8.0" layoutY="63.0" opacity="0.95" prefHeight="229.0" prefWidth="552.0" style="-fx-font-size: 14; -fx-font-family: 'Roboto Medium'; -fx-border-width: 0; -fx-border-color: null;" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="733.0" layoutY="419.0" prefHeight="308.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
+                     <children>
+                        <Pane layoutY="-1.0" prefHeight="60.0" prefWidth="570.0" style="-fx-background-color: #02AAB0; -fx-background-radius: 5 5 0 0;">
+                           <children>
+                              <Label layoutX="16.0" layoutY="14.0" prefHeight="30.0" prefWidth="192.0" text="Đơn vị tính" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="463.0" layoutY="14.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #e54e4e;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #F87951;">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="24.0" />
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <JFXListView fx:id="departmentList111" layoutX="8.0" layoutY="63.0" opacity="0.95" prefHeight="229.0" prefWidth="552.0" style="-fx-font-size: 14; -fx-font-family: 'Roboto Medium'; -fx-border-width: 0; -fx-border-color: null;" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
