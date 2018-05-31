@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< .merge_file_a05088
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <StackPane prefHeight="825.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXTabPane styleClass="tab">
+                    <tabs>
+                        <Tab text="Nhập Hàng">
+                            <fx:include source="ComponentImportView.fxml" />
+                        </Tab>
+                        <Tab text="Xuất Hàng">
+                            <fx:include fx:id="fooTabPage" source="ComponentExportView.fxml" />
+                        </Tab>
+                        <Tab text="Quản Lý Linh Kiện">
+
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </children>
+        </StackPane>
+=======
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -84,5 +110,6 @@
       <ComboBox fx:id="cbTypeName" layoutX="175.0" layoutY="192.0" prefHeight="31.0" prefWidth="150.0" />
       <ComboBox fx:id="cbAreaName" layoutX="495.0" layoutY="194.0" prefHeight="31.0" prefWidth="150.0" />
       <ComboBox fx:id="cbUnit" layoutX="1032.0" layoutY="192.0" prefHeight="31.0" prefWidth="150.0" />
+>>>>>>> .merge_file_a16088
     </children>
 </AnchorPane>
