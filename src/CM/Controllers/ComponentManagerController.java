@@ -5,6 +5,8 @@ import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,9 +21,11 @@ import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ComponentManagerController implements Initializable {
@@ -114,6 +118,154 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedData();
+            }
+        });
+        updateProgress();
+    }
+    private static double progress1 = 0;
+    private static double progress2 = 0;
+    private static double progress3 = 0;
+    private static double progress4 = 0;
+    private static double progress5 = 0;
+    private static double progress6 = 0;
+    private static double progress7 = 0;
+    private static double progress8 = 0;
+    private void updateProgress() {
+        DecimalFormat decimalFormat = new DecimalFormat("###.#");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+
+        //progressPersonal.setProgress(0.00);
+        double sum_progress = progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8;
+        txtComponentID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress1 = 0.2;
+
+                } else {
+                    progress1 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtComponentConfig.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress2 = 0.2;
+
+                } else {
+                    progress2 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtComponentMaker.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress3 = 0.2;
+
+                } else {
+                    progress3 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtComponentName.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress4 = 0.2;
+
+                } else {
+                    progress4 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+
+        txtNumOfComp.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress5 = 0.2;
+
+                } else {
+                    progress5 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+        cbAreaName.getEditor().textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress6 = 0.2;
+
+                } else {
+                    progress6 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+        cbTypeName.getEditor().textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress7 = 0.2;
+
+                } else {
+                    progress7 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+        cbUnit.getEditor().textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress8 = 0.2;
+
+                } else {
+                    progress8 = 0.0;
+
+                }
+
+               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
     }

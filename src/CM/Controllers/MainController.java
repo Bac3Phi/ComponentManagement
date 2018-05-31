@@ -28,6 +28,8 @@ import java.util.logging.Logger;
 
 public class MainController extends Application implements Initializable {
     @FXML
+    private JFXButton btnBill;
+    @FXML
     private StackPane stackPane;
 
     @FXML
@@ -86,7 +88,7 @@ public class MainController extends Application implements Initializable {
     }
 
     private Label lblDash;
-    private AnchorPane component, customer,provider,employee,report,setting;
+    private AnchorPane component, customer,provider,employee,bill,report,setting;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -106,6 +108,7 @@ public class MainController extends Application implements Initializable {
             employee = FXMLLoader.load(getClass().getResource("../Views/EmployeesView.fxml"));
             provider = FXMLLoader.load(getClass().getResource("../Views/ProviderView.fxml"));
             setting = FXMLLoader.load(getClass().getResource("../Views/SettingView.fxml"));
+            bill = FXMLLoader.load(getClass().getResource("../Views/BillView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -169,5 +172,10 @@ public class MainController extends Application implements Initializable {
     @FXML
     void openSetting(ActionEvent event) {
         setNode(setting);
+    }
+
+    @FXML
+    void openBill(ActionEvent actionEvent) {
+        setNode(bill);
     }
 }
