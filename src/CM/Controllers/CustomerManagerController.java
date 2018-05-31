@@ -44,6 +44,7 @@ public class CustomerManagerController implements Initializable {
 
     @FXML
     private JFXTextField txtCustomerPhone;
+
     @FXML
     private JFXButton btnPRINT;
 
@@ -383,18 +384,6 @@ public class CustomerManagerController implements Initializable {
     @FXML
     public void setBtnSEARCH (ActionEvent event)throws Exception{
         tabPaneEx.getSelectionModel().select(1);
-    }
-
-    @FXML
-    public void setBtnCANCEL (ActionEvent event)throws Exception{
-        alert = new Alert(Alert.AlertType.WARNING, "Do you want to close this?", ButtonType.YES, ButtonType.NO);
-        alert.show();
-
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.get() == ButtonType.YES) {
-
-        }
     }
 
     public void setBtnRefresh(ActionEvent actionEvent) {
