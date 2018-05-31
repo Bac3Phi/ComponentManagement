@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a1aa63-fd30-440b-b18c-3d75402efca2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/CompUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/database-qllk.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Components.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Components.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Components.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,8 +98,8 @@
       <file leaf-file-name="ComponentViewController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
+            <state relative-caret-position="5525">
+              <caret line="325" column="80" selection-start-line="325" selection-start-column="80" selection-end-line="325" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2826#2827#0" expanded="true" />
@@ -226,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="350" />
     <option name="y" value="190" />
     <option name="width" value="1615" />
@@ -500,7 +489,7 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" weight="0.2987616" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2987616" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2987616" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32768363" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="2" />
@@ -966,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
+        <state relative-caret-position="5525">
+          <caret line="325" column="80" selection-start-line="325" selection-start-column="80" selection-end-line="325" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2826#2827#0" expanded="true" />
