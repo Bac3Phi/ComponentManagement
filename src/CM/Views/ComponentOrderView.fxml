@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneOrderManagement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="829.0" prefWidth="1196.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
+   <children>
+      <Label fx:id="lbOrderForm" layoutX="456.0" layoutY="21.0" text="QUẢN LÝ ĐƠN ĐẶT HÀNG" />
+      <TitledPane fx:id="ttpaneOrder" animated="false" layoutX="14.0" layoutY="54.0" prefHeight="350.0" prefWidth="516.0" text="ĐƠN ĐẶT HÀNG">
+        <content>
+          <AnchorPane fx:id="paneOrder" minHeight="0.0" minWidth="0.0" prefHeight="304.0" prefWidth="514.0">
+               <children>
+                  <Label fx:id="lbOrderID" layoutX="14.0" layoutY="25.0" text="Mã Đơn đặt hàng" />
+                  <JFXTextField fx:id="txtOrderID" layoutX="223.0" layoutY="9.0" prefHeight="31.0" prefWidth="250.0" />
+                  <Label fx:id="lbDate" layoutX="14.0" layoutY="66.0" text="Ngày lập" />
+                  <DatePicker fx:id="dtDate" layoutX="222.0" layoutY="61.0" prefHeight="31.0" prefWidth="253.0" />
+                  <Label fx:id="lbEmployeeID" layoutX="14.0" layoutY="107.0" text="Mã Nhân viên" />
+                  <JFXTextField fx:id="txtEmployeeID" layoutX="223.0" layoutY="102.0" prefHeight="31.0" prefWidth="250.0" />
+                  <Label fx:id="lbProviderID" layoutX="14.0" layoutY="158.0" text="Mã Nhà cung cấp" />
+                  <JFXTextField fx:id="txtProviderID" layoutX="223.0" layoutY="153.0" prefHeight="31.0" prefWidth="250.0" />
+                  <JFXButton fx:id="btnADD" layoutX="14.0" layoutY="202.0" onAction="#setBtnADD" prefHeight="48.0" prefWidth="96.0" text="THÊM " />
+                  <JFXButton fx:id="btnDELETE" layoutX="141.0" layoutY="202.0" onAction="#setBtnDELETE" prefHeight="48.0" prefWidth="96.0" text="XÓA" />
+                  <JFXButton fx:id="btnUPDATE" layoutX="257.0" layoutY="202.0" onAction="#setBtnUPDATE" prefHeight="48.0" prefWidth="96.0" text="SỬA" />
+                  <JFXButton fx:id="btnSEARCH" layoutX="379.0" layoutY="202.0" onAction="#setBtnSEARCH" prefHeight="48.0" prefWidth="96.0" text="TÌM KIẾM" />
+                  <JFXButton fx:id="btnEXPORT" layoutX="24.0" layoutY="269.0" onAction="#setBtnEXPORT" prefHeight="31.0" prefWidth="450.0" text="IN ĐƠN ĐẶT HÀNG" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView fx:id="tbvOrder" layoutX="14.0" layoutY="415.0" prefHeight="400.0" prefWidth="516.0">
+        <columns>
+          <TableColumn fx:id="colOrderID" prefWidth="103.0" text="Mã ĐĐH" />
+          <TableColumn fx:id="colDate" prefWidth="129.0" text="Ngày Lập" />
+            <TableColumn fx:id="colEmployeeID" prefWidth="138.0" text="Mã NV" />
+            <TableColumn fx:id="colProviderID" prefWidth="145.0" text="Mã NCC" />
+        </columns>
+      </TableView>
+      <TitledPane fx:id="ttpaneOrderInfo" animated="false" layoutX="545.0" layoutY="54.0" prefHeight="292.0" prefWidth="634.0" text="CHI TIẾT ĐƠN ĐẶT HÀNG">
+         <content>
+            <AnchorPane fx:id="paneOrderInfo" minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="632.0">
+               <children>
+                  <Label fx:id="lbOrderInfoID" layoutX="14.0" layoutY="25.0" text="Mã CTĐĐH" />
+                  <JFXTextField fx:id="txtOrderInfoID" layoutX="222.0" layoutY="10.0" prefHeight="31.0" prefWidth="378.0" />
+                  <Label fx:id="lbQuantities" layoutX="15.0" layoutY="79.0" text="Số lượng" />
+                  <JFXTextField fx:id="txtQuantities" layoutX="223.0" layoutY="74.0" prefHeight="31.0" prefWidth="376.0" />
+                  <Label fx:id="lbComponentID" layoutX="15.0" layoutY="139.0" text="Mã Mặt hàng" />
+                  <JFXTextField fx:id="txtComponentID" layoutX="222.0" layoutY="134.0" prefHeight="31.0" prefWidth="378.0" />
+                  <JFXButton fx:id="btnADDinfo" layoutX="14.0" layoutY="202.0" onAction="#setBtnADDinfo" prefHeight="48.0" prefWidth="132.0" text="THÊM CHI TIẾT" />
+                  <JFXButton fx:id="btnDELETEinfo" layoutX="258.0" layoutY="202.0" onAction="#setBtnDELETEinfo" prefHeight="48.0" prefWidth="117.0" text="XÓA CHI TIẾT" />
+                  <JFXButton fx:id="btnUPDATEinfo" layoutX="474.0" layoutY="202.0" onAction="#setBtnUPDATEinfo" prefHeight="48.0" prefWidth="129.0" text="SỬA CHI TIẾT" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TableView fx:id="tbvOrderInfo" layoutX="545.0" layoutY="360.0" prefHeight="455.0" prefWidth="634.0">
+         <columns>
+            <TableColumn fx:id="colOrderInfoID" prefWidth="164.0" text="Mã CTĐĐH" />
+            <TableColumn fx:id="colQuantities" prefWidth="227.0" text="Số lượng" />
+            <TableColumn fx:id="colComponentID" prefWidth="242.0" text="Mã MH" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

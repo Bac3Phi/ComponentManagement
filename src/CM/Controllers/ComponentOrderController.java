@@ -1,8 +1,10 @@
 package CM.Controllers;
 
-import CM.Models.Bills;
-import CM.Models.BillsInfo;
+import CM.Models.ComponentOrder;
+import CM.Models.ComponentOrderInFo;
 import CM.Models.DataProvider;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,101 +21,87 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class BillController implements Initializable {
+public class ComponentOrderController implements Initializable {
     Alert alert;
     @FXML
-    public TextField txtBillID, txtBillInfoID, txtTaxCode, txtComponentID, txtSellingPrice,
-                    txtQuantities, txtCustomerID, txtEmployeeID, txtMoney;
-    public Button btnEXPORT, btnADD, btnUPDATE, btnDELETE, btnADDinfo, btnUPDATEinfo,
-                    btnDELETEinfo, btnREFRESH, btnSEARCH;
-    public ComboBox<String> cbbBillType;
-    public DatePicker dtPublishDate;
+    public JFXTextField txtOrderID, txtEmployeeID, txtProviderID, txtOrderInfoID,
+            txtQuantities, txtComponentID;
+    public JFXButton btnEXPORT, btnADD, btnUPDATE, btnDELETE, btnADDinfo, btnUPDATEinfo,
+            btnDELETEinfo, btnSEARCH;
+    public DatePicker dtDate;
 
-    public TableView<Bills> tbvBill;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colMoney, colBillType,
-                                        colCustomerID, colEmployeeID;
-    public TableColumn<Bills, Date> colPublishDate;
+    public TableView<ComponentOrder> tbvOrder;
+    public TableColumn<ComponentOrder, String> colOrderID, colEmployeeID, colProviderID;
+    public TableColumn<ComponentOrder, Date> colDate;
 
-    public TableView<BillsInfo> tbvBillInfo;
-    public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentID;
-    public TableColumn<BillsInfo, Integer> colQuantities;
-    public AnchorPane paneBill, paneBillInfo, paneBillManagement;
+    public TableView<ComponentOrderInFo> tbvOrderInfo;
+    public TableColumn<ComponentOrderInFo, String> colOrderInfoID, colComponentID;
+    public TableColumn<ComponentOrderInFo, Integer> colQuantities;
+    public AnchorPane paneOrder, paneOrderInfo, paneOrderManagement;
 
     DataProvider dbConn;
-    ObservableList<Bills> data;
-    ObservableList<BillsInfo> datainfo;
-    ObservableList<String> list;
+    ObservableList<ComponentOrder> data;
+    ObservableList<ComponentOrderInFo> datainfo;
     ResultSet resultSet;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConn = new DataProvider();
-        paneBill = new AnchorPane();
-        paneBillManagement = new AnchorPane();
-        paneBillInfo = new AnchorPane();
+        paneOrder = new AnchorPane();
+        paneOrderManagement = new AnchorPane();
+        paneOrderInfo = new AnchorPane();
         data = FXCollections.observableArrayList();
         datainfo = FXCollections.observableArrayList();
-        list = FXCollections.observableArrayList("Bán lẻ", "Bán sỉ");
-        cbbBillType.setItems(list);
         btnUPDATE.setVisible(false);
         btnUPDATEinfo.setVisible(false);
 
-        tbvBill.setEditable(false);
-        tbvBillInfo.setEditable(false);
+        tbvOrder.setEditable(false);
+        tbvOrderInfo.setEditable(false);
 
-        colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
-        colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
-        colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
-        colMoney.setCellValueFactory(new PropertyValueFactory<>("PurchaseMoney"));
-        colBillType.setCellValueFactory(new PropertyValueFactory<>("TypeOfBill"));
+        colOrderID.setCellValueFactory(new PropertyValueFactory<>("CompOrderID"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
-        colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        colProviderID.setCellValueFactory(new PropertyValueFactory<>("ProviderID"));
 
-        colBillInfoID.setCellValueFactory(new PropertyValueFactory<>("BillsInfoID"));
-        colSellingPrice.setCellValueFactory(new PropertyValueFactory<>("SellingPrice"));
+        colOrderInfoID.setCellValueFactory(new PropertyValueFactory<>("CompOrderInfoID"));
         colQuantities.setCellValueFactory(new PropertyValueFactory<>("Quantities"));
         colComponentID.setCellValueFactory(new PropertyValueFactory<>("ComponentID"));
 
         try {
             showData();
-
         }
         catch (IOException io){}
         catch (SQLException e) {}
 
-        tbvBill.setItems(data);
-        tbvBillInfo.setItems(datainfo);
+        tbvOrder.setItems(data);
 
-        if (!data.isEmpty())
-        {
-            tbvBill.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    try {
-                        getSelectedData();
-                        btnUPDATE.setVisible(true);
-                        String str = data.get(tbvBill.getSelectionModel().getSelectedIndex()).getBillID();
-                        showDataInfo(str);
-                    }
-                    catch (IOException io){}
-                    catch (SQLException e) {}
-                    catch (NullPointerException e) {}
+        tbvOrder.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    getSelectedData();
+                    btnUPDATE.setVisible(true);
+                    String str = data.get(tbvOrder.getSelectionModel().getSelectedIndex()).getCompOrderID();
+                    showDataInfo(str);
+                    tbvOrderInfo.setItems(datainfo);
                 }
-            });
-        }
+                catch (IOException io){}
+                catch (SQLException e) {}
+                catch (NullPointerException e) {}
+            }
+        });
 
-        tbvBillInfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        tbvOrderInfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 try {
                     getSelectedDataInfo();
                     btnUPDATEinfo.setVisible(true);
                 }
-                catch(NullPointerException e) {}
+                catch (NullPointerException e) {}
             }
         });
     }
@@ -121,17 +109,14 @@ public class BillController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT * FROM HOADON");
+        resultSet = dbConn.getData("SELECT * FROM DONDATHANG");
         data.removeAll(data);
         while (resultSet.next()){
-            data.add(new Bills(
-                    resultSet.getString("MaHD"),
+            data.add(new ComponentOrder(
+                    resultSet.getString("MaDDH"),
                     resultSet.getDate("NgayLap"),
-                    resultSet.getString("MaSoThue"),
-                    resultSet.getString("TienThanhToan"),
-                    resultSet.getString("LoaiHD"),
                     resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("MaNCC")
             ));
         }
         resultSet.close();
@@ -140,16 +125,15 @@ public class BillController implements Initializable {
 
     @FXML
     //Đổ dữ liệu vào bảng
-    public void showDataInfo(String billid) throws SQLException, IOException{
-        String query = "SELECT * FROM CHITIETHOADON WHERE MaHD = '" + billid  +"'";
+    public void showDataInfo(String orderid) throws SQLException, IOException{
+        String query = "SELECT * FROM CHITIETDONDATHANG WHERE MaDDH = '" + orderid  +"'";
         resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){
-            datainfo.add(new BillsInfo(
-                    resultSet.getString("MaCTHD"),
-                    resultSet.getString("DonGiaBan"),
+            datainfo.add(new ComponentOrderInFo(
+                    resultSet.getString("MaCTDDH"),
                     resultSet.getInt("SoLuong"),
-                    resultSet.getString("MaHD"),
+                    resultSet.getString("MaDDH"),
                     resultSet.getString("MaMH")
             ));
         }
@@ -159,59 +143,41 @@ public class BillController implements Initializable {
 
     //Hàm refresh xóa text
     public void refresh() {
-        txtBillID.setText("");
-        txtBillInfoID.setText("");
-        txtMoney.setText("");
-        txtTaxCode.setText("");
+        txtOrderID.setText("");
+        txtOrderInfoID.setText("");
+        txtProviderID.setText("");
         txtQuantities.setText("");
-        txtSellingPrice.setText("");
         txtComponentID.setText("");
-        txtCustomerID.setText("");
         txtEmployeeID.setText("");
     }
 
     //lay thong tin du lieu duoc HOADON
     public void getSelectedData() {
-        Bills selectedRow = tbvBill.getSelectionModel().getSelectedItem();
-        txtBillID.setText(selectedRow.getBillID());
-        dtPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
-        txtTaxCode.setText(selectedRow.getTaxCode());
-        txtMoney.setText(selectedRow.getPurchaseMoney());
-        if (selectedRow.getTypeOfBill().contentEquals("Bán lẻ"))
-            cbbBillType.getSelectionModel().select("Bán lẻ");
-        else if (selectedRow.getTypeOfBill().contentEquals("Bán sỉ"))
-            cbbBillType.getSelectionModel().select("Bán sỉ");
+        ComponentOrder selectedRow = tbvOrder.getSelectionModel().getSelectedItem();
+        txtOrderID.setText(selectedRow.getCompOrderID());
+        dtDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
+        txtProviderID.setText(selectedRow.getProviderID());
         txtEmployeeID.setText(selectedRow.getEmployeeID());
-        txtCustomerID.setText(selectedRow.getCustomerID());
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
     public void getSelectedDataInfo() {
-        BillsInfo selectedRow = tbvBillInfo.getSelectionModel().getSelectedItem();
-        txtBillInfoID.setText(selectedRow.getBillsInfoID());
-        txtSellingPrice.setText(selectedRow.getSellingPrice());
+        ComponentOrderInFo selectedRow = tbvOrderInfo.getSelectionModel().getSelectedItem();
+        txtOrderInfoID.setText(selectedRow.getCompOrderInfoID());
         txtQuantities.setText(String.valueOf(selectedRow.getQuantities()));
         txtComponentID.setText(selectedRow.getComponentID());
     }
 
-    //Thêm dữ liệu vào bảng HOADON
+    //Thêm dữ liệu vào bảng DONDATHANG
     public void insertData() {
-        String id = "", nglap = "", mst = "", tientt = "", loaihd = "", nvid = "", khid = "";
+        String id = "", nglap = "", nvid = "", nccid = "";
         try {
-            id = txtBillID.getText();
-            nglap = dtPublishDate.getValue().toString();
-            mst = txtTaxCode .getText();
-            tientt = txtMoney.getText();
-            if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán lẻ"))
-                loaihd = "Bán lẻ";
-            else if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán sỉ"))
-                loaihd = "Bán sỉ";
+            id = txtOrderID.getText();
+            nglap = dtDate.getValue().toString();
             nvid = txtEmployeeID.getText();
-            khid = txtCustomerID.getText();
-            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null)
-                    || cbbBillType.getSelectionModel().getSelectedItem().contentEquals(null))
+            nccid = txtProviderID.getText();
+            if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
+                    || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -221,8 +187,8 @@ public class BillController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataInsert = {id, nglap, mst, tientt, loaihd, nvid, khid};
-        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "HOADON");
+        String[] dataInsert = {id, nglap, nvid, nccid};
+        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "DONDATHANG");
         if (isInserted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully inserted !!!");
@@ -242,18 +208,16 @@ public class BillController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Thêm dữ liệu vào bảng CHITIETHOADON
+    //Thêm dữ liệu vào bảng CHITIETDONDATHANG
     public void insertDataInfo() {
-        String id = "", dongia = "", soluong = "", hdid = "", mhid = "";
+        String id = "", soluong = "", ddhid = "", mhid = "";
         try {
-            id = txtBillInfoID.getText();
-            dongia = txtSellingPrice.getText();
+            id = txtOrderInfoID.getText();
             soluong = txtQuantities.getText();
-            hdid = txtBillID.getText();
+            ddhid = txtOrderID.getText();
             mhid = txtComponentID.getText();
-            if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
-                    || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
-                    || txtBillID.getText().isEmpty())
+            if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
+                    || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -263,8 +227,8 @@ public class BillController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataInsert = {id, dongia, soluong, hdid, mhid};
-        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETHOADON");
+        String[] dataInsert = {id, soluong, ddhid, mhid};
+        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETDONDATHANG");
         if (isInserted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully inserted !!!");
@@ -284,24 +248,16 @@ public class BillController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Update dữ liệu
+    //Update dữ liệu DONDATHANG
     public void updateData() {
-        String id = "", nglap = "", mst = "", tientt = "", loaihd = "", nvid = "", khid = "";
+        String id = "", nglap = "", nvid = "", nccid = "";
         try {
-            id = txtBillID.getText();
-            nglap = dtPublishDate.getValue().toString();
-            mst = txtTaxCode .getText();
-            tientt = txtMoney.getText();
-            if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán lẻ"))
-                loaihd = "Bán lẻ";
-            else if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán sỉ"))
-                loaihd = "Bán sỉ";
+            id = txtOrderID.getText();
+            nglap = dtDate.getValue().toString();
             nvid = txtEmployeeID.getText();
-            khid = txtCustomerID.getText();
-            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null)
-                    || cbbBillType.getSelectionModel().getSelectedItem().contentEquals(null))
+            nccid = txtProviderID.getText();
+            if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
+                    || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -312,9 +268,9 @@ public class BillController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataUpdate = {id, nglap, mst, tientt, loaihd, nvid, khid};
-        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TienThanhToan", "LoaiHD", "MaNV", "MaKH"};
-        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
+        String[] dataUpdate = {id, nglap, nvid, nccid};
+        String[] colLabel = {"MaDDH", "NgayLap", "MaNV", "MaNCC"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "DONDATHANG");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully updated !!!");
@@ -334,18 +290,16 @@ public class BillController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Update dữ liệu
+    //Update dữ liệu CHITIETDONDATHANG
     public void updateDataInfo() {
-        String id = "", dongia = "", soluong = "", hdid = "", mhid = "";
+        String id = "", soluong = "", ddhid = "", mhid = "";
         try {
-            id = txtBillInfoID.getText();
-            dongia = txtSellingPrice.getText();
-            soluong = txtQuantities.getText();
-            hdid = txtBillID.getText();
+            id = txtOrderInfoID.getText();
+            soluong = dtDate.getValue().toString();
+            ddhid = txtOrderID.getText();
             mhid = txtComponentID.getText();
-            if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
-                    || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
-                    || txtBillID.getText().isEmpty())
+            if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
+                    || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -356,9 +310,9 @@ public class BillController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataUpdate = {id, dongia, soluong, hdid, mhid};
-        String[] colLabel = {"MaCTHD", "DonGiaBan", "SoLuong", "MaHD", "MaMH"};
-        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETHOADON");
+        String[] dataUpdate = {id, soluong, ddhid, mhid};
+        String[] colLabel = {"MaCTDDH", "SoLuong", "MaDDH", "MaMH"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETDONDATHANG");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully updated !!!");
@@ -378,16 +332,16 @@ public class BillController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Delete dữ liệu
+    //Delete dữ liệu DONDATHANG
     public void deleteData() {
-        if (txtBillID.getText().isEmpty())
+        if (txtOrderID.getText().isEmpty())
         {
             alert = new Alert(Alert.AlertType.WARNING,
                     "Please fill in the blank!!!", ButtonType.OK);
             alert.show();
         }
-        String[] dataDelete = {txtBillID.getText()};
-        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "HOADON", "MaHD");
+        String[] dataDelete = {txtOrderID.getText()};
+        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "DONDATHANG", "MaDDH");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully deleted !!!");
@@ -407,16 +361,16 @@ public class BillController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Delete dữ liệu
+    //Delete dữ liệu CHITIETDONDATHANG
     public void deleteDataInfo() {
-        if (txtBillInfoID.getText().isEmpty())
+        if (txtOrderInfoID.getText().isEmpty())
         {
             alert = new Alert(Alert.AlertType.WARNING,
                     "Please fill in the blank!!!", ButtonType.OK);
             alert.show();
         }
-        String[] dataDelete = {txtBillInfoID.getText()};
-        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETHOADON", "MaCTHD");
+        String[] dataDelete = {txtOrderInfoID.getText()};
+        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETDONDATHANG", "MaCTDDH");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Data are successfully deleted !!!");
@@ -486,14 +440,6 @@ public class BillController implements Initializable {
 
     @FXML
     public void setBtnEXPORT (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
-    }
-
-    @FXML
-    public void setBtnREFRESH (ActionEvent event)throws Exception{
 //        deleteData();
 //        if (btnDELETE.isPressed()) {
 //            refresh();

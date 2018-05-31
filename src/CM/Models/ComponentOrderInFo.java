@@ -5,17 +5,14 @@ public class ComponentOrderInFo {
     private String CompOrderInfoID;
     private String ComponentID;
     private int Quantities;
-    private String ImportPrice;
-
 
     public ComponentOrderInFo() {}
 
-    public ComponentOrderInFo(String compOrderInfoID, String importPrice, int quantities, String compOrderID, String componentID) {
+    public ComponentOrderInFo(String compOrderInfoID, int quantities, String compOrderID, String componentID) {
         CompOrderID = compOrderID;
         CompOrderInfoID = compOrderInfoID;
         ComponentID = componentID;
         Quantities = quantities;
-        ImportPrice = importPrice;
     }
 
     public String getCompOrderID() { return CompOrderID; }
@@ -33,8 +30,4 @@ public class ComponentOrderInFo {
     public int getQuantities() { return Quantities;  }
 
     public void setQuantities(int quantities) { Quantities = quantities; }
-
-    public String getImportPrice() { return ImportPrice; }
-
-    public void setImportPrice(String importPrice) { ImportPrice = importPrice; }
 }
