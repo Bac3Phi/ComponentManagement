@@ -4,15 +4,15 @@ import java.util.Date;
 
 public class ComponentOrder {
     private String CompOrderID;
-    private String SupplierID;
+    private String ProviderID;
     private String EmployeeID;
     private Date PublishDate;
 
     public ComponentOrder() {}
 
-    public ComponentOrder(String compOrderID, Date publishDate, String employeeID, String supplierID) {
+    public ComponentOrder(String compOrderID, Date publishDate, String employeeID, String providerID) {
         CompOrderID = compOrderID;
-        SupplierID = supplierID;
+        ProviderID = providerID;
         EmployeeID = employeeID;
         PublishDate = publishDate;
     }
@@ -21,9 +21,9 @@ public class ComponentOrder {
 
     public void setCompOrderID(String compOrderID) { CompOrderID = compOrderID; }
 
-    public String getSupplierID() { return SupplierID; }
+    public String getProviderID() { return ProviderID; }
 
-    public void setSupplierID(String supplierID) { SupplierID = supplierID; }
+    public void setProviderID(String providerID) { ProviderID = providerID; }
 
     public String getEmployeeID() { return EmployeeID; }
 

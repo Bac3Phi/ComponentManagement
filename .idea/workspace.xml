@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86a1aa63-fd30-440b-b18c-3d75402efca2" name="Default" comment="">
+    <list default="true" id="279094fe-afa6-4dd6-8013-91373d384a47" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/TrayNotification.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentViewController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentViewController$2.class" beforeDir="false" />
@@ -21,6 +23,9 @@
       <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml.orig" beforeDir="false" />
+>>>>>>> dev
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +35,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ComponentManagement$Main.ic" NAME="Main Coverage Results" MODIFIED="1527695961706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>CM.Controllers.*</FILTER>
@@ -75,22 +81,57 @@
                 <element signature="e#5359#5360#0" expanded="true" />
                 <element signature="e#14237#14238#0" expanded="true" />
                 <element signature="e#14262#14263#0" expanded="true" />
+=======
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="CustomerManagerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerManagerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="263" column="94" selection-start-line="263" selection-start-column="94" selection-end-line="263" selection-end-column="94" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SmileNotification.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CM/Functions/SmileNotification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> dev
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="CustomerManagerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="508">
               <caret line="351" column="120" lean-forward="true" selection-start-line="351" selection-start-column="12" selection-end-line="351" selection-end-column="120" />
+=======
+      <file leaf-file-name="ProviderManagerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ProviderManagerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> dev
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -108,12 +149,15 @@
       <find>alert</find>
     </findStrings>
   </component>
+=======
+>>>>>>> dev
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -190,23 +234,47 @@
     <option name="width" value="1612" />
     <option name="height" value="734" />
 >>>>>>> ecb9ce949995ce72a984a7d9cd1a61a0a20b9eb6
+=======
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="350" />
+    <option name="y" value="190" />
+    <option name="width" value="1615" />
+    <option name="height" value="735" />
+>>>>>>> dev
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+=======
+>>>>>>> dev
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+>>>>>>> dev
             </path>
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
@@ -229,6 +297,7 @@
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
               <item name="Functions" type="462c0819:PsiDirectoryNode" />
@@ -236,13 +305,16 @@
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> dev
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
               <item name="Stytlesheet" type="462c0819:PsiDirectoryNode" />
@@ -250,6 +322,8 @@
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> dev
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
@@ -259,6 +333,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,6 +356,19 @@
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/TrayNotification.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+>>>>>>> dev
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -353,6 +441,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
       <created>1359379246138</created>
       <option name="number" value="Default" />
@@ -480,6 +569,15 @@
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
       <updated>1527429880585</updated>
+=======
+      <changelist id="279094fe-afa6-4dd6-8013-91373d384a47" name="Default" comment="" />
+      <created>1527780181008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527780181008</updated>
+      <workItem from="1527780207732" duration="295000" />
+      <workItem from="1527780536314" duration="230000" />
+>>>>>>> dev
     </task>
     <task id="LOCAL-00014" summary="BIGUPDATE: Cập Nhật Employees Views">
       <created>1527654524914</created>
@@ -506,6 +604,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="6049000" />
   </component>
   <component name="ToolWindowManager">
@@ -567,37 +666,50 @@
       <window_info anchor="bottom" id="Messages" order="20" weight="0.32768363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info id="Designer" order="3" />
+=======
+    <option name="totallyTimeSpent" value="550000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.32909605" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+>>>>>>> dev
     </layout>
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
@@ -781,14 +893,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="74" column="98" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="263" column="94" selection-start-line="263" selection-start-column="94" selection-end-line="263" selection-end-column="94" />
+>>>>>>> dev
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/TypeOfGoods.java">
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ProviderManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
@@ -842,12 +965,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+=======
+        <state relative-caret-position="456">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+>>>>>>> dev
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
@@ -933,10 +1061,19 @@
             <element signature="e#5250#5251#0" expanded="true" />
             <element signature="e#14128#14129#0" expanded="true" />
             <element signature="e#14153#14154#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/CM/Functions/SmileNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> dev
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -977,5 +1114,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> dev
   </component>
 </project>
