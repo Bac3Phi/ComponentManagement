@@ -91,7 +91,10 @@ public class BillController implements Initializable {
             public void handle(MouseEvent event) {
                 getSelectedData();
                 btnUPDATE.setVisible(true);
-                try { showDataInfo(); }
+                try {
+                    String str = data.get(tbvBill.getSelectionModel().getSelectedIndex()).getBillID();
+                    showDataInfo(str);
+                }
                 catch (IOException io){}
                 catch (SQLException e) {}
             }
@@ -128,8 +131,9 @@ public class BillController implements Initializable {
 
     @FXML
     //Đổ dữ liệu vào bảng
-    public void showDataInfo() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT * FROM CHITIETHOADON");
+    public void showDataInfo(String billid) throws SQLException, IOException{
+        String query = "SELECT * FROM CHITIETHOADON WHERE MaHD = '" + billid  +"'";
+        resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){
             datainfo.add(new BillsInfo(
