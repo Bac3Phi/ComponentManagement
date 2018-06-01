@@ -78,7 +78,7 @@ public class CustomerManagerController implements Initializable {
     private Label lblComplete;
 
     DataProvider dbConn;
-    ObservableList<Customer> data;
+    public static ObservableList<Customer> data;
     ResultSet resultSet;
 
     @Override
@@ -381,5 +381,9 @@ public class CustomerManagerController implements Initializable {
 
     public void setBtnRefresh(ActionEvent actionEvent) {
         refresh();
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException e) {}
     }
 }

@@ -481,7 +481,7 @@ public class ComponentManagerController implements Initializable {
                 String[] colLabel = {"MaMH", "TenMH", "HangSX", "MaDV", "CauHinh", "HinhMH", "MaLoai", "MaKhu"};
                 int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "MATHANG");
                 if (isUpdated > 0) {
-                    SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
+                    SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
                 }
                 else
                 {

@@ -1,9 +1,11 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.ComponentOrder;
 import CM.Models.ComponentOrderInFo;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import tray.notification.NotificationType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,11 +30,54 @@ import java.util.ResourceBundle;
 public class ComponentOrderController implements Initializable {
     Alert alert;
     @FXML
-    public JFXTextField txtOrderID, txtEmployeeID, txtProviderID, txtOrderInfoID,
-            txtQuantities, txtComponentID;
-    public JFXButton btnEXPORT, btnADD, btnUPDATE, btnDELETE, btnADDinfo, btnUPDATEinfo,
-            btnDELETEinfo, btnSEARCH;
-    public DatePicker dtDate;
+    private JFXTextField txtOrderID;
+
+    @FXML
+    private JFXDatePicker dtDate;
+
+    @FXML
+    private JFXTextField txtEmployeeID;
+
+    @FXML
+    private JFXTextField txtProviderID;
+
+    @FXML
+    private JFXButton btnPRINT;
+
+    @FXML
+    private JFXButton btnSEARCH;
+
+    @FXML
+    private JFXButton btnDELETE;
+
+    @FXML
+    private JFXButton btnUPDATE;
+
+    @FXML
+    private JFXButton btnADD;
+
+    @FXML
+    private JFXButton btnREFRESH;
+    @FXML
+    private JFXTextField txtOrderInfoID;
+
+    @FXML
+    private JFXTextField txtQuantities;
+
+    @FXML
+    private JFXTextField txtComponentID;
+
+    @FXML
+    private JFXButton btnDELETEinfo;
+
+    @FXML
+    private JFXButton btnUPDATEinfo;
+
+    @FXML
+    private JFXButton btnADDinfo;
+
+    @FXML
+    private JFXButton btnREFRESHinfo;
 
     public TableView<ComponentOrder> tbvOrder;
     public TableColumn<ComponentOrder, String> colOrderID, colEmployeeID, colProviderID;
@@ -179,8 +225,7 @@ public class ComponentOrderController implements Initializable {
             if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
                     || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -190,15 +235,11 @@ public class ComponentOrderController implements Initializable {
         String[] dataInsert = {id, nglap, nvid, nccid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "DONDATHANG");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -219,8 +260,7 @@ public class ComponentOrderController implements Initializable {
             if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
                     || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -230,15 +270,11 @@ public class ComponentOrderController implements Initializable {
         String[] dataInsert = {id, soluong, ddhid, mhid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETDONDATHANG");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -259,9 +295,7 @@ public class ComponentOrderController implements Initializable {
             if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
                     || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -272,15 +306,11 @@ public class ComponentOrderController implements Initializable {
         String[] colLabel = {"MaDDH", "NgayLap", "MaNV", "MaNCC"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "DONDATHANG");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -301,9 +331,7 @@ public class ComponentOrderController implements Initializable {
             if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
                     || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -314,15 +342,11 @@ public class ComponentOrderController implements Initializable {
         String[] colLabel = {"MaCTDDH", "SoLuong", "MaDDH", "MaMH"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETDONDATHANG");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -336,22 +360,16 @@ public class ComponentOrderController implements Initializable {
     public void deleteData() {
         if (txtOrderID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtOrderID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "DONDATHANG", "MaDDH");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();
@@ -365,22 +383,16 @@ public class ComponentOrderController implements Initializable {
     public void deleteDataInfo() {
         if (txtOrderInfoID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtOrderInfoID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETDONDATHANG", "MaCTDDH");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();
@@ -452,5 +464,11 @@ public class ComponentOrderController implements Initializable {
 //        if (btnDELETE.isPressed()) {
 //            refresh();
 //        }
+    }
+
+    public void setBtnREFRESH(ActionEvent actionEvent) {
+    }
+
+    public void setBtnREFRESHinfo(ActionEvent actionEvent) {
     }
 }

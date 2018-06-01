@@ -103,12 +103,12 @@ public class MainController extends Application implements Initializable {
 
     private void createPages() {
         try {
-            component = FXMLLoader.load(getClass().getResource("../Views/ComponentView.fxml"));
-            customer = FXMLLoader.load(getClass().getResource("../Views/CustomerView.fxml"));
-            employee = FXMLLoader.load(getClass().getResource("../Views/EmployeesView.fxml"));
-            provider = FXMLLoader.load(getClass().getResource("../Views/ProviderView.fxml"));
-            setting = FXMLLoader.load(getClass().getResource("../Views/SettingView.fxml"));
-            bill = FXMLLoader.load(getClass().getResource("../Views/BillView.fxml"));
+            component = FXMLLoader.load(getClass().getResource("/CM/Views/ComponentView.fxml"));
+            customer = FXMLLoader.load(getClass().getResource("/CM/Views/CustomerView.fxml"));
+            employee = FXMLLoader.load(getClass().getResource("/CM/Views/EmployeesView.fxml"));
+            provider = FXMLLoader.load(getClass().getResource("/CM/Views/ProviderView.fxml"));
+            setting = FXMLLoader.load(getClass().getResource("/CM/Views/SettingView.fxml"));
+            bill = FXMLLoader.load(getClass().getResource("/CM/Views/BillView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -152,7 +152,10 @@ public class MainController extends Application implements Initializable {
 
     @FXML
     void openCustomer(ActionEvent event) {
-        setNode(customer);
+        try {
+            setNode(customer);
+        } catch (NullPointerException e) {}
+
     }
 
     @FXML
