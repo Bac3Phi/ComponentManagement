@@ -101,8 +101,10 @@ public class ComponentOrderController implements Initializable {
         paneOrderInfo = new AnchorPane();
         data = FXCollections.observableArrayList();
         datainfo = FXCollections.observableArrayList();
-        btnUPDATE.setVisible(false);
-        btnUPDATEinfo.setVisible(false);
+        btnUPDATE.setDisable(true);
+        btnUPDATEinfo.setDisable(true);
+        btnDELETE.setDisable(true);
+        btnDELETEinfo.setDisable(true);
 
         tbvOrder.setEditable(false);
         tbvOrderInfo.setEditable(false);
@@ -129,7 +131,8 @@ public class ComponentOrderController implements Initializable {
             public void handle(MouseEvent event) {
                 try {
                     getSelectedData();
-                    btnUPDATE.setVisible(true);
+                    btnUPDATE.setDisable(false);
+                    btnDELETE.setDisable(false);
                     String str = data.get(tbvOrder.getSelectionModel().getSelectedIndex()).getCompOrderID();
                     showDataInfo(str);
                     tbvOrderInfo.setItems(datainfo);
@@ -145,7 +148,8 @@ public class ComponentOrderController implements Initializable {
             public void handle(MouseEvent event) {
                 try {
                     getSelectedDataInfo();
-                    btnUPDATEinfo.setVisible(true);
+                    btnUPDATEinfo.setDisable(false);
+                    btnDELETEinfo.setDisable(false);
                 }
                 catch (NullPointerException e) {}
             }
