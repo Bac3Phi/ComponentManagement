@@ -15,7 +15,6 @@
 
                      <fx:include source="CustomerManagerView.fxml"></fx:include>
                   </Tab>
-
                   <Tab text="Tìm Kiếm khách hàng" >
                    <fx:include source="CustomerSearchView.fxml"></fx:include>
                   </Tab>

@@ -65,6 +65,9 @@
                                  <TableColumn fx:id="colCustomerEmail" prefWidth="263.0" text="Email" />
                                  <TableColumn fx:id="colCustomerPhone" prefWidth="226.0" text="SoDT" />
                              </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                          </TableView>
                      </children>
                   </AnchorPane>

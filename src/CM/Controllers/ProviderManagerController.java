@@ -77,7 +77,7 @@ public class ProviderManagerController implements Initializable {
     public AnchorPane paneProviderManagement;
 
     DataProvider dbConn;
-    ObservableList<Providers> data;
+    public static ObservableList<Providers> data;
     ResultSet resultSet;
 
 
@@ -113,6 +113,10 @@ public class ProviderManagerController implements Initializable {
     @FXML
     void setBtnREFRESH(ActionEvent event) {
         refresh();
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     @FXML

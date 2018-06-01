@@ -1,65 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneOrderManagement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="829.0" prefWidth="1196.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
-   <children>
-      <Label fx:id="lbOrderForm" layoutX="456.0" layoutY="21.0" text="QUẢN LÝ ĐƠN ĐẶT HÀNG" />
-      <TitledPane fx:id="ttpaneOrder" animated="false" layoutX="14.0" layoutY="54.0" prefHeight="350.0" prefWidth="516.0" text="ĐƠN ĐẶT HÀNG">
-        <content>
-          <AnchorPane fx:id="paneOrder" minHeight="0.0" minWidth="0.0" prefHeight="304.0" prefWidth="514.0">
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
+    <children>
+        <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="303.0" prefWidth="477.0" styleClass="card-white">
+                            <children>
+                                <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="223.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #ff6e7f;">
+                                    <children>
+                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="176.0" text="Thông Tin Đơn Đặt Hàng" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto Medium" size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <GridPane layoutX="14.0" layoutY="26.0" prefHeight="228.0" prefWidth="436.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <JFXTextField fx:id="txtOrderID" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Mã đơn đặt hàng" />
+                                        <JFXDatePicker defaultColor="#f38945" maxWidth="433.0" minWidth="224.0" prefHeight="54.0" prefWidth="433.0" promptText="Ngày Nhập" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="txtEmployeeID" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Mã Nhân Viên" GridPane.rowIndex="2" />
+                                        <JFXTextField fx:id="txtProviderID" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Mã Nhà Cung Cấp" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <HBox layoutX="106.0" layoutY="254.0" spacing="10.0">
+                                    <children>
+                                        <JFXButton fx:id="btnPRINT" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" prefWidth="36.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text=" " textFill="WHITE" textOverrun="CLIP">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="18.0" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnSEARCH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#setBtnSEARCH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnDELETE" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnDELETE" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="18" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnUPDATE" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnUPDATE" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #fec425;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="BORDER_COLOR" size="18.0" wrappingWidth="18.0" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnADD" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnADD" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnREFRESH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnREFRESH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16.0" />
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="536.0" layoutY="56.0" prefHeight="304.0" prefWidth="836.0" styleClass="card-footer" AnchorPane.leftAnchor="536.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="56.0">
+                            <children>
+                                <TableView fx:id="tbvOrder" prefHeight="400.0" prefWidth="836.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="colOrderID" prefWidth="103.0" text="Mã ĐĐH" />
+                                        <TableColumn fx:id="colDate" prefWidth="129.0" text="Ngày Lập" />
+                                        <TableColumn fx:id="colEmployeeID" prefWidth="138.0" text="Mã NV" />
+                                        <TableColumn fx:id="colProviderID" prefWidth="145.0" text="Mã NCC" />
+                                    </columns>
+                                </TableView>
+                            </children></AnchorPane>
+                        <AnchorPane layoutX="30.0" layoutY="417.0" prefHeight="303.0" prefWidth="477.0" styleClass="card-white">
+                            <children>
+                                <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #ff6e7f;">
+                                    <children>
+                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Chi Tiết Đơn Đặt Hàng" textFill="WHITE">
+                                            <font>
+                                                <Font name="Roboto Medium" size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <GridPane layoutX="14.0" layoutY="26.0" prefHeight="228.0" prefWidth="436.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <JFXTextField fx:id="txtOrderInfoID" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Mã CTĐĐH" />
+                                        <JFXTextField fx:id="txtQuantities" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Số Lượng Đặt" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="txtComponentID" focusColor="#f38945" labelFloat="true" prefHeight="31.0" prefWidth="250.0" promptText="Mã Mặt Hàng" GridPane.rowIndex="2" />
+                                    </children>
+                                </GridPane>
+                                <HBox layoutX="138.0" layoutY="254.0" spacing="10.0">
+                                    <children>
+                                        <JFXButton fx:id="btnDELETEinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnDELETEinfo" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="18" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnUPDATEinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnUPDATEinfo" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #fec425;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <MaterialDesignIconView fill="WHITE" glyphName="BORDER_COLOR" size="18.0" wrappingWidth="18.0" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnADDinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnADDinfo" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text=" " textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnREFRESHinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnREFRESHinfo" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16.0" />
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="536.0" layoutY="417.0" prefHeight="304.0" prefWidth="836.0" styleClass="card-footer" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="536.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="417.0">
+                            <children>
+                                <TableView fx:id="tbvOrderInfo" prefHeight="304.0" prefWidth="836.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="colOrderInfoID" prefWidth="164.0" text="Mã CTĐĐH" />
+                                        <TableColumn fx:id="colQuantities" prefWidth="227.0" text="Số lượng" />
+                                        <TableColumn fx:id="colComponentID" prefWidth="242.0" text="Mã MH" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </center>
+         <bottom>
+            <AnchorPane prefHeight="53.0" prefWidth="1400.0" styleClass="card-footer" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="lbOrderID" layoutX="14.0" layoutY="25.0" text="Mã Đơn đặt hàng" />
-                  <JFXTextField fx:id="txtOrderID" layoutX="223.0" layoutY="9.0" prefHeight="31.0" prefWidth="250.0" />
-                  <Label fx:id="lbDate" layoutX="14.0" layoutY="66.0" text="Ngày lập" />
-                  <DatePicker fx:id="dtDate" layoutX="222.0" layoutY="61.0" prefHeight="31.0" prefWidth="253.0" />
-                  <Label fx:id="lbEmployeeID" layoutX="14.0" layoutY="107.0" text="Mã Nhân viên" />
-                  <JFXTextField fx:id="txtEmployeeID" layoutX="223.0" layoutY="102.0" prefHeight="31.0" prefWidth="250.0" />
-                  <Label fx:id="lbProviderID" layoutX="14.0" layoutY="158.0" text="Mã Nhà cung cấp" />
-                  <JFXTextField fx:id="txtProviderID" layoutX="223.0" layoutY="153.0" prefHeight="31.0" prefWidth="250.0" />
-                  <JFXButton fx:id="btnADD" layoutX="14.0" layoutY="202.0" onAction="#setBtnADD" prefHeight="48.0" prefWidth="96.0" text="THÊM " />
-                  <JFXButton fx:id="btnDELETE" layoutX="141.0" layoutY="202.0" onAction="#setBtnDELETE" prefHeight="48.0" prefWidth="96.0" text="XÓA" />
-                  <JFXButton fx:id="btnUPDATE" layoutX="257.0" layoutY="202.0" onAction="#setBtnUPDATE" prefHeight="48.0" prefWidth="96.0" text="SỬA" />
-                  <JFXButton fx:id="btnSEARCH" layoutX="379.0" layoutY="202.0" onAction="#setBtnSEARCH" prefHeight="48.0" prefWidth="96.0" text="TÌM KIẾM" />
-                  <JFXButton fx:id="btnEXPORT" layoutX="24.0" layoutY="269.0" onAction="#setBtnEXPORT" prefHeight="31.0" prefWidth="450.0" text="IN ĐƠN ĐẶT HÀNG" />
+                  <Pane prefHeight="53.0" prefWidth="668.0" style="-fx-background-color: #fe8131;" />
                </children>
             </AnchorPane>
-        </content>
-      </TitledPane>
-      <TableView fx:id="tbvOrder" layoutX="14.0" layoutY="415.0" prefHeight="400.0" prefWidth="516.0">
-        <columns>
-          <TableColumn fx:id="colOrderID" prefWidth="103.0" text="Mã ĐĐH" />
-          <TableColumn fx:id="colDate" prefWidth="129.0" text="Ngày Lập" />
-            <TableColumn fx:id="colEmployeeID" prefWidth="138.0" text="Mã NV" />
-            <TableColumn fx:id="colProviderID" prefWidth="145.0" text="Mã NCC" />
-        </columns>
-      </TableView>
-      <TitledPane fx:id="ttpaneOrderInfo" animated="false" layoutX="545.0" layoutY="54.0" prefHeight="292.0" prefWidth="634.0" text="CHI TIẾT ĐƠN ĐẶT HÀNG">
-         <content>
-            <AnchorPane fx:id="paneOrderInfo" minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="632.0">
-               <children>
-                  <Label fx:id="lbOrderInfoID" layoutX="14.0" layoutY="25.0" text="Mã CTĐĐH" />
-                  <JFXTextField fx:id="txtOrderInfoID" layoutX="222.0" layoutY="10.0" prefHeight="31.0" prefWidth="378.0" />
-                  <Label fx:id="lbQuantities" layoutX="15.0" layoutY="79.0" text="Số lượng" />
-                  <JFXTextField fx:id="txtQuantities" layoutX="223.0" layoutY="74.0" prefHeight="31.0" prefWidth="376.0" />
-                  <Label fx:id="lbComponentID" layoutX="15.0" layoutY="139.0" text="Mã Mặt hàng" />
-                  <JFXTextField fx:id="txtComponentID" layoutX="222.0" layoutY="134.0" prefHeight="31.0" prefWidth="378.0" />
-                  <JFXButton fx:id="btnADDinfo" layoutX="14.0" layoutY="202.0" onAction="#setBtnADDinfo" prefHeight="48.0" prefWidth="132.0" text="THÊM CHI TIẾT" />
-                  <JFXButton fx:id="btnDELETEinfo" layoutX="258.0" layoutY="202.0" onAction="#setBtnDELETEinfo" prefHeight="48.0" prefWidth="117.0" text="XÓA CHI TIẾT" />
-                  <JFXButton fx:id="btnUPDATEinfo" layoutX="474.0" layoutY="202.0" onAction="#setBtnUPDATEinfo" prefHeight="48.0" prefWidth="129.0" text="SỬA CHI TIẾT" />
-               </children>
-            </AnchorPane>
-         </content>
-      </TitledPane>
-      <TableView fx:id="tbvOrderInfo" layoutX="545.0" layoutY="360.0" prefHeight="455.0" prefWidth="634.0">
-         <columns>
-            <TableColumn fx:id="colOrderInfoID" prefWidth="164.0" text="Mã CTĐĐH" />
-            <TableColumn fx:id="colQuantities" prefWidth="227.0" text="Số lượng" />
-            <TableColumn fx:id="colComponentID" prefWidth="242.0" text="Mã MH" />
-         </columns>
-      </TableView>
-   </children>
+         </bottom>
+        </BorderPane>
+    </children>
 </AnchorPane>

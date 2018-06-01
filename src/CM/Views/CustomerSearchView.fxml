@@ -53,7 +53,7 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
+                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" prefHeight="35.0" ripplerFill="#ee9e43" onAction="#setBtnGETINFO" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

@@ -84,23 +84,10 @@ public class CustomerSearchController implements Initializable {
         colCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("CustomerAddress"));
         colCustomerEmail.setCellValueFactory(new PropertyValueFactory<>("CustomerEmail"));
         colCustomerPhone.setCellValueFactory(new PropertyValueFactory<>("CustomerPhoneNo"));
-
-        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Customer selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
-                try {
-                    pointer.data.removeAll(pointer.data);
-                    pointer.data.add(selectedRow);
-                    pointer.tbvCustomer.setItems(pointer.data);
-                }
-                catch (NullPointerException e) {}
-            }
-        });
     }
 
     public void searchData (String field, String str) throws SQLException {
-        String query = "SELECT * FROM KHACHHANG WHERE " + field + " = '" + str +"';";
+        String query = "SELECT * FROM KHACHHANG WHERE " + field + " LIKE '%" + str +"%';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
@@ -140,5 +127,20 @@ public class CustomerSearchController implements Initializable {
             else if (rdbtnCustomerPhone.isSelected())
                 searchData(str[4], txtSEARCH.getText());
         } catch (SQLException e) {}
+    }
+
+    public void setBtnGETINFO (ActionEvent event) {
+        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                Customer selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                try {
+                    pointer.data.removeAll(pointer.data);
+                    pointer.data.add(selectedRow);
+                    pointer.tbvCustomer.setItems(pointer.data);
+                }
+                catch (NullPointerException e) {}
+            }
+        });
     }
 }
