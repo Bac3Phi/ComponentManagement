@@ -4,6 +4,7 @@ import CM.Models.ComponentOrder;
 import CM.Models.ComponentOrderInFo;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,11 +28,54 @@ import java.util.ResourceBundle;
 public class ComponentOrderController implements Initializable {
     Alert alert;
     @FXML
-    public JFXTextField txtOrderID, txtEmployeeID, txtProviderID, txtOrderInfoID,
-            txtQuantities, txtComponentID;
-    public JFXButton btnEXPORT, btnADD, btnUPDATE, btnDELETE, btnADDinfo, btnUPDATEinfo,
-            btnDELETEinfo, btnSEARCH;
-    public DatePicker dtDate;
+    private JFXTextField txtOrderID;
+
+    @FXML
+    private JFXDatePicker dtDate;
+
+    @FXML
+    private JFXTextField txtEmployeeID;
+
+    @FXML
+    private JFXTextField txtProviderID;
+
+    @FXML
+    private JFXButton btnPRINT;
+
+    @FXML
+    private JFXButton btnSEARCH;
+
+    @FXML
+    private JFXButton btnDELETE;
+
+    @FXML
+    private JFXButton btnUPDATE;
+
+    @FXML
+    private JFXButton btnADD;
+
+    @FXML
+    private JFXButton btnREFRESH;
+    @FXML
+    private JFXTextField txtOrderInfoID;
+
+    @FXML
+    private JFXTextField txtQuantities;
+
+    @FXML
+    private JFXTextField txtComponentID;
+
+    @FXML
+    private JFXButton btnDELETEinfo;
+
+    @FXML
+    private JFXButton btnUPDATEinfo;
+
+    @FXML
+    private JFXButton btnADDinfo;
+
+    @FXML
+    private JFXButton btnREFRESHinfo;
 
     public TableView<ComponentOrder> tbvOrder;
     public TableColumn<ComponentOrder, String> colOrderID, colEmployeeID, colProviderID;
@@ -452,5 +496,11 @@ public class ComponentOrderController implements Initializable {
 //        if (btnDELETE.isPressed()) {
 //            refresh();
 //        }
+    }
+
+    public void setBtnREFRESH(ActionEvent actionEvent) {
+    }
+
+    public void setBtnREFRESHinfo(ActionEvent actionEvent) {
     }
 }
