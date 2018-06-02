@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/database-qllk.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillController$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$3.class" afterDir="false" />
@@ -25,10 +21,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesSearchView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Bills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Bills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/BillManagerView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,16 +94,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ComponentOrderController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ComponentOrderController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="32" />
+            <state relative-caret-position="-936">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentOrderView.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComponentOrderView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentOrderView.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="603">
@@ -514,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527847820598</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Cập nhật lại hóa đơn và fix bug tính tiền.">
+      <created>1527935224891</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527935224891</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218755000" />
+    <option name="totallyTimeSpent" value="219048000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -675,7 +674,8 @@
     <MESSAGE value="BIGUPDATE: Cập Nhật Provider Views" />
     <MESSAGE value="Xong tìm kiếm khách hàng." />
     <MESSAGE value="Xong tìm kiếm nhà cung cấp." />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong tìm kiếm nhà cung cấp." />
+    <MESSAGE value="Cập nhật lại hóa đơn và fix bug tính tiền." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cập nhật lại hóa đơn và fix bug tính tiền." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1069,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentOrderView.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="603">
@@ -1083,6 +1076,13 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
