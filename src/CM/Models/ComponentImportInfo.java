@@ -1,49 +1,87 @@
 package CM.Models;
 
 public class ComponentImportInfo {
-    private String CompImportInfoID;
-    private int Quantities;
-    private String ImportPrice;
-    private String SellingPrice;
+    private String CompImportInforId;
+    private String CompImportInforImportId;
     private String Note;
-    private String ComponentID;
-    private String CompImportID;
+    private String ComponentName;
+    private String NumOfComp;
+    private String UnitPrice;
+    private String Price;
+    private String Amount;
 
-    public ComponentImportInfo(String compImportInfoID, int quantities, String importPrice, String sellingPrice, String note, String componentID, String compImportID) {
-        CompImportInfoID = compImportInfoID;
-        Quantities = quantities;
-        ImportPrice = importPrice;
-        SellingPrice = sellingPrice;
+    public ComponentImportInfo(String compImportInforId, String compImportInforImportId, String note, String componentName, String numOfComp, String unitPrice, String price, String amount) {
+        CompImportInforId = compImportInforId;
+        CompImportInforImportId = compImportInforImportId;
         Note = note;
-        ComponentID = componentID;
-        CompImportID = compImportID;
+        ComponentName = componentName;
+        NumOfComp = numOfComp;
+        UnitPrice = unitPrice;
+        Price = price;
+        Amount = amount;
     }
 
-    public String getCompImportInfoID() { return CompImportInfoID; }
+    public String getCompImportInforId() {
+        return CompImportInforId;
+    }
 
-    public void setCompImportInfoID(String compImportInfoID) { CompImportInfoID = compImportInfoID; }
+    public void setCompImportInforId(String compImportInforId) {
+        CompImportInforId = compImportInforId;
+    }
 
-    public int getQuantities() { return Quantities; }
+    public String getCompImportInforImportId() {
+        return CompImportInforImportId;
+    }
 
-    public void setQuantities(int quantities) { Quantities = quantities; }
+    public void setCompImportInforImportId(String compImportInforImportId) {
+        CompImportInforImportId = compImportInforImportId;
+    }
 
-    public String getImportPrice() { return ImportPrice; }
+    public String getNote() {
+        return Note;
+    }
 
-    public void setImportPrice(String importPrice) { ImportPrice = importPrice; }
+    public void setNote(String note) {
+        Note = note;
+    }
 
-    public String getSellingPrice() { return SellingPrice; }
+    public String getComponentName() {
+        return ComponentName;
+    }
 
-    public void setSellingPrice(String sellingPrice) { SellingPrice = sellingPrice; }
+    public void setComponentName(String componentName) {
+        ComponentName = componentName;
+    }
 
-    public String getNote() { return Note; }
+    public String getNumOfComp() {
+        return NumOfComp;
+    }
 
-    public void setNote(String note) { Note = note; }
+    public void setNumOfComp(String numOfComp) {
+        NumOfComp = numOfComp;
+    }
 
-    public String getComponentID() { return ComponentID; }
+    public String getUnitPrice() {
+        return UnitPrice;
+    }
 
-    public void setComponentID(String componentID) { ComponentID = componentID; }
+    public void setUnitPrice(String unitPrice) {
+        UnitPrice = unitPrice;
+    }
 
-    public String getCompImportID() { return CompImportID; }
+    public String getPrice() {
+        return Price;
+    }
 
-    public void setCompImportID(String compImportID) { CompImportID = compImportID; }
+    public void setPrice(String price) {
+        Price = price;
+    }
+
+    public String getAmount() {
+        return Amount;
+    }
+
+    public void setAmount(String amount) {
+        Amount = amount;
+    }
 }
