@@ -109,6 +109,7 @@ public class MainController extends Application implements Initializable {
             provider = FXMLLoader.load(getClass().getResource("/CM/Views/ProviderView.fxml"));
             setting = FXMLLoader.load(getClass().getResource("/CM/Views/SettingView.fxml"));
             bill = FXMLLoader.load(getClass().getResource("/CM/Views/BillView.fxml"));
+            report = FXMLLoader.load(getClass().getResource("/CM/Views/ReportView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -170,6 +171,7 @@ public class MainController extends Application implements Initializable {
 
     @FXML
     void openReport(ActionEvent event) {
+        setNode(report);
 
     }
     @FXML

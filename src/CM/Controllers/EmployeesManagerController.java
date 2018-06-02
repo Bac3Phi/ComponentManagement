@@ -2,6 +2,7 @@ package CM.Controllers;
 
 import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
+import CM.Models.Department;
 import CM.Models.Employees;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -43,7 +44,7 @@ public class EmployeesManagerController implements Initializable {
     private JFXRadioButton rbFEMALE;
 
     @FXML
-    private TableView<Employees> tbvEmployees;
+    public TableView<Employees> tbvEmployees;
 
     @FXML
     private TableColumn<Employees, String> colEmployeeID;
@@ -92,16 +93,15 @@ public class EmployeesManagerController implements Initializable {
 
     DataProvider dbConn;
     ObservableList<Employees> data;
+    ObservableList<Department> list;
     ResultSet resultSet;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cbxDepartmentName.getItems().add("Phi");
-        cbxDepartmentName.getItems().add("poz");
-        cbxDepartmentName.getItems().add("Fifi");
         dbConn = new DataProvider();
         paneEmployeesManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
+        list = FXCollections.observableArrayList();
         tbvEmployees.setEditable(false);
         group = new ToggleGroup();
 
@@ -132,6 +132,23 @@ public class EmployeesManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
+        resultSet = dbConn.getData("SELECT * FROM PHONGBAN");
+        list.removeAll(list);
+        while(resultSet.next()) {
+            list.add(new Department(
+                    resultSet.getString("MaPhong"),
+                    resultSet.getString("TenPhong")
+            ));
+        }
+
+        ObservableList<String> listdata;
+        String[] str = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            str[i] = list.get(i).getDepartmentName();
+        }
+        listdata = FXCollections.observableArrayList(str);
+        cbxDepartmentName.setItems(listdata);
+
         resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
         data.removeAll(data);
         while (resultSet.next()){
@@ -170,6 +187,35 @@ public class EmployeesManagerController implements Initializable {
             rbFEMALE.setSelected(true);
         }
         txtDepartmentID.setText(selectedRow.getDepartmentID());
+        try {
+            String str = txtDepartmentID.getText();
+            String query = "SELECT * FROM PHONGBAN WHERE MaPhong = N'" + str + "';";
+            resultSet = dbConn.getData(query);
+            list.removeAll(list);
+            while(resultSet.next()) {
+                list.add(new Department(
+                        resultSet.getString("MaPhong"),
+                        resultSet.getString("TenPhong")
+                ));
+            }
+            cbxDepartmentName.getSelectionModel().select(list.get(0).getDepartmentName());
+        }catch (SQLException e) {}
+    }
+
+    public void setSelectedItem(ActionEvent event) {
+        try {
+            String selectedData = cbxDepartmentName.getSelectionModel().getSelectedItem();
+            String query = "SELECT * FROM PHONGBAN WHERE TenPhong = N'" + selectedData + "' COLLATE utf8_unicode_ci;";
+            resultSet = dbConn.getData(query);
+            list.removeAll(list);
+            while(resultSet.next()) {
+                list.add(new Department(
+                        resultSet.getString("MaPhong"),
+                        resultSet.getString("TenPhong")
+                ));
+            }
+            txtDepartmentID.setText(list.get(0).getDepartmentID());
+        }catch (SQLException e) {}
     }
 
     //Thêm dữ liệu vào bảng

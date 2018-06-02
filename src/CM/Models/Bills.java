@@ -8,19 +8,15 @@ public class Bills {
     private Date PublishDate;
     private String EmployeeID;
     private String TaxCode;
-    private String PurchaseMoney;
-    private String TypeOfBill;
 
     public Bills() {}
 
-    public Bills(String hdid, Date ngl, String mst, String tientt, String loaihd, String nvid, String khid) {
+    public Bills(String hdid, Date ngl, String mst, String nvid, String khid) {
         this.BillID = hdid;
         this.CustomerID = khid;
         this.PublishDate = ngl;
         this.EmployeeID = nvid;
         this.TaxCode = mst;
-        this.PurchaseMoney = tientt;
-        this.TypeOfBill = loaihd;
     }
 
     public String getBillID() {
@@ -62,16 +58,4 @@ public class Bills {
     public void setTaxCode(String taxCode) {
         this.TaxCode = taxCode;
     }
-
-    public String getPurchaseMoney() {
-        return PurchaseMoney;
-    }
-
-    public void setPurchaseMoney(String purchaseMoney) {
-        this.PurchaseMoney = purchaseMoney;
-    }
-
-    public String getTypeOfBill() { return TypeOfBill; }
-
-    public void setTypeOfBill(String typeOfBill) { TypeOfBill = typeOfBill; }
 }
