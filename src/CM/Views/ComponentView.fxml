@@ -14,9 +14,6 @@
                         <Tab text="Nhập Hàng">
                             <fx:include source="ComponentImportView.fxml" />
                         </Tab>
-                        <Tab text="Xuất Hàng">
-                            <fx:include fx:id="fooTabPage" source="ComponentExportView.fxml" />
-                        </Tab>
                         <Tab text="Quản Lý Linh Kiện">
                             <fx:include source="ComponentManagerView.fxml" />
                         </Tab>
