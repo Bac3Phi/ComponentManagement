@@ -20,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -54,6 +55,8 @@ public class SignInController  implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/MainView.fxml")); // DMMMMM dau ..
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
+            Image image = new Image(String.valueOf(this.getClass().getResource("../Assets/images/Glogo.png")));
+            stage.getIcons().add(image);
             stage.setTitle("GAMEON : Quản Lý Linh Kiện");
             stage.setScene(new Scene(root));
             stage.show();
