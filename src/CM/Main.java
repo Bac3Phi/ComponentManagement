@@ -15,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -34,6 +35,8 @@ public class Main extends Application {
             //FXMLLoader fxmlLoader = new FXMLLoader();
             Parent parent = FXMLLoader.load(getClass().getResource("Views/SignInView.fxml"));
             Scene scene = new Scene(parent, 800, 450);
+            Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
+            window.getIcons().add(image);
             window.setTitle("SMILE - Log In");
             window.setScene(scene);
             window.setResizable(false);
