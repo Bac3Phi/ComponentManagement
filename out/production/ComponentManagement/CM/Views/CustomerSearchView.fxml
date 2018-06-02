@@ -7,9 +7,10 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -27,12 +28,11 @@
                <children>
                   <Pane prefHeight="53.0" prefWidth="668.0" style="-fx-background-color: #fe8131;">
                      <children>
-                        <ProgressBar fx:id="progressPersonal" layoutX="86.0" layoutY="18.0" prefHeight="18.0" prefWidth="248.0" progress="0.0" />
-                        <Label fx:id="lblComplete" alignment="CENTER" layoutX="348.0" layoutY="18.0" prefHeight="18.0" prefWidth="129.0" text="0% Hoàn thành" textFill="WHITE">
-                           <font>
-                              <Font name="Roboto Black" size="13.0" />
-                           </font>
-                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="325.0" layoutX="191.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/images/footer.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <HBox layoutX="879.0" layoutY="9.0" spacing="6.0" AnchorPane.rightAnchor="16.0">
@@ -53,7 +53,7 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" prefHeight="35.0" ripplerFill="#ee9e43" onAction="#setBtnGETINFO" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
+                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" onAction="#setBtnGETINFO" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

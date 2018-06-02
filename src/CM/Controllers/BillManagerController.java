@@ -88,12 +88,8 @@ public class BillManagerController implements Initializable {
     @FXML
     private JFXButton btnREFRESHinfo;
 
-    @FXML
-    private JFXComboBox<String> cbbBillType;
-
     public TableView<Bills> tbvBill;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colMoney, colBillType,
-            colCustomerID, colEmployeeID;
+    public TableColumn<Bills, String> colBillID, colTaxCode, colMoney, colCustomerID, colEmployeeID;
     public TableColumn<Bills, Date> colPublishDate;
 
     public TableView<BillsInfo> tbvBillInfo;
@@ -104,7 +100,6 @@ public class BillManagerController implements Initializable {
     DataProvider dbConn;
     ObservableList<Bills> data;
     ObservableList<BillsInfo> datainfo;
-    ObservableList<String> list;
     ResultSet resultSet;
 
     @Override
@@ -115,12 +110,11 @@ public class BillManagerController implements Initializable {
         paneBillInfo = new AnchorPane();
         data = FXCollections.observableArrayList();
         datainfo = FXCollections.observableArrayList();
-        list = FXCollections.observableArrayList("Bán lẻ", "Bán sỉ");
-        cbbBillType.setItems(list);
         btnUPDATE.setDisable(true);
         btnUPDATEinfo.setDisable(true);
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
+        txtMoney.setEditable(false);
 
         tbvBill.setEditable(false);
         tbvBillInfo.setEditable(false);
@@ -128,8 +122,6 @@ public class BillManagerController implements Initializable {
         colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
-        colMoney.setCellValueFactory(new PropertyValueFactory<>("PurchaseMoney"));
-        colBillType.setCellValueFactory(new PropertyValueFactory<>("TypeOfBill"));
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
         colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
 
@@ -137,6 +129,7 @@ public class BillManagerController implements Initializable {
         colSellingPrice.setCellValueFactory(new PropertyValueFactory<>("SellingPrice"));
         colQuantities.setCellValueFactory(new PropertyValueFactory<>("Quantities"));
         colComponentID.setCellValueFactory(new PropertyValueFactory<>("ComponentID"));
+        colMoney.setCellValueFactory(new PropertyValueFactory<>("PurchaseMoney"));
 
         try {
             showData();
@@ -190,8 +183,6 @@ public class BillManagerController implements Initializable {
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
-                    resultSet.getString("TienThanhToan"),
-                    resultSet.getString("LoaiHD"),
                     resultSet.getString("MaNV"),
                     resultSet.getString("MaKH")
             ));
@@ -212,7 +203,8 @@ public class BillManagerController implements Initializable {
                     resultSet.getString("DonGiaBan"),
                     resultSet.getInt("SoLuong"),
                     resultSet.getString("MaHD"),
-                    resultSet.getString("MaMH")
+                    resultSet.getString("MaMH"),
+                    resultSet.getInt("TienThanhToan")
             ));
         }
         resultSet.close();
@@ -238,42 +230,42 @@ public class BillManagerController implements Initializable {
         txtBillID.setText(selectedRow.getBillID());
         dtPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
         txtTaxCode.setText(selectedRow.getTaxCode());
-        txtMoney.setText(selectedRow.getPurchaseMoney());
-        if (selectedRow.getTypeOfBill().contentEquals("Bán lẻ"))
-            cbbBillType.getSelectionModel().select("Bán lẻ");
-        else if (selectedRow.getTypeOfBill().contentEquals("Bán sỉ"))
-            cbbBillType.getSelectionModel().select("Bán sỉ");
         txtEmployeeID.setText(selectedRow.getEmployeeID());
         txtCustomerID.setText(selectedRow.getCustomerID());
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
     public void getSelectedDataInfo() {
+        btnUPDATEinfo.setDisable(false);
         BillsInfo selectedRow = tbvBillInfo.getSelectionModel().getSelectedItem();
         txtBillInfoID.setText(selectedRow.getBillsInfoID());
         txtSellingPrice.setText(selectedRow.getSellingPrice());
         txtQuantities.setText(String.valueOf(selectedRow.getQuantities()));
         txtComponentID.setText(selectedRow.getComponentID());
+        if (selectedRow.getPurchaseMoney() == 0)
+            txtMoney.setText(String.valueOf(calculate()));
+        else if (selectedRow.getPurchaseMoney() != 0)
+            txtMoney.setText(String.valueOf(selectedRow.getPurchaseMoney()));
+    }
+
+    private int calculate() {
+        int result = 0;
+        result = Integer.parseInt(txtQuantities.getText()) * Integer.parseInt(txtSellingPrice.getText());
+        return result;
     }
 
     //Thêm dữ liệu vào bảng HOADON
     public void insertData() {
-        String id = "", nglap = "", mst = "", tientt = "", loaihd = "", nvid = "", khid = "";
+        String id = "", nglap = "", mst = "", nvid = "", khid = "";
         try {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
-            tientt = txtMoney.getText();
-            if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán lẻ"))
-                loaihd = "Bán lẻ";
-            else if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán sỉ"))
-                loaihd = "Bán sỉ";
             nvid = txtEmployeeID.getText();
             khid = txtCustomerID.getText();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
                     || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null)
-                    || cbbBillType.getSelectionModel().getSelectedItem().contentEquals(null))
+                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -283,7 +275,7 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataInsert = {id, nglap, mst, tientt, loaihd, nvid, khid};
+        String[] dataInsert = {id, nglap, mst, nvid, khid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "HOADON");
         if (isInserted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -306,16 +298,18 @@ public class BillManagerController implements Initializable {
 
     //Thêm dữ liệu vào bảng CHITIETHOADON
     public void insertDataInfo() {
-        String id = "", dongia = "", soluong = "", hdid = "", mhid = "";
+        String id = "", dongia = "", soluong = "", hdid = "", mhid = "", tientt = "";
         try {
             id = txtBillInfoID.getText();
             dongia = txtSellingPrice.getText();
             soluong = txtQuantities.getText();
             hdid = txtBillID.getText();
             mhid = txtComponentID.getText();
+            tientt = String.valueOf(calculate());
+            txtMoney.setText(tientt);
             if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
                     || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
-                    || txtBillID.getText().isEmpty())
+                    || txtBillID.getText().isEmpty() || txtBillID.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -325,7 +319,7 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataInsert = {id, dongia, soluong, hdid, mhid};
+        String[] dataInsert = {id, dongia, soluong, hdid, mhid, tientt};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETHOADON");
         if (isInserted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -348,22 +342,16 @@ public class BillManagerController implements Initializable {
 
     //Update dữ liệu
     public void updateData() {
-        String id = "", nglap = "", mst = "", tientt = "", loaihd = "", nvid = "", khid = "";
+        String id = "", nglap = "", mst = "", nvid = "", khid = "";
         try {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
-            tientt = txtMoney.getText();
-            if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán lẻ"))
-                loaihd = "Bán lẻ";
-            else if (cbbBillType.getSelectionModel().getSelectedItem().contentEquals("Bán sỉ"))
-                loaihd = "Bán sỉ";
             nvid = txtEmployeeID.getText();
             khid = txtCustomerID.getText();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
                     || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null)
-                    || cbbBillType.getSelectionModel().getSelectedItem().contentEquals(null))
+                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -374,8 +362,8 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataUpdate = {id, nglap, mst, tientt, loaihd, nvid, khid};
-        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TienThanhToan", "LoaiHD", "MaNV", "MaKH"};
+        String[] dataUpdate = {id, nglap, mst, nvid, khid};
+        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "MaNV", "MaKH"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -398,16 +386,18 @@ public class BillManagerController implements Initializable {
 
     //Update dữ liệu
     public void updateDataInfo() {
-        String id = "", dongia = "", soluong = "", hdid = "", mhid = "";
+        String id = "", dongia = "", soluong = "", hdid = "", mhid = "", tientt = "";
         try {
             id = txtBillInfoID.getText();
             dongia = txtSellingPrice.getText();
             soluong = txtQuantities.getText();
             hdid = txtBillID.getText();
             mhid = txtComponentID.getText();
+            tientt = String.valueOf(calculate());
+            txtMoney.setText(tientt);
             if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
                     || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
-                    || txtBillID.getText().isEmpty())
+                    || txtBillID.getText().isEmpty() || txtMoney.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -418,8 +408,8 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataUpdate = {id, dongia, soluong, hdid, mhid};
-        String[] colLabel = {"MaCTHD", "DonGiaBan", "SoLuong", "MaHD", "MaMH"};
+        String[] dataUpdate = {id, dongia, soluong, hdid, mhid, tientt};
+        String[] colLabel = {"MaCTHD", "DonGiaBan", "SoLuong", "MaHD", "MaMH", "TienThanhToan"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETHOADON");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -571,5 +561,16 @@ public class BillManagerController implements Initializable {
     }
 
     public void setBtnREFRESHinfo(ActionEvent actionEvent) {
+    }
+
+    public void setCalculateMoney(ActionEvent actionEvent) {
+        if (!txtQuantities.getText().isEmpty() && !txtSellingPrice.getText().isEmpty())
+            txtMoney.setText(String.valueOf(calculate()));
+        else if (!txtQuantities.getText().isEmpty() || !txtSellingPrice.getText().isEmpty())
+        {
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Please fill in the previous blank !!!");
+            alert.show();
+        }
     }
 }
