@@ -89,16 +89,16 @@ public class BillManagerController implements Initializable {
     private JFXButton btnREFRESHinfo;
 
     public TableView<Bills> tbvBill;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colMoney, colCustomerID, colEmployeeID;
+    public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerID, colEmployeeID;
     public TableColumn<Bills, Date> colPublishDate;
 
     public TableView<BillsInfo> tbvBillInfo;
-    public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentID;
+    public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentID, colMoney;
     public TableColumn<BillsInfo, Integer> colQuantities;
     public AnchorPane paneBill, paneBillInfo, paneBillManagement;
 
     DataProvider dbConn;
-    ObservableList<Bills> data;
+    public static ObservableList<Bills> data;
     ObservableList<BillsInfo> datainfo;
     ResultSet resultSet;
 

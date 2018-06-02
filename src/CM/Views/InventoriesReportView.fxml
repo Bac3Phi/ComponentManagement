@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="paneReport" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="851.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.InventoriesReportController">
+   <children>
+      <Label fx:id="lbReportForm" layoutX="546.0" layoutY="22.0" text="BÁO CÁO HÀNG TỒN" />
+      <Label fx:id="lbReport" layoutX="81.0" layoutY="64.0" text="Báo cáo theo:" />
+      <JFXRadioButton fx:id="rdbtnMonth" layoutX="200.0" layoutY="64.0" text="Tháng" />
+      <JFXRadioButton fx:id="rdbtnQuarter" layoutX="200.0" layoutY="113.0" text="Quý" />
+      <Label fx:id="lbMonth" layoutX="282.0" layoutY="64.0" text="Tháng" />
+      <JFXComboBox fx:id="cbbMonth" layoutX="332.0" layoutY="59.0" />
+      <Label fx:id="lbEmployeeID" layoutX="561.0" layoutY="64.0" text="Mã Nhân viên lập" />
+      <JFXTextField fx:id="txtEmployeeID" layoutX="691.0" layoutY="59.0" />
+      <Label fx:id="lbReportDate" layoutX="561.0" layoutY="113.0" text="Ngày lập báo cáo" />
+      <TableView fx:id="tbvReport" layoutX="14.0" layoutY="155.0" prefHeight="683.0" prefWidth="1207.0">
+        <columns>
+          <TableColumn fx:id="colReportID" prefWidth="78.0" text="Mã BCHT" />
+          <TableColumn fx:id="colReportDate" prefWidth="113.0" text="Ngày lập" />
+            <TableColumn fx:id="colStockID" prefWidth="126.0" text="Mã khu" />
+            <TableColumn fx:id="colComponentName" prefWidth="322.0" text="Tên MH" />
+            <TableColumn fx:id="colImport" prefWidth="183.0" text="Tồn đầu" />
+            <TableColumn fx:id="colSell" prefWidth="170.0" text="Bán" />
+            <TableColumn fx:id="colRemain" prefWidth="214.0" text="Tồn cuối" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXButton fx:id="btnSHOW" layoutX="909.0" layoutY="44.0" prefHeight="46.0" prefWidth="116.0" text="Xuất báo cáo" />
+      <JFXButton fx:id="btnEXPORT" layoutX="1078.0" layoutY="44.0" prefHeight="46.0" prefWidth="116.0" text="In báo cáo" />
+      <JFXButton fx:id="btnPUBLISH" layoutX="909.0" layoutY="102.0" prefHeight="46.0" prefWidth="116.0" text="Lập báo cáo" />
+      <JFXComboBox fx:id="cbbQuarter" layoutX="329.0" layoutY="108.0" />
+      <Label fx:id="lbQuarter" layoutX="279.0" layoutY="113.0" text="Quý" />
+      <JFXComboBox fx:id="cbbYear" layoutX="81.0" layoutY="109.0" prefHeight="31.0" prefWidth="91.0" />
+      <Label fx:id="lbYear" layoutX="36.0" layoutY="114.0" text="Năm" />
+      <DatePicker fx:id="dtDate" layoutX="691.0" layoutY="108.0" prefHeight="31.0" prefWidth="169.0" />
+   </children>
+</AnchorPane>
