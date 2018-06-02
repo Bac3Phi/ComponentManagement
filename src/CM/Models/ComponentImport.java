@@ -3,25 +3,57 @@ package CM.Models;
 import java.util.Date;
 
 public class ComponentImport {
-    private String CompImportID;
-    private Date PublishDate;
-    private String EmployeeID;
+    private String CompImportId;
+    private String OrderId;
+    private String PublishDate;
+    private String EmployeeName;
+    private String Amount;
 
-    public ComponentImport(String compImportID, Date publishDate, String employeeID) {
-        CompImportID = compImportID;
+    public ComponentImport(String compImportId, String orderId, String publishDate, String employeeName, String amount) {
+        CompImportId = compImportId;
+        OrderId = orderId;
         PublishDate = publishDate;
-        EmployeeID = employeeID;
+        EmployeeName = employeeName;
+        Amount = amount;
     }
 
-    public String getCompImportID() { return CompImportID; }
+    public String getCompImportId() {
+        return CompImportId;
+    }
 
-    public void setCompImportID(String compImportID) { CompImportID = compImportID; }
+    public void setCompImportId(String compImportId) {
+        CompImportId = compImportId;
+    }
 
-    public Date getPublishDate() { return PublishDate; }
+    public String getOrderId() {
+        return OrderId;
+    }
 
-    public void setPublishDate(Date publishDate) { PublishDate = publishDate; }
+    public void setOrderId(String orderId) {
+        OrderId = orderId;
+    }
 
-    public String getEmployeeID() { return EmployeeID; }
+    public String getPublishDate() {
+        return PublishDate;
+    }
 
-    public void setEmployeeID(String employeeID) { EmployeeID = employeeID; }
+    public void setPublishDate(String publishDate) {
+        PublishDate = publishDate;
+    }
+
+    public String getEmployeeName() {
+        return EmployeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        EmployeeName = employeeName;
+    }
+
+    public String getAmount() {
+        return Amount;
+    }
+
+    public void setAmount(String amount) {
+        Amount = amount;
+    }
 }
