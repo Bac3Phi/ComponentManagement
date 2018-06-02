@@ -15,7 +15,7 @@ public class DataProvider {
     public DataProvider() {
         try {
             //Tạo một connection tới dtb
-            myConn = DriverManager.getConnection(myPath, "root", "123456");
+            myConn = DriverManager.getConnection(myPath, "root", "");
         }
         catch (SQLException e){
             Logger.getLogger(DataProvider.class.getName()).log(Level.SEVERE, null, e);

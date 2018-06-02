@@ -140,7 +140,7 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.isEmpty()) {
-                    progress1 = 0.2;
+                    progress1 = 0.125;
 
                 } else {
                     progress1 = 0.0;
@@ -157,7 +157,7 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.isEmpty()) {
-                    progress2 = 0.2;
+                    progress2 = 0.125;
 
                 } else {
                     progress2 = 0.0;
@@ -174,7 +174,7 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.isEmpty()) {
-                    progress3 = 0.2;
+                    progress3 = 0.125;
 
                 } else {
                     progress3 = 0.0;
@@ -191,7 +191,7 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.isEmpty()) {
-                    progress4 = 0.2;
+                    progress4 = 0.125;
 
                 } else {
                     progress4 = 0.0;
@@ -208,7 +208,7 @@ public class ComponentManagerController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.isEmpty()) {
-                    progress5 = 0.2;
+                    progress5 = 0.125;
 
                 } else {
                     progress5 = 0.0;
@@ -220,50 +220,51 @@ public class ComponentManagerController implements Initializable {
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-        cbAreaName.getEditor().textProperty().addListener(new ChangeListener<String>() {
+
+        cbAreaName.valueProperty().addListener(new ChangeListener<Stock>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.isEmpty()) {
-                    progress6 = 0.2;
+            public void changed(ObservableValue<? extends Stock> observable, Stock oldValue, Stock newValue) {
+                if (!cbAreaName.getSelectionModel().isSelected(0)) {
+                    progress6 = 0.125;
 
                 } else {
                     progress6 = 0.0;
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-        cbTypeName.getEditor().textProperty().addListener(new ChangeListener<String>() {
+        cbTypeName.valueProperty().addListener(new ChangeListener<TypeOfGoods>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.isEmpty()) {
-                    progress7 = 0.2;
+            public void changed(ObservableValue<? extends TypeOfGoods> observable, TypeOfGoods oldValue, TypeOfGoods newValue) {
+                if (!cbTypeName.getSelectionModel().isSelected(0)) {
+                    progress7 = 0.125;
 
                 } else {
                     progress7 = 0.0;
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-        cbUnit.getEditor().textProperty().addListener(new ChangeListener<String>() {
+        cbUnit.valueProperty().addListener(new ChangeListener<CompUnit>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.isEmpty()) {
-                    progress8 = 0.2;
+            public void changed(ObservableValue<? extends CompUnit> observable, CompUnit oldValue, CompUnit newValue) {
+                if (!cbUnit.getSelectionModel().isSelected(0)) {
+                    progress8 = 0.125;
 
                 } else {
                     progress8 = 0.0;
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
