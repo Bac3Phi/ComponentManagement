@@ -2,10 +2,7 @@ package CM.Controllers;
 
 import CM.Functions.SmileNotification;
 import CM.Models.*;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeTableView;
+import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -27,17 +25,71 @@ import java.util.ResourceBundle;
 
 public class ComponentImportController implements Initializable {
     @FXML
-    private TextField txtImPortComponentId, txtImportComponentAmount, txtImportComponentInforId, txtImportComponentInforImportId, txtOrderId,
-                        txtNote, txtNumOfComp, txtUnitPrice, txtPrice, txtInforAmount;
+    private JFXTextField txtImPortComponentId;
+
     @FXML
-    private ComboBox<Employees> cbEmployeeName;
+    private JFXTextField txtOrderId;
+
     @FXML
-    private ComboBox<Components> cbComponentName;
+    private JFXDatePicker dpPublishDate;
+
     @FXML
-    private DatePicker dpPublishDate;
+    private JFXComboBox<Employees> cbEmployeeName;
+
     @FXML
-    private Button btnAdd, btnDelete, btnUpdate, btnSearch, btnExport,
-                    btnAddInfor, btnDeleteInfor, btnUpdateInfor;
+    private JFXTextField txtImportComponentAmount;
+
+    @FXML
+    private JFXButton btnPrint;
+
+    @FXML
+    private JFXButton btnSearch;
+
+    @FXML
+    private JFXButton btnDelete;
+
+    @FXML
+    private JFXButton btnUpdate;
+
+    @FXML
+    private JFXButton btnAdd;
+
+    @FXML
+    private JFXButton btnRefresh;
+    @FXML
+    private JFXTextField txtNote;
+
+    @FXML
+    private JFXTextField txtNumOfComp;
+
+    @FXML
+    private JFXTextField txtUnitPrice;
+
+    @FXML
+    private JFXTextField txtPrice;
+
+    @FXML
+    private JFXTextField txtInforAmount;
+
+    @FXML
+    private JFXButton btnDeleteInfor;
+
+    @FXML
+    private JFXButton btnUpdateInfor;
+
+    @FXML
+    private JFXButton btnAddInfor;
+
+    @FXML
+    private JFXButton btnREFRESHinfo;
+    @FXML
+    private JFXTextField txtImportComponentInforId;
+
+    @FXML
+    private JFXTextField txtImportComponentInforImportId;
+
+    @FXML
+    private JFXComboBox<Components> cbComponentName;
     @FXML
     private TableView<ComponentImportInfo> tbvImportComponentInfo;
     @FXML
@@ -562,5 +614,14 @@ public class ComponentImportController implements Initializable {
         if (btnUpdateInfor.isPressed()) {
             refreshInfor();
         }
+    }
+
+    public void setBtnPRINT(ActionEvent actionEvent) {
+    }
+
+    public void setBtnREFRESH(ActionEvent actionEvent) {
+    }
+
+    public void setBtnREFRESHinfo(ActionEvent actionEvent) {
     }
 }
