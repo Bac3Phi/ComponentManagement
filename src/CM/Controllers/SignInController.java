@@ -120,7 +120,7 @@ public class SignInController  implements Initializable {
 
             getData(username);
             if (data.size() ==0 ){
-                SmileNotification.creatingNotification("Thông Báo","Sai mật khẩu hoặc mật khẩu",NotificationType.ERROR);
+                SmileNotification.creatingNotification("Thông Báo","Sai tên đăng nhập hoặc mật khẩu",NotificationType.ERROR);
                 return false;
             }
             getDataInfo(String.valueOf(data.get(0).getAuthID()));
@@ -131,7 +131,7 @@ public class SignInController  implements Initializable {
             return true;
         }
         else {
-            SmileNotification.creatingNotification("Thông Báo","Sai mật khẩu hoặc mật khẩu",NotificationType.ERROR);
+            SmileNotification.creatingNotification("Thông Báo","Sai tên đăng nhập hoặc mật khẩu",NotificationType.ERROR);
             return false;
         }
 

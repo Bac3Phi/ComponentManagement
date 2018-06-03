@@ -38,6 +38,7 @@ public class ChangePasswordController implements Initializable {
     @FXML
     private JFXButton btnConfirm;
 
+    DataProvider dbConn;
     @FXML
     void setBtnCancel(ActionEvent event) {
         Platform.exit();
@@ -48,22 +49,53 @@ public class ChangePasswordController implements Initializable {
     void setBtnConfirm(ActionEvent event) {
         String username = txtUsername.getText();
         String password = txtPasswordOld.getText();
+        String passwordNew = txtPasswordNew.getText();
+        String passwordNewConfirm = txtPasswordNewConfirm.getText();
+
+
         if (SignInController.checkData(username,password)){
+            if (!passwordNew.equals(passwordNewConfirm)){
+                SmileNotification.creatingNotification("Thông Báo","Mật khẩu mới không khớp",NotificationType.INFORMATION);
+                refresh();
+                return;
+            }
+            if(password.equals(passwordNew)){{
+                SmileNotification.creatingNotification("Thông Báo","Mật khẩu mới trùng với mật khẩu củ",NotificationType.INFORMATION);
+                refresh();
+                return;
+            }}
+            if(passwordNew.isEmpty() || passwordNewConfirm.isEmpty()){
+                SmileNotification.creatingNotification("Thông Báo","Vui lòng xác nhận mật khẩu mới",NotificationType.INFORMATION);
+                refresh();
+                return ;
+            }
             //true update
-            //updatePassword();
+            updatePassword(username,passwordNew);
         }
+        else refresh();
 
 
 
     }
 
     private void updatePassword(String username,String passwordNew) {
-        String query = "UPDATE DangNhap SET password = '"+passwordNew+"' WHERE username = '"+username+"'";
 
+        String[] collable = {"Username", "Password"};
+        String[] dataupdate = {username, passwordNew};
+       int updatedRow= dbConn.ExecuteSQLUpdate(collable,dataupdate,"DANGNHAP");
+        if (updatedRow!=0){
+            SmileNotification.creatingNotification("Thông Báo","Cập nhật mật khẩu thành công",NotificationType.SUCCESS);
+        }else SmileNotification.creatingNotification("Thông Báo","Cập nhật mật khẩu thất bại",NotificationType.ERROR);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        dbConn = new DataProvider();
 
+    }
+    public void refresh(){
+        txtPasswordOld.setText("");
+        txtPasswordNew.setText("");
+        txtPasswordNewConfirm.setText("");
     }
 }
