@@ -11,7 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -27,6 +30,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MainController extends Application implements Initializable {
+    public Label lbCurrentUserName;
+    public VBox TabParent;
     @FXML
     private JFXButton btnBill;
     @FXML
@@ -80,7 +85,25 @@ public class MainController extends Application implements Initializable {
 
     @FXML
     void logOff(ActionEvent event) {
+        Stage stage = (Stage) stackPane.getScene().getWindow();
 
+        Platform.setImplicitExit(false);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/SignInView.fxml")); // DMMMMM dau ..
+        Parent root2 = null;
+        try {
+            root2 = (Parent) fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene secondScene = new Scene(root2);
+        Stage secondStage = new Stage();
+        secondStage.setResizable(false);
+        Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
+        secondStage.getIcons().add(image);
+        secondStage.setScene(secondScene); // set the scene
+        secondStage.setTitle("GAMEON: Đăng Nhập");
+        secondStage.show();
+        stage.close();
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -92,6 +115,7 @@ public class MainController extends Application implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         JFXRippler fXRippler = new JFXRippler(lblDash);
         JFXRippler fXRippler2 = new JFXRippler(lblMenu);
         fXRippler2.setMaskType((JFXRippler.RipplerMask.RECT));
@@ -182,5 +206,36 @@ public class MainController extends Application implements Initializable {
     @FXML
     void openBill(ActionEvent actionEvent) {
         setNode(bill);
+    }
+
+    private  String username,displayname,authname;
+    public void setInfo(String UserName,String DisplayName,String AuthName){
+        this.username = UserName;
+        this.displayname = DisplayName;
+        this.authname = AuthName;
+        lbCurrentUserName.setText(displayname);
+        setPermisstion(authname);
+    }
+
+    private void setPermisstion(String authname){
+         if (authname.equals("Kế Toán")){
+             TabParent.getChildren().remove(6);
+             TabParent.getChildren().remove(2);
+             TabParent.getChildren().remove(1);
+
+         }
+        if (authname.equals("Kinh Doanh")){
+            TabParent.getChildren().remove(3);
+            TabParent.getChildren().remove(2);
+        }
+        if (authname.equals("Thủ Kho")){
+            TabParent.getChildren().remove(6);
+            TabParent.getChildren().remove(4);
+            TabParent.getChildren().remove(3);
+            TabParent.getChildren().remove(2);
+        }
+    }
+
+    public void openCustom(ActionEvent actionEvent) {
     }
 }

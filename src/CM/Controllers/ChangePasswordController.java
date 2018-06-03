@@ -9,6 +9,8 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import tray.notification.NotificationType;
 
 import java.io.IOException;
@@ -20,6 +22,7 @@ import java.util.logging.Logger;
 
 public class ChangePasswordController implements Initializable {
 
+    public javafx.scene.layout.AnchorPane AnchorPane;
     @FXML
     private JFXTextField txtUsername;
 
@@ -41,8 +44,8 @@ public class ChangePasswordController implements Initializable {
     DataProvider dbConn;
     @FXML
     void setBtnCancel(ActionEvent event) {
-        Platform.exit();
-        System.exit(0);
+        Stage stage = (Stage) AnchorPane.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
