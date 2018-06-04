@@ -159,6 +159,7 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETHOADON` (
   `SoLuong` INT NULL,
   `MaHD` VARCHAR(10) NULL,
   `MaMH` VARCHAR(10) NULL,
+  `TienThanhToan` DECIMAL NOT NULL,
   PRIMARY KEY (`MaCTHD`),
   INDEX `MaHD_idx` (`MaHD` ASC),
   INDEX `MaMH_idx` (`MaMH` ASC),
@@ -217,7 +218,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETDONDATHANG` (
   `MaCTDDH` VARCHAR(10) NOT NULL,
-  `DonGia` VARCHAR(45) NULL,
   `SoLuong` INT NULL,
   `MaDDH` VARCHAR(10) NULL,
   `MaMH` VARCHAR(10) NULL,
@@ -330,32 +330,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `database-qllk`.`BAOCAOHANGTON` (
   `MaBCHT` VARCHAR(10) NOT NULL,
-  `TonDau` INT NULL,
-  `TonCuoi` INT NULL,
-  `MaCTPN` VARCHAR(10) NULL,
-  `MaKhu` VARCHAR(4) NULL,
-  `MaHD` VARCHAR(10) NULL,
+  `NgayLap` DATETIME NULL,
+  `Thang` DATETIME NULL,
+  `TongNhap` INT NULL,
+  `TongTon` INT NULL,
+  `TongBan` INT NULL,
   `MaNV` VARCHAR(10) NULL,
   PRIMARY KEY (`MaBCHT`),
-  INDEX `MaCTPN_idx` (`MaCTPN` ASC),
-  INDEX `MaHD_idx` (`MaHD` ASC),
-  INDEX `MaKhu_idx` (`MaKhu` ASC),
   INDEX `MaNV_idx` (`MaNV` ASC),
-  CONSTRAINT `fk_BAOCAOHANGTON_CHITIETPHIEUNHAP`
-    FOREIGN KEY (`MaCTPN`)
-    REFERENCES `database-qllk`.`CHITIETPHIEUNHAP` (`MaCTPN`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_BAOCAOHANGTON_HOADON`
-    FOREIGN KEY (`MaHD`)
-    REFERENCES `database-qllk`.`HOADON` (`MaHD`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_BAOCAOHANGTON_KHO`
-    FOREIGN KEY (`MaKhu`)
-    REFERENCES `database-qllk`.`KHO` (`MaKhu`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_BAOCAOHANGTON_NHANVIEN`
     FOREIGN KEY (`MaNV`)
     REFERENCES `database-qllk`.`NHANVIEN` (`MaNV`)
@@ -381,19 +363,86 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`BAOCAOTHUCHI` (
   `TuyChon` VARCHAR(45) NULL,
 
   `ThoiGian` VARCHAR(8) NULL,
-
   PRIMARY KEY (`MaBCTC`),
-
-  INDEX `fk_BAOCAOTHUCHI_NHANVIEN_idx` (`MaNV` ASC),
-
+  INDEX `MaNV_idx` (`MaNV` ASC),
   CONSTRAINT `fk_BAOCAOTHUCHI_NHANVIEN`
-
     FOREIGN KEY (`MaNV`)
-
     REFERENCES `database-qllk`.`NHANVIEN` (`MaNV`)
-
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `database-qllk`.`CHITIETBAOCAOHANGTON`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETBAOCAOHANGTON` (
+  `MaCTBC` VARCHAR(10) NOT NULL,
+  `LuongNhapBĐ` INT NULL,
+  `LuongBan` INT NULL,
+  `LuongTon` INT NULL,
+  `MaMH` VARCHAR(10) NULL,
+  `MaBCHT` VARCHAR(10) NULL,
+  PRIMARY KEY (`MaCTBC`),
+  INDEX `MaMH_idx` (`MaMH` ASC),
+  INDEX `MaBCHT_idx` (`MaBCHT` ASC),
+  CONSTRAINT `fk_CHITIETBAOCAOHANGTON_MATHANG`
+    FOREIGN KEY (`MaMH`)
+    REFERENCES `database-qllk`.`MATHANG` (`MaMH`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CHITIETBAOCAOHANGTON_BAOCAOHANGTON`
+    FOREIGN KEY (`MaBCHT`)
+    REFERENCES `database-qllk`.`BAOCAOHANGTON` (`MaBCHT`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `database-qllk`.`CHITIETTHU`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETTHU` (
+  `MaCTT` VARCHAR(10) NOT NULL,
+  `MaBCTC` VARCHAR(10) NULL,
+  `MaMH` VARCHAR(10) NULL,
+  `TongBan` DECIMAL NULL,
+  PRIMARY KEY (`MaCTT`),
+  INDEX `MaBCTC_idx` (`MaBCTC` ASC),
+  INDEX `MaMH_idx` (`MaMH` ASC),
+  CONSTRAINT `fk_CHITIETTHU_BAOCAOTHUCHI`
+    FOREIGN KEY (`MaBCTC`)
+    REFERENCES `database-qllk`.`BAOCAOTHUCHI` (`MaBCTC`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CHITIETTHU_CHITIETHOADON`
+    FOREIGN KEY (`MaMH`)
+    REFERENCES `database-qllk`.`CHITIETHOADON` (`MaMH`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `database-qllk`.`CHITIETCHI`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETCHI` (
+  `MaCTC` VARCHAR(10) NOT NULL,
+  `MaBCTC` VARCHAR(10) NULL,
+  `MaMH` VARCHAR(10) NULL,
+  `TongNhap` DECIMAL NULL,
+  PRIMARY KEY (`MaCTC`),
+  INDEX `MaBCTC_idx` (`MaBCTC` ASC),
+  INDEX `MaMH_idx` (`MaMH` ASC),
+  CONSTRAINT `fk_CHITIETCHI_BAOCAOTHUCHI`
+    FOREIGN KEY (`MaBCTC`)
+    REFERENCES `database-qllk`.`BAOCAOTHUCHI` (`MaBCTC`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CHITIETCHI_CHITIETPHIEUNHAP`
+    FOREIGN KEY (`MaMH`)
+    REFERENCES `database-qllk`.`CHITIETPHIEUNHAP` (`MaMH`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 

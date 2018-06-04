@@ -14,6 +14,12 @@
                         <Tab text="Nhập Hàng">
                             <fx:include source="ComponentImportView.fxml" />
                         </Tab>
+<<<<<<< HEAD
+=======
+                        <Tab text="Tìm Kiếm Phiếu Nhập" >
+                            <fx:include source="ComponentImportSearchView.fxml"></fx:include>
+                        </Tab>
+>>>>>>> ComponentManager
                         <Tab text="Quản Lý Linh Kiện">
                             <fx:include source="ComponentManagerView.fxml" />
                         </Tab>
