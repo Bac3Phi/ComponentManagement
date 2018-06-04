@@ -30,7 +30,7 @@
                             <children>
                                 <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="223.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #ff6e7f;">
                                     <children>
-                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="176.0" text="Thông Tin Đơn Đặt Hàng" textFill="WHITE">
+                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="176.0" text="Thông Tin Hóa Đơn" textFill="WHITE">
                                             <font>
                                                 <Font name="Roboto Medium" size="14.0" />
                                             </font>
@@ -167,7 +167,7 @@
                             <children>
                                 <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #ff6e7f;">
                                     <children>
-                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Chi Tiết Đơn Đặt Hàng" textFill="WHITE">
+                                        <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="160.0" text="Chi Tiết Hóa Đơn" textFill="WHITE">
                                             <font>
                                                 <Font name="Roboto Medium" size="14.0" />
                                             </font>

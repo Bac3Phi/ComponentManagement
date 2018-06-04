@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ProviderSearchController">
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ProviderSearchController">
    <children>
       <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -53,7 +53,7 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" onAction="#setBtnGETINFO" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
+                        <JFXButton fx:id="btnGETINFO" buttonType="RAISED" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text="Lấy Thông Tin" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

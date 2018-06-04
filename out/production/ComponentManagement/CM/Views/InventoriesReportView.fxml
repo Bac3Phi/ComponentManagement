@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneReport" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="851.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.InventoriesReportController">
+   <children>
+      <Label fx:id="lbReportForm" layoutX="546.0" layoutY="22.0" text="BÁO CÁO HÀNG TỒN" />
+      <Label fx:id="lbReportID" layoutX="14.0" layoutY="64.0" text="Mã Báo cáo" />
+      <JFXTextField fx:id="txtReportID" layoutX="138.0" layoutY="59.0" prefHeight="31.0" prefWidth="169.0" />
+      <Label fx:id="lbEmployeeID" layoutX="329.0" layoutY="64.0" text="Mã Nhân viên lập" />
+      <JFXTextField fx:id="txtEmployeeID" layoutX="462.0" layoutY="59.0" />
+      <Label fx:id="lbReportDate" layoutX="14.0" layoutY="115.0" text="Ngày lập báo cáo" />
+      <DatePicker fx:id="dtDate" layoutX="138.0" layoutY="110.0" prefHeight="31.0" prefWidth="169.0" />
+      <Label fx:id="lbSumImport" layoutX="329.0" layoutY="115.0" text="Tổng Nhập" />
+      <JFXTextField fx:id="txtSumImport" layoutX="462.0" layoutY="110.0" />
+      <Label fx:id="lbSumSell" layoutX="671.0" layoutY="64.0" text="Tổng Bán" />
+      <JFXTextField fx:id="txtSumSell" layoutX="772.0" layoutY="59.0" />
+      <Label fx:id="lbSumStock" layoutX="671.0" layoutY="115.0" text="Tổng Tồn" />
+      <JFXTextField fx:id="txtSumStock" layoutX="772.0" layoutY="110.0" />
+      <Label fx:id="lbReport" layoutX="14.0" layoutY="165.0" text="Báo cáo theo:" />
+      <JFXRadioButton fx:id="rdbtnMonth" layoutX="161.0" layoutY="165.0" text="Tháng" />
+      <JFXRadioButton fx:id="rdbtnQuarter" layoutX="161.0" layoutY="211.0" text="Quý" />
+      <Label fx:id="lbMonth" layoutX="255.0" layoutY="165.0" text="Tháng" />
+      <JFXComboBox fx:id="cbbMonth" layoutX="301.0" layoutY="157.0" />
+      <Label fx:id="lbQuarter" layoutX="255.0" layoutY="211.0" text="Quý" />
+      <JFXComboBox fx:id="cbbQuarter" layoutX="301.0" layoutY="206.0" />
+      <Label fx:id="lbYear" layoutX="14.0" layoutY="211.0" text="Năm" />
+      <JFXComboBox fx:id="cbbYear" layoutX="60.0" layoutY="206.0" prefHeight="31.0" prefWidth="91.0" />
+      <TableView fx:id="tbvReport" layoutX="14.0" layoutY="260.0" prefHeight="285.0" prefWidth="1207.0">
+        <columns>
+          <TableColumn fx:id="colReportID" prefWidth="100.0" text="Mã BCHT" />
+          <TableColumn fx:id="colReportDate" prefWidth="135.0" text="Ngày lập" />
+            <TableColumn fx:id="colMonth" prefWidth="109.0" text="Tháng" />
+            <TableColumn fx:id="colComponentName" prefWidth="330.0" text="Tên MH" />
+            <TableColumn fx:id="colSumImport" prefWidth="183.0" text="Tổng Nhập" />
+            <TableColumn fx:id="colSumSell" prefWidth="181.0" text="Tổng Bán" />
+            <TableColumn fx:id="colSumRemain" prefWidth="173.0" text="Tổng Tồn" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnPUBLISH" layoutX="388.0" layoutY="176.0" prefHeight="46.0" prefWidth="116.0" text="Lập báo cáo" />
+      <JFXButton fx:id="btnSHOW" layoutX="560.0" layoutY="176.0" prefHeight="46.0" prefWidth="116.0" text="Xuất báo cáo" />
+      <JFXButton fx:id="btnUPDATE" layoutX="734.0" layoutY="176.0" prefHeight="46.0" prefWidth="116.0" text="Sửa báo cáo" />
+      <JFXButton fx:id="btnREFRESH" layoutX="883.0" layoutY="176.0" prefHeight="46.0" prefWidth="116.0" text="Làm mới" />
+      <JFXButton fx:id="btnEXPORT" layoutX="1040.0" layoutY="176.0" prefHeight="46.0" prefWidth="116.0" text="In báo cáo" />
+      <TableView fx:id="tbvReportInfo" layoutX="14.0" layoutY="551.0" prefHeight="285.0" prefWidth="1207.0">
+         <columns>
+            <TableColumn fx:id="colReportInfoID" prefWidth="138.0" text="Mã CTBCHT" />
+            <TableColumn fx:id="colImport" prefWidth="303.0" text="Lượng nhập" />
+            <TableColumn fx:id="colSell" prefWidth="288.0" text="Lượng bán" />
+            <TableColumn fx:id="colRemain" prefWidth="276.0" text="Lượng tồn" />
+            <TableColumn fx:id="colEmployeeID" prefWidth="201.0" text="Mã MH" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
