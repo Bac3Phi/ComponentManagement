@@ -431,7 +431,8 @@ public class ComponentManagerController implements Initializable {
             donvi = cbUnit.getSelectionModel().getSelectedItem().getUnitCode();
             if (txtComponentID.getText().isEmpty() || txtComponentName.getText().isEmpty()
                     || txtComponentConfig.getText().isEmpty() || txtComponentMaker.getText().isEmpty()
-                    || cbTypeName == null || cbAreaName == null || cbUnit == null)
+                    || cbTypeName.getSelectionModel().getSelectedIndex() == 0 || cbAreaName.getSelectionModel().getSelectedIndex() == 0
+                    || cbUnit.getSelectionModel().getSelectedIndex() == 0)
             {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }

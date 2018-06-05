@@ -37,11 +37,11 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXTextField fx:id="txtProviderID" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Mã Nhà Cung Cấp" />
-                              <JFXTextField fx:id="txtProviderName" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Tên Nhà Cung Cấp" GridPane.rowIndex="1" />
-                              <JFXTextField fx:id="txtProviderAddress" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Địa Chỉ" GridPane.rowIndex="2" />
-                              <JFXTextField fx:id="txtProviderEmail" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Email" GridPane.rowIndex="3" />
-                              <JFXTextField fx:id="txtProviderPhone" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Số Điện Thoại" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="txtProviderID" focusColor="#f38945" labelFloat="true" promptText="Mã Nhà Cung Cấp" />
+                              <JFXTextField fx:id="txtProviderName" focusColor="#f38945" labelFloat="true" promptText="Tên Nhà Cung Cấp" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="txtProviderAddress" focusColor="#f38945" labelFloat="true" promptText="Địa Chỉ" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="txtProviderEmail" focusColor="#f38945" labelFloat="true" promptText="Email" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="txtProviderPhone" focusColor="#f38945" labelFloat="true" promptText="Số Điện Thoại" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                         <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="233.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #cd78e8;">

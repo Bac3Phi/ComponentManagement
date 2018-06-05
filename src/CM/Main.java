@@ -37,7 +37,7 @@ public class Main extends Application {
             Scene scene = new Scene(parent, 800, 450);
             Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
             window.getIcons().add(image);
-            window.setTitle("SMILE - Log In");
+            window.setTitle("GAMEON: Đăng Nhập");
             window.setScene(scene);
             window.setResizable(false);
             window.show();

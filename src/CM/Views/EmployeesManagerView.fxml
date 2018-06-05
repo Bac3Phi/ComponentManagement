@@ -37,8 +37,8 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXTextField fx:id="txtEmployeeID" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Mã Nhân Viên" />
-                              <JFXTextField fx:id="txtEmployeeName" focusColor="#f38945" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Tên Nhân Viên" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="txtEmployeeID" focusColor="#f38945" labelFloat="true" promptText="Mã Nhân Viên" />
+                              <JFXTextField fx:id="txtEmployeeName" focusColor="#f38945" labelFloat="true" promptText="Tên Nhân Viên" GridPane.rowIndex="1" />
                               <GridPane GridPane.rowIndex="2">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -91,7 +91,7 @@
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXTextField fx:id="txtDepartmentID" focusColor="#f38945" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="Mã Phòng Ban" />
+                              <JFXTextField fx:id="txtDepartmentID" focusColor="#f38945" labelFloat="true" promptText="Mã Phòng Ban" />
                               <JFXComboBox fx:id="cbxDepartmentName" focusColor="#f38945" labelFloat="true" onAction="#setSelectedItem" prefHeight="39.0" prefWidth="299.0" promptText="Tên Phòng Ban" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
