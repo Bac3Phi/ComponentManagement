@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CM.Controllers.ReportPaymentController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="607.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ReportPaymentController">
+   <children>
+      <JFXTextField fx:id="txtPaymentReportId" layoutX="166.0" layoutY="82.0" />
+      <Label layoutX="40.0" layoutY="82.0" prefHeight="25.0" prefWidth="116.0" text="Mã Báo Cáo Thu Chi" />
+      <Label layoutX="40.0" layoutY="153.0" prefHeight="25.0" prefWidth="116.0" text="Ngày Lập" />
+      <Label layoutX="40.0" layoutY="193.0" prefHeight="25.0" prefWidth="116.0" text="Loại Báo Cáo" />
+      <JFXTextField fx:id="txtMonth" layoutX="166.0" layoutY="227.0" prefHeight="25.0" prefWidth="37.0" />
+      <Label layoutX="40.0" layoutY="227.0" prefHeight="25.0" prefWidth="116.0" text="Tháng/Quý" />
+      <JFXDatePicker fx:id="dpPublishDate" layoutX="166.0" layoutY="153.0" />
+      <JFXRadioButton fx:id="rdbtnMonth" layoutX="166.0" layoutY="197.0" text="Tháng" />
+      <JFXRadioButton fx:id="rdbtnQuaterOfYear" layoutX="255.0" layoutY="197.0" text="Quý" />
+      <Label layoutX="152.0" layoutY="27.0" text="Báo Cáo Thu Chi" />
+      <TableView fx:id="tbvReport" layoutX="337.0" layoutY="48.0" prefHeight="238.0" prefWidth="659.0">
+        <columns>
+          <TableColumn fx:id="colPaymentReportId" prefWidth="93.0" text="Mã CTBC" />
+          <TableColumn fx:id="colEmployeeNameReport" prefWidth="127.0" text="Nhân Viên" />
+            <TableColumn fx:id="colTotalRevenue" minWidth="5.0" text="Tổng Thu" />
+            <TableColumn fx:id="colTotalCost" minWidth="0.0" prefWidth="78.0" text="Tổng Chi" />
+            <TableColumn fx:id="colPublishDate" minWidth="0.0" prefWidth="101.0" text="Ngày Lập" />
+            <TableColumn fx:id="colReportType" minWidth="5.0" prefWidth="86.0" text="Loại Báo Cáo" />
+            <TableColumn fx:id="colDate" prefWidth="92.0" text="Thời Gian" />
+        </columns>
+      </TableView>
+      <Label layoutX="40.0" layoutY="120.0" prefHeight="25.0" prefWidth="116.0" text="Nhân Viên" />
+      <JFXComboBox fx:id="cbEmployeeName" layoutX="166.0" layoutY="120.0" prefHeight="25.0" prefWidth="135.0" />
+      <Label layoutX="248.0" layoutY="320.0" text="Chi Tiết Thu" />
+      <TableView fx:id="tbvRevenueDetail" layoutX="40.0" layoutY="357.0" prefHeight="200.0" prefWidth="465.0">
+        <columns>
+          <TableColumn fx:id="colRevenueDetailId" prefWidth="113.0" text="Mã Chi Tiết Thu" />
+          <TableColumn fx:id="colCompNameRevenue" minWidth="0.0" prefWidth="222.0" text="Tên Mặt Hàng" />
+            <TableColumn fx:id="colTotalRevenueDetail" prefWidth="128.0" text="Tổng Bán" />
+        </columns>
+      </TableView>
+      <Label layoutX="705.0" layoutY="320.0" text="Chi Tiết Chi" />
+      <TableView fx:id="tbvCostDetail" layoutX="531.0" layoutY="357.0" prefHeight="200.0" prefWidth="465.0">
+         <columns>
+            <TableColumn fx:id="colCostDetailId" prefWidth="116.0" text="Mã Chi Tiết Chi" />
+            <TableColumn fx:id="colCompNameCost" prefWidth="222.0" text="Tên Mặt Hàng" />
+            <TableColumn fx:id="colTotalCostDetail" prefWidth="126.0" text="Tổng Nhập" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnAdd" layoutX="357.0" layoutY="308.0" onAction="#setButtonADD" text="Thêm" />
+      <JFXButton fx:id="btnUpdate" layoutX="415.0" layoutY="308.0" onAction="#setButtonUPDATE" text="Sửa" />
+      <JFXButton fx:id="btnDelete" layoutX="467.0" layoutY="308.0" onAction="#setButtonDELETE" text="Xóa" />
+      <JFXButton fx:id="btnRefresh" layoutX="510.0" layoutY="308.0" onAction="#setButtonREFRESH" text="Làm Mới" />
+      <JFXButton fx:id="btnPrint" layoutX="586.0" layoutY="308.0" text="In Báo Cáo" />
+      <JFXTextField fx:id="txtYear" layoutX="166.0" layoutY="261.0" prefHeight="25.0" prefWidth="74.0" />
+      <Label layoutX="40.0" layoutY="261.0" prefHeight="25.0" prefWidth="116.0" text="Năm" />
+   </children>
 </AnchorPane>

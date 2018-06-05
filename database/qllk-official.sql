@@ -511,8 +511,4 @@ SELECT * FROM `database-qllk`.PHIEUNHAPHANG;
 
 SELECT * FROM `database-qllk`.CHITIETPHIEUNHAP;
 
-SELECT * FROM `database-qllk`.PHIEUXUATHANG;
-
-SELECT * FROM `database-qllk`.CHITIETPHIEUXUAT;
-
 SELECT * FROM `database-qllk`.HANGTONKHO;
