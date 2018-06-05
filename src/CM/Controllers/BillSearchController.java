@@ -69,11 +69,6 @@ public class BillSearchController implements Initializable {
     public BillManagerController pointer;
 
     @FXML
-    void setBtnGETINFO(ActionEvent event) {
-
-    }
-
-    @FXML
     void setBtnPRINT(ActionEvent event) {
 
     }

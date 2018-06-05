@@ -5,7 +5,6 @@ public class Components {
     private String ComponentName;
     private String Unit;
     private String CompMaker;
-    private String Photos;
     private String TypesOfComp;
     private String CompInfo;
     private String AreaName;
@@ -13,12 +12,11 @@ public class Components {
 
     public Components(){}
 
-    public Components(String componentID, String componentName, String unit, String compMaker, String photos, String typesOfComp, String compInfo, String areaName, String numOfComp) {
+    public Components(String componentID, String componentName, String unit, String compMaker, String typesOfComp, String compInfo, String areaName, String numOfComp) {
         ComponentID = componentID;
         ComponentName = componentName;
         Unit = unit;
         CompMaker = compMaker;
-        Photos = photos;
         TypesOfComp = typesOfComp;
         CompInfo = compInfo;
         AreaName = areaName;
@@ -55,14 +53,6 @@ public class Components {
 
     public void setCompMaker(String compMaker) {
         CompMaker = compMaker;
-    }
-
-    public String getPhotos() {
-        return Photos;
-    }
-
-    public void setPhotos(String photos) {
-        Photos = photos;
     }
 
     public String getTypesOfComp() {

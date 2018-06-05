@@ -3,15 +3,15 @@ package CM.Models;
 public class ComponentOrderInFo {
     private String CompOrderID;
     private String CompOrderInfoID;
-    private String ComponentID;
+    private String ComponentName;
     private int Quantities;
 
     public ComponentOrderInFo() {}
 
-    public ComponentOrderInFo(String compOrderInfoID, int quantities, String compOrderID, String componentID) {
+    public ComponentOrderInFo(String compOrderInfoID, int quantities, String compOrderID, String componentName) {
         CompOrderID = compOrderID;
         CompOrderInfoID = compOrderInfoID;
-        ComponentID = componentID;
+        ComponentName = componentName;
         Quantities = quantities;
     }
 
@@ -23,9 +23,9 @@ public class ComponentOrderInFo {
 
     public void setCompOrderInfoID(String compOrderInfoID) { CompOrderInfoID = compOrderInfoID; }
 
-    public String getComponentID() { return ComponentID; }
+    public String getComponentName() { return ComponentName; }
 
-    public void setComponentID(String componentID) { ComponentID = componentID; }
+    public void setComponentName(String componentName) { ComponentName = componentName; }
 
     public int getQuantities() { return Quantities;  }
 

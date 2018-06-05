@@ -1,22 +1,19 @@
 package CM.Models;
 
-import java.util.Date;
-
 public class InventoriesReportInfo {
     private String ReportInfoID;
     private int Import;
     private int Selling;
     private int Stock;
-    private String ComponentID;
     private String ComponentName;
     private String ReportID;
 
-    public InventoriesReportInfo(String reportInfoID, int anImport, int selling, int stock, String componentID, String reportID) {
+    public InventoriesReportInfo(String reportInfoID, String componentName, int anImport, int selling, int stock, String reportID) {
         ReportInfoID = reportInfoID;
         Import = anImport;
         Selling = selling;
         Stock = stock;
-        ComponentID = componentID;
+        ComponentName = componentName;
         ReportID = reportID;
     }
 
@@ -36,9 +33,9 @@ public class InventoriesReportInfo {
 
     public void setStock(int stock) { Stock = stock; }
 
-    public String getComponentID() { return ComponentID; }
+    public String getComponentName() { return ComponentName; }
 
-    public void setComponentID(String componentID) { ComponentID = componentID; }
+    public void setComponentName(String componentName) { ComponentName = componentName; }
 
     public String getReportID() { return ReportID; }
 

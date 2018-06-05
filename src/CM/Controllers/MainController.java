@@ -98,7 +98,7 @@ public class MainController extends Application implements Initializable {
         Scene secondScene = new Scene(root2);
         Stage secondStage = new Stage();
         secondStage.setResizable(false);
-        Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
+        Image image = new Image(String.valueOf(this.getClass().getResource("/CM/Assets/images/Glogo.png")));
         secondStage.getIcons().add(image);
         secondStage.setScene(secondScene); // set the scene
         secondStage.setTitle("GAMEON: Đăng Nhập");
@@ -224,11 +224,11 @@ public class MainController extends Application implements Initializable {
              TabParent.getChildren().remove(1);
 
          }
-        if (authname.equals("Kinh Doanh")){
+        if (authname.equals("Kinh doanh")){
             TabParent.getChildren().remove(3);
             TabParent.getChildren().remove(2);
         }
-        if (authname.equals("Thủ Kho")){
+        if (authname.equals("Thủ kho")){
             TabParent.getChildren().remove(6);
             TabParent.getChildren().remove(4);
             TabParent.getChildren().remove(3);

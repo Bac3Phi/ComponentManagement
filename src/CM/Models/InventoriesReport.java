@@ -6,20 +6,20 @@ public class InventoriesReport {
     private String ReportID;
     private Date PublishDate;
     private int ReportMonth;
+    private String EmployeeName;
     private int SumStock;
     private int SumImport;
     private int SumSell;
-    private String EmployeeID;
 
-    public InventoriesReport(String reportID, Date publishDate, int reportMonth,
-                             int sumStock, int sumImport, int sumSell, String employeeID) {
+    public InventoriesReport(String reportID, Date publishDate, int reportMonth, String employeeName,
+                             int sumImport, int sumSell, int sumStock) {
         ReportID = reportID;
         PublishDate = publishDate;
         ReportMonth = reportMonth;
         SumStock = sumStock;
         SumImport = sumImport;
         SumSell = sumSell;
-        EmployeeID = employeeID;
+        EmployeeName = employeeName;
     }
 
     public String getReportID() { return ReportID; }
@@ -46,7 +46,7 @@ public class InventoriesReport {
 
     public void setSumSell(int sumSell) { SumSell = sumSell; }
 
-    public String getEmployeeID() { return EmployeeID; }
+    public String getEmployeeName() { return EmployeeName; }
 
-    public void setEmployeeID(String employeeID) { EmployeeID = employeeID; }
+    public void setEmployeeName(String employeeName) { EmployeeName = employeeName; }
 }
