@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class DataProvider {
     static Connection myConn;
-    static String myPath = "jdbc:mysql://localhost:3306/database-qllk?characterEncoding=utf8";
+    static String myPath = "jdbc:mysql://localhost:3306/database_qllk?characterEncoding=utf8";
     //đây là đối tượng như Statement nhưng được cải thiện để nhanh hơn
     PreparedStatement myPrep = null;
     ResultSet myRs;
