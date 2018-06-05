@@ -170,10 +170,10 @@
                                             <children>
                                                 <JFXTextField fx:id="txtNumOfComp" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="128.0" promptText="Số Lượng Nhập" />
                                                 <JFXTextField fx:id="txtUnitPrice" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="133.0" promptText="Đơn Giá" />
-                                                <JFXTextField fx:id="txtPrice" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Đơn Giá Bán" />
+                                                <JFXTextField fx:id="txtPrice" disable="true" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Đơn Giá Bán" />
                                             </children>
                                         </HBox>
-                                        <JFXTextField fx:id="txtInforAmount" focusColor="#ff6e7f" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Tổng Tiền" GridPane.rowIndex="3" />
+                                        <JFXTextField fx:id="txtInforAmount" disable="true" focusColor="#ff6e7f" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Tổng Tiền" GridPane.rowIndex="3" />
                                     </children>
                                 </GridPane>
                                 <HBox layoutX="138.0" layoutY="286.0" spacing="10.0">
