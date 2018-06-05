@@ -29,6 +29,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.Vector;
 
 public class InventoriesReportController implements Initializable {
 
@@ -264,30 +265,28 @@ public class InventoriesReportController implements Initializable {
         }
 
         for (int i = 0; i < list.size(); i++) {
-            String str = list.get(i).getReportID();
-            resultSet = dbConn.getData("SELECT SUM(LuongNhapBĐ) AS TongNhap FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ str + "');");
-            while (resultSet.next()) {
-                nhap += resultSet.getInt("TongNhap");
-            }
+            String ma = list.get(i).getReportID();
+            resultSet = dbConn.getData("SELECT SUM(LuongNhapBĐ) AS TongNhap FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "')");
+            nhap = resultSet.getInt("TongNhap");
 
 
-            resultSet = dbConn.getData("SELECT SUM(LuongBan) AS TongBan FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ str + "');");
+            resultSet = dbConn.getData("SELECT SUM(LuongBan) AS TongBan FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "');");
             while (resultSet.next()) {
                 ban += resultSet.getInt("TongBan");
             }
 
 
-            resultSet = dbConn.getData("SELECT SUM(LuongTon) AS TongTon FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ str + "');");
+            resultSet = dbConn.getData("SELECT SUM(LuongTon) AS TongTon FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "');");
             while (resultSet.next()) {
                 ton += resultSet.getInt("TongTon");
             }
 
 
-            resultSet = dbConn.getData("SELECT BCHT.NgayLap, BCHT.Thang, NV.TenNV FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV GROUP BY " + str + ";");
+            resultSet = dbConn.getData("SELECT BCHT.NgayLap, BCHT.Thang, NV.TenNV FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV GROUP BY " + ma + ";");
             data.removeAll(data);
             while(resultSet.next()) {
                 data.add(new InventoriesReport(
-                        list.get(i).getReportID(),
+                        ma,
                         resultSet.getDate("NgayLap"),
                         resultSet.getInt("Thang"),
                         resultSet.getString("TenNV"), nhap, ban, ton

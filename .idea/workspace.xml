@@ -2,76 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f39dc23-e668-4581-ab60-a8508f8c856d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Controllers/ChangePasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentOrderSearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Views/ChangePasswordView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Views/ComponentOrderSearchView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql.orig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SignInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Bills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Bills.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/BillsInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/BillsInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Component.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImportInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImportInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Components.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Components.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InventoriesReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InventoriesReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentOrderView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/InventoriesReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/InventoriesReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SignInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SignInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/BillSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Bills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Bills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Component.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentImportInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentImportInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentOrderInFo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ComponentOrderInFo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/Components.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/InventoriesReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/InventoriesReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/InventoriesReportInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/InventoriesReportInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/BillSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentOrderView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/CustomerManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/InventoriesReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/InventoriesReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ProviderManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ProviderManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/SignInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/SignInView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,7 +45,7 @@
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
-              <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="42" />
+              <caret line="69" column="40" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -114,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="360" column="5" lean-forward="true" selection-start-line="290" selection-start-column="4" selection-end-line="360" selection-end-column="5" />
+              <caret line="360" column="5" selection-start-line="290" selection-start-column="4" selection-end-line="360" selection-end-column="5" />
               <folding>
                 <element signature="e#5520#6224#0" />
                 <element signature="e#6230#6495#0" />
@@ -126,20 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillManagerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="622" lean-forward="true" selection-start-line="622" selection-end-line="622" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BillSearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/BillSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
-              <caret line="98" column="5" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
+              <caret line="98" column="5" selection-start-line="85" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
               <folding>
                 <element signature="method#initialize#0;class#BillSearchController#0" />
                 <element signature="method#searchData#0;class#BillSearchController#0" />
@@ -151,8 +82,8 @@
       <file leaf-file-name="InventoriesReportController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-754">
-              <caret line="270" column="13" lean-forward="true" selection-start-line="270" selection-start-column="13" selection-end-line="270" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="279" column="38" lean-forward="true" selection-start-line="279" selection-start-column="38" selection-end-line="279" selection-end-column="38" />
               <folding>
                 <element signature="e#5647#5648#0" expanded="true" />
                 <element signature="e#5696#5697#0" expanded="true" />
@@ -179,6 +110,15 @@
                 <element signature="e#14663#16880#0" />
                 <element signature="e#16886#18312#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiptsAndPaymentsReport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-783">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -233,7 +173,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="380" />
     <option name="y" value="110" />
     <option name="width" value="1615" />
@@ -423,7 +363,7 @@
       <workItem from="1528073927131" duration="617000" />
       <workItem from="1528090960315" duration="237000" />
       <workItem from="1528091436775" duration="27000" />
-      <workItem from="1528091492598" duration="30976000" />
+      <workItem from="1528091492598" duration="34205000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -558,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527953948043</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Xong màn hình báo cáo hàng tồn (còn bug chưa fix được).&#10;Update màn hình hóa đơn">
+      <created>1528169177900</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1528169177901</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30989000" />
+    <option name="totallyTimeSpent" value="34218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -690,7 +637,8 @@
     <MESSAGE value="Xong tìm kiếm nhà cung cấp." />
     <MESSAGE value="Cập nhật lại hóa đơn và fix bug tính tiền." />
     <MESSAGE value="Update search Nhà cung cấp, Nhân viên, Khách hàng." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update search Nhà cung cấp, Nhân viên, Khách hàng." />
+    <MESSAGE value="Xong màn hình báo cáo hàng tồn (còn bug chưa fix được).&#10;Update màn hình hóa đơn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Xong màn hình báo cáo hàng tồn (còn bug chưa fix được).&#10;Update màn hình hóa đơn" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -698,31 +646,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
-          <line>277</line>
-          <properties />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
-          <line>283</line>
-          <properties />
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
-          <line>255</line>
+          <line>256</line>
           <properties />
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
-          <line>267</line>
+          <line>268</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
-          <line>266</line>
+          <line>267</line>
           <properties />
           <option name="timeStamp" value="129" />
         </line-breakpoint>
@@ -732,47 +668,29 @@
           <properties />
           <option name="timeStamp" value="130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
+          <line>291</line>
+          <properties />
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
+          <line>280</line>
+          <properties />
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java</url>
+          <line>274</line>
+          <properties />
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="131" />
+      <option name="time" value="136" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/control/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="8413" selection-start-line="8413" selection-end-line="8413" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="1762" selection-start-line="1762" selection-end-line="1762" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Views/CustomerManagerView.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -1065,14 +983,14 @@
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
-          <caret line="622" lean-forward="true" selection-start-line="622" selection-end-line="622" />
+          <caret line="622" selection-start-line="622" selection-end-line="622" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/BillSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
-          <caret line="98" column="5" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
+          <caret line="98" column="5" selection-start-line="85" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
           <folding>
             <element signature="method#initialize#0;class#BillSearchController#0" />
             <element signature="method#searchData#0;class#BillSearchController#0" />
@@ -1084,14 +1002,14 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
-          <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="42" />
+          <caret line="69" column="40" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="360" column="5" lean-forward="true" selection-start-line="290" selection-start-column="4" selection-end-line="360" selection-end-column="5" />
+          <caret line="360" column="5" selection-start-line="290" selection-start-column="4" selection-end-line="360" selection-end-column="5" />
           <folding>
             <element signature="e#5520#6224#0" />
             <element signature="e#6230#6495#0" />
@@ -1133,10 +1051,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-783">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Views/ReportInventoriesView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Views/ReportPaymentView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-754">
-          <caret line="270" column="13" lean-forward="true" selection-start-line="270" selection-start-column="13" selection-end-line="270" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="279" column="38" lean-forward="true" selection-start-line="279" selection-start-column="38" selection-end-line="279" selection-end-column="38" />
           <folding>
             <element signature="e#5647#5648#0" expanded="true" />
             <element signature="e#5696#5697#0" expanded="true" />
