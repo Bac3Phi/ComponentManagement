@@ -4,61 +4,49 @@ import java.util.Date;
 
 public class InventoriesReport {
     private String ReportID;
-    private String CompImportInfoID;
-    private int InventoriesBefore;
-    private int InventoriesAfter;
-    private String StockID;
-    private String BillID;
-    private String EmployeeID;
-    private int ReportMonth;
     private Date PublishDate;
+    private int ReportMonth;
+    private String EmployeeName;
+    private int SumStock;
+    private int SumImport;
+    private int SumSell;
 
-    public InventoriesReport(String reportID, int inventoriesBefore, int inventoriesAfter, String compImportInfoID,
-                             String stockID, String billID, String employeeID, int reportMonth, Date ngl) {
+    public InventoriesReport(String reportID, Date publishDate, int reportMonth, String employeeName,
+                             int sumImport, int sumSell, int sumStock) {
         ReportID = reportID;
-        CompImportInfoID = compImportInfoID;
-        InventoriesBefore = inventoriesBefore;
-        InventoriesAfter = inventoriesAfter;
-        StockID = stockID;
-        BillID = billID;
-        EmployeeID = employeeID;
+        PublishDate = publishDate;
         ReportMonth = reportMonth;
-        PublishDate = ngl;
+        SumStock = sumStock;
+        SumImport = sumImport;
+        SumSell = sumSell;
+        EmployeeName = employeeName;
     }
 
     public String getReportID() { return ReportID; }
 
     public void setReportID(String reportID) { ReportID = reportID; }
 
-    public String getCompImportInfoID() { return CompImportInfoID; }
+    public Date getPublishDate() { return PublishDate; }
 
-    public void setCompImportInfoID(String compImportInfoID) { CompImportInfoID = compImportInfoID; }
-
-    public int getInventoriesBefore() { return InventoriesBefore; }
-
-    public void setInventoriesBefore(int inventoriesBefore) { InventoriesBefore = inventoriesBefore; }
-
-    public int getInventoriesAfter() { return InventoriesAfter; }
-
-    public void setInventoriesAfter(int inventoriesAfter) { InventoriesAfter = inventoriesAfter; }
-
-    public String getStockID() { return StockID; }
-
-    public void setStockID(String stockID) { StockID = stockID; }
-
-    public String getBillID() { return BillID; }
-
-    public void setBillID(String billID) { BillID = billID; }
-
-    public String getEmployeeID() { return EmployeeID; }
-
-    public void setEmployeeID(String employeeID) { EmployeeID = employeeID; }
+    public void setPublishDate(Date publishDate) { PublishDate = publishDate; }
 
     public int getReportMonth() { return ReportMonth; }
 
     public void setReportMonth(int reportMonth) { ReportMonth = reportMonth; }
 
-    public Date getPublishDate() { return PublishDate; }
+    public int getSumStock() { return SumStock; }
 
-    public void setPublishDate(Date publishDate) { PublishDate = publishDate; }
+    public void setSumStock(int sumStock) { SumStock = sumStock; }
+
+    public int getSumImport() { return SumImport; }
+
+    public void setSumImport(int sumImport) { SumImport = sumImport; }
+
+    public int getSumSell() { return SumSell; }
+
+    public void setSumSell(int sumSell) { SumSell = sumSell; }
+
+    public String getEmployeeName() { return EmployeeName; }
+
+    public void setEmployeeName(String employeeName) { EmployeeName = employeeName; }
 }

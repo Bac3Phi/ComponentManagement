@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class Bills {
     private String BillID;
-    private String CustomerID;
+    private String CustomerName;
     private Date PublishDate;
-    private String EmployeeID;
+    private String EmployeeName;
     private String TaxCode;
 
     public Bills() {}
 
-    public Bills(String hdid, Date ngl, String mst, String nvid, String khid) {
+    public Bills(String hdid, Date ngl, String mst, String nvname, String khid) {
         this.BillID = hdid;
-        this.CustomerID = khid;
+        this.CustomerName = khid;
         this.PublishDate = ngl;
-        this.EmployeeID = nvid;
+        this.EmployeeName = nvname;
         this.TaxCode = mst;
     }
 
@@ -27,12 +27,12 @@ public class Bills {
         this.BillID = billID;
     }
 
-    public String getCustomerID() {
-        return CustomerID;
+    public String getCustomerName() {
+        return CustomerName;
     }
 
-    public void setCustomerID(String customerID) {
-        this.CustomerID = customerID;
+    public void setCustomerName(String customerName) {
+        this.CustomerName = customerName;
     }
 
     public Date getPublishDate() {
@@ -43,12 +43,12 @@ public class Bills {
         this.PublishDate = ngl;
     }
 
-    public String getEmployeeID() {
-        return EmployeeID;
+    public String getEmployeeName() {
+        return EmployeeName;
     }
 
-    public void setEmployeeID(String nvid) {
-        this.EmployeeID = nvid;
+    public void setEmployeeName(String nvid) {
+        this.EmployeeName = nvid;
     }
 
     public String getTaxCode() {

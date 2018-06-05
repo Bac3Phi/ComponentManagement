@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class ComponentOrder {
     private String CompOrderID;
-    private String ProviderID;
-    private String EmployeeID;
+    private String ProviderName;
+    private String EmployeeName;
     private Date PublishDate;
 
     public ComponentOrder() {}
 
-    public ComponentOrder(String compOrderID, Date publishDate, String employeeID, String providerID) {
+    public ComponentOrder(String compOrderID, Date publishDate, String employeeName, String providerName) {
         CompOrderID = compOrderID;
-        ProviderID = providerID;
-        EmployeeID = employeeID;
+        ProviderName = providerName;
+        EmployeeName = employeeName;
         PublishDate = publishDate;
     }
 
@@ -21,13 +21,13 @@ public class ComponentOrder {
 
     public void setCompOrderID(String compOrderID) { CompOrderID = compOrderID; }
 
-    public String getProviderID() { return ProviderID; }
+    public String getProviderName() { return ProviderName; }
 
-    public void setProviderID(String providerID) { ProviderID = providerID; }
+    public void setProviderName(String providerName) { ProviderName = providerName; }
 
-    public String getEmployeeID() { return EmployeeID; }
+    public String getEmployeeName() { return EmployeeName; }
 
-    public void setEmployeeID(String employeeID) {  EmployeeID = employeeID; }
+    public void setEmployeeName(String employeeName) {  EmployeeName = employeeName; }
 
     public Date getPublishDate() { return PublishDate; }
 

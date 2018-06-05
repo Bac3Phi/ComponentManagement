@@ -90,6 +90,24 @@ public class EmployeesSearchController implements Initializable {
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
         colEmployeeGender.setCellValueFactory(new PropertyValueFactory<>("EmployeeGender"));
         colDepartmentID.setCellValueFactory(new PropertyValueFactory<>("DepartmentID"));
+
+        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Employees selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                        try {
+                            pointer.data.removeAll(pointer.data);
+                            pointer.data.add(selectedRow);
+                            pointer.tbvEmployees.setItems(pointer.data);
+                        }
+                        catch (NullPointerException e) {}
+                    }
+                });
+            }
+        });
     }
 
     public void searchData (String field, String str) throws SQLException {
@@ -148,18 +166,12 @@ public class EmployeesSearchController implements Initializable {
         } catch (SQLException e) {}
     }
 
-    public void setBtnGETINFO (ActionEvent event) {
-        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Employees selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
-                try {
-                    pointer.data.removeAll(pointer.data);
-                    pointer.data.add(selectedRow);
-                    pointer.tbvEmployees.setItems(pointer.data);
-                }
-                catch (NullPointerException e) {}
-            }
-        });
+    public void setBtnREFRESH(ActionEvent event) {
+        txtSEARCH.setText(null);
+        list.removeAll(list);
+        rdbtnEmployeesID.setSelected(true);
+        rdbtnDepartmentName.setSelected(false);
+        rdbtnEmployeesName.setSelected(false);
+        rdbtnDepartmentID.setSelected(false);
     }
 }

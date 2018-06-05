@@ -1,21 +1,19 @@
 package CM.Models;
 
-import java.text.DecimalFormat;
-
 public class BillsInfo {
     private String BillsInfoID;
     private String SellingPrice;
     private int Quantities;
     private String BillID;
-    private String ComponentID;
+    private String ComponentName;
     private int PurchaseMoney;
 
-    public BillsInfo(String billsInfoID, String sellingPrice, int quantities, String billID, String componentID, int tientt) {
+    public BillsInfo(String billsInfoID, String sellingPrice, int quantities, String billID, String componentName, int tientt) {
         BillsInfoID = billsInfoID;
         SellingPrice = sellingPrice;
         Quantities = quantities;
         BillID = billID;
-        ComponentID = componentID;
+        ComponentName = componentName;
         this.PurchaseMoney = tientt;
     }
 
@@ -35,9 +33,9 @@ public class BillsInfo {
 
     public void setBillID(String billID) { BillID = billID; }
 
-    public String getComponentID() { return ComponentID; }
+    public String getComponentName() { return ComponentName; }
 
-    public void setComponentID(String componentID) { ComponentID = componentID; }
+    public void setComponentName(String componentName) { ComponentName = componentName; }
 
     public int getPurchaseMoney() {
         return PurchaseMoney;

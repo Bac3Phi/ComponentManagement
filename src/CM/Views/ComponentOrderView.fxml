@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
     <children>
         <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
@@ -49,8 +49,8 @@
                                     <children>
                                         <JFXTextField fx:id="txtOrderID" focusColor="#f38945" labelFloat="true" promptText="Mã đơn đặt hàng" />
                                         <JFXDatePicker fx:id="dtDate" defaultColor="#f38945" maxWidth="433.0" minWidth="224.0" prefHeight="54.0" prefWidth="433.0" promptText="Ngày Nhập" GridPane.rowIndex="1" />
-                                        <JFXTextField fx:id="txtEmployeeID" focusColor="#f38945" labelFloat="true" promptText="Mã Nhân Viên" GridPane.rowIndex="2" />
                                         <JFXTextField fx:id="txtProviderID" focusColor="#f38945" labelFloat="true" promptText="Mã Nhà Cung Cấp" GridPane.rowIndex="3" />
+                                        <JFXTextField fx:id="txtEmployeeID" text="Mã Nhân viên" GridPane.rowIndex="2" />
                                     </children>
                                 </GridPane>
                                 <HBox layoutX="106.0" layoutY="254.0" spacing="10.0">
@@ -113,8 +113,8 @@
                                     <columns>
                                         <TableColumn fx:id="colOrderID" prefWidth="103.0" text="Mã ĐĐH" />
                                         <TableColumn fx:id="colDate" prefWidth="129.0" text="Ngày Lập" />
-                                        <TableColumn fx:id="colEmployeeID" prefWidth="138.0" text="Mã NV" />
-                                        <TableColumn fx:id="colProviderID" prefWidth="145.0" text="Mã NCC" />
+                                        <TableColumn fx:id="colEmployeeName" prefWidth="138.0" text="Tên NV" />
+                                        <TableColumn fx:id="colProviderName" prefWidth="145.0" text="Tên NCC" />
                                     </columns>
                                 </TableView>
                             </children></AnchorPane>
@@ -188,7 +188,7 @@
                                     <columns>
                                         <TableColumn fx:id="colOrderInfoID" prefWidth="164.0" text="Mã CTĐĐH" />
                                         <TableColumn fx:id="colQuantities" prefWidth="227.0" text="Số lượng" />
-                                        <TableColumn fx:id="colComponentID" prefWidth="242.0" text="Mã MH" />
+                                        <TableColumn fx:id="colComponentName" prefWidth="242.0" text="Tên MH" />
                                     </columns>
                                 </TableView>
                             </children>

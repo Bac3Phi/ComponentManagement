@@ -98,7 +98,7 @@ public class MainController extends Application implements Initializable {
         Scene secondScene = new Scene(root2);
         Stage secondStage = new Stage();
         secondStage.setResizable(false);
-        Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
+        Image image = new Image(String.valueOf(this.getClass().getResource("/CM/Assets/images/Glogo.png")));
         secondStage.getIcons().add(image);
         secondStage.setScene(secondScene); // set the scene
         secondStage.setTitle("GAMEON: Đăng Nhập");

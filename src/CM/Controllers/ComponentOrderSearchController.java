@@ -1,7 +1,6 @@
 package CM.Controllers;
 
-
-import CM.Models.Bills;
+import CM.Models.ComponentOrder;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -25,7 +24,8 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class BillSearchController implements Initializable {
+public class ComponentOrderSearchController implements Initializable {
+
     @FXML
     private JFXButton btnPRINT;
 
@@ -39,16 +39,19 @@ public class BillSearchController implements Initializable {
     private JFXButton btnREFRESH;
 
     @FXML
+    private AnchorPane paneOrderSearch;
+
+    @FXML
     private JFXTextArea txtSEARCH;
 
     @FXML
-    private JFXRadioButton rdbtnBillID;
+    private JFXRadioButton rdbtnOrderID;
 
     @FXML
-    private JFXRadioButton rdbtnCustomerID;
+    private JFXRadioButton rdbtnProviderName;
 
     @FXML
-    private JFXRadioButton rdbtnEmployeesID;
+    private JFXRadioButton rdbtnEmployeesName;
 
     @FXML
     private JFXDatePicker dateCheckIn;
@@ -59,14 +62,25 @@ public class BillSearchController implements Initializable {
     @FXML
     private AnchorPane paneSEARCH;
 
-    public TableView<Bills> tbvSEARCH;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerID, colEmployeeID;
-    public TableColumn<Bills, Date> colPublishDate;
+    @FXML
+    private TableView<ComponentOrder> tbvSEARCH;
+
+    @FXML
+    private TableColumn<ComponentOrder, String> colOrderID;
+
+    @FXML
+    private TableColumn<ComponentOrder, Date> colPublishDate;
+
+    @FXML
+    private TableColumn<ComponentOrder, String> colEmployeeName;
+
+    @FXML
+    private TableColumn<ComponentOrder, String> colProviderName;
 
     DataProvider dbConn;
-    ObservableList<Bills> list;
+    ObservableList<ComponentOrder> list;
     ResultSet resultSet;
-    public BillManagerController pointer;
+    public ComponentOrderController pointer;
 
     @FXML
     void setBtnPRINT(ActionEvent event) {
@@ -75,27 +89,29 @@ public class BillSearchController implements Initializable {
 
     @FXML
     void setBtnREFRESH(ActionEvent event) {
-        rdbtnBillID.setSelected(false);
-        rdbtnEmployeesID.setSelected(false);
-        rdbtnCustomerID.setSelected(false);
+        rdbtnOrderID.setSelected(false);
+        rdbtnEmployeesName.setSelected(false);
+        rdbtnProviderName.setSelected(false);
         list.removeAll(list);
         dateCheckOut.setValue(null);
         dateCheckIn.setValue(null);
     }
 
-    public void setBtnSEARCH (ActionEvent event) {
-        String[] str = {"MaHD", "MaNV", "MaKH"};
+    @FXML
+    void setBtnSEARCH(ActionEvent event) {
+        String[] str = {"MaDDH", "TenNV", "TenNCC"};
         try {
-            if (rdbtnBillID.isSelected())
+            if (rdbtnOrderID.isSelected())
                 searchData(str[0], txtSEARCH.getText());
-            else if (rdbtnEmployeesID.isSelected())
+            else if (rdbtnEmployeesName.isSelected())
                 searchData(str[1], txtSEARCH.getText());
-            else if (rdbtnCustomerID.isSelected())
+            else if (rdbtnProviderName.isSelected())
                 searchData(str[2], txtSEARCH.getText());
-            else if (!rdbtnCustomerID.isSelected() && !rdbtnEmployeesID.isSelected() && !rdbtnCustomerID.isSelected()
+            else if (!rdbtnOrderID.isSelected() && !rdbtnEmployeesName.isSelected() && !rdbtnProviderName.isSelected()
                     && !dateCheckIn.getValue().equals(null) && !dateCheckOut.getValue().equals(null))
                 searchDate(dateCheckIn.getValue().toString(), dateCheckOut.getValue().toString());
         } catch (SQLException e) {}
+
     }
 
     @Override
@@ -105,13 +121,12 @@ public class BillSearchController implements Initializable {
         list = FXCollections.observableArrayList();
         tbvSEARCH.setItems(list);
         //groupByRaidioButton();
-        pointer = new BillManagerController();
+        pointer = new ComponentOrderController();
 
-        colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
+        colOrderID.setCellValueFactory(new PropertyValueFactory<>("CompOrderID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
-        colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
-        colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
-        colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("ProviderName"));
+        colProviderName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
 
         tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -119,11 +134,11 @@ public class BillSearchController implements Initializable {
                 btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        Bills selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                        ComponentOrder selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
                         try {
                             pointer.data.removeAll(pointer.data);
                             pointer.data.add(selectedRow);
-                            pointer.tbvBill.setItems(pointer.data);
+                            pointer.tbvOrder.setItems(pointer.data);
                         }
                         catch (NullPointerException e) {}
                     }
@@ -133,16 +148,15 @@ public class BillSearchController implements Initializable {
     }
 
     public void searchData (String field, String str) throws SQLException {
-        String query = "SELECT * FROM HOADON WHERE " + field + " LIKE '%" + str +"%';";
+        String query = "SELECT MaDDH, NgayLap, TenNV, TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC WHERE " + field + " LIKE '%" + str +"%';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
-            list.add(new Bills(
-                    resultSet.getString("MaHD"),
+            list.add(new ComponentOrder(
+                    resultSet.getString("MaDDH"),
                     resultSet.getDate("NgayLap"),
-                    resultSet.getString("MaSoThue"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenNCC")
             ));
         }
         resultSet.close();
@@ -150,16 +164,15 @@ public class BillSearchController implements Initializable {
     }
 
     public void searchDate (String date1, String date2) throws SQLException {
-        String query = "SELECT * FROM HOADON WHERE NgayLap >= '" + date1 +"' AND NgayLap <= '" + date2 + "';";
+        String query = "SELECT MaDDH, NgayLap, TenNV, TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC WHERE NgayLap >= '" + date1 +"' AND NgayLap <= '" + date2 + "';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
-            list.add(new Bills(
-                    resultSet.getString("MaHD"),
+            list.add(new ComponentOrder(
+                    resultSet.getString("MaDDH"),
                     resultSet.getDate("NgayLap"),
-                    resultSet.getString("MaSoThue"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenNCC")
             ));
         }
         resultSet.close();

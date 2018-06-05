@@ -180,10 +180,10 @@ public class ComponentImportController implements Initializable {
     private void setupCbComponentName() throws SQLException {
         ResultSet dataComponentName = dbConn.getData("SELECT MaMH, TenMH FROM MATHANG");
         ObservableList<Components> components = FXCollections.observableArrayList();
-        components.add(new Components(null, "No selection", "", "", "", "", "", "", ""));
+        components.add(new Components(null, "No selection", "", "", "", "", "", ""));
 
         while (dataComponentName.next()){
-            components.add(new Components(dataComponentName.getString("MaMH"), dataComponentName.getString("TenMH"), "", "", "", "", "", "", ""));
+            components.add(new Components(dataComponentName.getString("MaMH"), dataComponentName.getString("TenMH"), "", "", "", "", "", ""));
         }
         cbComponentName.setItems(components);
         cbComponentName.setConverter(new StringConverter<Components>() {

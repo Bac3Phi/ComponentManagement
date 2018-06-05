@@ -1,8 +1,6 @@
 package CM.Controllers;
 
-import CM.Models.Bills;
-import CM.Models.BillsInfo;
-import CM.Models.DataProvider;
+import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -17,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +38,7 @@ public class BillManagerController implements Initializable {
     private JFXDatePicker dtPublishDate;
 
     @FXML
-    private JFXTextField txtEmployeeID;
+    private JFXComboBox<Employees> cbbEmployeeName;
 
     @FXML
     private JFXTextField txtCustomerID;
@@ -74,7 +73,7 @@ public class BillManagerController implements Initializable {
     private JFXTextField txtQuantities;
 
     @FXML
-    private JFXTextField txtComponentID;
+    private JFXComboBox<Components> cbbComponentName;
 
     @FXML
     private JFXButton btnDELETEinfo;
@@ -89,16 +88,16 @@ public class BillManagerController implements Initializable {
     private JFXButton btnREFRESHinfo;
 
     public TableView<Bills> tbvBill;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colMoney, colCustomerID, colEmployeeID;
+    public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerName, colEmployeeName;
     public TableColumn<Bills, Date> colPublishDate;
 
     public TableView<BillsInfo> tbvBillInfo;
-    public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentID;
+    public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentName, colMoney;
     public TableColumn<BillsInfo, Integer> colQuantities;
     public AnchorPane paneBill, paneBillInfo, paneBillManagement;
 
     DataProvider dbConn;
-    ObservableList<Bills> data;
+    public static ObservableList<Bills> data;
     ObservableList<BillsInfo> datainfo;
     ResultSet resultSet;
 
@@ -122,18 +121,17 @@ public class BillManagerController implements Initializable {
         colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
-        colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
-        colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
 
         colBillInfoID.setCellValueFactory(new PropertyValueFactory<>("BillsInfoID"));
         colSellingPrice.setCellValueFactory(new PropertyValueFactory<>("SellingPrice"));
         colQuantities.setCellValueFactory(new PropertyValueFactory<>("Quantities"));
-        colComponentID.setCellValueFactory(new PropertyValueFactory<>("ComponentID"));
+        colComponentName.setCellValueFactory(new PropertyValueFactory<>("ComponentName"));
         colMoney.setCellValueFactory(new PropertyValueFactory<>("PurchaseMoney"));
 
         try {
             showData();
-
         }
         catch (IOException io){}
         catch (SQLException e) {}
@@ -176,7 +174,7 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT * FROM HOADON");
+        resultSet = dbConn.getData("SELECT MaHD, NgayLap, MaSoThue, TenNV, MaKH FROM HOADON HD JOIN NHANVIEN NV ON HD.MaNV = NV.MaNV");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Bills(
@@ -187,6 +185,26 @@ public class BillManagerController implements Initializable {
                     resultSet.getString("MaKH")
             ));
         }
+        resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
+        ObservableList<Employees> list = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            list.add(new Employees(
+                    resultSet.getString("MaNV"),
+                    resultSet.getString("TenNV"),"",""
+            ));
+        }
+        cbbEmployeeName.setItems(list);
+        cbbEmployeeName.setConverter(new StringConverter<Employees>() {
+            @Override
+            public String toString(Employees object) {
+                return object.getEmployeeName();
+            }
+
+            @Override
+            public Employees fromString(String string) {
+                return null;
+            }
+        });
         resultSet.close();
         dbConn.close();
     }
@@ -194,7 +212,7 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showDataInfo(String billid) throws SQLException, IOException{
-        String query = "SELECT * FROM CHITIETHOADON WHERE MaHD = '" + billid  +"'";
+        String query = "SELECT MaCTHD, DonGiaBan, SoLuong, MaHD, TenMH, TienThanhToan FROM CHITIETHOADON CTHD JOIN MATHANG MH ON CTHD.MaMH = MH.MaMH WHERE MaHD = '" + billid  +"'";
         resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){
@@ -203,10 +221,31 @@ public class BillManagerController implements Initializable {
                     resultSet.getString("DonGiaBan"),
                     resultSet.getInt("SoLuong"),
                     resultSet.getString("MaHD"),
-                    resultSet.getString("MaMH"),
+                    resultSet.getString("TenMH"),
                     resultSet.getInt("TienThanhToan")
             ));
         }
+        resultSet = dbConn.getData("SELECT * FROM MATHANG");
+        ObservableList<Components> list = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            list.add(new Components(
+                    resultSet.getString("MaMH"),
+                    resultSet.getString("TenMH"),
+                    "", "", "", "", "", ""
+            ));
+        }
+        cbbComponentName.setItems(list);
+        cbbComponentName.setConverter(new StringConverter<Components>() {
+            @Override
+            public String toString(Components object) {
+                return object.getComponentName();
+            }
+
+            @Override
+            public Components fromString(String string) {
+                return null;
+            }
+        });
         resultSet.close();
         dbConn.close();
     }
@@ -219,9 +258,9 @@ public class BillManagerController implements Initializable {
         txtTaxCode.setText("");
         txtQuantities.setText("");
         txtSellingPrice.setText("");
-        txtComponentID.setText("");
+        cbbComponentName.getSelectionModel().select(0);
         txtCustomerID.setText("");
-        txtEmployeeID.setText("");
+        cbbEmployeeName.getSelectionModel().select(0);
     }
 
     //lay thong tin du lieu duoc HOADON
@@ -230,8 +269,12 @@ public class BillManagerController implements Initializable {
         txtBillID.setText(selectedRow.getBillID());
         dtPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
         txtTaxCode.setText(selectedRow.getTaxCode());
-        txtEmployeeID.setText(selectedRow.getEmployeeID());
-        txtCustomerID.setText(selectedRow.getCustomerID());
+        for (Employees ten:
+             cbbEmployeeName.getItems()) {
+            if (ten.getEmployeeName().matches(selectedRow.getEmployeeName()))
+                cbbEmployeeName.getSelectionModel().select(ten);
+        }
+        txtCustomerID.setText(selectedRow.getCustomerName());
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -241,7 +284,11 @@ public class BillManagerController implements Initializable {
         txtBillInfoID.setText(selectedRow.getBillsInfoID());
         txtSellingPrice.setText(selectedRow.getSellingPrice());
         txtQuantities.setText(String.valueOf(selectedRow.getQuantities()));
-        txtComponentID.setText(selectedRow.getComponentID());
+        for (Components ten:
+                cbbComponentName.getItems()) {
+            if (ten.getComponentName().matches(selectedRow.getComponentName()))
+                cbbComponentName.getSelectionModel().select(ten);
+        }
         if (selectedRow.getPurchaseMoney() == 0)
             txtMoney.setText(String.valueOf(calculate()));
         else if (selectedRow.getPurchaseMoney() != 0)
@@ -261,10 +308,10 @@ public class BillManagerController implements Initializable {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
-            nvid = txtEmployeeID.getText();
+            nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
             khid = txtCustomerID.getText();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
+                    || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
@@ -304,11 +351,11 @@ public class BillManagerController implements Initializable {
             dongia = txtSellingPrice.getText();
             soluong = txtQuantities.getText();
             hdid = txtBillID.getText();
-            mhid = txtComponentID.getText();
+            mhid = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
             tientt = String.valueOf(calculate());
             txtMoney.setText(tientt);
             if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
-                    || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
+                    || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtBillID.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
@@ -347,11 +394,10 @@ public class BillManagerController implements Initializable {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
-            nvid = txtEmployeeID.getText();
+            nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
             khid = txtCustomerID.getText();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || txtEmployeeID.getText().isEmpty()
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
+                    || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);
@@ -392,11 +438,11 @@ public class BillManagerController implements Initializable {
             dongia = txtSellingPrice.getText();
             soluong = txtQuantities.getText();
             hdid = txtBillID.getText();
-            mhid = txtComponentID.getText();
+            mhid = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
             tientt = String.valueOf(calculate());
             txtMoney.setText(tientt);
             if (txtBillInfoID.getText().isEmpty() || txtSellingPrice.getText().isEmpty()
-                    || txtQuantities.getText().isEmpty() || txtComponentID.getText().isEmpty()
+                    || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtMoney.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING,
