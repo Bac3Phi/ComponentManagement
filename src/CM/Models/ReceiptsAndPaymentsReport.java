@@ -7,52 +7,73 @@ public class ReceiptsAndPaymentsReport {
     private Date PublishDate;
     private int SumReceipts;
     private int SumPayments;
-    private String EmployeeID;
-    private String BillID;
-    private String CompImportID;
-    private int ReportMonth;
+    private String EmployeeName;
+    private String Type;
+    private String Date;
 
-    public ReceiptsAndPaymentsReport(String reportID, Date publishDate, int sumReceipts, int sumPayments,
-                                     String employeeID, String billID, String compImportID, int reportMonth) {
+    public ReceiptsAndPaymentsReport(String reportID, java.util.Date publishDate, int sumReceipts, int sumPayments, String employeeName, String type, String date) {
         ReportID = reportID;
         PublishDate = publishDate;
         SumReceipts = sumReceipts;
         SumPayments = sumPayments;
-        EmployeeID = employeeID;
-        BillID = billID;
-        CompImportID = compImportID;
-        ReportMonth = reportMonth;
+        EmployeeName = employeeName;
+        Type = type;
+        Date = date;
     }
 
-    public String getReportID() { return ReportID; }
+    public String getReportID() {
+        return ReportID;
+    }
 
-    public void setReportID(String reportID) { ReportID = reportID; }
+    public void setReportID(String reportID) {
+        ReportID = reportID;
+    }
 
-    public Date getPublishDate() { return PublishDate; }
+    public java.util.Date getPublishDate() {
+        return PublishDate;
+    }
 
-    public void setPublishDate(Date publishDate) { PublishDate = publishDate; }
+    public void setPublishDate(java.util.Date publishDate) {
+        PublishDate = publishDate;
+    }
 
-    public int getSumReceipts() { return SumReceipts; }
+    public int getSumReceipts() {
+        return SumReceipts;
+    }
 
-    public void setSumReceipts(int sumReceipts) { SumReceipts = sumReceipts; }
+    public void setSumReceipts(int sumReceipts) {
+        SumReceipts = sumReceipts;
+    }
 
-    public int getSumPayments() { return SumPayments; }
+    public int getSumPayments() {
+        return SumPayments;
+    }
 
-    public void setSumPayments(int sumPayments) { SumPayments = sumPayments; }
+    public void setSumPayments(int sumPayments) {
+        SumPayments = sumPayments;
+    }
 
-    public String getEmployeeID() { return EmployeeID; }
+    public String getEmployeeName() {
+        return EmployeeName;
+    }
 
-    public void setEmployeeID(String employeeID) { EmployeeID = employeeID; }
+    public void setEmployeeName(String employeeName) {
+        EmployeeName = employeeName;
+    }
 
-    public String getBillID() { return BillID; }
+    public String getType() {
+        return Type;
+    }
 
-    public void setBillID(String billID) { BillID = billID; }
+    public void setType(String type) {
+        Type = type;
+    }
 
-    public String getCompImportID() { return CompImportID; }
+    public String getDate() {
+        return Date;
+    }
 
-    public void setCompImportID(String compImportID) { CompImportID = compImportID; }
-
-    public int getReportMonth() { return ReportMonth; }
-
-    public void setReportMonth(int reportMonth) { ReportMonth = reportMonth; }
+    public void setDate(String date) {
+        Date = date;
+    }
 }

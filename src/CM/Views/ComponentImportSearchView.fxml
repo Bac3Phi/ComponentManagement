@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
@@ -77,7 +79,7 @@
          <top>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="84.0" layoutY="59.0" prefHeight="94.0" prefWidth="1227.0" styleClass="card-white">
+                  <AnchorPane layoutX="84.0" layoutY="59.0" prefHeight="94.0" prefWidth="497.0" styleClass="card-white">
                      <children>
                         <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
                            <children>
@@ -88,11 +90,10 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXTextArea fx:id="txtSearch" focusColor="#f75d5d" layoutX="14.0" layoutY="39.0" prefHeight="31.0" prefWidth="651.0" promptText="Gõ từ khóa cần tìm kiếm" />
-                        <GridPane layoutX="708.0" layoutY="17.0" prefHeight="60.0" prefWidth="287.0">
+                        <JFXTextArea fx:id="txtSearch" focusColor="#f75d5d" layoutX="14.0" layoutY="39.0" prefHeight="31.0" prefWidth="279.0" promptText="Gõ từ khóa cần tìm kiếm" />
+                        <GridPane layoutX="327.0" layoutY="17.0" prefHeight="60.0" prefWidth="148.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="148.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="141.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -100,10 +101,36 @@
                           </rowConstraints>
                            <children>
                               <JFXRadioButton fx:id="rdbtnImportComponentId" styleClass="jfx-radio-button" text="Mã Phiếu Nhập" />
-                              <JFXRadioButton fx:id="rdbtnPublshDate" text="Thời Gian Lập" GridPane.rowIndex="1" />
-                              <JFXRadioButton fx:id="rdbtnOrderId" prefHeight="17.0" prefWidth="136.0" text="Mã Đơn Đặt Hàng" GridPane.columnIndex="1" />
+                              <JFXRadioButton fx:id="rdbtnOrderId" prefHeight="17.0" prefWidth="136.0" text="Mã Đơn Đặt Hàng" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="639.0" layoutY="59.0" prefHeight="94.0" prefWidth="564.0" styleClass="card-white">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="-25.0" prefHeight="51.0" prefWidth="225.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="174.0" text="Tìm Kiếm Phiếu Nhập" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <HBox layoutX="51.0" layoutY="26.0" spacing="20.0">
+                           <children>
+                              <JFXDatePicker fx:id="dateCheckIn" defaultColor="#f0673c" prefHeight="51.0" prefWidth="199.0" />
+                              <Label alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" prefHeight="52.0" prefWidth="25.0" text="đến">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="CROSSHAIR" />
+                                 </cursor>
+                              </Label>
+                              <JFXDatePicker fx:id="dateCheckOut" defaultColor="#f0673c" layoutX="10.0" layoutY="10.0" prefHeight="51.0" prefWidth="199.0" />
+                           </children>
+                        </HBox>
                      </children>
                   </AnchorPane>
                </children>
