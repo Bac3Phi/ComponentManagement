@@ -92,6 +92,7 @@ public class SettingInternalController implements Initializable {
     @FXML
     private TableColumn<CompUnit, String>colCompUnitName;
 
+
     DataProvider dbConn;
     ObservableList<Stock> dataStock;
     ObservableList<Department> dataDepartment;

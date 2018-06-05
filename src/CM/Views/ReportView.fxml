@@ -13,7 +13,7 @@
                     <tabs>
                         <Tab text="Báo Cáo Hàng Tồn">
                             <content>
-                                <fx:include source="InventoriesReportView.fxml" />
+                                <fx:include source="ReportInventoriesView.fxml" />
                             </content>
                         </Tab>
                         <Tab text="Báo Cáo Thu Chi">
