@@ -64,17 +64,17 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`MATHANG` (
   INDEX `MaLoai_idx` (`MaLoai` ASC),
   INDEX `MaKhu_idx` (`MaKhu` ASC),
   INDEX `MaDV_idx` (`MaDV` ASC),
-  CONSTRAINT `MaLoai`
+  CONSTRAINT `fk_MATHANG_LOAIMATHANG`
     FOREIGN KEY (`MaLoai`)
     REFERENCES `database-qllk`.`LOAIMATHANG` (`MaLoai`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `MaKhu`
+  CONSTRAINT `fk_MATHANG_KHO`
     FOREIGN KEY (`MaKhu`)
     REFERENCES `database-qllk`.`KHO` (`MaKhu`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `MaDV`
+  CONSTRAINT `fk_MATHANG_DONVITINH`
     FOREIGN KEY (`MaDV`)
     REFERENCES `database-qllk`.`DONVITINH` (`MaDV`)
     ON DELETE NO ACTION
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`NHANVIEN` (
   `MaPhong` VARCHAR(10) NULL,
   PRIMARY KEY (`MaNV`),
   INDEX `MaPhong_idx` (`MaPhong` ASC),
-  CONSTRAINT `MaPhong`
+  CONSTRAINT `fk_NHANVIEN_PHONGBAN`
     FOREIGN KEY (`MaPhong`)
     REFERENCES `database-qllk`.`PHONGBAN` (`MaPhong`)
     ON DELETE NO ACTION
@@ -136,12 +136,12 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`HOADON` (
   PRIMARY KEY (`MaHD`),
   INDEX `MaNV_idx` (`MaNV` ASC),
   INDEX `MaKH_idx` (`MaKH` ASC),
-  CONSTRAINT `MaNV`
+  CONSTRAINT `fk_HOADON_NHANVIEN`
     FOREIGN KEY (`MaNV`)
     REFERENCES `database-qllk`.`NHANVIEN` (`MaNV`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `MaKH`
+  CONSTRAINT `fk_HOADON_KHACHHANG`
     FOREIGN KEY (`MaKH`)
     REFERENCES `database-qllk`.`KHACHHANG` (`MaKH`)
     ON DELETE NO ACTION
@@ -162,12 +162,12 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`CHITIETHOADON` (
   PRIMARY KEY (`MaCTHD`),
   INDEX `MaHD_idx` (`MaHD` ASC),
   INDEX `MaMH_idx` (`MaMH` ASC),
-  CONSTRAINT `MaHD`
+  CONSTRAINT `fk_CHITIETHOADON_HOADON`
     FOREIGN KEY (`MaHD`)
     REFERENCES `database-qllk`.`HOADON` (`MaHD`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `MaMH`
+  CONSTRAINT `fk_CHITIETHOADON_MATHANG`
     FOREIGN KEY (`MaMH`)
     REFERENCES `database-qllk`.`MATHANG` (`MaMH`)
     ON DELETE NO ACTION
@@ -258,12 +258,12 @@ CREATE TABLE IF NOT EXISTS `database-qllk`.`DANGNHAP` (
   PRIMARY KEY (`MaDN`),
   INDEX `Username_idx` (`Username` ASC),
   INDEX `MaPQ_idx` (`MaPQ` ASC),
-  CONSTRAINT `MaPQ`
+  CONSTRAINT `fk_DANGNHAP_PHANQUYEN`
     FOREIGN KEY (`MaPQ`)
     REFERENCES `database-qllk`.`PHANQUYEN` (`MaPQ`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `Username`
+  CONSTRAINT `fk_DANGNHAP_NHANVIEN`
     FOREIGN KEY (`Username`)
     REFERENCES `database-qllk`.`NHANVIEN` (`MaNV`)
     ON DELETE NO ACTION
@@ -444,6 +444,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+SELECT * FROM `database-qllk`.khachhang;
 insert into `database-qllk`.khachhang values ('KH001', N'Đặng Hoàng Long', N'123 Đường ABC', N'long97@gmail.com', '0123456789');
 insert into `database-qllk`.khachhang values ('KH002', N'Phạm Nhật Phi', N'3 Đường số 2', N'phipn@gmail.com', '0903123456');
 
@@ -502,9 +503,5 @@ SELECT * FROM `database-qllk`.CHITIETHOADON;
 SELECT * FROM `database-qllk`.PHIEUNHAPHANG;
 
 SELECT * FROM `database-qllk`.CHITIETPHIEUNHAP;
-
-SELECT * FROM `database-qllk`.PHIEUXUATHANG;
-
-SELECT * FROM `database-qllk`.CHITIETPHIEUXUAT;
 
 SELECT * FROM `database-qllk`.HANGTONKHO;

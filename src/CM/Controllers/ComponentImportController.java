@@ -3,6 +3,8 @@ package CM.Controllers;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -150,6 +152,40 @@ public class ComponentImportController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedDataInfor();
+            }
+        });
+
+        txtUnitPrice.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.matches("")){
+                    txtPrice.setText("");
+                    txtInforAmount.setText("");
+                }
+                else {
+                    int value = (int) (Integer.parseInt(newValue)*1.1);
+                    txtPrice.setText(String.valueOf(value));
+
+                    if (!txtNumOfComp.getText().isEmpty()){
+                        int total = Integer.parseInt(txtNumOfComp.getText()) * Integer.parseInt(newValue);
+                        txtInforAmount.setText(String.valueOf(total));
+                    }
+                }
+            }
+        });
+
+        txtNumOfComp.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.matches("")){
+                    txtInforAmount.setText("");
+                }
+                else {
+                    if (!txtUnitPrice.getText().isEmpty()){
+                        int total = Integer.parseInt(txtUnitPrice.getText()) * Integer.parseInt(newValue);
+                        txtInforAmount.setText(String.valueOf(total));
+                    }
+                }
             }
         });
     }
