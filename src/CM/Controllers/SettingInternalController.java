@@ -1,6 +1,7 @@
 package CM.Controllers;
 
 import CM.Functions.SmileNotification;
+import CM.Functions.generateID;
 import CM.Models.*;
 import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
@@ -91,6 +92,7 @@ public class SettingInternalController implements Initializable {
 
     @FXML
     private TableColumn<CompUnit, String>colCompUnitName;
+
 
     DataProvider dbConn;
     ObservableList<Stock> dataStock;
@@ -249,7 +251,11 @@ public class SettingInternalController implements Initializable {
             dialog.close();
         });
         addBtn.setOnAction((ActionEvent event1) -> {
-            stockID ="K003"; //Gắn Mã Tự Sinh
+            try {
+                stockID = generateID.create("KHO","MaKhu","K"); //Gắn Mã Tự Sinh
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             stockName = txtStockName.getText();
             insertData("KHO",stockID,stockName);
             dialog.close();

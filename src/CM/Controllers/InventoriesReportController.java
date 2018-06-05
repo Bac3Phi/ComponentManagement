@@ -254,44 +254,53 @@ public class InventoriesReportController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException {
-        ObservableList<InventoriesReportInfo> list = FXCollections.observableArrayList();
-        int nhap = 0, ban = 0, ton = 0;
-        resultSet = dbConn.getData("SELECT MaBCHT FROM BAOCAOHANGTON");
-        while (resultSet.next()) {
-            list.add(new InventoriesReportInfo(
-                    "", "", 0, 0,
-                    0, resultSet.getString("MaBCHT")
+//        ObservableList<InventoriesReportInfo> list = FXCollections.observableArrayList();
+//        int nhap = 0, ban = 0, ton = 0;
+//        resultSet = dbConn.getData("SELECT MaBCHT FROM BAOCAOHANGTON");
+//        while (resultSet.next()) {
+//            list.add(new InventoriesReportInfo(
+//                    "", "", 0, 0,
+//                    0, resultSet.getString("MaBCHT")
+//            ));
+//        }
+//
+//        for (int i = 0; i < list.size(); i++) {
+//            String ma = list.get(i).getReportID();
+//            resultSet = dbConn.getData("SELECT SUM(LuongNhapBĐ) AS TongNhap FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
+//            nhap += resultSet.getInt("TongNhap");
+//
+//
+//            resultSet = dbConn.getData("SELECT SUM(LuongBan) AS TongBan FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
+//            ban += resultSet.getInt("TongBan");
+//
+//
+//            resultSet = dbConn.getData("SELECT SUM(LuongTon) AS TongTon FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
+//            ton += resultSet.getInt("TongTon");
+//
+//
+//            resultSet = dbConn.getData("SELECT BCHT.NgayLap, BCHT.Thang, NV.TenNV FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV GROUP BY " + ma + ";");
+//            data.removeAll(data);
+//            while(resultSet.next()) {
+//                data.add(new InventoriesReport(
+//                        ma,
+//                        resultSet.getDate("NgayLap"),
+//                        resultSet.getInt("Thang"),
+//                        resultSet.getString("TenNV"), nhap, ban, ton
+//                ));
+//            }
+//        }
+        resultSet = dbConn.getData("SELECT BCHT.MaBCHT, BCHT.NgayLap, BCHT.Thang, NV.TenNV, BCHT.TongNhap, BCHT.TongBan, BCHT.TongTon FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV;");
+        data.removeAll(data);
+        while(resultSet.next()) {
+            data.add(new InventoriesReport(
+                    resultSet.getString("MaBCHT"),
+                    resultSet.getDate("NgayLap"),
+                    resultSet.getInt("Thang"),
+                    resultSet.getString("TenNV"),
+                    resultSet.getInt("TongNhap"),
+                    resultSet.getInt("TongBan"),
+                    resultSet.getInt("TongTon")
             ));
-        }
-
-        for (int i = 0; i < list.size(); i++) {
-            String ma = list.get(i).getReportID();
-            resultSet = dbConn.getData("SELECT SUM(LuongNhapBĐ) AS TongNhap FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "')");
-            nhap = resultSet.getInt("TongNhap");
-
-
-            resultSet = dbConn.getData("SELECT SUM(LuongBan) AS TongBan FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "');");
-            while (resultSet.next()) {
-                ban += resultSet.getInt("TongBan");
-            }
-
-
-            resultSet = dbConn.getData("SELECT SUM(LuongTon) AS TongTon FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "');");
-            while (resultSet.next()) {
-                ton += resultSet.getInt("TongTon");
-            }
-
-
-            resultSet = dbConn.getData("SELECT BCHT.NgayLap, BCHT.Thang, NV.TenNV FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV GROUP BY " + ma + ";");
-            data.removeAll(data);
-            while(resultSet.next()) {
-                data.add(new InventoriesReport(
-                        ma,
-                        resultSet.getDate("NgayLap"),
-                        resultSet.getInt("Thang"),
-                        resultSet.getString("TenNV"), nhap, ban, ton
-                ));
-            }
         }
         resultSet.close();
         dbConn.close();

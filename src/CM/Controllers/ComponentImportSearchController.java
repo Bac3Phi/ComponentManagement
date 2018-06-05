@@ -4,6 +4,7 @@ import CM.Models.ComponentImport;
 import CM.Models.Customer;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.collections.FXCollections;
@@ -28,7 +29,10 @@ public class ComponentImportSearchController implements Initializable {
     private JFXTextArea txtSearch;
 
     @FXML
-    private JFXRadioButton rdbtnImportComponentId, rdbtnOrderId, rdbtnPublshDate;
+    private JFXRadioButton rdbtnImportComponentId, rdbtnOrderId;
+
+    @FXML
+    private JFXDatePicker dateCheckIn, dateCheckOut;
 
     @FXML
     private TableView<ComponentImport> tbvSearch;
@@ -81,7 +85,6 @@ public class ComponentImportSearchController implements Initializable {
         rdbtnImportComponentId.setToggleGroup(group);
         rdbtnImportComponentId.setSelected(true);
         rdbtnOrderId.setToggleGroup(group);
-        rdbtnPublshDate.setToggleGroup(group);
     }
 
     public void setBtnSEARCHdata (ActionEvent event) {
@@ -91,8 +94,6 @@ public class ComponentImportSearchController implements Initializable {
                 searchData(str[0], txtSearch.getText());
             else if (rdbtnOrderId.isSelected())
                 searchData(str[1], txtSearch.getText());
-            else if (rdbtnPublshDate.isSelected())
-                searchData(str[2], txtSearch.getText());
         } catch (SQLException e) {}
     }
 

@@ -1,14 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CM.Controllers.ReportInventoriesController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.InventoriesReportController">
+   <children>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane fx:id="paneReport" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1400.0" stylesheets="@../Stytlesheet/default.css" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="239.0" prefWidth="1330.0" styleClass="card-white" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="40.0">
+                     <children>
+                        <Label fx:id="lbReportID" layoutX="30.0" layoutY="42.0" text="Mã Báo cáo" />
+                        <JFXTextField fx:id="txtReportID" layoutX="154.0" layoutY="37.0" prefHeight="31.0" prefWidth="169.0" />
+                        <Label fx:id="lbEmployeeName" layoutX="457.0" layoutY="41.0" text="Tên Nhân viên lập" />
+                        <JFXTextField fx:id="txtEmployeeName" layoutX="590.0" layoutY="36.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbReportDate" layoutX="30.0" layoutY="93.0" text="Ngày lập báo cáo" />
+                        <DatePicker fx:id="dtDate" layoutX="154.0" layoutY="88.0" prefHeight="31.0" prefWidth="169.0" />
+                        <Label fx:id="lbSumImport" layoutX="457.0" layoutY="92.0" text="Tổng Nhập" />
+                        <JFXTextField fx:id="txtSumImport" layoutX="590.0" layoutY="87.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbSumSell" layoutX="734.0" layoutY="43.0" text="Tổng Bán" />
+                        <JFXTextField fx:id="txtSumSell" layoutX="816.0" layoutY="38.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbSumStock" layoutX="734.0" layoutY="94.0" text="Tổng Tồn" />
+                        <JFXTextField fx:id="txtSumStock" layoutX="816.0" layoutY="89.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbReport" layoutX="30.0" layoutY="143.0" text="Báo cáo theo:" />
+                        <JFXRadioButton fx:id="rdbtnMonth" layoutX="177.0" layoutY="143.0" text="Tháng" />
+                        <JFXRadioButton fx:id="rdbtnQuarter" layoutX="177.0" layoutY="189.0" text="Quý" />
+                        <Label fx:id="lbMonth" layoutX="271.0" layoutY="143.0" text="Tháng" />
+                        <JFXComboBox fx:id="cbbMonth" layoutX="317.0" layoutY="135.0" />
+                        <Label fx:id="lbQuarter" layoutX="271.0" layoutY="189.0" text="Quý" />
+                        <JFXComboBox fx:id="cbbQuarter" layoutX="317.0" layoutY="184.0" />
+                        <Label fx:id="lbYear" layoutX="30.0" layoutY="189.0" text="Năm" />
+                        <JFXComboBox fx:id="cbbYear" layoutX="76.0" layoutY="184.0" prefHeight="31.0" prefWidth="91.0" />
+                        <HBox layoutX="455.0" layoutY="179.0" spacing="20.0">
+                           <children>
+                              <JFXButton fx:id="btnADD" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #ee9ca7;" text="Lập báo cáo" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnPRINT" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #799F0C;" text="Xuất báo cáo" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnUPDATE" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #334d50;" text="Sửa báo cáo" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnREFRESH" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: #6FB1FC;" text="Làm mới" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnADDinfo" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #ab70ef;" text="Thêm Chi tiết BC" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btnUPDATEinfo" prefHeight="46.0" prefWidth="103.0" style="-fx-background-color: #ffa751;" text="Sửa Chi tiết BC" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <Label fx:id="lbImport" layoutX="457.0" layoutY="142.0" text="Lượng Nhập" />
+                        <JFXTextField fx:id="txtImport" layoutX="590.0" layoutY="137.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbSell" layoutX="730.0" layoutY="144.0" text="Lượng Bán" />
+                        <JFXTextField fx:id="txtSell" layoutX="820.0" layoutY="139.0" prefHeight="31.0" prefWidth="133.0" />
+                        <Label fx:id="lbStock" layoutX="986.0" layoutY="143.0" text="Lượng Tồn" />
+                        <JFXTextField fx:id="txtStock" layoutX="1081.0" layoutY="138.0" prefHeight="31.0" prefWidth="169.0" />
+                        <Label fx:id="lbComponentName" layoutX="986.0" layoutY="93.0" text="Tên MH" />
+                        <JFXTextField fx:id="txtComponentName" layoutX="1076.0" layoutY="88.0" prefHeight="31.0" prefWidth="177.0" />
+                        <Label fx:id="lbReportInfoID" layoutX="986.0" layoutY="42.0" text="Mã CTBC" />
+                        <JFXTextField fx:id="txtReportInfoID" layoutX="1077.0" layoutY="37.0" prefHeight="31.0" prefWidth="177.0" />
+                        <Pane layoutX="30.0" layoutY="-14.0" prefHeight="51.0" prefWidth="210.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
+                           <children>
+                              <Label layoutX="36.0" layoutY="8.0" prefHeight="35.0" prefWidth="153.0" text="Báo Cáo Hàng Tồn" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="33.0" layoutY="313.0" prefHeight="216.0" prefWidth="1330.0" styleClass="card-footer" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="43.0">
+                     <children>
+                        <TableView fx:id="tbvReport" prefHeight="246.0" prefWidth="1207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="colReportID" prefWidth="100.0" text="Mã BCHT" />
+                            <TableColumn fx:id="colReportDate" prefWidth="135.0" text="Ngày lập" />
+                              <TableColumn fx:id="colMonth" prefWidth="109.0" text="Tháng" />
+                              <TableColumn fx:id="colEmployeeName" prefWidth="188.0" text="Tên MV" />
+                              <TableColumn fx:id="colSumImport" prefWidth="235.0" text="Tổng Nhập" />
+                              <TableColumn fx:id="colSumSell" prefWidth="230.0" text="Tổng Bán" />
+                              <TableColumn fx:id="colSumRemain" prefWidth="214.0" text="Tổng Tồn" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="34.0" layoutY="542.0" prefHeight="225.0" prefWidth="1323.0" styleClass="card-footer" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="43.0">
+                     <children>
+                        <TableView fx:id="tbvReportInfo" prefHeight="262.0" prefWidth="1207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="colReportInfoID" prefWidth="138.0" text="Mã CTBCHT" />
+                              <TableColumn fx:id="colComponentName" prefWidth="216.0" text="Tên MH" />
+                              <TableColumn fx:id="colImport" prefWidth="249.0" text="Lượng nhập" />
+                              <TableColumn fx:id="colSell" prefWidth="238.0" text="Lượng bán" />
+                              <TableColumn fx:id="colRemain" prefWidth="365.0" text="Lượng tồn" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>

@@ -91,7 +91,7 @@
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <JFXTextField fx:id="txtDepartmentID" focusColor="#f38945" labelFloat="true" promptText="Mã Phòng Ban" />
+                              <JFXTextField fx:id="txtDepartmentID" editable="false" focusColor="#f38945" labelFloat="true" promptText="Mã Phòng Ban" />
                               <JFXComboBox fx:id="cbxDepartmentName" focusColor="#f38945" labelFloat="true" onAction="#setSelectedItem" prefHeight="39.0" prefWidth="299.0" promptText="Tên Phòng Ban" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
