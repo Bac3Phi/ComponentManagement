@@ -81,6 +81,24 @@ public class ProviderSearchController implements Initializable {
         colProvidersAddress.setCellValueFactory(new PropertyValueFactory<>("ProvidersAddress"));
         colProvidersEmail.setCellValueFactory(new PropertyValueFactory<>("ProvidersEmail"));
         colProvidersPhone.setCellValueFactory(new PropertyValueFactory<>("ProvidersPhone"));
+
+        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Providers selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                        try {
+                            pointer.data.removeAll(pointer.data);
+                            pointer.data.add(selectedRow);
+                            pointer.tbvProviders.setItems(pointer.data);
+                        }
+                        catch (NullPointerException e) {}
+                    }
+                });
+            }
+        });
     }
 
     public void searchData (String field, String str) throws SQLException {
@@ -129,21 +147,13 @@ public class ProviderSearchController implements Initializable {
         } catch (SQLException e) {}
     }
 
-    public void setBtnGETINFO(javafx.event.ActionEvent actionEvent) {
-        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Providers selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
-                try {
-                    pointer.data.removeAll(pointer.data);
-                    pointer.data.add(selectedRow);
-                    pointer.tbvProviders.setItems(pointer.data);
-                }
-                catch (NullPointerException e) {}
-            }
-        });
-    }
-
     public void setBtnREFRESH(javafx.event.ActionEvent actionEvent) {
+        txtSEARCH.setText(null);
+        list.removeAll(list);
+        rdbtnProviderID.setSelected(true);
+        rdbtnProviderPhone.setSelected(false);
+        rdbtnProviderAddress.setSelected(false);
+        rdbtnProviderName.setSelected(false);
+        rdbtnProviderEmail.setSelected(false);
     }
 }

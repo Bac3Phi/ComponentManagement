@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import tray.notification.NotificationType;
 
+import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -364,19 +365,11 @@ public class EmployeesManagerController implements Initializable {
         tabPaneEx.getSelectionModel().select(1);
     }
 
-    @FXML
-    public void setBtnCANCEL (ActionEvent event)throws Exception{
-        alert = new Alert(Alert.AlertType.WARNING, "Do you want to close this?", ButtonType.YES, ButtonType.NO);
-        alert.show();
-
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.get() == ButtonType.YES) {
-
-        }
-    }
-
     public void setBtnREFRESH(ActionEvent actionEvent) {
         refresh();
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 }

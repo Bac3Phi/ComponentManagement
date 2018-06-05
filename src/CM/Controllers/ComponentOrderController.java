@@ -80,16 +80,16 @@ public class ComponentOrderController implements Initializable {
     private JFXButton btnREFRESHinfo;
 
     public TableView<ComponentOrder> tbvOrder;
-    public TableColumn<ComponentOrder, String> colOrderID, colEmployeeID, colProviderID;
+    public TableColumn<ComponentOrder, String> colOrderID, colEmployeeName, colProviderName;
     public TableColumn<ComponentOrder, Date> colDate;
 
     public TableView<ComponentOrderInFo> tbvOrderInfo;
-    public TableColumn<ComponentOrderInFo, String> colOrderInfoID, colComponentID;
+    public TableColumn<ComponentOrderInFo, String> colOrderInfoID, colComponentName;
     public TableColumn<ComponentOrderInFo, Integer> colQuantities;
     public AnchorPane paneOrder, paneOrderInfo, paneOrderManagement;
 
     DataProvider dbConn;
-    ObservableList<ComponentOrder> data;
+    public static ObservableList<ComponentOrder> data;
     ObservableList<ComponentOrderInFo> datainfo;
     ResultSet resultSet;
 
@@ -111,12 +111,12 @@ public class ComponentOrderController implements Initializable {
 
         colOrderID.setCellValueFactory(new PropertyValueFactory<>("CompOrderID"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
-        colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
-        colProviderID.setCellValueFactory(new PropertyValueFactory<>("ProviderID"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colProviderName.setCellValueFactory(new PropertyValueFactory<>("ProviderName"));
 
         colOrderInfoID.setCellValueFactory(new PropertyValueFactory<>("CompOrderInfoID"));
         colQuantities.setCellValueFactory(new PropertyValueFactory<>("Quantities"));
-        colComponentID.setCellValueFactory(new PropertyValueFactory<>("ComponentID"));
+        colComponentName.setCellValueFactory(new PropertyValueFactory<>("ComponentName"));
 
         try {
             showData();
@@ -159,14 +159,14 @@ public class ComponentOrderController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT * FROM DONDATHANG");
+        resultSet = dbConn.getData("SELECT MaDDH, NgayLap, TenNV, TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new ComponentOrder(
                     resultSet.getString("MaDDH"),
                     resultSet.getDate("NgayLap"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaNCC")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenNCC")
             ));
         }
         resultSet.close();
@@ -176,15 +176,15 @@ public class ComponentOrderController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showDataInfo(String orderid) throws SQLException, IOException{
-        String query = "SELECT * FROM CHITIETDONDATHANG WHERE MaDDH = '" + orderid  +"'";
+        String query = "SELECT CTDDH.MaCTDDH, CTDDH.SoLuong, MH.TenMH FROM CHITIETDONDATHANG CTDDH JOIN MATHANG MH ON CTDDH.MaMH = MH.MaMH WHERE MaDDH = '" + orderid  +"'";
         resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){
             datainfo.add(new ComponentOrderInFo(
                     resultSet.getString("MaCTDDH"),
                     resultSet.getInt("SoLuong"),
-                    resultSet.getString("MaDDH"),
-                    resultSet.getString("MaMH")
+                    "",
+                    resultSet.getString("TenMH")
             ));
         }
         resultSet.close();
@@ -206,8 +206,8 @@ public class ComponentOrderController implements Initializable {
         ComponentOrder selectedRow = tbvOrder.getSelectionModel().getSelectedItem();
         txtOrderID.setText(selectedRow.getCompOrderID());
         dtDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
-        txtProviderID.setText(selectedRow.getProviderID());
-        txtEmployeeID.setText(selectedRow.getEmployeeID());
+        txtProviderID.setText(selectedRow.getProviderName());
+        txtEmployeeID.setText(selectedRow.getEmployeeName());
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -215,7 +215,7 @@ public class ComponentOrderController implements Initializable {
         ComponentOrderInFo selectedRow = tbvOrderInfo.getSelectionModel().getSelectedItem();
         txtOrderInfoID.setText(selectedRow.getCompOrderInfoID());
         txtQuantities.setText(String.valueOf(selectedRow.getQuantities()));
-        txtComponentID.setText(selectedRow.getComponentID());
+        txtComponentID.setText(selectedRow.getComponentName());
     }
 
     //Thêm dữ liệu vào bảng DONDATHANG

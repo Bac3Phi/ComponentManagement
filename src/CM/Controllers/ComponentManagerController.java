@@ -354,7 +354,6 @@ public class ComponentManagerController implements Initializable {
                     resultSet.getString("TenMH"),
                     resultSet.getString("TenDV"),
                     resultSet.getString("HangSX"),
-                    resultSet.getString("HinhMH"),
                     resultSet.getString("TenLoai"),
                     resultSet.getString("CauHinh"),
                     resultSet.getString("TenKhu"),

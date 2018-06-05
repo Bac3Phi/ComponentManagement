@@ -23,6 +23,9 @@
                         <Tab text="Đơn đặt hàng">
                             <fx:include source="ComponentOrderView.fxml"/>
                         </Tab>
+                        <Tab text="Tìm kiếm đơn đặt hàng">
+                            <fx:include source="ComponentOrderSearchView.fxml"/>
+                        </Tab>
                     </tabs>
                 </JFXTabPane>
             </children>

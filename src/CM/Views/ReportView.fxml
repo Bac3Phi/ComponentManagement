@@ -11,9 +11,9 @@
             <children>
                 <JFXTabPane fx:id="tabPane" styleClass="tab">
                     <tabs>
-                        <Tab text="Báo Cáo Tồn">
+                        <Tab text="Báo Cáo Hàng Tồn">
                             <content>
-                                <fx:include source="ReportInventoriesView.fxml" />
+                                <fx:include source="InventoriesReportView.fxml" />
                             </content>
                         </Tab>
                         <Tab text="Báo Cáo Thu Chi">

@@ -70,6 +70,7 @@ public class CustomerSearchController implements Initializable {
     DataProvider dbConn;
     ObservableList<Customer> list;
     ResultSet resultSet;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConn = new DataProvider();
@@ -84,6 +85,24 @@ public class CustomerSearchController implements Initializable {
         colCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("CustomerAddress"));
         colCustomerEmail.setCellValueFactory(new PropertyValueFactory<>("CustomerEmail"));
         colCustomerPhone.setCellValueFactory(new PropertyValueFactory<>("CustomerPhoneNo"));
+
+        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Customer selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                        try {
+                            pointer.data.removeAll(pointer.data);
+                            pointer.data.add(selectedRow);
+                            pointer.tbvCustomer.setItems(pointer.data);
+                        }
+                        catch (NullPointerException e) {}
+                    }
+                });
+            }
+        });
     }
 
     public void searchData (String field, String str) throws SQLException {
@@ -129,18 +148,13 @@ public class CustomerSearchController implements Initializable {
         } catch (SQLException e) {}
     }
 
-    public void setBtnGETINFO (ActionEvent event) {
-        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                Customer selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
-                try {
-                    pointer.data.removeAll(pointer.data);
-                    pointer.data.add(selectedRow);
-                    pointer.tbvCustomer.setItems(pointer.data);
-                }
-                catch (NullPointerException e) {}
-            }
-        });
+    public void setBtnREFRESH(ActionEvent event) {
+        txtSEARCH.setText(null);
+        list.removeAll(list);
+        rdbtnCustomerID.setSelected(true);
+        rdbtnCustomerName.setSelected(false);
+        rdbtnCustomerAddress.setSelected(false);
+        rdbtnCustomerEmail.setSelected(false);
+        rdbtnCustomerPhone.setSelected(false);
     }
 }
