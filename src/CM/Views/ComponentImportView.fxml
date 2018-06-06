@@ -59,7 +59,7 @@
                                                 <JFXComboBox fx:id="cbEmployeeName" focusColor="#f38945" labelFloat="true" prefHeight="35.0" prefWidth="211.0" promptText="Nhân Viên" />
                                             </children>
                                         </HBox>
-                                        <JFXTextField fx:id="txtImportComponentAmount" focusColor="#ff6e7f" labelFloat="true" prefHeight="25.0" prefWidth="436.0" promptText="Tiền thanh toán" GridPane.rowIndex="2" />
+                                        <JFXTextField fx:id="txtImportComponentAmount" disable="true" focusColor="#ff6e7f" labelFloat="true" prefHeight="25.0" prefWidth="436.0" promptText="Tiền thanh toán" GridPane.rowIndex="2" />
                                     </children>
                                 </GridPane>
                                 <HBox layoutX="106.0" layoutY="222.0" spacing="10.0">
@@ -157,7 +157,7 @@
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0">
                                             <children>
                                                 <JFXTextField fx:id="txtImportComponentInforId" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="194.0" promptText="Mã Chi Tiết Phiếu Nhập" />
-                                                <JFXTextField fx:id="txtImportComponentInforImportId" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Mã Phiếu Nhập" />
+                                                <JFXTextField fx:id="txtImportComponentInforImportId" disable="true" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Mã Phiếu Nhập" />
                                             </children>
                                         </HBox>
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0" GridPane.rowIndex="1">

@@ -134,7 +134,6 @@ public class ComponentImportController implements Initializable {
 
         try {
             showData();
-            showDataInfor();
         }
         catch (IOException io){}
         catch (SQLException e) {}
@@ -276,9 +275,10 @@ public class ComponentImportController implements Initializable {
 
     @FXML
     //Đổ dữ liệu vào bảng
-    public void showDataInfor() throws SQLException, IOException{
-        resultSet = dbConn.getData("select MaCTPN, SoLuong, DonGia, DonGiaBan, GhiChu, MaPN, TongTien, TenMH\n" +
-                "from CHITIETPHIEUNHAP CTPN join MATHANG MH on CTPN.MaMH = MH.MaMH");
+    public void showDataInfor(String maPN) throws SQLException, IOException{
+        resultSet = dbConn.getData("select MaCTPN, CTPN.SoLuong, DonGia, DonGiaBan, GhiChu, MaPN, TongTien, TenMH\n" +
+                "from CHITIETPHIEUNHAP CTPN join MATHANG MH on CTPN.MaMH = MH.MaMH\n" +
+                "where MaPN = '" + maPN + "'");
         dataInfor.removeAll(dataInfor);
         while (resultSet.next()){
             dataInfor.add(new ComponentImportInfo(
@@ -315,6 +315,13 @@ public class ComponentImportController implements Initializable {
                 break;
             }
         }
+        try {
+            showDataInfor(selectedRow.getCompImportId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //lay thong tin du lieu duoc
@@ -343,15 +350,14 @@ public class ComponentImportController implements Initializable {
     @FXML
     //Thêm dữ liệu vào bảng
     public void insertData() {
-        String id = "", ngaylap ="", manv = "", tongtien = "", maddh = "";
+        String id = "", ngaylap ="", manv = "", tongtien = "0", maddh = "";
         try {
             id = txtImPortComponentId.getText();
             ngaylap = dpPublishDate.getValue().toString();
             manv = cbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
-            tongtien = txtImportComponentAmount.getText();
             maddh = txtOrderId.getText();
 
-            if (txtImPortComponentId.getText().isEmpty() || txtImportComponentAmount.getText().isEmpty()
+            if (txtImPortComponentId.getText().isEmpty()
                     || txtOrderId.getText().isEmpty() || dpPublishDate.getValue().toString().isEmpty()
                     || cbEmployeeName.getSelectionModel().getSelectedIndex() == 0)
             {
@@ -475,22 +481,47 @@ public class ComponentImportController implements Initializable {
                 int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETPHIEUNHAP");
                 if (isInserted > 0) {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
+                    try {
+                        updateTongTien(mapn, getTongTien(mapn), tongtieninfor);
+                        showDataInfor(mapn);
+                        showData();
+                        refreshInfor();
+                    }
+                    catch (SQLException e){}
+                    catch (IOException io) {}
                 }
                 else
                 {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
                 }
-                try {
-                    showDataInfor();
-                    refreshInfor();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
         {
             e.printStackTrace();
+        }
+    }
+
+    private String getTongTien(String MaPN) throws SQLException {
+        resultSet = dbConn.getData("select TongTienPN\n" +
+                "from PHIEUNHAPHANG where MaPN = '" + MaPN + "'");
+        while (resultSet.next()){
+            return resultSet.getString("TongTienPN");
+        }
+        return null;
+    }
+
+    public void updateTongTien(String maPN, String tongTien, String tienCT){
+        String newTongTien = String.valueOf(Long.parseLong(tongTien) + Long.parseLong(tienCT));
+        String[] dataUpdate = {maPN, newTongTien};
+        String[] colLabel = {"MaPN", "TongTienPN"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "PHIEUNHAPHANG");
+        if (isUpdated > 0) {
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
+        }
+        else
+        {
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
     }
 
@@ -527,7 +558,7 @@ public class ComponentImportController implements Initializable {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
                 }
                 try {
-                    showDataInfor();
+                    showDataInfor(mapn);
                     refreshInfor();
                 }
                 catch (SQLException e){}
@@ -557,7 +588,7 @@ public class ComponentImportController implements Initializable {
                 SmileNotification.creatingNotification("Thông Báo","Xóa dữ liệu thất bại",NotificationType.INFORMATION);
             }
             try {
-                showDataInfor();
+                showDataInfor(txtImportComponentInforImportId.getText());
                 refreshInfor();
             }
             catch (SQLException e){}
