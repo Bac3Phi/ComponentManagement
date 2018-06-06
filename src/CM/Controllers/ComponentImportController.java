@@ -481,8 +481,8 @@ public class ComponentImportController implements Initializable {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
                 }
                 try {
-                    showData();
-                    refresh();
+                    showDataInfor();
+                    refreshInfor();
                 }
                 catch (SQLException e){}
                 catch (IOException io) {}
@@ -527,8 +527,8 @@ public class ComponentImportController implements Initializable {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
                 }
                 try {
-                    showData();
-                    refresh();
+                    showDataInfor();
+                    refreshInfor();
                 }
                 catch (SQLException e){}
                 catch (IOException io) {}
@@ -557,8 +557,8 @@ public class ComponentImportController implements Initializable {
                 SmileNotification.creatingNotification("Thông Báo","Xóa dữ liệu thất bại",NotificationType.INFORMATION);
             }
             try {
-                showData();
-                refresh();
+                showDataInfor();
+                refreshInfor();
             }
             catch (SQLException e){}
             catch (IOException io) {}
