@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66f1eaea-12e3-46a0-92a5-3ff436242637" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/database-qllk.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +19,8 @@
       <file leaf-file-name="ComponentSearchController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2550">
-              <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+            <state relative-caret-position="479">
+              <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2796#2797#0" expanded="true" />
@@ -34,11 +30,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ComponentImportController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2250">
+              <caret line="697" column="18" selection-start-line="697" selection-start-column="18" selection-end-line="697" selection-end-column="18" />
+              <folding>
+                <element signature="e#25922#25923#0" expanded="true" />
+                <element signature="e#25947#25948#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentManagerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <caret line="515" column="13" selection-start-line="515" selection-start-column="13" selection-end-line="515" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Components.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -46,8 +64,8 @@
       <file leaf-file-name="CustomerSearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="159" column="5" lean-forward="true" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
+            <state relative-caret-position="2295">
+              <caret line="159" column="5" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -67,12 +85,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" />
         <option value="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentSearchComtroller.java" />
         <option value="$PROJECT_DIR$/src/CM/Views/ComponentSearchView.fxml" />
-        <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java" />
+        <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" />
+        <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" />
       </list>
     </option>
   </component>
@@ -88,8 +106,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -134,6 +150,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -226,18 +244,17 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32972136" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972136" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32972136" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -250,6 +267,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32972136" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -257,18 +275,47 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java</url>
-          <line>484</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2796#2797#0" expanded="true" />
+            <element signature="e#2856#2857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="159" column="5" lean-forward="true" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="285" column="48" lean-forward="true" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
+          <folding>
+            <element signature="e#25922#25923#0" expanded="true" />
+            <element signature="e#25947#25948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -381,33 +428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="285" column="48" lean-forward="true" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentSearchView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -418,37 +442,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="351" column="36" lean-forward="true" selection-start-line="351" selection-start-column="36" selection-end-line="351" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="159" column="5" lean-forward="true" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
+        <state relative-caret-position="2295">
+          <caret line="159" column="5" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="515" column="13" selection-start-line="515" selection-start-column="13" selection-end-line="515" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="697" column="18" selection-start-line="697" selection-start-column="18" selection-end-line="697" selection-end-column="18" />
+          <folding>
+            <element signature="e#25922#25923#0" expanded="true" />
+            <element signature="e#25947#25948#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+        <state relative-caret-position="479">
+          <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2796#2797#0" expanded="true" />

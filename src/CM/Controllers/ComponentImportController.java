@@ -373,12 +373,6 @@ public class ComponentImportController implements Initializable {
                 {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
                 }
-                try {
-                    showData();
-                    refresh();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
@@ -414,12 +408,6 @@ public class ComponentImportController implements Initializable {
                 {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
                 }
-                try {
-                    showData();
-                    refresh();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
@@ -445,12 +433,6 @@ public class ComponentImportController implements Initializable {
             {
                 SmileNotification.creatingNotification("Thông Báo","Xóa dữ liệu thất bại",NotificationType.INFORMATION);
             }
-            try {
-                showData();
-                refresh();
-            }
-            catch (SQLException e){}
-            catch (IOException io) {}
         }
     }
 
@@ -483,9 +465,8 @@ public class ComponentImportController implements Initializable {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
                     try {
                         updateTongTien(mapn, getTongTien(mapn), tongtieninfor);
-                        showDataInfor(mapn);
+                        updateNumOfComp(mamh, getNumOfComp(mamh), soluong);
                         showData();
-                        refreshInfor();
                     }
                     catch (SQLException e){}
                     catch (IOException io) {}
@@ -500,6 +481,29 @@ public class ComponentImportController implements Initializable {
         {
             e.printStackTrace();
         }
+    }
+
+    private void updateNumOfComp(String mamh, String numOfComp, String soluong) {
+        String newSoLuong = String.valueOf(Integer.parseInt(numOfComp) + Integer.parseInt(soluong));
+        String[] dataUpdate = {mamh, newSoLuong};
+        String[] colLabel = {"MaMH", "SoLuong"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "MATHANG");
+        if (isUpdated > 0) {
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
+        }
+        else
+        {
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
+        }
+    }
+
+    private String getNumOfComp(String mamh) throws SQLException {
+        resultSet = dbConn.getData("select SoLuong\n" +
+                "from MATHANG where MaMH = '" + mamh + "'");
+        while (resultSet.next()){
+            return resultSet.getString("SoLuong");
+        }
+        return null;
     }
 
     private String getTongTien(String MaPN) throws SQLException {
@@ -557,12 +561,6 @@ public class ComponentImportController implements Initializable {
                 {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
                 }
-                try {
-                    showDataInfor(mapn);
-                    refreshInfor();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
@@ -587,12 +585,6 @@ public class ComponentImportController implements Initializable {
             {
                 SmileNotification.creatingNotification("Thông Báo","Xóa dữ liệu thất bại",NotificationType.INFORMATION);
             }
-            try {
-                showDataInfor(txtImportComponentInforImportId.getText());
-                refreshInfor();
-            }
-            catch (SQLException e){}
-            catch (IOException io) {}
         }
     }
 
@@ -601,6 +593,14 @@ public class ComponentImportController implements Initializable {
     public void refresh() {
         btnDelete.setDisable(true);
         btnUpdate.setDisable(true);
+
+        try {
+            showData();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         txtImPortComponentId.setText("");
         txtOrderId.setText("");
@@ -611,9 +611,17 @@ public class ComponentImportController implements Initializable {
 
     @FXML
     //Hàm refresh xóa text
-    public void refreshInfor() {
+    public void refreshInfor(){
         btnDeleteInfor.setDisable(true);
         btnUpdateInfor.setDisable(true);
+
+        try {
+            showDataInfor(txtImportComponentInforImportId.getText());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         txtImportComponentInforId.setText("");
         txtNote.setText("");
@@ -687,8 +695,16 @@ public class ComponentImportController implements Initializable {
     }
 
     public void setBtnREFRESH(ActionEvent actionEvent) {
+        refresh();
     }
 
     public void setBtnREFRESHinfo(ActionEvent actionEvent) {
+        try {
+            showDataInfor(txtImportComponentInforImportId.getText());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -378,6 +378,14 @@ public class ComponentManagerController implements Initializable {
         cbAreaName.getSelectionModel().select(0);
         cbTypeName.getSelectionModel().select(0);
         cbUnit.getSelectionModel().select(0);
+
+        try {
+            showData();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //lay thong tin du lieu duoc
@@ -445,12 +453,6 @@ public class ComponentManagerController implements Initializable {
                 {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
                 }
-                try {
-                    showData();
-                    refresh();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
@@ -488,12 +490,6 @@ public class ComponentManagerController implements Initializable {
                 {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
                 }
-                try {
-                    showData();
-                    refresh();
-                }
-                catch (SQLException e){}
-                catch (IOException io) {}
             }
         }
         catch (NullPointerException e)
@@ -518,12 +514,6 @@ public class ComponentManagerController implements Initializable {
             {
                 SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
             }
-            try {
-                showData();
-                refresh();
-            }
-            catch (SQLException e){}
-            catch (IOException io) {}
         }
     }
 
