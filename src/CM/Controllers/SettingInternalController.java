@@ -1,7 +1,7 @@
 package CM.Controllers;
 
 import CM.Functions.SmileNotification;
-import CM.Functions.generateID;
+import CM.Functions.GenerateID;
 import CM.Models.*;
 import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
@@ -251,11 +251,8 @@ public class SettingInternalController implements Initializable {
             dialog.close();
         });
         addBtn.setOnAction((ActionEvent event1) -> {
-            try {
-                stockID = generateID.create("KHO","MaKhu","K"); //Gắn Mã Tự Sinh
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+                stockID = GenerateID.create("KHO","MaKhu","K"); //Gắn Mã Tự Sinh
+
             stockName = txtStockName.getText();
             insertData("KHO",stockID,stockName);
             dialog.close();
@@ -346,7 +343,7 @@ public class SettingInternalController implements Initializable {
             dialog.close();
         });
         addBtn.setOnAction((ActionEvent event1) -> {
-            departmentID ="K003"; //Gắn Mã Tự Sinh
+            departmentID = GenerateID.create("PHONGBAN","MaPhong","PB");
             departmentName = txtDepartmentName.getText();
             insertData("PHONGBAN",departmentID,departmentName);
             dialog.close();
@@ -390,7 +387,7 @@ public class SettingInternalController implements Initializable {
             dialog.close();
         });
         addBtn.setOnAction((ActionEvent event1) -> {
-            typeofgoodsID ="K003"; //Gắn Mã Tự Sinh
+            typeofgoodsID = GenerateID.create("LOAIMATHANG","MaLoai","LMH");
             typeofgoodsName = txtTypeOfGoods.getText();
             insertData("LOAIMATHANG",typeofgoodsID,typeofgoodsName);
             dialog.close();
@@ -435,7 +432,8 @@ public class SettingInternalController implements Initializable {
             dialog.close();
         });
         addBtn.setOnAction((ActionEvent event1) -> {
-            compUnitID ="K003"; //Gắn Mã Tự Sinh
+
+            compUnitID = GenerateID.create("DonViTinh","maDV","DV");
             compUnitName = txtCompUnit.getText();
             insertData("DONVITINH",compUnitID,compUnitName);
             dialog.close();

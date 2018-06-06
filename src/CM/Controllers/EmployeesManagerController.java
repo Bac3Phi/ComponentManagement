@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
 import CM.Models.Department;
@@ -8,6 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +25,11 @@ import tray.notification.NotificationType;
 
 import java.io.IOError;
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -105,6 +110,8 @@ public class EmployeesManagerController implements Initializable {
         list = FXCollections.observableArrayList();
         tbvEmployees.setEditable(false);
         group = new ToggleGroup();
+        txtEmployeeID.setEditable(false);
+        txtEmployeeID.setText(GenerateID.create("NhanVien","MaNV","NV"));
 
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
@@ -126,6 +133,49 @@ public class EmployeesManagerController implements Initializable {
             @Override
             public void handle(MouseEvent event) {
                 getSelectedData();
+            }
+        });
+        updateProcess();
+    }
+    private static double progress1 = 0;
+    private static double progress2 = 0;
+
+    private void updateProcess() {
+        DecimalFormat decimalFormat = new DecimalFormat("###.#");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+
+        //progressPersonal.setProgress(0.00);
+        double sum_progress = progress1 + progress2 ;
+        txtDepartmentID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress1 = 0.5;
+
+                } else {
+                    progress1 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2);
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
+            }
+        });
+        txtEmployeeName.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.isEmpty()) {
+                    progress1 = 0.5;
+
+                } else {
+                    progress1 = 0.0;
+
+                }
+
+                double sum = ( progress1 + progress2);
+                progressPersonal.setProgress(sum);
+                lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
     }
@@ -170,7 +220,8 @@ public class EmployeesManagerController implements Initializable {
         txtEmployeeName.setText("");
         rbFEMALE.setSelected(false);
         rbMALE.setSelected(true);
-        txtDepartmentID.setText("");
+       // txtDepartmentID.setText("");
+        txtEmployeeID.setText(GenerateID.create("NhanVIen","maNV","NV"));
     }
 
     //lay thong tin du lieu duoc
@@ -315,7 +366,7 @@ public class EmployeesManagerController implements Initializable {
                     "Please fill in the blank!!!", ButtonType.OK);
             alert.show();
         }
-        String[] dataDelete = {txtDepartmentID.getText()};
+        String[] dataDelete = {txtEmployeeID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "NHANVIEN", "MaNV");
         if (isDeleted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);

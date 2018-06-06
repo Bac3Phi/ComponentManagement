@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.ComponentOrder;
 import CM.Models.ComponentOrderInFo;
@@ -105,7 +106,8 @@ public class ComponentOrderController implements Initializable {
         btnUPDATEinfo.setDisable(true);
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
-
+        txtOrderID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
+        txtOrderInfoID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
         tbvOrder.setEditable(false);
         tbvOrderInfo.setEditable(false);
 
