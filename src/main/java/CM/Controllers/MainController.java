@@ -88,7 +88,7 @@ public class MainController extends Application implements Initializable {
         Stage stage = (Stage) stackPane.getScene().getWindow();
 
         Platform.setImplicitExit(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/SignInView.fxml")); // DMMMMM dau ..
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Views/SignInView.fxml")); // DMMMMM dau ..
         Parent root2 = null;
         try {
             root2 = (Parent) fxmlLoader.load();
@@ -98,7 +98,7 @@ public class MainController extends Application implements Initializable {
         Scene secondScene = new Scene(root2);
         Stage secondStage = new Stage();
         secondStage.setResizable(false);
-        Image image = new Image(String.valueOf(this.getClass().getResource("/CM/Assets/images/Glogo.png")));
+        Image image = new Image(String.valueOf(this.getClass().getResource("/Assets/images/Glogo.png")));
         secondStage.getIcons().add(image);
         secondStage.setScene(secondScene); // set the scene
         secondStage.setTitle("GAMEON: Đăng Nhập");
@@ -127,13 +127,13 @@ public class MainController extends Application implements Initializable {
 
     private void createPages() {
         try {
-            component = FXMLLoader.load(getClass().getResource("/CM/Views/ComponentView.fxml"));
-            customer = FXMLLoader.load(getClass().getResource("/CM/Views/CustomerView.fxml"));
-            employee = FXMLLoader.load(getClass().getResource("/CM/Views/EmployeesView.fxml"));
-            provider = FXMLLoader.load(getClass().getResource("/CM/Views/ProviderView.fxml"));
-            setting = FXMLLoader.load(getClass().getResource("/CM/Views/SettingView.fxml"));
-            bill = FXMLLoader.load(getClass().getResource("/CM/Views/BillView.fxml"));
-            report = FXMLLoader.load(getClass().getResource("/CM/Views/ReportView.fxml"));
+            component = FXMLLoader.load(getClass().getResource("/Views/ComponentView.fxml"));
+            customer = FXMLLoader.load(getClass().getResource("/Views/CustomerView.fxml"));
+            employee = FXMLLoader.load(getClass().getResource("/Views/EmployeesView.fxml"));
+            provider = FXMLLoader.load(getClass().getResource("/Views/ProviderView.fxml"));
+            setting = FXMLLoader.load(getClass().getResource("/Views/SettingView.fxml"));
+            bill = FXMLLoader.load(getClass().getResource("/Views/BillView.fxml"));
+            report = FXMLLoader.load(getClass().getResource("/Views/ReportView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {

@@ -79,10 +79,10 @@ public class SignInController  implements Initializable {
     private void completeLogin(){
         btn_SignIn.getScene().getWindow().hide();
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/MainView.fxml")); // DMMMMM dau ..
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Views/MainView.fxml")); // DMMMMM dau ..
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            Image image = new Image(String.valueOf(this.getClass().getResource("../Assets/images/Glogo.png")));
+            Image image = new Image(String.valueOf(this.getClass().getResource("/Assets/images/Glogo.png")));
             MainController mainController = fxmlLoader.getController();
             mainController.setInfo(data.get(0).getUsername(),data.get(0).getDisplayName(),datainfo.get(0).getAuthName());
             stage.getIcons().add(image);
@@ -174,7 +174,7 @@ public class SignInController  implements Initializable {
 
     }
     public void setLinkChangePassword(ActionEvent actionEvent) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/ChangePasswordView.fxml")); // DMMMMM dau ..
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Views/ChangePasswordView.fxml")); // DMMMMM dau ..
         Parent root2 = null;
         try {
             root2 = (Parent) fxmlLoader.load();

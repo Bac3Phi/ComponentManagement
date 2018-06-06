@@ -33,9 +33,9 @@ public class Main extends Application {
         //Scene login
         try {
             //FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent parent = FXMLLoader.load(getClass().getResource("Views/SignInView.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/Views/SignInView.fxml"));
             Scene scene = new Scene(parent, 800, 450);
-            Image image = new Image(String.valueOf(this.getClass().getResource("Assets/images/Glogo.png")));
+            Image image = new Image(String.valueOf(this.getClass().getResource("/Assets/images/Glogo.png")));
             window.getIcons().add(image);
             window.setTitle("GAMEON: Đăng Nhập");
             window.setScene(scene);

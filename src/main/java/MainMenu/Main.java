@@ -1,4 +1,4 @@
-package Testing.MainMenu;
+package MainMenu;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

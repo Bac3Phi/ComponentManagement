@@ -1,4 +1,4 @@
-package Testing.MainMenu;
+package MainMenu;
 
 public class MainMenuController {
 }

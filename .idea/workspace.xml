@@ -2,11 +2,338 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66f1eaea-12e3-46a0-92a5-3ff436242637" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComponentManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ComponentManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/font/BebasNeue.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Contentlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/GIF/Infinity-1s-78px.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/GIF/index.block-rotate-loading-gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/GIF/index.double-ring-spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/GIF/index.infinity-rotate-cycle-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Glogo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Glogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_Admin_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_CV_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_Handshake_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_Increase_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_Weixing_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/Material/icons8_Workstation_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/gameon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Add_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Assistant_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Delete_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Edit_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Keyboard_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Memory_Slot_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Microsoft_Excel_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_NVIDIA_GeForce_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Print_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Processor_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_SSD_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Save_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_User_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/icons8_Workstation_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillSearchController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ChangePasswordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentSearchController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/DepartmentController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/DepartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesSearchController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/LogInController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderSearchController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderSearchController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderSearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportInventoriesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingExternalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SignInController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/CustomerFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/DbConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/DynamicViews.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/SmileNotification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Functions/generateID.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Authority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Bills.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/BillsInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/CompUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentImportInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ComponentOrderInFo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Components.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Constance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/CostDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/DataProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Employees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Inventories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InventoriesReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InventoriesReportInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/LogIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Providers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ReceiptsAndPaymentsReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/RevenueDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/TypeOfGoods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Stytlesheet/customer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Stytlesheet/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Stytlesheet/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/BillManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/BillSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/BillView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ChangePasswordView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentOrderSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentOrderView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ProviderView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportInventoriesView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportPaymentView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingExternalView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingInternalView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SignInView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/MainMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/Testing/MainMenu/Style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/font/BebasNeue.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Contentlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/GIF/Infinity-1s-78px.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/GIF/index.block-rotate-loading-gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/GIF/index.double-ring-spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/GIF/index.infinity-rotate-cycle-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Glogo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Glogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_Admin_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_CV_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_Handshake_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_Increase_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_Weixing_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/Material/icons8_Workstation_24px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/gameon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Add_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Assistant_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Delete_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Edit_File_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Keyboard_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Memory_Slot_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Microsoft_Excel_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_NVIDIA_GeForce_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Print_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Processor_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_SSD_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Save_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_User_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/icons8_Workstation_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/BillSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ChangePasswordController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentOrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentOrderSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/DepartmentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/EmployeesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/EmployeesManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/EmployeesSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/LogInController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ProviderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ProviderManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ProviderSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ReportInventoriesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SettingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SettingExternalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SettingInternalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SignInController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Functions/CustomerFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Functions/DbConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Functions/DynamicViews.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Functions/SmileNotification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Functions/generateID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Authority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Bills.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/BillsInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/CompUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentImport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentImportInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/ComponentOrderInFo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Components.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Constance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/CostDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/DataProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Employees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Inventories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/InventoriesReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/InventoriesReportInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/LogIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Providers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/RevenueDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Models/TypeOfGoods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Stytlesheet/customer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Stytlesheet/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Stytlesheet/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/BillView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ChangePasswordView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentImportSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentOrderSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentOrderView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/MainView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ProviderManagerView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ProviderSearchView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ProviderView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportInventoriesView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportPaymentView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/SettingExternalView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/SettingInternalView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/SettingView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CM/Views/SignInView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/MainMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Testing/MainMenu/Style.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,25 +343,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ComponentSearchController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
+      <file leaf-file-name="ComponentSearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
+            <state relative-caret-position="-1009">
+              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2796#2797#0" expanded="true" />
-                <element signature="e#2856#2857#0" expanded="true" />
+                <element signature="e#2866#2867#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentImportController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="697" column="18" selection-start-line="697" selection-start-column="18" selection-end-line="697" selection-end-column="18" />
+            <state relative-caret-position="453">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentImportController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="669">
+              <caret line="544" column="33" selection-start-line="544" selection-start-column="33" selection-end-line="544" selection-end-column="33" />
               <folding>
                 <element signature="e#25922#25923#0" expanded="true" />
                 <element signature="e#25947#25948#0" expanded="true" />
@@ -43,8 +378,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1944">
+              <caret line="100" column="76" lean-forward="true" selection-start-line="100" selection-start-column="76" selection-end-line="100" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ComponentManagerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-28">
               <caret line="515" column="13" selection-start-line="515" selection-start-column="13" selection-end-line="515" selection-end-column="13" />
@@ -53,16 +415,16 @@
         </entry>
       </file>
       <file leaf-file-name="Components.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Components.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="17">
               <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CustomerSearchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2295">
               <caret line="159" column="5" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
@@ -76,6 +438,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -91,7 +454,19 @@
         <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java" />
         <option value="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentSearchController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -123,38 +498,90 @@
               <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ComponentProject" type="1abcf292:AndroidViewProjectNode" />
+              <item name="ComponentManagement" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="1abcf292:AndroidViewProjectNode" />
+              <item name="ComponentManagement" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ComponentProject\src\main\resources" />
+      <recent name="D:\ComponentProject\src\main\java" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ComponentProject\src\CM\Views" />
     </key>
@@ -240,17 +667,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32972136" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32972136" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972136" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -267,7 +694,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32972136" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -279,33 +705,32 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2796#2797#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="e#2866#2867#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Components.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2703">
           <caret line="159" column="5" lean-forward="true" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4845">
           <caret line="285" column="48" lean-forward="true" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
@@ -316,157 +741,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/SignInController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5321">
           <caret line="313" selection-start-line="313" selection-end-line="313" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/SignInController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5321">
           <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/SignInController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3128">
           <caret line="184" column="65" selection-start-line="184" selection-start-column="65" selection-end-line="184" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/DataProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/ComponentImportInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/ComponentImportInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/SignInController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerManagerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
           <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Models/Components.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2295">
           <caret line="159" column="5" selection-start-line="135" selection-start-column="4" selection-end-line="159" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentManagerController.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1009">
+          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2866#2867#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Components.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28">
           <caret line="515" column="13" selection-start-line="515" selection-start-column="13" selection-end-line="515" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="697" column="18" selection-start-line="697" selection-start-column="18" selection-end-line="697" selection-end-column="18" />
+        <state relative-caret-position="669">
+          <caret line="544" column="33" selection-start-line="544" selection-start-column="33" selection-end-line="544" selection-end-column="33" />
           <folding>
             <element signature="e#25922#25923#0" expanded="true" />
             <element signature="e#25947#25948#0" expanded="true" />
@@ -474,17 +910,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CM/Controllers/ComponentSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="150" column="1" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2796#2797#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1944">
+          <caret line="100" column="76" lean-forward="true" selection-start-line="100" selection-start-column="76" selection-end-line="100" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ComponentManagement</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>fontawesomefx-8.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
