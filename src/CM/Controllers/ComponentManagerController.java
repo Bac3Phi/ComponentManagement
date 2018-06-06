@@ -45,7 +45,7 @@ public class ComponentManagerController implements Initializable {
     @FXML
     private JFXTextField txtNumOfComp;
     @FXML
-    private TableView<Components> tbvComponent;
+    public TableView<Components> tbvComponent;
 
     @FXML
     private TableColumn<Components, String> colComponentD, colComponentName, colComponentConfig, colTypeName, colComponentMaker, colAreaName,colUnit, colNumOfComp;

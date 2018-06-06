@@ -157,7 +157,7 @@
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0">
                                             <children>
                                                 <JFXTextField fx:id="txtImportComponentInforId" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="194.0" promptText="Mã Chi Tiết Phiếu Nhập" />
-                                                <JFXTextField fx:id="txtImportComponentInforImportId" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Mã Phiếu Nhập" />
+                                                <JFXTextField fx:id="txtImportComponentInforImportId" disable="true" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Mã Phiếu Nhập" />
                                             </children>
                                         </HBox>
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0" GridPane.rowIndex="1">

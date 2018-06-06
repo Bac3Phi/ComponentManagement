@@ -20,6 +20,9 @@
                         <Tab text="Quản Lý Linh Kiện">
                             <fx:include source="ComponentManagerView.fxml" />
                         </Tab>
+                        <Tab text="Tìm Kiếm Linh Kiện">
+                            <fx:include source="ComponentSearchView.fxml" />
+                        </Tab>
                         <Tab text="Đơn đặt hàng">
                             <fx:include source="ComponentOrderView.fxml"/>
                         </Tab>
