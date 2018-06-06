@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ReportPaymentController">
    <children>
       <BorderPane>
@@ -93,7 +92,7 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="499.0" layoutY="56.0" prefHeight="433.0" prefWidth="858.0" styleClass="card-footer">
+                  <AnchorPane layoutX="499.0" layoutY="56.0" prefHeight="433.0" prefWidth="858.0" styleClass="card-footer" AnchorPane.rightAnchor="43.0">
                      <children>
                         <TableView fx:id="tbvReport" prefHeight="238.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>

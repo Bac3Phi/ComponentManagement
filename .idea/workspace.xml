@@ -1,88 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f39dc23-e668-4581-ab60-a8508f8c856d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillManagerController$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillSearchController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/BillSearchController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentOrderSearchController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/EmployeesSearchController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ProviderSearchController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/Constance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/CostDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/InventoriesReportInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/RevenueDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentOrderSearchView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Functions/generateID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/Constance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/CostDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CM/Models/RevenueDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/database/database-qllk.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ComponentImportSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/CustomerSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/InventoriesReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/ReportPaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Controllers/SettingInternalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/DataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/DataProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ReceiptsAndPaymentsReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Models/ReceiptsAndPaymentsReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/CustomerSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/EmployeesSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/InventoriesReportView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportInventoriesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportPaymentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/ReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingInternalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingInternalView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ComponentManagement/CM/Views/SettingView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ComponentImportSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/CustomerSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/InventoriesReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/ReportPaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Controllers/SettingInternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Controllers/SettingInternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/DataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Models/ReceiptsAndPaymentsReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentImportSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentImportSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/CustomerSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/CustomerSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/EmployeesSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/InventoriesReportView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ReportInventoriesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ReportPaymentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/ReportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/ReportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/SettingInternalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/SettingInternalView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CM/Views/SettingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CM/Views/SettingView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="7f39dc23-e668-4581-ab60-a8508f8c856d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -243,9 +162,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="411" />
-    <option name="y" value="112" />
-    <option name="width" value="1943" />
+    <option name="x" value="410" />
+    <option name="y" value="111" />
+    <option name="width" value="1944" />
     <option name="height" value="790" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -439,7 +358,7 @@
       <workItem from="1528090960315" duration="237000" />
       <workItem from="1528091436775" duration="27000" />
       <workItem from="1528091492598" duration="35157000" />
-      <workItem from="1528179324105" duration="9881000" />
+      <workItem from="1528179324105" duration="10127000" />
     </task>
     <task id="LOCAL-00001" summary="Done Model Employees">
       <created>1522385190340</created>
@@ -585,11 +504,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10774000" />
+    <option name="totallyTimeSpent" value="11020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -653,7 +571,8 @@
     <MESSAGE value="Cập nhật lại hóa đơn và fix bug tính tiền." />
     <MESSAGE value="Update search Nhà cung cấp, Nhân viên, Khách hàng." />
     <MESSAGE value="Xong màn hình báo cáo hàng tồn (còn bug chưa fix được).&#10;Update màn hình hóa đơn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong màn hình báo cáo hàng tồn (còn bug chưa fix được).&#10;Update màn hình hóa đơn" />
+    <MESSAGE value="Sinh mã tự động." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sinh mã tự động." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
