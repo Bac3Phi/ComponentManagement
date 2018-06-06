@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.util.function.Function;
 
 public class Main extends Application {
-    private Stage window;
+    public static Stage window;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

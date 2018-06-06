@@ -1,7 +1,18 @@
 package CM.Controllers;
 
 import CM.Functions.SmileNotification;
+import CM.Main;
 import CM.Models.*;
+import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.TextAlignment;
 import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,9 +25,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.DirectoryChooser;
 import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -184,36 +199,38 @@ public class ReportPaymentController implements Initializable {
 
     //lay thong tin du lieu duoc
     public void getSelectedData() {
-        btnDelete.setDisable(false);
-        btnUpdate.setDisable(false);
-        btnPrint.setDisable(false);
         ReceiptsAndPaymentsReport selectedRow = tbvReport.getSelectionModel().getSelectedItem();
-        txtPaymentReportId.setText(selectedRow.getReportID());
-        String[] parts = selectedRow.getDate().split(" ");
-        txtMonth.setText(parts[1]);
-        txtYear.setText(parts[3]);
+        if (selectedRow != null){
+            btnDelete.setDisable(false);
+            btnUpdate.setDisable(false);
+            btnPrint.setDisable(false);
+            txtPaymentReportId.setText(selectedRow.getReportID());
+            String[] parts = selectedRow.getDate().split(" ");
+            txtMonth.setText(parts[1]);
+            txtYear.setText(parts[3]);
 
-        dpPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
+            dpPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
 
-        if (selectedRow.getType().matches(Constance.Month))
-        {
-            rdbtnMonth.setSelected(true);
-        }
-        else rdbtnQuaterOfYear.setSelected(true);
-
-        for (Employees employees:
-                cbEmployeeName.getItems()) {
-            if (employees.getEmployeeName().matches(selectedRow.getEmployeeName())){
-                cbEmployeeName.getSelectionModel().select(employees);
-                break;
+            if (selectedRow.getType().matches(Constance.Month))
+            {
+                rdbtnMonth.setSelected(true);
             }
-        }
+            else rdbtnQuaterOfYear.setSelected(true);
 
-        try {
-            loadTbvRevenueDetail(selectedRow.getReportID());
-            loadTbvCostDetail(selectedRow.getReportID());
-        } catch (SQLException e) {
-            e.printStackTrace();
+            for (Employees employees:
+                    cbEmployeeName.getItems()) {
+                if (employees.getEmployeeName().matches(selectedRow.getEmployeeName())){
+                    cbEmployeeName.getSelectionModel().select(employees);
+                    break;
+                }
+            }
+
+            try {
+                loadTbvRevenueDetail(selectedRow.getReportID());
+                loadTbvCostDetail(selectedRow.getReportID());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -545,5 +562,190 @@ public class ReportPaymentController implements Initializable {
 
     public void setButtonREFRESH(ActionEvent actionEvent) {
         refresh();
+    }
+
+    public void setButtonPRINT(ActionEvent actionEvent) {
+        DirectoryChooser chooser = new DirectoryChooser();
+        chooser.setTitle("Báo Cáo Thu Chi");
+        File defaultDirectory = new File("c:/");
+        chooser.setInitialDirectory(defaultDirectory);
+        File selectedDirectory = chooser.showDialog(Main.window);
+
+        try {
+            PdfWriter writer;
+            if (rdbtnMonth.isSelected()){
+                writer = new PdfWriter(selectedDirectory.getAbsolutePath() + "/BaoCaoThuChi_Thang" + txtMonth.getText() + "_" + txtYear.getText() + ".pdf");
+            }
+            else{
+                writer = new PdfWriter(selectedDirectory.getAbsolutePath() + "/BaoCaoThuChi_Quy" + txtMonth.getText() + "_" + txtYear.getText() + ".pdf");
+            }
+
+            // Creating a PdfDocument
+            PdfDocument pdfDoc = new PdfDocument(writer);
+
+            // Adding a new page
+            pdfDoc.addNewPage();
+
+            // Creating a Document
+            Document document = new Document(pdfDoc);
+
+            addTitlePage(document);
+            addDate(document);
+            addInfo(document);
+            addContent(document);
+
+            // Closing the document
+            document.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addContent(Document document) throws IOException, SQLException {
+        addHeader("2. Báo Cáo", document);
+        addInfo("2.1 Thông Tin Báo Cáo", document);
+        addTable(document);
+        
+        addInfo("2.2 Báo Cáo Chi Tiết Thu", document);
+        addTableRecetpts(document);
+
+        addInfo("2.3 Báo Cáo Chi Tiết Chi", document);
+        addTablePayments(document);
+    }
+
+    private void addTableRecetpts(Document document) throws SQLException {
+        float [] pointColumnWidths = {200F, 200F, 200F};
+        Table table = new Table(pointColumnWidths);
+
+        table.addCell(new Cell().add("Ma Chi Tiet Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Ten Mat Hang").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Tong Ban").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+
+        resultSet = dbConn.getData("select MaCTT, TenMH, TongBan\n" +
+                "from CHITIETTHU CTT join MATHANG MH on CTT.MaMH = MH.MaMH\n" +
+                "where MaBCTC = '" + txtPaymentReportId.getText() + "'");
+
+        while (resultSet.next()){
+            table.addCell(new Cell().add(resultSet.getString("MaCTT")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongBan"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        }
+
+        document.add(table);
+    }
+
+    private void addTablePayments(Document document) throws SQLException {
+        float [] pointColumnWidths = {200F, 200F, 200F};
+        Table table = new Table(pointColumnWidths);
+
+        table.addCell(new Cell().add("Ma Chi Tiet Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Ten Mat Hang").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Tong Nhap").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+
+        resultSet = dbConn.getData("select MaCTC, TenMH, TongNhap\n" +
+                "from CHITIETCHI CTC join MATHANG MH on CTC.MaMH = MH.MaMH\n" +
+                "where MaBCTC = '" + txtPaymentReportId.getText() + "'");
+
+        while (resultSet.next()){
+            table.addCell(new Cell().add(resultSet.getString("MaCTC")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongNhap"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        }
+
+        document.add(table);
+    }
+
+    private void addTable(Document document) throws SQLException {
+        float [] pointColumnWidths = {200F, 200F, 200F, 200F, 200F, 200F, 200F};
+        Table table = new Table(pointColumnWidths);
+
+        table.addCell(new Cell().add("Mã BCTC").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Nhân Viên").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Tong Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Tong Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Ngay Lap").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Loai Bao Cao").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Thoi Gian").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+
+        ReceiptsAndPaymentsReport selectedRow = tbvReport.getSelectionModel().getSelectedItem();
+
+            table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+            table.addCell(new Cell().add(selectedRow.getEmployeeName()).setTextAlignment(TextAlignment.LEFT));
+            table.addCell(new Cell().add(String.valueOf(selectedRow.getSumReceipts())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(String.valueOf(selectedRow.getSumPayments())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(String.valueOf(selectedRow.getPublishDate())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(selectedRow.getType()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(selectedRow.getDate()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+
+        document.add(table);
+    }
+
+    private void addInfo(Document document) throws IOException {
+        addHeader("1. Thông Tin", document);
+        addInfo("Mã Báo Cáo: " + txtPaymentReportId.getText(), document);
+        addInfo("Tên Nhân Viên: " + cbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeName(), document);
+        addInfo("Ngày Lập: " + dpPublishDate.getValue(), document);
+
+        if (rdbtnMonth.isSelected()){
+            addInfo("Loại Báo Cáo: Tháng", document);
+            addInfo("Tháng: " + txtMonth.getText() + "\tNăm: " + txtYear.getText(), document);
+        }
+        else {
+            addInfo("Loại Báo Cáo: Quý", document);
+            addInfo("Quý: " + txtMonth.getText() + "\tNăm: " + txtYear.getText(), document);
+        }
+    }
+
+    private void addInfo(String strinfo, Document document) throws IOException {
+        Paragraph info = new Paragraph(strinfo);
+
+        // Setting font of the text
+        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+        info.setFont(font);
+        info.setFontSize(12);
+        info.setTextAlignment(TextAlignment.LEFT);
+        info.setPaddingLeft(25);
+
+        document.add(info);
+    }
+
+    private void addHeader(String strheader, Document document) throws IOException {
+        Paragraph header = new Paragraph(strheader);
+
+        // Setting font of the text
+        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        header.setFont(font);
+        header.setFontSize(14);
+        header.setTextAlignment(TextAlignment.LEFT);
+
+        document.add(header);
+    }
+
+    private void addDate(Document document) throws IOException {
+        Paragraph date;
+        if (rdbtnMonth.isSelected()){
+            date = new Paragraph("Tháng: " + txtMonth.getText() + "/" + txtYear.getText());
+        }
+        else date = new Paragraph("Quý: " + txtMonth.getText() + "/" + txtYear.getText());
+
+        // Setting font of the text
+        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+        date.setFont(font);
+        date.setFontSize(12);
+        date.setTextAlignment(TextAlignment.CENTER);
+
+        document.add(date);
+    }
+
+    private void addTitlePage(Document document) throws IOException {
+        Paragraph title = new Paragraph("Báo Cáo Thu Chi");
+
+        // Setting font of the text
+        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        title.setFont(font);
+        title.setFontSize(22);
+        title.setTextAlignment(TextAlignment.CENTER);
+
+        document.add(title);
     }
 }

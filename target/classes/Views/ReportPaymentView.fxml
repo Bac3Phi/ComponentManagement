@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ReportPaymentController">
    <children>
       <BorderPane>
@@ -49,7 +48,7 @@
                         </Pane>
                         <HBox layoutX="83.0" layoutY="359.0" spacing="10.0">
                            <children>
-                              <JFXButton fx:id="btnPrint" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" prefWidth="36.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text=" " textFill="WHITE" textOverrun="CLIP">
+                              <JFXButton fx:id="btnPrint" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonPRINT" prefHeight="35.0" prefWidth="36.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text=" " textFill="WHITE" textOverrun="CLIP">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
