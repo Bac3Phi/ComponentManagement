@@ -24,7 +24,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
+import static CM.Controllers.CustomerController.tabPaneEx;
 public class CustomerSearchController implements Initializable {
 
     @FXML
@@ -92,6 +92,7 @@ public class CustomerSearchController implements Initializable {
                 btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
+                        tabPaneEx.getSelectionModel().select(0);
                         Customer selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
                         try {
                             pointer.data.removeAll(pointer.data);

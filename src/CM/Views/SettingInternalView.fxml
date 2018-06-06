@@ -159,7 +159,7 @@
                   </StackPane>
                   <StackPane fx:id="deptStackPane4" layoutX="727.0" layoutY="413.0">
                      <children>
-                        <AnchorPane prefHeight="308.0" prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
+                        <AnchorPane prefHeight="308.0"  prefWidth="564.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5);">
                            <children>
                               <Pane layoutY="-1.0" prefHeight="60.0" prefWidth="570.0" style="-fx-background-color: #02AAB0; -fx-background-radius: 5 5 0 0;">
                                  <children>

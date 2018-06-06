@@ -11,14 +11,9 @@
             <children>
                 <JFXTabPane fx:id="tabPane" styleClass="tab">
                     <tabs>
-                        <Tab text="Kho &amp; Phòng Ban ">
+                        <Tab text="Chỉnh sửa thông tin hệ thống">
                             <content>
                                 <fx:include source="SettingInternalView.fxml" />
-                            </content>
-                        </Tab>
-                        <Tab text="Thiết lập Cá Nhân">
-                            <content>
-                                <fx:include source="SettingExternalView.fxml" />
                             </content>
                         </Tab>
                     </tabs>
