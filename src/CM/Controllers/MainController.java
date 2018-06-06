@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -32,6 +33,7 @@ import java.util.logging.Logger;
 public class MainController extends Application implements Initializable {
     public Label lbCurrentUserName;
     public VBox TabParent;
+    public Button btnREFRESH;
     @FXML
     private JFXButton btnBill;
     @FXML
@@ -237,5 +239,9 @@ public class MainController extends Application implements Initializable {
     }
 
     public void openCustom(ActionEvent actionEvent) {
+    }
+
+    public void setbtnRefresh(ActionEvent actionEvent) throws Exception {
+       createPages();
     }
 }

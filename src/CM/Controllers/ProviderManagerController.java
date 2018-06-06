@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
 import CM.Models.Providers;
@@ -145,6 +146,8 @@ public class ProviderManagerController implements Initializable {
         paneProviderManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
         tbvProviders.setEditable(false);
+        txtProviderID.setEditable(false);
+        txtProviderID.setText(GenerateID.create("NHACUNGCAP","MaNCC","NCC"));
 
         colProvidersID.setCellValueFactory(new PropertyValueFactory<>("ProvidersID"));
         colProvidersName.setCellValueFactory(new PropertyValueFactory<>("ProvidersName"));
@@ -197,7 +200,7 @@ public class ProviderManagerController implements Initializable {
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-
+        progress1=0.2;
         txtProviderName.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -296,6 +299,7 @@ public class ProviderManagerController implements Initializable {
         txtProviderName.setText("");
         txtProviderEmail.setText("");
         txtProviderPhone.setText("");
+        txtProviderID.setText(GenerateID.create("NHACUNGCAP","MaNCC","NCC"));
     }
 
     //lay thong tin du lieu duoc

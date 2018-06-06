@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.Customer;
 import CM.Models.DataProvider;
@@ -86,6 +87,8 @@ public class CustomerManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnUPDATE.setDisable(true);
         dbConn = new DataProvider();
+        txtCustomerID.setEditable(false);
+        txtCustomerID.setText(GenerateID.create("KHACHHANG","MaKH","KH"));
         paneCustomerManagement = new AnchorPane();
         data = FXCollections.observableArrayList();
         tbvCustomer.setEditable(false);
@@ -134,7 +137,7 @@ public class CustomerManagerController implements Initializable {
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-
+        progress1 =0.2;
         txtCustomerName.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -225,6 +228,7 @@ public class CustomerManagerController implements Initializable {
     @FXML
     //Hàm refresh xóa text
     public void refresh() {
+
         btnDELETE.setDisable(true);
         btnUPDATE.setDisable(true);
         txtCustomerPhone.setText("");
@@ -232,6 +236,7 @@ public class CustomerManagerController implements Initializable {
         txtCustomerName.setText("");
         txtCustomerEmail.setText("");
         txtCustomerAddress.setText("");
+        txtCustomerID.setText(GenerateID.create("KHACHHANG","MaKH","KH"));
     }
 
     //lay thong tin du lieu duoc

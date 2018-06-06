@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
@@ -45,7 +46,7 @@ public class ComponentManagerController implements Initializable {
     @FXML
     private JFXTextField txtNumOfComp;
     @FXML
-    private TableView<Components> tbvComponent;
+    public TableView<Components> tbvComponent;
 
     @FXML
     private TableColumn<Components, String> colComponentD, colComponentName, colComponentConfig, colTypeName, colComponentMaker, colAreaName,colUnit, colNumOfComp;
@@ -87,6 +88,9 @@ public class ComponentManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnUPDATE.setDisable(true);
         dbConn = new DataProvider();
+        txtComponentID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
+        txtComponentID.setEditable(false);
+        txtNumOfComp.setEditable(false);
         data = FXCollections.observableArrayList();
         tbvComponent.setEditable(false);
 
@@ -147,12 +151,12 @@ public class ComponentManagerController implements Initializable {
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-
+        progress1 =0.125;
         txtComponentConfig.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -164,7 +168,7 @@ public class ComponentManagerController implements Initializable {
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
@@ -181,7 +185,7 @@ public class ComponentManagerController implements Initializable {
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
@@ -198,7 +202,7 @@ public class ComponentManagerController implements Initializable {
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
@@ -215,12 +219,12 @@ public class ComponentManagerController implements Initializable {
 
                 }
 
-               double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
+                double sum = ( progress1 + progress2 + progress3 + progress4 + progress5 +progress6 +progress7 +progress8 );
                 progressPersonal.setProgress(sum);
                 lblComplete.setText(decimalFormat.format(sum * 100) + "% hoàn thành");
             }
         });
-
+        progress5 =0.125;
         cbAreaName.valueProperty().addListener(new ChangeListener<Stock>() {
             @Override
             public void changed(ObservableValue<? extends Stock> observable, Stock oldValue, Stock newValue) {
@@ -344,7 +348,7 @@ public class ComponentManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("select MaMH, TenMH, TenDV, HangSX, HinhMH, TenLoai, CauHinh, TenKhu, SoLuong\n" +
+        resultSet = dbConn.getData("select MaMH, TenMH, TenDV, HangSX, TenLoai, CauHinh, TenKhu, SoLuong\n" +
                 "from MATHANG mh join LOAIMATHANG lmh on mh.MaLoai = lmh.MaLoai\n" +
                 "\tjoin DONVITINH dv on mh.MaDV = dv.MaDV join KHO k on mh.MaKhu = k.Makhu");
         data.removeAll(data);
@@ -374,7 +378,7 @@ public class ComponentManagerController implements Initializable {
         txtComponentName.setText("");
         txtComponentMaker.setText("");
         txtNumOfComp.setText("");
-
+        txtComponentID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
         cbAreaName.getSelectionModel().select(0);
         cbTypeName.getSelectionModel().select(0);
         cbUnit.getSelectionModel().select(0);
@@ -419,7 +423,7 @@ public class ComponentManagerController implements Initializable {
     @FXML
     //Thêm dữ liệu vào bảng
     public void insertData() {
-        String id = "", ten = "", cauhinh = "", loai = "", makhu = "", hangsx= "", donvi = "", hinh= "", soluong= "0";
+        String id = "", ten = "", cauhinh = "", loai = "", makhu = "", hangsx= "", donvi = "", soluong= "0";
         try {
             id = txtComponentID.getText();
             ten = txtComponentName.getText();
@@ -436,7 +440,7 @@ public class ComponentManagerController implements Initializable {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
             else {
-                String[] dataInsert = {id, ten, hangsx, donvi, cauhinh, hinh, loai, makhu, soluong};
+                String[] dataInsert = {id, ten, hangsx, donvi, cauhinh, loai, makhu, soluong};
                 int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "MATHANG");
                 if (isInserted > 0) {
                     SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
@@ -478,8 +482,8 @@ public class ComponentManagerController implements Initializable {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
             else {
-                String[] dataUpdate = {id, ten, hangsx, donvi, cauhinh, hinh, loai, makhu};
-                String[] colLabel = {"MaMH", "TenMH", "HangSX", "MaDV", "CauHinh", "HinhMH", "MaLoai", "MaKhu"};
+                String[] dataUpdate = {id, ten, hangsx, donvi, cauhinh, loai, makhu};
+                String[] colLabel = {"MaMH", "TenMH", "HangSX", "MaDV", "CauHinh", "MaLoai", "MaKhu"};
                 int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "MATHANG");
                 if (isUpdated > 0) {
                     SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
