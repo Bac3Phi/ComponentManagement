@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -62,6 +63,11 @@
                <right>
                   <HBox fx:id="toolBarRight" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
                      <children>
+                        <Button fx:id="btnREFRESH" mnemonicParsing="false" onAction="#setbtnRefresh" style="-fx-background-color: transparent;" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="18" />
+                           </graphic>
+                        </Button>
 
                         <Label fx:id="lbCurrentUserName" text="Phạm Nhật Phi" textFill="WHITE">
                            <font>
