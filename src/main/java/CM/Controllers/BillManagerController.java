@@ -70,7 +70,7 @@ public class BillManagerController implements Initializable {
     private JFXTextField txtSellingPrice;
 
     @FXML
-    private JFXTextField txtQuantities;
+    private JFXTextField txtQuantities, txtSumMoney;
 
     @FXML
     private JFXComboBox<Components> cbbComponentName;
@@ -90,6 +90,7 @@ public class BillManagerController implements Initializable {
     public TableView<Bills> tbvBill;
     public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerName, colEmployeeName;
     public TableColumn<Bills, Date> colPublishDate;
+    public TableColumn<Bills, Integer> colSumMoney;
 
     public TableView<BillsInfo> tbvBillInfo;
     public TableColumn<BillsInfo, String> colBillInfoID, colSellingPrice, colComponentName, colMoney;
@@ -114,6 +115,7 @@ public class BillManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
         txtMoney.setEditable(false);
+        txtMoney.setText(String.valueOf(0));
 
         tbvBill.setEditable(false);
         tbvBillInfo.setEditable(false);
@@ -121,6 +123,7 @@ public class BillManagerController implements Initializable {
         colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
+        colSumMoney.setCellValueFactory(new PropertyValueFactory<>("SumMoney"));
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
         colCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
 
@@ -174,13 +177,14 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT MaHD, NgayLap, MaSoThue, TenNV, MaKH FROM HOADON HD JOIN NHANVIEN NV ON HD.MaNV = NV.MaNV");
+        resultSet = dbConn.getData("SELECT MaHD, NgayLap, MaSoThue, TongTien, TenNV, MaKH FROM HOADON HD JOIN NHANVIEN NV ON HD.MaNV = NV.MaNV");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Bills(
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
+                    resultSet.getInt("TongTien"),
                     resultSet.getString("MaNV"),
                     resultSet.getString("MaKH")
             ));
@@ -269,6 +273,7 @@ public class BillManagerController implements Initializable {
         txtBillID.setText(selectedRow.getBillID());
         dtPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
         txtTaxCode.setText(selectedRow.getTaxCode());
+        txtSumMoney.setText(String.valueOf(selectedRow.getSumMoney()));
         for (Employees ten:
              cbbEmployeeName.getItems()) {
             if (ten.getEmployeeName().matches(selectedRow.getEmployeeName()))
@@ -303,14 +308,15 @@ public class BillManagerController implements Initializable {
 
     //Thêm dữ liệu vào bảng HOADON
     public void insertData() {
-        String id = "", nglap = "", mst = "", nvid = "", khid = "";
+        String id = "", nglap = "", mst = "", sum = "", nvid = "", khid = "";
         try {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
+            sum = txtSumMoney.getText();
             nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
             khid = txtCustomerID.getText();
-            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
+            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty() || txtSumMoney.getText().isEmpty()
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
@@ -322,7 +328,7 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataInsert = {id, nglap, mst, nvid, khid};
+        String[] dataInsert = {id, nglap, mst, sum, nvid, khid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "HOADON");
         if (isInserted > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -389,14 +395,15 @@ public class BillManagerController implements Initializable {
 
     //Update dữ liệu
     public void updateData() {
-        String id = "", nglap = "", mst = "", nvid = "", khid = "";
+        String id = "", nglap = "", mst = "", sum = "", nvid = "", khid = "";
         try {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
+            sum = txtSumMoney.getText();
             nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
             khid = txtCustomerID.getText();
-            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
+            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty() || txtSumMoney.getText().isEmpty()
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
@@ -408,8 +415,8 @@ public class BillManagerController implements Initializable {
         {
             e.printStackTrace();
         }
-        String[] dataUpdate = {id, nglap, mst, nvid, khid};
-        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "MaNV", "MaKH"};
+        String[] dataUpdate = {id, nglap, mst, sum, nvid, khid};
+        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TongTien", "MaNV", "MaKH"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
         if (isUpdated > 0) {
             alert = new Alert(Alert.AlertType.INFORMATION);

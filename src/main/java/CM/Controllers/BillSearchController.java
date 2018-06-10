@@ -62,6 +62,7 @@ public class BillSearchController implements Initializable {
     public TableView<Bills> tbvSEARCH;
     public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerID, colEmployeeID;
     public TableColumn<Bills, Date> colPublishDate;
+    public TableColumn<Bills, Integer> colSumMoney;
 
     DataProvider dbConn;
     ObservableList<Bills> list;
@@ -110,6 +111,7 @@ public class BillSearchController implements Initializable {
         colBillID.setCellValueFactory(new PropertyValueFactory<>("BillID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
+        colSumMoney.setCellValueFactory(new PropertyValueFactory<>("SumMoney"));
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
         colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
 
@@ -141,6 +143,7 @@ public class BillSearchController implements Initializable {
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
+                    resultSet.getInt("TongTien"),
                     resultSet.getString("MaNV"),
                     resultSet.getString("MaKH")
             ));
@@ -158,6 +161,7 @@ public class BillSearchController implements Initializable {
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
+                    resultSet.getInt("TongTien"),
                     resultSet.getString("MaNV"),
                     resultSet.getString("MaKH")
             ));

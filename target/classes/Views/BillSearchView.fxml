@@ -147,6 +147,7 @@
                               <TableColumn fx:id="colBillID" prefWidth="69.0" text="Mã HĐ" />
                               <TableColumn fx:id="colPublishDate" prefWidth="81.0" text="Ngày lập" />
                               <TableColumn fx:id="colTaxCode" prefWidth="93.0" text="Mã số thuế" />
+                              <TableColumn fx:id="colSumMoney" prefWidth="93.0" text="Tổng tiền" />
                               <TableColumn fx:id="colEmployeeID" prefWidth="101.0" text="Mã NV" />
                               <TableColumn fx:id="colCustomerID" prefWidth="102.0" text="Mã KH" />
                            </columns>
