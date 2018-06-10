@@ -41,7 +41,7 @@ public class BillManagerController implements Initializable {
     private JFXComboBox<Employees> cbbEmployeeName;
 
     @FXML
-    private JFXTextField txtCustomerID;
+    private JFXComboBox<Customer> cbbCustomerName;
 
     @FXML
     private JFXTextField txtMoney;
@@ -172,12 +172,44 @@ public class BillManagerController implements Initializable {
                 catch(NullPointerException e) {}
             }
         });
+
+//        if (!cbbComponentName.getValue().equals(null))
+//        {
+//            cbbComponentName.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                @Override
+//                public void handle(MouseEvent event) {
+//                    try {
+//                        showDataDonGia();
+//                    }  catch (SQLException e) {}
+//                    catch (IOException ex) {}
+//                }
+//            });
+//        }
     }
+
+//    @FXML
+    //Đổ dữ liệu vào bảng
+//    public void showDataDonGia() throws SQLException, IOException{
+//        String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
+//        resultSet = dbConn.getData("SELECT CTPN.DonGiaBan, MH.TenMH FROM CHITIETPHIEUNHAP CTPN JOIN MATHANG MH ON CTPN.MaMH = MH.MaMH WHERE CTPN.MaMH = '" + ID + "';");
+//        ObservableList<ComponentImportInfo> list = FXCollections.observableArrayList();
+//        list.removeAll(list);
+//        while (resultSet.next()){
+//            list.add(new ComponentImportInfo(
+//                    "", "", "",
+//                    resultSet.getString("TenMH"), "", "",
+//                    resultSet.getString("DonGiaBan"),
+//                    ""
+//            ));
+//        }
+//        resultSet.close();
+//        dbConn.close();
+//    }
 
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT MaHD, NgayLap, MaSoThue, TongTien, TenNV, MaKH FROM HOADON HD JOIN NHANVIEN NV ON HD.MaNV = NV.MaNV");
+        resultSet = dbConn.getData("SELECT HD.MaHD, HD.NgayLap, HD.MaSoThue, HD.TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH ON HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Bills(
@@ -185,19 +217,41 @@ public class BillManagerController implements Initializable {
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
                     resultSet.getInt("TongTien"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenKH")
             ));
         }
-        resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
-        ObservableList<Employees> list = FXCollections.observableArrayList();
+
+        resultSet = dbConn.getData("SELECT * FROM KHACHHANG");
+        ObservableList<Customer> list = FXCollections.observableArrayList();
         while (resultSet.next()) {
-            list.add(new Employees(
+            list.add(new Customer(
+                    resultSet.getString("MaKH"),
+                    resultSet.getString("TenKH"),"","", ""
+            ));
+        }
+        cbbCustomerName.setItems(list);
+        cbbCustomerName.setConverter(new StringConverter<Customer>() {
+            @Override
+            public String toString(Customer object) {
+                return object.getCustomerName();
+            }
+
+            @Override
+            public Customer fromString(String string) {
+                return null;
+            }
+        });
+
+        resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
+        ObservableList<Employees> ds = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            ds.add(new Employees(
                     resultSet.getString("MaNV"),
                     resultSet.getString("TenNV"),"",""
             ));
         }
-        cbbEmployeeName.setItems(list);
+        cbbEmployeeName.setItems(ds);
         cbbEmployeeName.setConverter(new StringConverter<Employees>() {
             @Override
             public String toString(Employees object) {
@@ -216,7 +270,7 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showDataInfo(String billid) throws SQLException, IOException{
-        String query = "SELECT MaCTHD, DonGiaBan, SoLuong, MaHD, TenMH, TienThanhToan FROM CHITIETHOADON CTHD JOIN MATHANG MH ON CTHD.MaMH = MH.MaMH WHERE MaHD = '" + billid  +"'";
+        String query = "SELECT CTHD.MaCTHD, CTHD.DonGiaBan, CTHD.SoLuong, CTHD.MaHD, MH.TenMH, CTHD.TienThanhToan FROM CHITIETHOADON CTHD JOIN MATHANG MH ON CTHD.MaMH = MH.MaMH WHERE MaHD = '" + billid  +"'";
         resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){
@@ -263,7 +317,7 @@ public class BillManagerController implements Initializable {
         txtQuantities.setText("");
         txtSellingPrice.setText("");
         cbbComponentName.getSelectionModel().select(0);
-        txtCustomerID.setText("");
+        cbbCustomerName.getSelectionModel().select(0);
         cbbEmployeeName.getSelectionModel().select(0);
     }
 
@@ -279,7 +333,12 @@ public class BillManagerController implements Initializable {
             if (ten.getEmployeeName().matches(selectedRow.getEmployeeName()))
                 cbbEmployeeName.getSelectionModel().select(ten);
         }
-        txtCustomerID.setText(selectedRow.getCustomerName());
+
+        for (Customer ten:
+                cbbCustomerName.getItems()) {
+            if (ten.getCustomerName().matches(selectedRow.getEmployeeName()))
+                cbbCustomerName.getSelectionModel().select(ten);
+        }
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -315,10 +374,10 @@ public class BillManagerController implements Initializable {
             mst = txtTaxCode .getText();
             sum = txtSumMoney.getText();
             nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
-            khid = txtCustomerID.getText();
+            khid = cbbCustomerName.getSelectionModel().getSelectedItem().getCustomerID();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty() || txtSumMoney.getText().isEmpty()
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
-                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
+                    || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
                 alert.show();
@@ -402,9 +461,10 @@ public class BillManagerController implements Initializable {
             mst = txtTaxCode .getText();
             sum = txtSumMoney.getText();
             nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
-            khid = txtCustomerID.getText();
+            khid = cbbCustomerName.getSelectionModel().getSelectedItem().getCustomerID();
             if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty() || txtSumMoney.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)                    || txtCustomerID.getText().isEmpty() || dtPublishDate.getValue().isEqual(null))
+                    || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
+                    || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Plese fill in all the blank!!!", ButtonType.OK);

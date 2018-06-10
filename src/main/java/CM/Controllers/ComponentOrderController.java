@@ -2,10 +2,9 @@ package CM.Controllers;
 
 import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
-import CM.Models.ComponentOrder;
-import CM.Models.ComponentOrderInFo;
-import CM.Models.DataProvider;
+import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -18,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
 import java.io.IOException;
@@ -37,10 +37,10 @@ public class ComponentOrderController implements Initializable {
     private JFXDatePicker dtDate;
 
     @FXML
-    private JFXTextField txtEmployeeID;
+    private JFXComboBox<Employees> cbbEmployeeName;
 
     @FXML
-    private JFXTextField txtProviderID;
+    private JFXComboBox<Providers> cbbProviderName;
 
     @FXML
     private JFXButton btnPRINT;
@@ -66,7 +66,7 @@ public class ComponentOrderController implements Initializable {
     private JFXTextField txtQuantities;
 
     @FXML
-    private JFXTextField txtComponentID;
+    private JFXComboBox<Components> cbbComponentName;
 
     @FXML
     private JFXButton btnDELETEinfo;
@@ -161,7 +161,7 @@ public class ComponentOrderController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT MaDDH, NgayLap, TenNV, TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC");
+        resultSet = dbConn.getData("SELECT DDH.MaDDH, DDH.NgayLap, NV.TenNV, NCC.TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new ComponentOrder(
@@ -171,6 +171,69 @@ public class ComponentOrderController implements Initializable {
                     resultSet.getString("TenNCC")
             ));
         }
+
+        resultSet = dbConn.getData("SELECT TenNV FROM NHANVIEN");
+        ObservableList<Employees> list = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            list.add(new Employees(
+                    "",
+                    resultSet.getString("TenNV"), "", ""
+            ));
+        }
+        cbbEmployeeName.setItems(list);
+        cbbEmployeeName.setConverter(new StringConverter<Employees>() {
+            @Override
+            public String toString(Employees object) {
+                return object.getEmployeeName();
+            }
+
+            @Override
+            public Employees fromString(String string) {
+                return null;
+            }
+        });
+
+        resultSet = dbConn.getData("SELECT TenNCC FROM NHACUNGCAP");
+        ObservableList<Providers> ds = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            ds.add(new Providers(
+                    "",
+                    resultSet.getString("TenNCC"), "", "", ""
+            ));
+        }
+        cbbProviderName.setItems(ds);
+        cbbProviderName.setConverter(new StringConverter<Providers>() {
+            @Override
+            public String toString(Providers object) {
+                return object.getProvidersName();
+            }
+
+            @Override
+            public Providers fromString(String string) {
+                return null;
+            }
+        });
+
+        resultSet = dbConn.getData("SELECT TenMH FROM MATHANG");
+        ObservableList<Components> components = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            components.add(new Components(
+                    "",
+                    resultSet.getString("TenMH"), "", "", "", "", "", ""
+            ));
+        }
+        cbbComponentName.setItems(components);
+        cbbComponentName.setConverter(new StringConverter<Components>() {
+            @Override
+            public String toString(Components object) {
+                return object.getComponentName();
+            }
+
+            @Override
+            public Components fromString(String string) {
+                return null;
+            }
+        });
         resultSet.close();
         dbConn.close();
     }
@@ -197,19 +260,28 @@ public class ComponentOrderController implements Initializable {
     public void refresh() {
         txtOrderID.setText("");
         txtOrderInfoID.setText("");
-        txtProviderID.setText("");
+        cbbProviderName.getSelectionModel().select(0);
         txtQuantities.setText("");
-        txtComponentID.setText("");
-        txtEmployeeID.setText("");
+        cbbComponentName.getSelectionModel().select(0);
+        cbbEmployeeName.getSelectionModel().select(0);
     }
 
-    //lay thong tin du lieu duoc HOADON
+    //lay thong tin du lieu duoc DONDATHANG
     public void getSelectedData() {
         ComponentOrder selectedRow = tbvOrder.getSelectionModel().getSelectedItem();
         txtOrderID.setText(selectedRow.getCompOrderID());
         dtDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
-        txtProviderID.setText(selectedRow.getProviderName());
-        txtEmployeeID.setText(selectedRow.getEmployeeName());
+        for (Employees ten:
+                cbbEmployeeName.getItems()) {
+            if (ten.getEmployeeName().matches(selectedRow.getEmployeeName()))
+                cbbEmployeeName.getSelectionModel().select(ten);
+        }
+
+        for (Providers ten:
+                cbbProviderName.getItems()) {
+            if (ten.getProvidersName().matches(selectedRow.getProviderName()))
+                cbbProviderName.getSelectionModel().select(ten);
+        }
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -217,7 +289,11 @@ public class ComponentOrderController implements Initializable {
         ComponentOrderInFo selectedRow = tbvOrderInfo.getSelectionModel().getSelectedItem();
         txtOrderInfoID.setText(selectedRow.getCompOrderInfoID());
         txtQuantities.setText(String.valueOf(selectedRow.getQuantities()));
-        txtComponentID.setText(selectedRow.getComponentName());
+        for (Components ten:
+                cbbComponentName.getItems()) {
+            if (ten.getComponentName().matches(selectedRow.getComponentName()))
+                cbbComponentName.getSelectionModel().select(ten);
+        }
     }
 
     //Thêm dữ liệu vào bảng DONDATHANG
@@ -226,10 +302,10 @@ public class ComponentOrderController implements Initializable {
         try {
             id = txtOrderID.getText();
             nglap = dtDate.getValue().toString();
-            nvid = txtEmployeeID.getText();
-            nccid = txtProviderID.getText();
-            if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
-                    || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
+            nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
+            nccid = cbbProviderName.getSelectionModel().getSelectedItem().getProvidersID();
+            if (txtOrderID.getText().isEmpty() || cbbProviderName.getSelectionModel().getSelectedItem().equals(null)
+                    || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null) || dtDate.getValue().isEqual(null))
             {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
@@ -262,8 +338,8 @@ public class ComponentOrderController implements Initializable {
             id = txtOrderInfoID.getText();
             soluong = txtQuantities.getText();
             ddhid = txtOrderID.getText();
-            mhid = txtComponentID.getText();
-            if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
+            mhid = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
+            if (txtOrderInfoID.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
@@ -296,10 +372,10 @@ public class ComponentOrderController implements Initializable {
         try {
             id = txtOrderID.getText();
             nglap = dtDate.getValue().toString();
-            nvid = txtEmployeeID.getText();
-            nccid = txtProviderID.getText();
-            if (txtOrderID.getText().isEmpty() || txtProviderID.getText().isEmpty()
-                    || txtEmployeeID.getText().isEmpty() || dtDate.getValue().isEqual(null))
+            nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
+            nccid = cbbProviderName.getSelectionModel().getSelectedItem().getProvidersID();
+            if (txtOrderID.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
+                    || cbbProviderName.getSelectionModel().getSelectedItem().equals(null) || dtDate.getValue().isEqual(null))
             {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
@@ -333,8 +409,8 @@ public class ComponentOrderController implements Initializable {
             id = txtOrderInfoID.getText();
             soluong = dtDate.getValue().toString();
             ddhid = txtOrderID.getText();
-            mhid = txtComponentID.getText();
-            if (txtOrderInfoID.getText().isEmpty() || txtComponentID.getText().isEmpty()
+            mhid = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
+            if (txtOrderInfoID.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtOrderID.getText().isEmpty() || dtDate.getValue().isEqual(null))
             {
                 SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
