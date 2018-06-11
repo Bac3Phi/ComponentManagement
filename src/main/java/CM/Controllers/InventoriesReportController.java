@@ -37,13 +37,10 @@ public class InventoriesReportController implements Initializable {
     private AnchorPane paneReport;
 
     @FXML
-    private Label lbReportForm;
-
-    @FXML
     private Label lbReportID;
 
     @FXML
-    private JFXTextField txtReportID, txtComponentName, txtStock, txtSell, txtImport, txtReportInfoID;
+    private JFXTextField txtReportID;
 
     @FXML
     private Label lbEmployeeName;
@@ -79,28 +76,10 @@ public class InventoriesReportController implements Initializable {
     private Label lbReport;
 
     @FXML
-    private JFXRadioButton rdbtnMonth;
-
-    @FXML
-    private JFXRadioButton rdbtnQuarter;
-
-    @FXML
     private Label lbMonth;
 
     @FXML
     private JFXComboBox<Integer> cbbMonth;
-
-    @FXML
-    private Label lbQuarter;
-
-    @FXML
-    private JFXComboBox<Integer> cbbQuarter;
-
-    @FXML
-    private Label lbYear;
-
-    @FXML
-    private JFXComboBox<Integer> cbbYear;
 
     @FXML
     private TableView<InventoriesReport> tbvReport;
@@ -127,13 +106,13 @@ public class InventoriesReportController implements Initializable {
     private TableColumn<InventoriesReport, Integer> colSumRemain;
 
     @FXML
-    private JFXButton btnADD, btnADDinfo;
+    private JFXButton btnADD;
 
     @FXML
     private JFXButton btnPRINT;
 
     @FXML
-    private JFXButton btnUPDATE, btnUPDATEinfo;
+    private JFXButton btnUPDATE;
 
     @FXML
     private JFXButton btnREFRESH;
@@ -169,8 +148,6 @@ public class InventoriesReportController implements Initializable {
         datainfo = FXCollections.observableArrayList();
         tbvReport.setEditable(false);
         tbvReportInfo.setEditable(false);
-        rdbtnQuarter.setDisable(true);
-        cbbQuarter.setDisable(true);
         ObservableList<Integer> str = FXCollections.observableArrayList(); str.add(0);
         str.add(1); str.add(2); str.add(3); str.add(4); str.add(5); str.add(6); str.add(7); str.add(8);
         str.add(9); str.add(10); str.add(11); str.add(12);
@@ -205,13 +182,6 @@ public class InventoriesReportController implements Initializable {
             }
         });
 
-        tbvReportInfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                getSelectedDataInfo();
-            }
-        });
-
         btnREFRESH.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -227,24 +197,10 @@ public class InventoriesReportController implements Initializable {
             }
         });
 
-        btnADDinfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                insertDataInfo();
-            }
-        });
-
         btnUPDATE.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 updateData();
-            }
-        });
-
-        btnUPDATEinfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                updateDataInfo();
             }
         });
 
@@ -254,42 +210,7 @@ public class InventoriesReportController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException {
-//        ObservableList<InventoriesReportInfo> list = FXCollections.observableArrayList();
-//        int nhap = 0, ban = 0, ton = 0;
-//        resultSet = dbConn.getData("SELECT MaBCHT FROM BAOCAOHANGTON");
-//        while (resultSet.next()) {
-//            list.add(new InventoriesReportInfo(
-//                    "", "", 0, 0,
-//                    0, resultSet.getString("MaBCHT")
-//            ));
-//        }
-//
-//        for (int i = 0; i < list.size(); i++) {
-//            String ma = list.get(i).getReportID();
-//            resultSet = dbConn.getData("SELECT SUM(LuongNhapBĐ) AS TongNhap FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
-//            nhap += resultSet.getInt("TongNhap");
-//
-//
-//            resultSet = dbConn.getData("SELECT SUM(LuongBan) AS TongBan FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
-//            ban += resultSet.getInt("TongBan");
-//
-//
-//            resultSet = dbConn.getData("SELECT SUM(LuongTon) AS TongTon FROM CHITIETBAOCAOHANGTON WHERE MaBCHT = '"+ ma + "';");
-//            ton += resultSet.getInt("TongTon");
-//
-//
-//            resultSet = dbConn.getData("SELECT BCHT.NgayLap, BCHT.Thang, NV.TenNV FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV GROUP BY " + ma + ";");
-//            data.removeAll(data);
-//            while(resultSet.next()) {
-//                data.add(new InventoriesReport(
-//                        ma,
-//                        resultSet.getDate("NgayLap"),
-//                        resultSet.getInt("Thang"),
-//                        resultSet.getString("TenNV"), nhap, ban, ton
-//                ));
-//            }
-//        }
-        resultSet = dbConn.getData("SELECT BCHT.MaBCHT, BCHT.NgayLap, BCHT.Thang, NV.TenNV, BCHT.TongNhap, BCHT.TongBan, BCHT.TongTon FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV ON BCHT.MaNV = NV.MaNV;");
+        resultSet = dbConn.getData("SELECT BCHT.MaBCHT, BCHT.NgayLap, BCHT.Thang, NV.TenNV, SUM(CTBC.LuongNhapBĐ) AS TongNhap, SUM(CTBC.LuongBan) AS TongBan, SUM(CTBC.LuongTon) AS TongTon FROM BAOCAOHANGTON BCHT JOIN NHANVIEN NV JOIN CHITIETBAOCAOHANGTON CTBC ON BCHT.MaNV = NV.MaNV AND CTBC.MaBCHT = BCHT.MaBCHT;");
         data.removeAll(data);
         while(resultSet.next()) {
             data.add(new InventoriesReport(
@@ -314,14 +235,7 @@ public class InventoriesReportController implements Initializable {
         txtSumSell.setText("");
         txtSumStock.setText("");
         cbbMonth.getSelectionModel().select(0);
-        cbbYear.getSelectionModel().select(0);
-        cbbQuarter.getSelectionModel().select(0);
         dtDate.setValue(null);
-        txtStock.setText("");
-        txtSell.setText("");
-        txtImport.setText("");
-        txtComponentName.setText("");
-        txtReportInfoID.setText("");
         try {
             showData();
         } catch (SQLException e) {}
@@ -337,7 +251,6 @@ public class InventoriesReportController implements Initializable {
         txtSumSell.setText(String.valueOf(selectedRow.getSumSell()));
         txtSumImport.setText(String.valueOf(selectedRow.getSumImport()));
         txtEmployeeName.setText(selectedRow.getEmployeeName());
-        rdbtnMonth.setSelected(true);
         cbbMonth.getSelectionModel().select(selectedRow.getReportMonth());
         try {
             showDataInfo(selectedRow.getReportID());
@@ -365,16 +278,6 @@ public class InventoriesReportController implements Initializable {
         }
         resultSet.close();
         dbConn.close();
-    }
-
-    //lay thong tin du lieu duoc tu CHITIETHOADON
-    public void getSelectedDataInfo() {
-        InventoriesReportInfo selectedRow = tbvReportInfo.getSelectionModel().getSelectedItem();
-        txtReportInfoID.setText(selectedRow.getReportInfoID());
-        txtSell.setText(String.valueOf(selectedRow.getSelling()));
-        txtImport.setText(String.valueOf(selectedRow.getImport()));
-        txtStock.setText(String.valueOf(selectedRow.getStock()));
-        txtComponentName.setText(selectedRow.getComponentName());
     }
 
     //Thêm dữ liệu vào bảng DONDATHANG
@@ -427,55 +330,6 @@ public class InventoriesReportController implements Initializable {
         catch (IOException io) {}
     }
 
-    //Thêm dữ liệu vào bảng CHITIETDONDATHANG
-    public void insertDataInfo() {
-        String id = "", nhap = "", ton = "", ban = "", mhid = "", ctbcid = "";
-        try {
-            ctbcid = txtReportInfoID.getText();
-            id = txtReportID.getText();
-            nhap = txtImport.getText();
-            ban = txtSell.getText();
-            ton = txtStock.getText();
-            resultSet = dbConn.getData("SELECT MaMH FROM MATHANG WHERE TenMH = N'" + txtComponentName.getText() + "';");
-            ObservableList<Components> ds = FXCollections.observableArrayList();
-            while (resultSet.next()) {
-                ds.add(new Components(
-                        resultSet.getString("MaMH"),
-                        "", "", "", "", "" ,"", ""
-                ));
-            }
-            mhid = ds.get(0).getComponentID();
-
-            if (txtEmployeeName.getText().isEmpty() || txtReportInfoID.getText().isEmpty()
-                    || txtReportID.getText().isEmpty()
-                    || txtStock.getText().isEmpty() || txtSell.getText().isEmpty() || txtImport.getText().isEmpty())
-            {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
-            }
-            dbConn.close();
-            resultSet.close();
-        } catch (SQLException ex) {}
-        catch (NullPointerException e)
-        {
-            e.printStackTrace();
-        }
-        String[] dataInsert = {ctbcid, nhap, ban, ton, mhid, id};
-        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETBAOCAOHANGTON");
-        if (isInserted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
-        }
-        else
-        {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
-        }
-        try {
-            showDataInfo(id);
-            refresh();
-        }
-        catch (SQLException e){}
-        catch (IOException io) {}
-    }
-
     //Update dữ liệu DONDATHANG
     public void updateData() {
         String id = "", nglap = "", thang = "", nvid = "", nhap = "", ban = "", ton = "";
@@ -519,56 +373,6 @@ public class InventoriesReportController implements Initializable {
         }
         try {
             showData();
-            refresh();
-        }
-        catch (SQLException e){}
-        catch (IOException io) {}
-    }
-
-    //Update dữ liệu CHITIETDONDATHANG
-    public void updateDataInfo() {
-        String id = "", nhap = "", ton = "", ban = "", mhid = "", ctbcid = "";
-        try {
-            ctbcid = txtReportInfoID.getText();
-            id = txtReportID.getText();
-            nhap = txtImport.getText();
-            ban = txtSell.getText();
-            ton = txtStock.getText();
-            resultSet = dbConn.getData("SELECT MaMH FROM MATHANG WHERE TenMH = N'" + txtComponentName.getText() + "';");
-            ObservableList<Components> ds = FXCollections.observableArrayList();
-            while (resultSet.next()) {
-                ds.add(new Components(
-                        resultSet.getString("MaMH"),
-                        "", "", "", "", "" ,"", ""
-                ));
-            }
-            mhid = ds.get(0).getComponentID();
-
-            if (txtEmployeeName.getText().isEmpty() || txtReportInfoID.getText().isEmpty()
-                    || txtReportID.getText().isEmpty()
-                    || txtStock.getText().isEmpty() || txtSell.getText().isEmpty() || txtImport.getText().isEmpty())
-            {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
-            }
-            dbConn.close();
-            resultSet.close();
-        } catch (SQLException ex) {}
-        catch (NullPointerException e)
-        {
-            e.printStackTrace();
-        }
-        String[] dataUpdate = {ctbcid, nhap, ban, ton, mhid, id};
-        String[] colLabel = {"MaCTBC", "LuongNhapBĐ", "LuongBan", "LuongTon", "MaMH", "MaBCHT"};
-        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETBAOCAOHANGTON");
-        if (isUpdated > 0) {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
-        }
-        else
-        {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
-        }
-        try {
-            showDataInfo(ctbcid);
             refresh();
         }
         catch (SQLException e){}

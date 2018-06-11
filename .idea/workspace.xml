@@ -3,18 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="c1ddb63a-7724-40ee-8af7-f5011dd41116" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Models/Employees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Models/Employees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/EmployeesSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentOrderView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesSearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Models/Employees.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Models/Employees.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentOrderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentOrderSearchView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/EmployeesManagerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/EmployeesSearchView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillManagerController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BillManagerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+            <state relative-caret-position="-2631">
+              <caret line="194" column="17" lean-forward="true" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
               <folding>
                 <element signature="e#6782#9011#0" />
                 <element signature="e#7763#7764#0" expanded="true" />
@@ -77,6 +84,53 @@
                 <element signature="e#11964#12852#0" />
                 <element signature="e#12858#13042#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoriesReportController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="222" column="47" lean-forward="true" selection-start-line="222" selection-start-column="47" selection-end-line="222" selection-end-column="47" />
+              <folding>
+                <element signature="e#9483#10157#0" />
+                <element signature="e#10163#11155#0" />
+                <element signature="e#11161#12016#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportInventoriesView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="InventoriesReport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoriesReportInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReportInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -118,6 +172,7 @@
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesSearchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesManagerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java" />
       </list>
     </option>
   </component>
@@ -307,7 +362,7 @@
       <option name="presentableId" value="Default" />
       <updated>1528603648968</updated>
       <workItem from="1528603665565" duration="5509000" />
-      <workItem from="1528684445305" duration="5510000" />
+      <workItem from="1528684445305" duration="8846000" />
     </task>
     <task id="LOCAL-00001" summary="fix xong bug hóa đơn + đổi txtfield mã nv, mã ncc, mã mh trong đơn đặt hàng.">
       <created>1528609127302</created>
@@ -316,14 +371,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528609127302</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix xong bug trong đơn đặt hàng + tìm kiếm nhân viên. Đang fix đơn giá bán trong hóa đơn.">
+      <created>1528690162436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528690162436</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11019000" />
+    <option name="totallyTimeSpent" value="14355000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -364,30 +426,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix xong bug hóa đơn + đổi txtfield mã nv, mã ncc, mã mh trong đơn đặt hàng." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix xong bug hóa đơn + đổi txtfield mã nv, mã ncc, mã mh trong đơn đặt hàng." />
+    <MESSAGE value="fix xong bug trong đơn đặt hàng + tìm kiếm nhân viên. Đang fix đơn giá bán trong hóa đơn." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix xong bug trong đơn đặt hàng + tìm kiếm nhân viên. Đang fix đơn giá bán trong hóa đơn." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java</url>
-          <line>175</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java</url>
-          <line>177</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java</url>
-          <line>185</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
   </component>
@@ -642,10 +685,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="2577" selection-start-line="2577" selection-end-line="2577" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="-2631">
+          <caret line="194" column="17" lean-forward="true" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
           <folding>
             <element signature="e#6782#9011#0" />
             <element signature="e#7763#7764#0" expanded="true" />
@@ -665,6 +715,47 @@
             <element signature="e#11087#11958#0" />
             <element signature="e#11964#12852#0" />
             <element signature="e#12858#13042#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReportInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/InventoriesReportView.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="222" column="47" lean-forward="true" selection-start-line="222" selection-start-column="47" selection-end-line="222" selection-end-column="47" />
+          <folding>
+            <element signature="e#9483#10157#0" />
+            <element signature="e#10163#11155#0" />
+            <element signature="e#11161#12016#0" />
           </folding>
         </state>
       </provider>
