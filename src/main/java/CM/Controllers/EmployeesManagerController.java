@@ -23,14 +23,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import tray.notification.NotificationType;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import static CM.Controllers.EmployeesController.tabPaneEx;
@@ -62,7 +60,7 @@ public class EmployeesManagerController implements Initializable {
     private TableColumn<Employees, String> colEmployeeGender;
 
     @FXML
-    private TableColumn<Employees, String> colDepartmentID;
+    private TableColumn<Employees, String> colDepartmentName;
 
     @FXML
     private JFXTextField txtDepartmentID;
@@ -98,7 +96,7 @@ public class EmployeesManagerController implements Initializable {
     public ToggleGroup group;
 
     DataProvider dbConn;
-    ObservableList<Employees> data;
+    public static ObservableList<Employees> data;
     ObservableList<Department> list;
     ResultSet resultSet;
 
@@ -116,7 +114,7 @@ public class EmployeesManagerController implements Initializable {
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
         colEmployeeGender.setCellValueFactory(new PropertyValueFactory<>("EmployeeGender"));
-        colDepartmentID.setCellValueFactory(new PropertyValueFactory<>("DepartmentID"));
+        colDepartmentName.setCellValueFactory(new PropertyValueFactory<>("DepartmentName"));
 
         rbMALE.setToggleGroup(group);
         rbMALE.setSelected(true);
@@ -200,14 +198,14 @@ public class EmployeesManagerController implements Initializable {
         listdata = FXCollections.observableArrayList(str);
         cbxDepartmentName.setItems(listdata);
 
-        resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
+        resultSet = dbConn.getData("SELECT NV.MaNV, NV.TenNV, NV.Phai, PB.TenPhong FROM NHANVIEN NV JOIN PHONGBAN PB ON PB.MaPhong = NV.MaPhong;");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Employees(
                     resultSet.getString("MaNV"),
                     resultSet.getString("TenNV"),
                     resultSet.getString("Phai"),
-                    resultSet.getString("MaPhong")
+                    resultSet.getString("TenPhong")
             ));
         }
         resultSet.close();
@@ -238,7 +236,7 @@ public class EmployeesManagerController implements Initializable {
             rbMALE.setSelected(false);
             rbFEMALE.setSelected(true);
         }
-        txtDepartmentID.setText(selectedRow.getDepartmentID());
+        txtDepartmentID.setText(selectedRow.getDepartmentName());
         try {
             String str = txtDepartmentID.getText();
             String query = "SELECT * FROM PHONGBAN WHERE MaPhong = N'" + str + "';";

@@ -51,9 +51,6 @@ public class EmployeesSearchController implements Initializable {
     private JFXRadioButton rdbtnEmployeesName;
 
     @FXML
-    private JFXRadioButton rdbtnDepartmentID;
-
-    @FXML
     private JFXRadioButton rdbtnDepartmentName;
 
     @FXML
@@ -69,7 +66,7 @@ public class EmployeesSearchController implements Initializable {
     private TableColumn<Employees, String> colEmployeeGender;
 
     @FXML
-    private TableColumn<Employees, String> colDepartmentID;
+    private TableColumn<Employees, String> colDepartmentName;
 
     DataProvider dbConn;
     ObservableList<Employees> list;
@@ -89,7 +86,25 @@ public class EmployeesSearchController implements Initializable {
         colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
         colEmployeeGender.setCellValueFactory(new PropertyValueFactory<>("EmployeeGender"));
-        colDepartmentID.setCellValueFactory(new PropertyValueFactory<>("DepartmentID"));
+        colDepartmentName.setCellValueFactory(new PropertyValueFactory<>("DepartmentName"));
+
+        tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                btnGETINFO.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Employees selectedRow = tbvSEARCH.getSelectionModel().getSelectedItem();
+                        try {
+                            pointer.data.removeAll(pointer.data);
+                            pointer.data.add(selectedRow);
+                            pointer.tbvEmployees.setItems(pointer.data);
+                        }
+                        catch (NullPointerException e) {}
+                    }
+                });
+            }
+        });
 
         tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -111,7 +126,7 @@ public class EmployeesSearchController implements Initializable {
     }
 
     public void searchData (String field, String str) throws SQLException {
-        String query = "SELECT * FROM NHANVIEN WHERE " + field + " LIKE N'%" + str +"%';";
+        String query = "SELECT NV.MaNV, NV.TenNV, NV.Phai, PB.TenPhong FROM NHANVIEN NV JOIN PHONGBAN PB ON PB.MaPhong = NV.MaPhong WHERE " + field + " LIKE N'%" + str +"%';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
@@ -119,26 +134,9 @@ public class EmployeesSearchController implements Initializable {
                     resultSet.getString("MaNV"),
                     resultSet.getString("TenNV"),
                     resultSet.getString("Phai"),
-                    resultSet.getString("MaPhong")
+                    resultSet.getString("TenPhong")
             ));
         }
-        resultSet.close();
-        dbConn.close();
-    }
-
-    public void searchOtherData (String str) throws SQLException {
-        String query = "SELECT * FROM PHONGBAN WHERE TenPhong " + "LIKE N'%" + str +"%' COLLATE utf8_unicode_ci;";
-        resultSet = dbConn.getData(query);
-        while (resultSet.next()){
-            try {
-                otherlist.add(new Department(
-                        resultSet.getString("MaPhong"),
-                        resultSet.getString("TenPhong")
-                ));
-            }
-            catch (NullPointerException e){}
-        }
-        searchData("MaPhong", otherlist.get(0).getDepartmentName());
         resultSet.close();
         dbConn.close();
     }
@@ -148,21 +146,18 @@ public class EmployeesSearchController implements Initializable {
         rdbtnEmployeesID.setToggleGroup(group);
         rdbtnEmployeesID.setSelected(true);
         rdbtnEmployeesName.setToggleGroup(group);
-        rdbtnDepartmentID.setToggleGroup(group);
         rdbtnDepartmentName.setToggleGroup(group);
     }
 
     public void setBtnSEARCH (ActionEvent event) {
-        String[] str = {"MaNV", "TenNV", "MaPhong"};
+        String[] str = {"MaNV", "TenNV", "TenPhong"};
         try {
             if (rdbtnEmployeesID.isSelected())
                 searchData(str[0], txtSEARCH.getText());
             else if (rdbtnEmployeesName.isSelected())
                 searchData(str[1], txtSEARCH.getText());
-            else if (rdbtnDepartmentID.isSelected())
-                searchData(str[2], txtSEARCH.getText());
             else if (rdbtnDepartmentName.isSelected())
-                searchOtherData(txtSEARCH.getText());
+                searchData(str[2], txtSEARCH.getText());
         } catch (SQLException e) {}
     }
 
@@ -170,8 +165,7 @@ public class EmployeesSearchController implements Initializable {
         txtSEARCH.setText(null);
         list.removeAll(list);
         rdbtnEmployeesID.setSelected(true);
-        rdbtnDepartmentName.setSelected(false);
         rdbtnEmployeesName.setSelected(false);
-        rdbtnDepartmentID.setSelected(false);
+        rdbtnDepartmentName.setSelected(false);
     }
 }

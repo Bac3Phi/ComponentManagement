@@ -172,11 +172,11 @@ public class ComponentOrderController implements Initializable {
             ));
         }
 
-        resultSet = dbConn.getData("SELECT TenNV FROM NHANVIEN");
+        resultSet = dbConn.getData("SELECT * FROM NHANVIEN");
         ObservableList<Employees> list = FXCollections.observableArrayList();
         while (resultSet.next()) {
             list.add(new Employees(
-                    "",
+                    resultSet.getString("MaNV"),
                     resultSet.getString("TenNV"), "", ""
             ));
         }
@@ -193,11 +193,11 @@ public class ComponentOrderController implements Initializable {
             }
         });
 
-        resultSet = dbConn.getData("SELECT TenNCC FROM NHACUNGCAP");
+        resultSet = dbConn.getData("SELECT * FROM NHACUNGCAP");
         ObservableList<Providers> ds = FXCollections.observableArrayList();
         while (resultSet.next()) {
             ds.add(new Providers(
-                    "",
+                    resultSet.getString("MaNCC"),
                     resultSet.getString("TenNCC"), "", "", ""
             ));
         }
@@ -214,11 +214,11 @@ public class ComponentOrderController implements Initializable {
             }
         });
 
-        resultSet = dbConn.getData("SELECT TenMH FROM MATHANG");
+        resultSet = dbConn.getData("SELECT * FROM MATHANG");
         ObservableList<Components> components = FXCollections.observableArrayList();
         while (resultSet.next()) {
             components.add(new Components(
-                    "",
+                    resultSet.getString("MaMH"),
                     resultSet.getString("TenMH"), "", "", "", "", "", ""
             ));
         }

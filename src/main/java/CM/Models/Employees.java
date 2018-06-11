@@ -4,7 +4,7 @@ public class Employees {
     private String EmployeeID;
     private String EmployeeName;
     private String EmployeeGender;
-    private String DepartmentID;
+    private String DepartmentName;
 
     public String getEmployeeID() {
         return EmployeeID;
@@ -22,12 +22,12 @@ public class Employees {
         this.EmployeeName = employeeName;
     }
 
-    public String getDepartmentID() {
-        return DepartmentID;
+    public String getDepartmentName() {
+        return DepartmentName;
     }
 
-    public void setDepartmentID(String PBID) {
-        this.DepartmentID = PBID;
+    public void setDepartmentName(String PBID) {
+        this.DepartmentName = PBID;
     }
 
     public String getEmployeeGender() {
@@ -40,10 +40,10 @@ public class Employees {
 
     public Employees() {}
 
-    public Employees(String employeeID, String employeeName, String employeeGender, String departmentID) {
+    public Employees(String employeeID, String employeeName, String employeeGender, String departmentName) {
         EmployeeID = employeeID;
         EmployeeName = employeeName;
         EmployeeGender = employeeGender;
-        DepartmentID = departmentID;
+        DepartmentName = departmentName;
     }
 }

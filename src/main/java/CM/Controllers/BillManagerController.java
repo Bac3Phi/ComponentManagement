@@ -173,25 +173,17 @@ public class BillManagerController implements Initializable {
             }
         });
 
-//        if (!cbbComponentName.getValue().equals(null))
-//        {
-//            cbbComponentName.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//                @Override
-//                public void handle(MouseEvent event) {
-//                    try {
-//                        showDataDonGia();
-//                    }  catch (SQLException e) {}
-//                    catch (IOException ex) {}
-//                }
-//            });
-//        }
+//        String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
+//        try {
+//            showDataDonGia(ID);
+//        }  catch (SQLException e) {}
+//        catch (IOException ex) {}
     }
 
 //    @FXML
-    //Đổ dữ liệu vào bảng
-//    public void showDataDonGia() throws SQLException, IOException{
-//        String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
-//        resultSet = dbConn.getData("SELECT CTPN.DonGiaBan, MH.TenMH FROM CHITIETPHIEUNHAP CTPN JOIN MATHANG MH ON CTPN.MaMH = MH.MaMH WHERE CTPN.MaMH = '" + ID + "';");
+//    //Đổ dữ liệu vào bảng
+//    public void showDataDonGia(String s) throws SQLException, IOException{
+//        resultSet = dbConn.getData("SELECT MH.TenMH, CTPN.DonGiaBan FROM CHITIETPHIEUNHAP CTPN JOIN MATHANG MH ON CTPN.MaMH = MH.MaMH WHERE CTPN.MaMH = '" + s + "';");
 //        ObservableList<ComponentImportInfo> list = FXCollections.observableArrayList();
 //        list.removeAll(list);
 //        while (resultSet.next()){
@@ -202,6 +194,7 @@ public class BillManagerController implements Initializable {
 //                    ""
 //            ));
 //        }
+//        txtSellingPrice.setText(list.get(0).getPrice());
 //        resultSet.close();
 //        dbConn.close();
 //    }
@@ -336,7 +329,7 @@ public class BillManagerController implements Initializable {
 
         for (Customer ten:
                 cbbCustomerName.getItems()) {
-            if (ten.getCustomerName().matches(selectedRow.getEmployeeName()))
+            if (ten.getCustomerName().matches(selectedRow.getCustomerName()))
                 cbbCustomerName.getSelectionModel().select(ten);
         }
     }

@@ -1,6 +1,7 @@
 package CM.Controllers;
 
 import CM.Models.ComponentOrder;
+import CM.Models.ComponentOrderInFo;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -95,6 +96,7 @@ public class ComponentOrderSearchController implements Initializable {
         list.removeAll(list);
         dateCheckOut.setValue(null);
         dateCheckIn.setValue(null);
+        txtSEARCH.setText("");
     }
 
     @FXML
@@ -125,8 +127,8 @@ public class ComponentOrderSearchController implements Initializable {
 
         colOrderID.setCellValueFactory(new PropertyValueFactory<>("CompOrderID"));
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
-        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("ProviderName"));
-        colProviderName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colProviderName.setCellValueFactory(new PropertyValueFactory<>("ProviderName"));
 
         tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -148,7 +150,7 @@ public class ComponentOrderSearchController implements Initializable {
     }
 
     public void searchData (String field, String str) throws SQLException {
-        String query = "SELECT MaDDH, NgayLap, TenNV, TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC WHERE " + field + " LIKE '%" + str +"%';";
+        String query = "SELECT DDH.MaDDH, DDH.NgayLap, NV.TenNV, NCC.TenNCC FROM DONDATHANG DDH JOIN NHANVIEN NV JOIN NHACUNGCAP NCC ON DDH.MaNV = NV.MaNV AND DDH.MaNCC = NCC.MaNCC WHERE " + field + " LIKE '%" + str +"%';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){

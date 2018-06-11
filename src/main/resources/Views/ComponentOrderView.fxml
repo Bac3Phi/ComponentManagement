@@ -114,8 +114,8 @@
                                     <columns>
                                         <TableColumn fx:id="colOrderID" prefWidth="103.0" text="Mã ĐĐH" />
                                         <TableColumn fx:id="colDate" prefWidth="129.0" text="Ngày Lập" />
-                                        <TableColumn fx:id="colEmployeeName" prefWidth="138.0" text="Tên NV" />
-                                        <TableColumn fx:id="colProviderName" prefWidth="145.0" text="Tên NCC" />
+                                        <TableColumn fx:id="colEmployeeName" prefWidth="138.0" text="Tên nhân viên" />
+                                        <TableColumn fx:id="colProviderName" prefWidth="145.0" text="Tên nhà cung cấp" />
                                     </columns>
                                 </TableView>
                             </children></AnchorPane>
