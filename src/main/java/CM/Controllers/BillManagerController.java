@@ -116,11 +116,11 @@ public class BillManagerController implements Initializable {
         btnUPDATEinfo.setDisable(true);
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
-        txtMoney.setEditable(false);
+        txtSumMoney.setEditable(false);
         if (txtSellingPrice.getText().isEmpty() && txtQuantities.getText().isEmpty())
-            txtMoney.setText(String.valueOf(0));
+            txtSumMoney.setDisable(true);
         else if (!txtQuantities.getText().isEmpty() && !txtQuantities.getText().isEmpty())
-            txtMoney.setText(String.valueOf(calculate()));
+            txtSumMoney.setText(String.valueOf(calculate()));
 
         tbvBill.setEditable(false);
         tbvBillInfo.setEditable(false);
@@ -207,18 +207,19 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT HD.MaHD, HD.NgayLap, HD.MaSoThue, HD.TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH ON HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
+        resultSet = dbConn.getData("SELECT HD.MaHD, NgayLap, MaSoThue, SUM(CTHD.TienThanhToan) AS TongTienTT, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH JOIN CHITIETHOADON CTHD ON CTHD.MaHD = HD.MaHD AND HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
         data.removeAll(data);
         while (resultSet.next()){
             data.add(new Bills(
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
-                    resultSet.getInt("TongTien"),
+                    resultSet.getLong("TongTienTT"),
                     resultSet.getString("TenNV"),
                     resultSet.getString("TenKH")
             ));
         }
+        long test = data.get(0).getSumMoney();
 
         resultSet = dbConn.getData("SELECT * FROM KHACHHANG");
         ObservableList<Customer> list = FXCollections.observableArrayList();
@@ -311,6 +312,7 @@ public class BillManagerController implements Initializable {
         txtBillID.setText("");
         txtBillInfoID.setText("");
         txtMoney.setText("");
+        txtSumMoney.setText("");
         txtTaxCode.setText("");
         txtQuantities.setText("");
         txtSellingPrice.setText("");
@@ -321,6 +323,7 @@ public class BillManagerController implements Initializable {
 
     //lay thong tin du lieu duoc HOADON
     public void getSelectedData() {
+        txtSumMoney.setDisable(false);
         Bills selectedRow = tbvBill.getSelectionModel().getSelectedItem();
         txtBillID.setText(selectedRow.getBillID());
         dtPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
