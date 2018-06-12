@@ -255,15 +255,14 @@ public class InventoriesReportController implements Initializable {
         try {
             showDataInfo(selectedRow.getReportID());
         } catch (SQLException e) {}
-        catch (IOException ex) {}
 //        String str = selectedRow.getPublishDate().toString();
 //        cbbYear.getSelectionModel().getSelectedItem().equals(String.valueOf(str.substring(0,4)));
     }
 
     @FXML
     //Đổ dữ liệu vào bảng
-    public void showDataInfo(String orderid) throws SQLException, IOException{
-        String query = "SELECT CTBCHT.MaCTBC, MH.TenMH, CTBCHT.LuongNhapBĐ, CTBCHT.LuongBan, CTBCHT.LuongTon FROM CHITIETBAOCAOHANGTON CTBCHT JOIN MATHANG MH ON CTBCHT.MaMH = MH.MaMH WHERE MaBCHT = '" + orderid  +"'";
+    public void showDataInfo(String orderid) throws SQLException{
+        String query = "SELECT CTBCHT.MaCTBC, MH.TenMH, SUM(CTPN.SoLuong) AS LuongNhapBĐ, SUM(CTHD.SoLuong) AS LuongBan, SUM(MH.SoLuong) AS LuongTon FROM CHITIETBAOCAOHANGTON CTBCHT JOIN MATHANG MH JOIN CHITIETPHIEUNHAP CTPN JOIN CHITIETHOADON CTHD ON CTBCHT.MaMH = MH.MaMH AND CTPN.MaMH = CTBCHT.MaMH AND CTHD.MaMH = CTBCHT.MaMH WHERE MaBCHT = '" + orderid + "'" + "GROUP BY TenMH;";
         resultSet = dbConn.getData(query);
         datainfo.removeAll(datainfo);
         while (resultSet.next()){

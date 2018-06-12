@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -16,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.StringConverter;
+import tray.notification.NotificationType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -115,7 +117,10 @@ public class BillManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
         txtMoney.setEditable(false);
-        txtMoney.setText(String.valueOf(0));
+        if (txtSellingPrice.getText().isEmpty() && txtQuantities.getText().isEmpty())
+            txtMoney.setText(String.valueOf(0));
+        else if (!txtQuantities.getText().isEmpty() && !txtQuantities.getText().isEmpty())
+            txtMoney.setText(String.valueOf(calculate()));
 
         tbvBill.setEditable(false);
         tbvBillInfo.setEditable(false);
@@ -600,6 +605,7 @@ public class BillManagerController implements Initializable {
         if (btnADD.isPressed()) {
             refresh();
         }
+        updateSoLuong();
     }
 
     @FXML
@@ -608,6 +614,7 @@ public class BillManagerController implements Initializable {
         if (btnUPDATE.isPressed()) {
             refresh();
         }
+        updateSoLuong();
     }
 
     @FXML
@@ -678,5 +685,44 @@ public class BillManagerController implements Initializable {
             alert.setContentText("Please fill in the previous blank !!!");
             alert.show();
         }
+    }
+
+    public void updateSoLuong() throws SQLException{
+        resultSet = dbConn.getData("SELECT * FROM MATHANG WHERE MaMH = '" + cbbComponentName.getSelectionModel().getSelectedItem().getComponentID() + "';");
+        ObservableList<Components> list = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            list.add(new Components(
+                    resultSet.getString("MaMH"),
+                    resultSet.getString("TenMH"),
+                    resultSet.getString("MaDV"),
+                    resultSet.getString("HangSX"),
+                    resultSet.getString("MaLoai"),
+                    resultSet.getString("CauHinh"),
+                    resultSet.getString("MaKhu"),
+                    resultSet.getString("SoLuong")
+            ));
+        }
+
+        int soluong = Integer.parseInt(list.get(0).getNumOfComp());
+        int update = soluong - Integer.parseInt(txtQuantities.getText());
+        String id = "", ten = "", cauhinh = "", loai = "", makhu = "", hangsx= "", donvi = "";
+        try {
+            id = list.get(0).getComponentID();
+            ten = list.get(0).getComponentName();
+            cauhinh = list.get(0).getCompInfo();
+            loai = list.get(0).getTypesOfComp();
+            makhu = list.get(0).getAreaName();
+            hangsx = list.get(0).getCompMaker();
+            donvi = list.get(0).getUnit();
+            String[] dataUpdate = {id, ten, hangsx, donvi, cauhinh, loai, makhu, String.valueOf(update)};
+            String[] colLabel = {"MaMH", "TenMH", "HangSX", "MaDV", "CauHinh", "MaLoai", "MaKhu", "SoLuong"};
+            int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "MATHANG");
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
+        dbConn.close();
+        resultSet.close();
     }
 }
