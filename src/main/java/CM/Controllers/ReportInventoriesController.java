@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.*;
@@ -28,7 +29,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
-public class InventoriesReportController implements Initializable {
+public class ReportInventoriesController implements Initializable {
 
     @FXML
     private AnchorPane paneReport;
@@ -150,6 +151,9 @@ public class InventoriesReportController implements Initializable {
         str.add(9); str.add(10); str.add(11); str.add(12);
         cbbMonth.setItems(str);
 
+        txtReportID.setEditable(false);
+        txtReportID.setText(GenerateID.create("BaoCaoHangTon","MaBCHT","BCHT"));
+
         colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
         colReportDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colMonth.setCellValueFactory(new PropertyValueFactory<>("ReportMonth"));
@@ -233,6 +237,7 @@ public class InventoriesReportController implements Initializable {
         txtSumStock.setText("");
         cbbMonth.getSelectionModel().select(0);
         dtDate.setValue(null);
+        txtReportID.setText(GenerateID.create("BaoCaoHangTon","MaBCHT","BCHT"));
         try {
             showData();
         } catch (SQLException e) {}

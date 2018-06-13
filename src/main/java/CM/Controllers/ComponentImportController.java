@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.*;
@@ -121,6 +122,9 @@ public class ComponentImportController implements Initializable {
         dataInfor = FXCollections.observableArrayList();
         tbvImportComponent.setEditable(false);
         tbvImportComponentInfo.setEditable(false);
+        txtImPortComponentId.setEditable(false);
+        txtImportComponentInforId.setEditable(false);
+        txtImPortComponentId.setText(GenerateID.create("PhieuNhapHang","MaPN","PN"));
 
         setupTbv();
         setupTbvInfor();
@@ -302,6 +306,7 @@ public class ComponentImportController implements Initializable {
 
         btnDelete.setDisable(false);
         btnUpdate.setDisable(false);
+        txtImportComponentInforId.setText(GenerateID.create("ChiTietNhap","MaCTPN","CTPN"));
         ComponentImport selectedRow = tbvImportComponent.getSelectionModel().getSelectedItem();
         txtImPortComponentId.setText(selectedRow.getCompImportId());
         txtImportComponentInforImportId.setText(selectedRow.getCompImportId());
@@ -607,6 +612,7 @@ public class ComponentImportController implements Initializable {
         txtImportComponentAmount.setText("");
 
         cbEmployeeName.getSelectionModel().select(0);
+        txtImPortComponentId.setText(GenerateID.create("PhieuNhapHang","MaPN","PN"));
     }
 
     @FXML
@@ -631,6 +637,7 @@ public class ComponentImportController implements Initializable {
         txtInforAmount.setText("");
 
         cbComponentName.getSelectionModel().select(0);
+        txtImportComponentInforId.setText(GenerateID.create("ChiTietNhap","MaCTPN","CTPN"));
     }
 
     @FXML
@@ -706,5 +713,6 @@ public class ComponentImportController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        refreshInfor();
     }
 }

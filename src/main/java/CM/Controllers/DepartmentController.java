@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.SmileNotification;
 import CM.Models.DataProvider;
 import CM.Models.Department;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import tray.notification.NotificationType;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +23,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class DepartmentController implements Initializable {
-    Alert alert;
+
     @FXML
     public TextField txtDepartmentID, txtDepartmentName;
     public Button btnCANCEL, btnADD, btnUPDATE, btnDELETE;
@@ -93,8 +95,7 @@ public class DepartmentController implements Initializable {
             ten = txtDepartmentName.getText();
             if (txtDepartmentID.getText().isEmpty() || txtDepartmentName.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -104,15 +105,11 @@ public class DepartmentController implements Initializable {
         String[] dataInsert = {id, ten};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "PHONGBAN");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -130,9 +127,7 @@ public class DepartmentController implements Initializable {
             ten = txtDepartmentName.getText();
             if (txtDepartmentID.getText().isEmpty() || txtDepartmentName.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -143,15 +138,11 @@ public class DepartmentController implements Initializable {
         String[] colLabel = {"MaPhong", "TenPhong"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "PHONGBAN");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -165,22 +156,16 @@ public class DepartmentController implements Initializable {
     public void deleteData() {
         if (txtDepartmentID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtDepartmentID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "PHONGBAN", "MaPhong");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();
@@ -216,8 +201,10 @@ public class DepartmentController implements Initializable {
 
     @FXML
     public void setBtnCANCEL (ActionEvent event)throws Exception{
+        Alert alert;
         alert = new Alert(Alert.AlertType.WARNING, "Do you want to close this?", ButtonType.YES, ButtonType.NO);
         alert.show();
+
 
         Optional<ButtonType> result = alert.showAndWait();
 

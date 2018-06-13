@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
@@ -33,7 +34,7 @@ import java.util.ResourceBundle;
 
 public class BillManagerController implements Initializable {
 
-    Alert alert;
+
     @FXML
     private JFXTextField txtBillID;
 
@@ -121,6 +122,11 @@ public class BillManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
         txtSumMoney.setEditable(false);
+
+
+        txtBillID.setText(GenerateID.create("HoaDon","MaHD","HD")); //MH001
+        btnADDinfo.setDisable(true);
+
         if (txtSellingPrice.getText().isEmpty() && txtQuantities.getText().isEmpty())
             txtSumMoney.setDisable(true);
         else if (!txtQuantities.getText().isEmpty() && !txtQuantities.getText().isEmpty())
@@ -366,6 +372,7 @@ public class BillManagerController implements Initializable {
         cbbComponentName.getSelectionModel().select(0);
         cbbCustomerName.getSelectionModel().select(0);
         cbbEmployeeName.getSelectionModel().select(0);
+
     }
 
     //lay thong tin du lieu duoc HOADON
@@ -427,8 +434,7 @@ public class BillManagerController implements Initializable {
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -438,15 +444,11 @@ public class BillManagerController implements Initializable {
         String[] dataInsert = {id, nglap, mst, sum, nvid, khid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "HOADON");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -471,8 +473,7 @@ public class BillManagerController implements Initializable {
                     || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtBillID.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -482,15 +483,11 @@ public class BillManagerController implements Initializable {
         String[] dataInsert = {id, dongia, soluong, hdid, mhid, tientt};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETHOADON");
         if (isInserted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not inserted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
         }
         try {
             showData();
@@ -514,9 +511,7 @@ public class BillManagerController implements Initializable {
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -527,15 +522,11 @@ public class BillManagerController implements Initializable {
         String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TongTien", "MaNV", "MaKH"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -560,9 +551,7 @@ public class BillManagerController implements Initializable {
                     || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtMoney.getText().isEmpty())
             {
-                alert = new Alert(Alert.AlertType.WARNING,
-                        "Plese fill in all the blank!!!", ButtonType.OK);
-                alert.show();
+                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
             }
         }
         catch (NullPointerException e)
@@ -573,15 +562,11 @@ public class BillManagerController implements Initializable {
         String[] colLabel = {"MaCTHD", "DonGiaBan", "SoLuong", "MaHD", "MaMH", "TienThanhToan"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETHOADON");
         if (isUpdated > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not updated !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
             showData();
@@ -595,22 +580,16 @@ public class BillManagerController implements Initializable {
     public void deleteData() {
         if (txtBillID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtBillID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "HOADON", "MaHD");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();
@@ -624,22 +603,16 @@ public class BillManagerController implements Initializable {
     public void deleteDataInfo() {
         if (txtBillInfoID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtBillInfoID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETHOADON", "MaCTHD");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();
@@ -720,9 +693,7 @@ public class BillManagerController implements Initializable {
             txtMoney.setText(String.valueOf(calculate()));
         else if (!txtQuantities.getText().isEmpty() || !txtSellingPrice.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Please fill in the previous blank !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
     }
 

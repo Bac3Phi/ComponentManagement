@@ -34,7 +34,7 @@ import java.util.ResourceBundle;
 import static CM.Controllers.EmployeesController.tabPaneEx;
 
 public class EmployeesManagerController implements Initializable {
-    Alert alert;
+
     @FXML
     private JFXTextField txtEmployeeID;
 
@@ -360,22 +360,16 @@ public class EmployeesManagerController implements Initializable {
     public void deleteData() {
         if (txtEmployeeID.getText().isEmpty())
         {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Please fill in the blank!!!", ButtonType.OK);
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
         String[] dataDelete = {txtEmployeeID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "NHANVIEN", "MaNV");
         if (isDeleted > 0) {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are successfully deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
         }
         else
         {
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Data are not deleted !!!");
-            alert.show();
+            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
         }
         try {
             showData();

@@ -30,7 +30,6 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ComponentManagerController implements Initializable {
-    Alert alert;
     @FXML
     private JFXTextField txtComponentID;
 

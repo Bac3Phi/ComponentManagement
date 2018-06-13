@@ -29,7 +29,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ComponentOrderController implements Initializable {
-    Alert alert;
+
     @FXML
     private JFXTextField txtOrderID;
 
@@ -110,6 +110,15 @@ public class ComponentOrderController implements Initializable {
         txtOrderInfoID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
         tbvOrder.setEditable(false);
         tbvOrderInfo.setEditable(false);
+
+        txtOrderID.setEditable(false);
+        txtOrderInfoID.setEditable(false);
+        txtOrderID.setText(GenerateID.create("DonDatHang","MaDDH","DDH")); //MH001
+        // txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDDH")); //MH001
+        tbvOrder.setEditable(false);
+        tbvOrderInfo.setEditable(false);
+
+
 
         colOrderID.setCellValueFactory(new PropertyValueFactory<>("CompOrderID"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
@@ -264,6 +273,7 @@ public class ComponentOrderController implements Initializable {
         txtQuantities.setText("");
         cbbComponentName.getSelectionModel().select(0);
         cbbEmployeeName.getSelectionModel().select(0);
+        txtOrderID.setText(GenerateID.create("DonDatHang","MaDDH","DDH")); //MH001
     }
 
     //lay thong tin du lieu duoc DONDATHANG
@@ -282,6 +292,8 @@ public class ComponentOrderController implements Initializable {
             if (ten.getProvidersName().matches(selectedRow.getProviderName()))
                 cbbProviderName.getSelectionModel().select(ten);
         }
+        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDDH"));
+        btnADDinfo.setDisable(false);
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -549,8 +561,15 @@ public class ComponentOrderController implements Initializable {
     }
 
     public void setBtnREFRESH(ActionEvent actionEvent) {
+        refresh();
     }
 
     public void setBtnREFRESHinfo(ActionEvent actionEvent) {
+        refreshInfo();
+    }
+
+    void refreshInfo() {
+        txtQuantities.setText("");
+        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDDH"));
     }
 }
