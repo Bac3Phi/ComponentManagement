@@ -6,16 +6,20 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Callback;
 import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
@@ -178,48 +182,65 @@ public class BillManagerController implements Initializable {
             }
         });
 
-//        String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
-//        try {
-//            showDataDonGia(ID);
-//        }  catch (SQLException e) {}
-//        catch (IOException ex) {}
+        btnREFRESH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    showData();
+                }
+                catch (SQLException e) {}
+                catch (IOException ex) {}
+            }
+        });
+
+        btnREFRESHinfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    showDataInfo(txtBillID.getText());
+                }
+                catch (SQLException e) {}
+                catch (IOException ex) {}
+                refresh();
+            }
+        });
     }
 
-//    @FXML
-//    //Đổ dữ liệu vào bảng
-//    public void showDataDonGia(String s) throws SQLException, IOException{
-//        resultSet = dbConn.getData("SELECT MH.TenMH, CTPN.DonGiaBan FROM CHITIETPHIEUNHAP CTPN JOIN MATHANG MH ON CTPN.MaMH = MH.MaMH WHERE CTPN.MaMH = '" + s + "';");
-//        ObservableList<ComponentImportInfo> list = FXCollections.observableArrayList();
-//        list.removeAll(list);
-//        while (resultSet.next()){
-//            list.add(new ComponentImportInfo(
-//                    "", "", "",
-//                    resultSet.getString("TenMH"), "", "",
-//                    resultSet.getString("DonGiaBan"),
-//                    ""
-//            ));
-//        }
-//        txtSellingPrice.setText(list.get(0).getPrice());
-//        resultSet.close();
-//        dbConn.close();
-//    }
+    @FXML
+    //Đổ dữ liệu vào bảng
+    public void showDataDonGia(String s) throws SQLException, IOException{
+        resultSet = dbConn.getData("SELECT MH.TenMH, CTPN.DonGiaBan FROM CHITIETPHIEUNHAP CTPN JOIN MATHANG MH ON CTPN.MaMH = MH.MaMH WHERE MH.TenMH = '" + s + "';");
+        ObservableList<ComponentImportInfo> list = FXCollections.observableArrayList();
+        list.removeAll(list);
+        while (resultSet.next()){
+            list.add(new ComponentImportInfo(
+                    "", "", "",
+                    resultSet.getString("TenMH"), "", "",
+                    resultSet.getString("DonGiaBan"),
+                    ""
+            ));
+        }
+        txtSellingPrice.setText(list.get(0).getPrice());
+        resultSet.close();
+        dbConn.close();
+    }
 
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT HD.MaHD, NgayLap, MaSoThue, SUM(CTHD.TienThanhToan) AS TongTienTT, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH JOIN CHITIETHOADON CTHD ON CTHD.MaHD = HD.MaHD AND HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
+        resultSet = dbConn.getData("SELECT HD.MaHD, NgayLap, MaSoThue, SUM(CTHD.TienThanhToan) AS TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH JOIN CHITIETHOADON CTHD ON CTHD.MaHD = HD.MaHD AND HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
         data.removeAll(data);
         while (resultSet.next()){
+
             data.add(new Bills(
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
-                    resultSet.getLong("TongTienTT"),
+                    resultSet.getInt("TongTien"),
                     resultSet.getString("TenNV"),
                     resultSet.getString("TenKH")
             ));
         }
-        long test = data.get(0).getSumMoney();
 
         resultSet = dbConn.getData("SELECT * FROM KHACHHANG");
         ObservableList<Customer> list = FXCollections.observableArrayList();
@@ -291,6 +312,7 @@ public class BillManagerController implements Initializable {
                     "", "", "", "", "", ""
             ));
         }
+
         cbbComponentName.setItems(list);
         cbbComponentName.setConverter(new StringConverter<Components>() {
             @Override
@@ -301,6 +323,31 @@ public class BillManagerController implements Initializable {
             @Override
             public Components fromString(String string) {
                 return null;
+            }
+        });
+
+        cbbComponentName.setCellFactory(new Callback<ListView<Components>, ListCell<Components>>() {
+            @Override
+            public ListCell<Components> call(ListView<Components> param) {
+                final ListCell<Components> cell = new ListCell<Components>() {
+                    @Override
+                    protected void updateItem(Components item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(empty ? null : item.getComponentName());
+                    }
+                };
+                cell.addEventFilter(MouseEvent.MOUSE_PRESSED,  event -> {
+                    String ID;
+                    if (!cell.isEmpty()) {
+                        ID = cell.getText();
+                        try {
+                            showDataDonGia(ID);
+                        }  catch (SQLException e) {}
+                        catch (IOException ex) {}
+                    }
+                    //String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
+                });
+                return cell;
             }
         });
         resultSet.close();
@@ -661,22 +708,11 @@ public class BillManagerController implements Initializable {
     }
 
     @FXML
-    public void setBtnREFRESH (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
-    }
-
-    @FXML
     public void setBtnSEARCH (ActionEvent event)throws Exception{
 //        deleteData();
 //        if (btnDELETE.isPressed()) {
 //            refresh();
 //        }
-    }
-
-    public void setBtnREFRESHinfo(ActionEvent actionEvent) {
     }
 
     public void setCalculateMoney(ActionEvent actionEvent) {

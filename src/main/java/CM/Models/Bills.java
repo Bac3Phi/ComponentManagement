@@ -18,6 +18,7 @@ public class Bills {
         this.PublishDate = ngl;
         this.EmployeeName = nvname;
         this.TaxCode = mst;
+        this.SumMoney = sumMoney;
     }
 
     public String getBillID() {
