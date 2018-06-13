@@ -2,15 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1ddb63a-7724-40ee-8af7-f5011dd41116" name="Default" comment="Fix xong bug Tổng tie">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/font/times.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/font/timesbd.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Models/Bills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Models/Bills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Models/Bills.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Models/Bills.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComponentManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ComponentManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/SignInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ReportInventoriesView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,92 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="qllk-official.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/qllk-official.sql">
+      <file leaf-file-name="ComponentManagerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BillSearchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="method#setBtnPRINT#0;class#BillSearchController#0" />
-                <element signature="method#setBtnREFRESH#0;class#BillSearchController#0" />
-                <element signature="method#setBtnSEARCH#0;class#BillSearchController#0" />
-                <element signature="method#initialize#0;class#BillSearchController#0" />
-                <element signature="method#searchData#0;class#BillSearchController#0" />
-                <element signature="method#searchDate#0;class#BillSearchController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BillManagerController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="347" column="106" selection-start-line="347" selection-start-column="106" selection-end-line="347" selection-end-column="106" />
-              <folding>
-                <element signature="class#5534:5897" />
-                <element signature="class#5981:6123" />
-                <element signature="e#6839#9187#0" />
-                <element signature="e#11538#11821#0" expanded="true" />
-                <element signature="e#11820#11821#0" expanded="true" />
-                <element signature="e#12444#12899#0" />
-                <element signature="e#14715#14899#0" />
-                <element signature="e#13296#15106#0" />
-                <element signature="e#15112#16890#0" />
-                <element signature="e#16896#18811#0" />
-                <element signature="e#18817#20700#0" />
-                <element signature="e#20706#21617#0" />
-                <element signature="e#21623#22555#0" />
-                <element signature="e#22561#22749#0" />
-                <element signature="e#22755#22949#0" />
-                <element signature="e#22955#23124#0" />
-                <element signature="e#23130#23305#0" />
-                <element signature="e#23311#23492#0" />
-                <element signature="e#23498#23679#0" />
-                <element signature="e#23685#23862#0" />
-                <element signature="e#24052#24229#0" />
-                <element signature="e#24303#24786#0" />
-                <element signature="e#24792#26624#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bills.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Bills.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoriesReportController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4752">
-              <caret line="245" column="35" selection-start-line="245" selection-start-column="35" selection-end-line="245" selection-end-column="35" />
-              <folding>
-                <element signature="e#6829#7241#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="-2935">
+              <caret line="363" column="50" lean-forward="true" selection-start-line="363" selection-start-column="50" selection-end-line="363" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -155,6 +87,7 @@
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java" />
         <option value="$PROJECT_DIR$/src/main/java/CM/Models/Bills.java" />
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" />
       </list>
     </option>
   </component>
@@ -175,10 +108,13 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="410" />
-    <option name="y" value="110" />
-    <option name="width" value="1945" />
-    <option name="height" value="790" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -191,38 +127,38 @@
         <subPane>
           <expand>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CM" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -230,28 +166,28 @@
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="font" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,6 +203,14 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ComponentProject\src\main\resources\Assets\font" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ComponentProject\src\main\resources\Assets\font" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -392,8 +336,7 @@
     <option name="totallyTimeSpent" value="28928000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -403,14 +346,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32817337" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24966443" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -418,9 +359,11 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -444,37 +387,69 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java</url>
-          <line>255</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java</url>
-          <line>264</line>
+          <line>210</line>
           <properties />
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java</url>
-          <line>341</line>
-          <properties />
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database/qllk-official.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Bills.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="245" column="35" selection-start-line="245" selection-start-column="35" selection-end-line="245" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5899">
+          <caret line="347" column="85" lean-forward="true" selection-start-line="347" selection-start-column="85" selection-end-line="347" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReport.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -501,9 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5136">
           <caret line="214" column="33" lean-forward="true" selection-start-line="214" selection-start-column="33" selection-end-line="214" selection-end-column="33" />
-          <folding>
-            <element signature="e#6829#7241#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -535,10 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -561,24 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Functions/GenerateID.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -596,28 +550,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1652">
-          <caret line="137" column="71" selection-start-line="137" selection-start-column="71" selection-end-line="137" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/ComponentOrderInFo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ComponentSearchView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/DataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -630,17 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ComponentOrderSearchView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7392">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -666,32 +593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/EmployeesManagerView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Employees.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/EmployeesSearchView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/CustomerSearchView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillSearchView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="3576">
-          <caret line="149" column="61" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -716,17 +621,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="2577" selection-start-line="2577" selection-end-line="2577" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/InventoriesReportView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/InventoriesReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -734,32 +629,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/Event.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="505" column="9" lean-forward="true" selection-start-line="467" selection-start-column="8" selection-end-line="505" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Components.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -780,74 +651,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/qllk-official.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/InventoriesReportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4752">
-          <caret line="245" column="35" selection-start-line="245" selection-start-column="35" selection-end-line="245" selection-end-column="35" />
-          <folding>
-            <element signature="e#6829#7241#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding>
-            <element signature="method#setBtnPRINT#0;class#BillSearchController#0" />
-            <element signature="method#setBtnREFRESH#0;class#BillSearchController#0" />
-            <element signature="method#setBtnSEARCH#0;class#BillSearchController#0" />
-            <element signature="method#initialize#0;class#BillSearchController#0" />
-            <element signature="method#searchData#0;class#BillSearchController#0" />
-            <element signature="method#searchDate#0;class#BillSearchController#0" />
-          </folding>
+        <state relative-caret-position="3366">
+          <caret line="200" column="13" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Bills.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="347" column="106" selection-start-line="347" selection-start-column="106" selection-end-line="347" selection-end-column="106" />
-          <folding>
-            <element signature="class#5534:5897" />
-            <element signature="class#5981:6123" />
-            <element signature="e#6839#9187#0" />
-            <element signature="e#11538#11821#0" expanded="true" />
-            <element signature="e#11820#11821#0" expanded="true" />
-            <element signature="e#12444#12899#0" />
-            <element signature="e#14715#14899#0" />
-            <element signature="e#13296#15106#0" />
-            <element signature="e#15112#16890#0" />
-            <element signature="e#16896#18811#0" />
-            <element signature="e#18817#20700#0" />
-            <element signature="e#20706#21617#0" />
-            <element signature="e#21623#22555#0" />
-            <element signature="e#22561#22749#0" />
-            <element signature="e#22755#22949#0" />
-            <element signature="e#22955#23124#0" />
-            <element signature="e#23130#23305#0" />
-            <element signature="e#23311#23492#0" />
-            <element signature="e#23498#23679#0" />
-            <element signature="e#23685#23862#0" />
-            <element signature="e#24052#24229#0" />
-            <element signature="e#24303#24786#0" />
-            <element signature="e#24792#26624#0" />
-          </folding>
+        <state relative-caret-position="3235">
+          <caret line="548" column="34" lean-forward="true" selection-start-line="548" selection-start-column="34" selection-end-line="548" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/qllk-official.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/itextpdf/io/7.0.7/io-7.0.7.jar!/com/itextpdf/io/font/FontConstants.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/itextpdf/kernel/7.0.7/kernel-7.0.7.jar!/com/itextpdf/kernel/font/PdfFontFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Assets/font/VNTIME.TTF">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Assets/font/BebasNeue.otf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Assets/font/times.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="113" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="93" column="95" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Models/Components.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2935">
+          <caret line="363" column="50" lean-forward="true" selection-start-line="363" selection-start-column="50" selection-end-line="363" selection-end-column="50" />
         </state>
       </provider>
     </entry>

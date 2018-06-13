@@ -116,7 +116,7 @@
                                                 <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
                                             </graphic>
                                         </JFXButton>
-                                        <JFXButton fx:id="btnREFRESH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnREFRESH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                                        <JFXButton fx:id="btnREFRESH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
                                             <font>
                                                 <Font name="System Bold" size="15.0" />
                                             </font>
@@ -200,7 +200,7 @@
                                                 <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
                                             </graphic>
                                         </JFXButton>
-                                        <JFXButton fx:id="btnREFRESHinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnREFRESHinfo" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                                        <JFXButton fx:id="btnREFRESHinfo" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
                                             <font>
                                                 <Font name="System Bold" size="15.0" />
                                             </font>
