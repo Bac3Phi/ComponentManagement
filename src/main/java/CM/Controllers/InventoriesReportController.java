@@ -2,10 +2,7 @@ package CM.Controllers;
 
 import CM.Functions.SmileNotification;
 import CM.Models.*;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -52,7 +49,7 @@ public class InventoriesReportController implements Initializable {
     private Label lbReportDate;
 
     @FXML
-    private DatePicker dtDate;
+    private JFXDatePicker dtDate;
 
     @FXML
     private Label lbSumImport;
@@ -106,16 +103,16 @@ public class InventoriesReportController implements Initializable {
     private TableColumn<InventoriesReport, Integer> colSumRemain;
 
     @FXML
-    private JFXButton btnADD;
+    private JFXButton btnAdd;
 
     @FXML
-    private JFXButton btnPRINT;
+    private JFXButton btnPrint;
 
     @FXML
-    private JFXButton btnUPDATE;
+    private JFXButton btnUpdate;
 
     @FXML
-    private JFXButton btnREFRESH;
+    private JFXButton btnRefresh;
 
     @FXML
     private TableView<InventoriesReportInfo> tbvReportInfo;
@@ -182,14 +179,14 @@ public class InventoriesReportController implements Initializable {
             }
         });
 
-        btnREFRESH.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        btnRefresh.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 refresh();
             }
         });
 
-        btnADD.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        btnAdd.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 insertData();
@@ -197,7 +194,7 @@ public class InventoriesReportController implements Initializable {
             }
         });
 
-        btnUPDATE.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        btnUpdate.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 updateData();
@@ -376,5 +373,20 @@ public class InventoriesReportController implements Initializable {
         }
         catch (SQLException e){}
         catch (IOException io) {}
+    }
+
+    public void setButtonPRINT(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void setButtonDELETE(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void setButtonUPDATE(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void setButtonADD(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void setButtonREFRESH(javafx.event.ActionEvent actionEvent) {
     }
 }
