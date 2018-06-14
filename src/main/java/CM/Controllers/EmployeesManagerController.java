@@ -236,10 +236,8 @@ public class EmployeesManagerController implements Initializable {
             rbMALE.setSelected(false);
             rbFEMALE.setSelected(true);
         }
-        txtDepartmentID.setText(selectedRow.getDepartmentName());
         try {
-            String str = txtDepartmentID.getText();
-            String query = "SELECT * FROM PHONGBAN WHERE MaPhong = N'" + str + "';";
+            String query = "SELECT * FROM PHONGBAN WHERE TenPhong = N'" + selectedRow.getDepartmentName() + "';";
             resultSet = dbConn.getData(query);
             list.removeAll(list);
             while(resultSet.next()) {
@@ -248,6 +246,7 @@ public class EmployeesManagerController implements Initializable {
                         resultSet.getString("TenPhong")
                 ));
             }
+            txtDepartmentID.setText(list.get(0).getDepartmentID());
             cbxDepartmentName.getSelectionModel().select(list.get(0).getDepartmentName());
         }catch (SQLException e) {}
     }

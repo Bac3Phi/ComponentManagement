@@ -6,13 +6,13 @@ public class Bills {
     private String BillID;
     private String CustomerName;
     private Date PublishDate;
-    private long SumMoney;
+    private int SumMoney;
     private String EmployeeName;
     private String TaxCode;
 
     public Bills() {}
 
-    public Bills(String hdid, Date ngl, String mst, long sumMoney, String nvname, String khid) {
+    public Bills(String hdid, Date ngl, String mst, int sumMoney, String nvname, String khid) {
         this.BillID = hdid;
         this.CustomerName = khid;
         this.PublishDate = ngl;
@@ -61,11 +61,11 @@ public class Bills {
         this.TaxCode = taxCode;
     }
 
-    public long getSumMoney() {
+    public int getSumMoney() {
         return SumMoney;
     }
 
-    public void setSumMoney(long sumMoney) {
+    public void setSumMoney(int sumMoney) {
         SumMoney = sumMoney;
     }
 }

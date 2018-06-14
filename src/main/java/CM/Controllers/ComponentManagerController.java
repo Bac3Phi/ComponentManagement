@@ -81,7 +81,7 @@ public class ComponentManagerController implements Initializable {
     private JFXButton btnREFRESH;
 
     DataProvider dbConn;
-    ObservableList<Components> data;
+    public static ObservableList<Components> data;
     ResultSet resultSet;
     @Override
     public void initialize(URL location, ResourceBundle resource) {
