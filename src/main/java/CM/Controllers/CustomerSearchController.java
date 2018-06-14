@@ -28,13 +28,7 @@ import static CM.Controllers.CustomerController.tabPaneEx;
 public class CustomerSearchController implements Initializable {
 
     @FXML
-    private JFXButton btnClear12;
-
-    @FXML
     private JFXButton btnSEARCH;
-
-    @FXML
-    private JFXButton btnADD;
 
     @FXML
     private JFXButton btnGETINFO;

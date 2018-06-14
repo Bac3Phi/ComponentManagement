@@ -49,9 +49,6 @@ public class CustomerManagerController implements Initializable {
     private JFXTextField txtCustomerPhone;
 
     @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
     private JFXButton btnSEARCH;
 
     @FXML

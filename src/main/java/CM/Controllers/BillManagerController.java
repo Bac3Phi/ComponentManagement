@@ -34,7 +34,7 @@ import java.util.ResourceBundle;
 
 public class BillManagerController implements Initializable {
 
-
+    Alert alert;
     @FXML
     private JFXTextField txtBillID;
 
@@ -52,12 +52,6 @@ public class BillManagerController implements Initializable {
 
     @FXML
     private JFXTextField txtMoney;
-
-    @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
-    private JFXButton btnSEARCH;
 
     @FXML
     private JFXButton btnDELETE;
@@ -121,12 +115,17 @@ public class BillManagerController implements Initializable {
         btnUPDATEinfo.setDisable(true);
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
+
+        txtBillID.setText(GenerateID.create("HOADON", "MaHD", "HD"));
+        txtBillInfoID.setEditable(false);
+        txtBillID.setEditable(false);
+        txtBillInfoID.setDisable(true);
+        txtQuantities.setDisable(true);
+        txtSellingPrice.setDisable(true);
+        txtMoney.setDisable(true);
+        cbbComponentName.setDisable(true);
+
         txtSumMoney.setEditable(false);
-
-
-        txtBillID.setText(GenerateID.create("HoaDon","MaHD","HD")); //MH001
-        btnADDinfo.setDisable(true);
-
         if (txtSellingPrice.getText().isEmpty() && txtQuantities.getText().isEmpty())
             txtSumMoney.setDisable(true);
         else if (!txtQuantities.getText().isEmpty() && !txtQuantities.getText().isEmpty())
@@ -196,20 +195,73 @@ public class BillManagerController implements Initializable {
                 }
                 catch (SQLException e) {}
                 catch (IOException ex) {}
+                refresh();
             }
         });
 
         btnREFRESHinfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                try {
-                    showDataInfo(txtBillID.getText());
-                }
-                catch (SQLException e) {}
-                catch (IOException ex) {}
-                refresh();
+                refreshInfo();
             }
         });
+
+        txtMoney.setDisable(true);
+        txtQuantities.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.matches("")){
+                    txtQuantities.setText("");
+                }
+                else {
+                    if (!txtSellingPrice.getText().isEmpty()){
+                        int total = Integer.parseInt(txtSellingPrice.getText()) * Integer.parseInt(newValue);
+                        txtMoney.setText(String.valueOf(total));
+                    }
+                }
+            }
+        });
+    }
+
+    //Cập nhật cột tổng tiền trong HOADON
+    public void updateTongTien() throws SQLException{
+        String id = txtBillID.getText();
+        resultSet = dbConn.getData("SELECT HD.MaHD, SUM(CTHD.TienThanhToan) AS TongTien FROM HOADON HD JOIN CHITIETHOADON CTHD ON CTHD.MaHD = HD.MaHD WHERE HD.MaHD = '" + id + "';");
+        ObservableList<Bills> money = FXCollections.observableArrayList();
+        while (resultSet.next()) {
+            money.add(new Bills(
+                    resultSet.getString("MaHD"),
+                    null, "",
+                    resultSet.getInt("TongTien"),
+                    "", ""
+            ));
+        }
+
+        String nglap = "", mst = "", sum = "", nvid = "", khid = "";
+        try {
+            nglap = dtPublishDate.getValue().toString();
+            mst = txtTaxCode .getText();
+            sum = String.valueOf(money.get(0).getSumMoney());
+            nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
+            khid = cbbCustomerName.getSelectionModel().getSelectedItem().getCustomerID();
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
+        String[] dataUpdate = {id, nglap, mst, sum, nvid, khid};
+        String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TongTien", "MaNV", "MaKH"};
+        int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
+        if (isUpdated > 0) {
+            try {
+                showData();
+                refresh();
+            }
+            catch (SQLException e){}
+            catch (IOException io) {}
+        }
+        dbConn.close();
+        resultSet.close();
     }
 
     @FXML
@@ -234,10 +286,10 @@ public class BillManagerController implements Initializable {
     @FXML
     //Đổ dữ liệu vào bảng
     public void showData() throws SQLException, IOException{
-        resultSet = dbConn.getData("SELECT HD.MaHD, NgayLap, MaSoThue, SUM(CTHD.TienThanhToan) AS TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH JOIN CHITIETHOADON CTHD ON CTHD.MaHD = HD.MaHD AND HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH");
+        resultSet = dbConn.getData("SELECT HD.MaHD, HD.NgayLap, HD.MaSoThue, HD.TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH ON HD.MaNV = NV.MaNV AND HD.MaKH = KH.MaKH;\n");
         data.removeAll(data);
+        int check;
         while (resultSet.next()){
-
             data.add(new Bills(
                     resultSet.getString("MaHD"),
                     resultSet.getDate("NgayLap"),
@@ -247,6 +299,7 @@ public class BillManagerController implements Initializable {
                     resultSet.getString("TenKH")
             ));
         }
+
 
         resultSet = dbConn.getData("SELECT * FROM KHACHHANG");
         ObservableList<Customer> list = FXCollections.observableArrayList();
@@ -351,7 +404,6 @@ public class BillManagerController implements Initializable {
                         }  catch (SQLException e) {}
                         catch (IOException ex) {}
                     }
-                    //String ID = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
                 });
                 return cell;
             }
@@ -362,17 +414,29 @@ public class BillManagerController implements Initializable {
 
     //Hàm refresh xóa text
     public void refresh() {
-        txtBillID.setText("");
-        txtBillInfoID.setText("");
-        txtMoney.setText("");
+        txtBillID.setText(GenerateID.create("HOADON", "MaHD", "HD"));
         txtSumMoney.setText("");
         txtTaxCode.setText("");
+        cbbCustomerName.getSelectionModel().select(0);
+        cbbEmployeeName.getSelectionModel().select(0);
+        dtPublishDate.setValue(null);
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
+    }
+
+    //Hàm refresh xóa text
+    public void refreshInfo() {
+        txtBillInfoID.setText(GenerateID.create("CHITIETHOADON", "MaCTHD", "CTHD"));
+        txtMoney.setText("");
         txtQuantities.setText("");
         txtSellingPrice.setText("");
         cbbComponentName.getSelectionModel().select(0);
-        cbbCustomerName.getSelectionModel().select(0);
-        cbbEmployeeName.getSelectionModel().select(0);
-
+        try {
+            showDataInfo(txtBillID.getText());
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     //lay thong tin du lieu duoc HOADON
@@ -394,10 +458,18 @@ public class BillManagerController implements Initializable {
             if (ten.getCustomerName().matches(selectedRow.getCustomerName()))
                 cbbCustomerName.getSelectionModel().select(ten);
         }
+
+        txtBillInfoID.setDisable(false);
+        txtBillInfoID.setText(GenerateID.create("CHITIETHOADON", "MaCTHD", "CTHD"));
+        txtQuantities.setDisable(false);
+        txtSellingPrice.setDisable(false);
+        txtMoney.setDisable(false);
+        cbbComponentName.setDisable(false);
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
     public void getSelectedDataInfo() {
+        btnADDinfo.setDisable(false);
         btnUPDATEinfo.setDisable(false);
         BillsInfo selectedRow = tbvBillInfo.getSelectionModel().getSelectedItem();
         txtBillInfoID.setText(selectedRow.getBillsInfoID());
@@ -422,19 +494,19 @@ public class BillManagerController implements Initializable {
 
     //Thêm dữ liệu vào bảng HOADON
     public void insertData() {
-        String id = "", nglap = "", mst = "", sum = "", nvid = "", khid = "";
+        String id = "", nglap = "", mst = "", sum = "0", nvid = "", khid = "";
         try {
             id = txtBillID.getText();
             nglap = dtPublishDate.getValue().toString();
             mst = txtTaxCode .getText();
-            sum = txtSumMoney.getText();
             nvid = cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeID();
             khid = cbbCustomerName.getSelectionModel().getSelectedItem().getCustomerID();
-            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty() || txtSumMoney.getText().isEmpty()
-                    || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
+            if (txtBillID.getText().isEmpty() || txtTaxCode.getText().isEmpty()
+                    || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
+                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
+                alert.show();
             }
         }
         catch (NullPointerException e)
@@ -444,11 +516,15 @@ public class BillManagerController implements Initializable {
         String[] dataInsert = {id, nglap, mst, sum, nvid, khid};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "HOADON");
         if (isInserted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully inserted !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not inserted !!!");
+            alert.show();
         }
         try {
             showData();
@@ -473,7 +549,8 @@ public class BillManagerController implements Initializable {
                     || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtBillID.getText().isEmpty())
             {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng hoàn thành 100%",NotificationType.WARNING);
+                alert = new Alert(Alert.AlertType.WARNING, "Plese fill in all the blank!!!", ButtonType.OK);
+                alert.show();
             }
         }
         catch (NullPointerException e)
@@ -483,13 +560,18 @@ public class BillManagerController implements Initializable {
         String[] dataInsert = {id, dongia, soluong, hdid, mhid, tientt};
         int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETHOADON");
         if (isInserted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thành công!",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully inserted !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông báo","Thêm dữ liệu thất bại",NotificationType.ERROR);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not inserted !!!");
+            alert.show();
         }
         try {
+            updateTongTien();
             showData();
             refresh();
         }
@@ -511,7 +593,9 @@ public class BillManagerController implements Initializable {
                     || txtMoney.getText().isEmpty() || cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null)
                     || cbbCustomerName.getSelectionModel().getSelectedItem().equals(null) || dtPublishDate.getValue().isEqual(null))
             {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+                alert = new Alert(Alert.AlertType.WARNING,
+                        "Plese fill in all the blank!!!", ButtonType.OK);
+                alert.show();
             }
         }
         catch (NullPointerException e)
@@ -522,11 +606,15 @@ public class BillManagerController implements Initializable {
         String[] colLabel = {"MaHD", "NgayLap", "MaSoThue", "TongTien", "MaNV", "MaKH"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "HOADON");
         if (isUpdated > 0) {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully updated !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not updated !!!");
+            alert.show();
         }
         try {
             showData();
@@ -551,7 +639,9 @@ public class BillManagerController implements Initializable {
                     || txtQuantities.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)
                     || txtBillID.getText().isEmpty() || txtMoney.getText().isEmpty())
             {
-                SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+                alert = new Alert(Alert.AlertType.WARNING,
+                        "Plese fill in all the blank!!!", ButtonType.OK);
+                alert.show();
             }
         }
         catch (NullPointerException e)
@@ -562,13 +652,18 @@ public class BillManagerController implements Initializable {
         String[] colLabel = {"MaCTHD", "DonGiaBan", "SoLuong", "MaHD", "MaMH", "TienThanhToan"};
         int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "CHITIETHOADON");
         if (isUpdated > 0) {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật dữ liệu thành công!",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully updated !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not updated !!!");
+            alert.show();
         }
         try {
+            updateTongTien();
             showData();
             refresh();
         }
@@ -580,16 +675,22 @@ public class BillManagerController implements Initializable {
     public void deleteData() {
         if (txtBillID.getText().isEmpty())
         {
-            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+            alert = new Alert(Alert.AlertType.WARNING,
+                    "Please fill in the blank!!!", ButtonType.OK);
+            alert.show();
         }
         String[] dataDelete = {txtBillID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "HOADON", "MaHD");
         if (isDeleted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully deleted !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not deleted !!!");
+            alert.show();
         }
         try {
             showData();
@@ -603,16 +704,22 @@ public class BillManagerController implements Initializable {
     public void deleteDataInfo() {
         if (txtBillInfoID.getText().isEmpty())
         {
-            SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
+            alert = new Alert(Alert.AlertType.WARNING,
+                    "Please fill in the blank!!!", ButtonType.OK);
+            alert.show();
         }
         String[] dataDelete = {txtBillInfoID.getText()};
         int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETHOADON", "MaCTHD");
         if (isDeleted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are successfully deleted !!!");
+            alert.show();
         }
         else
         {
-            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Data are not deleted !!!");
+            alert.show();
         }
         try {
             showData();
@@ -628,7 +735,6 @@ public class BillManagerController implements Initializable {
         if (btnADD.isPressed()) {
             refresh();
         }
-        updateSoLuong();
     }
 
     @FXML
@@ -637,7 +743,6 @@ public class BillManagerController implements Initializable {
         if (btnUPDATE.isPressed()) {
             refresh();
         }
-        updateSoLuong();
     }
 
     @FXML
@@ -654,6 +759,7 @@ public class BillManagerController implements Initializable {
         if (btnADDinfo.isPressed()) {
             refresh();
         }
+        updateSoLuong();
     }
 
     @FXML
@@ -662,6 +768,7 @@ public class BillManagerController implements Initializable {
         if (btnUPDATEinfo.isPressed()) {
             refresh();
         }
+        updateSoLuong();
     }
 
     @FXML
@@ -672,28 +779,14 @@ public class BillManagerController implements Initializable {
         }
     }
 
-    @FXML
-    public void setBtnEXPORT (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
-    }
-
-    @FXML
-    public void setBtnSEARCH (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
-    }
-
     public void setCalculateMoney(ActionEvent actionEvent) {
         if (!txtQuantities.getText().isEmpty() && !txtSellingPrice.getText().isEmpty())
             txtMoney.setText(String.valueOf(calculate()));
         else if (!txtQuantities.getText().isEmpty() || !txtSellingPrice.getText().isEmpty())
         {
-            SmileNotification.creatingNotification("Thông Báo","Vui lòng hoàn thành 100%",NotificationType.INFORMATION);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Please fill in the previous blank !!!");
+            alert.show();
         }
     }
 

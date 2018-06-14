@@ -16,20 +16,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.InventoriesReportController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ReportInventoriesController">
    <children>
       <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <AnchorPane fx:id="paneReport" prefHeight="788.0" prefWidth="1400.0" stylesheets="@../Stytlesheet/default.css" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="566.0" prefWidth="382.0" styleClass="card-white" AnchorPane.leftAnchor="30.0">
+                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="595.0" prefWidth="367.0" styleClass="card-white" AnchorPane.leftAnchor="30.0">
                      <children>
-                        <VBox alignment="CENTER" layoutX="38.0" layoutY="71.0" prefHeight="387.0" prefWidth="306.0" spacing="30.0">
+                        <VBox alignment="CENTER" layoutX="31.0" layoutY="59.0" prefHeight="387.0" prefWidth="306.0" spacing="30.0">
                            <children>
                               <JFXTextField fx:id="txtReportID" focusColor="#f38945" labelFloat="true" promptText="Mã Báo Cáo" />
                               <JFXDatePicker fx:id="dtDate" defaultColor="#f38945" prefHeight="49.0" prefWidth="304.0" promptText="Ngày Nhập" />
                               <JFXComboBox fx:id="cbbMonth" focusColor="#f38945" labelFloat="true" prefHeight="33.0" prefWidth="301.0" promptText="Tháng" />
-                              <JFXTextField fx:id="txtEmployeeName" focusColor="#f38945" labelFloat="true" promptText="Nhân Viên" />
+                              <JFXComboBox fx:id="cbbEmployeeName" prefHeight="41.0" prefWidth="390.0" promptText="Tên nhân viên" />
                               <JFXTextField fx:id="txtSumImport" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Nhập" />
                               <JFXTextField fx:id="txtSumSell" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Nhập" />
                               <JFXTextField fx:id="txtSumStock" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Tồn" />
@@ -43,7 +43,7 @@
                                           <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="18.0" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="btnDelete" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonDELETE" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
+                                    <JFXButton fx:id="btnDelete" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -51,7 +51,7 @@
                                           <FontAwesomeIconView fill="WHITE" glyphName="REMOVE" size="18" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="btnUpdate" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonUPDATE" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #fec425;" text=" " textFill="WHITE">
+                                    <JFXButton fx:id="btnUpdate" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #fec425;" text=" " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -59,7 +59,7 @@
                                           <MaterialDesignIconView fill="WHITE" glyphName="BORDER_COLOR" size="18.0" wrappingWidth="18.0" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="btnAdd" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonADD" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text=" " textFill="WHITE">
+                                    <JFXButton fx:id="btnAdd" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="#ee9e43" style="-fx-background-color: #f38945;" text=" " textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -67,7 +67,7 @@
                                           <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
                                        </graphic>
                                     </JFXButton>
-                                    <JFXButton fx:id="btnRefresh" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonREFRESH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
+                                    <JFXButton fx:id="btnRefresh" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #77d5d8;" text="Làm Mới" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -90,9 +90,9 @@
                         </Pane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="436.0" layoutY="56.0" prefHeight="692.0" prefWidth="490.0" styleClass="card-footer" AnchorPane.bottomAnchor="40.0" AnchorPane.topAnchor="56.0">
+                  <AnchorPane layoutX="414.0" layoutY="56.0" prefHeight="692.0" prefWidth="512.0" styleClass="card-footer" AnchorPane.bottomAnchor="40.0" AnchorPane.topAnchor="56.0">
                      <children>
-                        <TableView fx:id="tbvReport" prefHeight="692.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tbvReport" layoutX="-1.0" prefHeight="692.0" prefWidth="513.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="colReportID" prefWidth="100.0" text="Mã BCHT" />
                             <TableColumn fx:id="colReportDate" prefWidth="135.0" text="Ngày lập" />
@@ -108,7 +108,7 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="970.0" layoutY="57.0" prefHeight="690.0" prefWidth="392.0" styleClass="card-footer" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="950.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="56.0">
+                  <AnchorPane layoutX="938.0" layoutY="57.0" prefHeight="692.0" prefWidth="455.0" styleClass="card-footer" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="938.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="56.0">
                      <children>
                         <TableView fx:id="tbvReportInfo" prefHeight="690.0" prefWidth="392.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>

@@ -27,9 +27,6 @@ import java.util.ResourceBundle;
 
 public class BillSearchController implements Initializable {
     @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
     private JFXButton btnSEARCH;
 
     @FXML
@@ -45,10 +42,10 @@ public class BillSearchController implements Initializable {
     private JFXRadioButton rdbtnBillID;
 
     @FXML
-    private JFXRadioButton rdbtnCustomerID;
+    private JFXRadioButton rdbtnCustomerName;
 
     @FXML
-    private JFXRadioButton rdbtnEmployeesID;
+    private JFXRadioButton rdbtnEmployeesName;
 
     @FXML
     private JFXDatePicker dateCheckIn;
@@ -60,7 +57,7 @@ public class BillSearchController implements Initializable {
     private AnchorPane paneSEARCH;
 
     public TableView<Bills> tbvSEARCH;
-    public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerID, colEmployeeID;
+    public TableColumn<Bills, String> colBillID, colTaxCode, colCustomerName, colEmployeeName;
     public TableColumn<Bills, Date> colPublishDate;
     public TableColumn<Bills, Integer> colSumMoney;
 
@@ -77,23 +74,23 @@ public class BillSearchController implements Initializable {
     @FXML
     void setBtnREFRESH(ActionEvent event) {
         rdbtnBillID.setSelected(false);
-        rdbtnEmployeesID.setSelected(false);
-        rdbtnCustomerID.setSelected(false);
+        rdbtnEmployeesName.setSelected(false);
+        rdbtnCustomerName.setSelected(false);
         list.removeAll(list);
         dateCheckOut.setValue(null);
         dateCheckIn.setValue(null);
     }
 
     public void setBtnSEARCH (ActionEvent event) {
-        String[] str = {"MaHD", "MaNV", "MaKH"};
+        String[] str = {"MaHD", "TenNV", "TenKH"};
         try {
             if (rdbtnBillID.isSelected())
                 searchData(str[0], txtSEARCH.getText());
-            else if (rdbtnEmployeesID.isSelected())
+            else if (rdbtnEmployeesName.isSelected())
                 searchData(str[1], txtSEARCH.getText());
-            else if (rdbtnCustomerID.isSelected())
+            else if (rdbtnCustomerName.isSelected())
                 searchData(str[2], txtSEARCH.getText());
-            else if (!rdbtnCustomerID.isSelected() && !rdbtnEmployeesID.isSelected() && !rdbtnCustomerID.isSelected()
+            else if (!rdbtnCustomerName.isSelected() && !rdbtnEmployeesName.isSelected() && !rdbtnCustomerName.isSelected()
                     && !dateCheckIn.getValue().equals(null) && !dateCheckOut.getValue().equals(null))
                 searchDate(dateCheckIn.getValue().toString(), dateCheckOut.getValue().toString());
         } catch (SQLException e) {}
@@ -112,8 +109,8 @@ public class BillSearchController implements Initializable {
         colPublishDate.setCellValueFactory(new PropertyValueFactory<>("PublishDate"));
         colTaxCode.setCellValueFactory(new PropertyValueFactory<>("TaxCode"));
         colSumMoney.setCellValueFactory(new PropertyValueFactory<>("SumMoney"));
-        colEmployeeID.setCellValueFactory(new PropertyValueFactory<>("EmployeeID"));
-        colCustomerID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        colEmployeeName.setCellValueFactory(new PropertyValueFactory<>("EmployeeName"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("CustomerName"));
 
         tbvSEARCH.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -135,7 +132,7 @@ public class BillSearchController implements Initializable {
     }
 
     public void searchData (String field, String str) throws SQLException {
-        String query = "SELECT * FROM HOADON WHERE " + field + " LIKE '%" + str +"%';";
+        String query = "SELECT HD.MaHD, HD.NgayLap, HD.MaSoThue, HD.TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH ON NV.MaNV = HD.MaNV AND KH.MaKH = HD.MaKH WHERE " + field + " LIKE '%" + str +"%';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
@@ -144,8 +141,8 @@ public class BillSearchController implements Initializable {
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
                     resultSet.getInt("TongTien"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenKH")
             ));
         }
         resultSet.close();
@@ -153,7 +150,7 @@ public class BillSearchController implements Initializable {
     }
 
     public void searchDate (String date1, String date2) throws SQLException {
-        String query = "SELECT * FROM HOADON WHERE NgayLap >= '" + date1 +"' AND NgayLap <= '" + date2 + "';";
+        String query = "SELECT HD.MaHD, HD.NgayLap, HD.MaSoThue, HD.TongTien, NV.TenNV, KH.TenKH FROM HOADON HD JOIN NHANVIEN NV JOIN KHACHHANG KH ON NV.MaNV = HD.MaNV AND KH.MaKH = HD.MaKH WHERE NgayLap >= '" + date1 +"' AND NgayLap <= '" + date2 + "';";
         resultSet = dbConn.getData(query);
         list.removeAll(list);
         while (resultSet.next()){
@@ -162,8 +159,8 @@ public class BillSearchController implements Initializable {
                     resultSet.getDate("NgayLap"),
                     resultSet.getString("MaSoThue"),
                     resultSet.getInt("TongTien"),
-                    resultSet.getString("MaNV"),
-                    resultSet.getString("MaKH")
+                    resultSet.getString("TenNV"),
+                    resultSet.getString("TenKH")
             ));
         }
         resultSet.close();

@@ -5,11 +5,11 @@ import java.util.Date;
 public class ComponentImport {
     private String CompImportId;
     private String OrderId;
-    private String PublishDate;
+    private Date PublishDate;
     private String EmployeeName;
     private String Amount;
 
-    public ComponentImport(String compImportId, String orderId, String publishDate, String employeeName, String amount) {
+    public ComponentImport(String compImportId, String orderId, Date publishDate, String employeeName, String amount) {
         CompImportId = compImportId;
         OrderId = orderId;
         PublishDate = publishDate;
@@ -33,11 +33,11 @@ public class ComponentImport {
         OrderId = orderId;
     }
 
-    public String getPublishDate() {
+    public Date getPublishDate() {
         return PublishDate;
     }
 
-    public void setPublishDate(String publishDate) {
+    public void setPublishDate(Date publishDate) {
         PublishDate = publishDate;
     }
 
