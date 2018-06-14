@@ -5,7 +5,6 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -38,14 +37,6 @@
                   </Pane>
                   <HBox layoutX="879.0" layoutY="9.0" spacing="6.0" AnchorPane.rightAnchor="16.0">
                      <children>
-                        <JFXButton fx:id="btnPRINT" buttonType="RAISED" onAction="#setBtnPRINT" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text="In" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <graphic>
-                              <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="29.0" />
-                           </graphic>
-                        </JFXButton>
                         <JFXButton fx:id="btnSEARCH" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#setBtnSEARCH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text="Tìm Kiếm" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />

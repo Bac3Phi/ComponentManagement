@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.*;
@@ -98,12 +99,12 @@ public class ComponentImportController implements Initializable {
     private TableColumn<ComponentImportInfo, String> colImportComponentInforId, colImportComponentInforImportId,
             colComponentName, colNumOfComponent, colUnitPrice, colPrice, colNote, colInforAmount;
     @FXML
-    private TableView<ComponentImport> tbvImportComponent;
+    public TableView<ComponentImport> tbvImportComponent;
     @FXML
     private TableColumn<ComponentImport, String> colImportComponentId, colOrderId, colEmployeeName, colPublishDate, colImportComponentAmount;
 
     DataProvider dbConn;
-    ObservableList<ComponentImport> dataImport;
+    public static ObservableList<ComponentImport> dataImport;
     ObservableList<ComponentImportInfo> dataInfor;
     ResultSet resultSet;
 
@@ -121,6 +122,9 @@ public class ComponentImportController implements Initializable {
         dataInfor = FXCollections.observableArrayList();
         tbvImportComponent.setEditable(false);
         tbvImportComponentInfo.setEditable(false);
+        txtImPortComponentId.setEditable(false);
+        txtImportComponentInforId.setEditable(false);
+        txtImPortComponentId.setText(GenerateID.create("PhieuNhapHang","MaPN","PN"));
 
         setupTbv();
         setupTbvInfor();
@@ -264,7 +268,7 @@ public class ComponentImportController implements Initializable {
             dataImport.add(new ComponentImport(
                     resultSet.getString("MaPN"),
                     resultSet.getString("MaDDH"),
-                    resultSet.getString("NgayLapPhieu"),
+                    resultSet.getDate("NgayLapPhieu"),
                     resultSet.getString("TenNV"),
                     resultSet.getString("TongTienPN")
             ));
@@ -299,10 +303,11 @@ public class ComponentImportController implements Initializable {
     //lay thong tin du lieu duoc
     public void getSelectedData() {
         btnAddInfor.setDisable(false);
-
         btnDelete.setDisable(false);
         btnUpdate.setDisable(false);
+        txtImportComponentInforId.setText(GenerateID.create("CHITIETPHIEUNHAP","MaCTPN","CTPN"));
         ComponentImport selectedRow = tbvImportComponent.getSelectionModel().getSelectedItem();
+        dpPublishDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
         txtImPortComponentId.setText(selectedRow.getCompImportId());
         txtImportComponentInforImportId.setText(selectedRow.getCompImportId());
         txtOrderId.setText(selectedRow.getOrderId());
@@ -605,8 +610,9 @@ public class ComponentImportController implements Initializable {
         txtImPortComponentId.setText("");
         txtOrderId.setText("");
         txtImportComponentAmount.setText("");
-
+        dpPublishDate.setValue(null);
         cbEmployeeName.getSelectionModel().select(0);
+        txtImPortComponentId.setText(GenerateID.create("PhieuNhapHang","MaPN","PN"));
     }
 
     @FXML
@@ -631,6 +637,7 @@ public class ComponentImportController implements Initializable {
         txtInforAmount.setText("");
 
         cbComponentName.getSelectionModel().select(0);
+        txtImportComponentInforId.setText(GenerateID.create("ChiTietPhieuNhap","MaCTPN","CTPN"));
     }
 
     @FXML
@@ -663,11 +670,6 @@ public class ComponentImportController implements Initializable {
         if (btnDeleteInfor.isPressed()) {
             refreshInfor();
         }
-    }
-
-    @FXML
-    void setBtnEXPORT(ActionEvent event) {
-
     }
 
     @FXML
@@ -706,5 +708,6 @@ public class ComponentImportController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        refreshInfor();
     }
 }

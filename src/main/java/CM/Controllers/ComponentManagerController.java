@@ -30,7 +30,6 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ComponentManagerController implements Initializable {
-    Alert alert;
     @FXML
     private JFXTextField txtComponentID;
 
@@ -61,12 +60,6 @@ public class ComponentManagerController implements Initializable {
 
     @FXML
     private Label lblComplete;
-
-    @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
-    private JFXButton btnSEARCH;
 
     @FXML
     private JFXButton btnDELETE;
@@ -134,6 +127,7 @@ public class ComponentManagerController implements Initializable {
     private static double progress6 = 0;
     private static double progress7 = 0;
     private static double progress8 = 0;
+
     private void updateProgress() {
         DecimalFormat decimalFormat = new DecimalFormat("###.#");
         decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
@@ -382,6 +376,10 @@ public class ComponentManagerController implements Initializable {
         cbAreaName.getSelectionModel().select(0);
         cbTypeName.getSelectionModel().select(0);
         cbUnit.getSelectionModel().select(0);
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     //lay thong tin du lieu duoc
@@ -553,11 +551,6 @@ public class ComponentManagerController implements Initializable {
         if (btnDELETE.isPressed()) {
             refresh();
         }
-    }
-
-    @FXML
-    public void setBtnSEARCH (ActionEvent event)throws Exception{
-
     }
 
     public void setBtnREFRESH(ActionEvent actionEvent) {

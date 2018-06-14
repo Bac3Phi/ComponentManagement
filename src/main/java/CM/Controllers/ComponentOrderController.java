@@ -29,7 +29,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ComponentOrderController implements Initializable {
-    Alert alert;
+
     @FXML
     private JFXTextField txtOrderID;
 
@@ -43,12 +43,6 @@ public class ComponentOrderController implements Initializable {
     private JFXComboBox<Providers> cbbProviderName;
 
     @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
-    private JFXButton btnSEARCH;
-
-    @FXML
     private JFXButton btnDELETE;
 
     @FXML
@@ -59,6 +53,7 @@ public class ComponentOrderController implements Initializable {
 
     @FXML
     private JFXButton btnREFRESH;
+
     @FXML
     private JFXTextField txtOrderInfoID;
 
@@ -106,8 +101,17 @@ public class ComponentOrderController implements Initializable {
         btnUPDATEinfo.setDisable(true);
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
-        txtOrderID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
-        txtOrderInfoID.setText(GenerateID.create("mathang","mamh","MH")); //MH001
+        btnADDinfo.setDisable(true);
+        txtOrderID.setText(GenerateID.create("DONDATHANG","MaDDH","DDH")); //DDH001
+        txtOrderInfoID.setText(GenerateID.create("CHITIETDONDATHANG","MaCTDDH","CTDH")); //CTDH001
+        tbvOrder.setEditable(false);
+        tbvOrderInfo.setEditable(false);
+        txtQuantities.setDisable(true);
+        txtOrderInfoID.setDisable(true);
+        cbbComponentName.setDisable(true);
+
+        txtOrderID.setEditable(false);
+        txtOrderInfoID.setEditable(false);
         tbvOrder.setEditable(false);
         tbvOrderInfo.setEditable(false);
 
@@ -264,10 +268,19 @@ public class ComponentOrderController implements Initializable {
         txtQuantities.setText("");
         cbbComponentName.getSelectionModel().select(0);
         cbbEmployeeName.getSelectionModel().select(0);
+        txtOrderID.setText(GenerateID.create("DonDatHang","MaDDH","DDH")); //MH001
+        dtDate.setValue(null);
+        try {
+            showData();
+        }catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     //lay thong tin du lieu duoc DONDATHANG
     public void getSelectedData() {
+        txtQuantities.setDisable(false);
+        txtOrderInfoID.setDisable(false);
+        cbbComponentName.setDisable(false);
         ComponentOrder selectedRow = tbvOrder.getSelectionModel().getSelectedItem();
         txtOrderID.setText(selectedRow.getCompOrderID());
         dtDate.setValue(LocalDate.parse(selectedRow.getPublishDate().toString()));
@@ -282,6 +295,8 @@ public class ComponentOrderController implements Initializable {
             if (ten.getProvidersName().matches(selectedRow.getProviderName()))
                 cbbProviderName.getSelectionModel().select(ten);
         }
+        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDH"));
+        btnADDinfo.setDisable(false);
     }
 
     //lay thong tin du lieu duoc tu CHITIETHOADON
@@ -514,6 +529,9 @@ public class ComponentOrderController implements Initializable {
         if (btnADDinfo.isPressed()) {
             refresh();
         }
+        txtOrderInfoID.setDisable(false);
+        cbbComponentName.setDisable(false);
+        txtQuantities.setDisable(false);
     }
 
     @FXML
@@ -533,24 +551,23 @@ public class ComponentOrderController implements Initializable {
     }
 
     @FXML
-    public void setBtnEXPORT (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
+    public void setBtnREFRESH(ActionEvent actionEvent) {
+        refresh();
     }
 
     @FXML
-    public void setBtnSEARCH (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
-    }
-
-    public void setBtnREFRESH(ActionEvent actionEvent) {
-    }
-
     public void setBtnREFRESHinfo(ActionEvent actionEvent) {
+        refreshInfo();
+    }
+
+    void refreshInfo() {
+        txtQuantities.setText("");
+        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDDH"));
+        cbbComponentName.getSelectionModel().select(0);
+        try {
+            if (!txtOrderID.getText().isEmpty())
+                showDataInfo(txtOrderID.getText());
+        }catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 }

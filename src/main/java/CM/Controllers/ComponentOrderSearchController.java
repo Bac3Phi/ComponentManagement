@@ -28,9 +28,6 @@ import java.util.ResourceBundle;
 public class ComponentOrderSearchController implements Initializable {
 
     @FXML
-    private JFXButton btnPRINT;
-
-    @FXML
     private JFXButton btnSEARCH;
 
     @FXML
@@ -82,11 +79,6 @@ public class ComponentOrderSearchController implements Initializable {
     ObservableList<ComponentOrder> list;
     ResultSet resultSet;
     public ComponentOrderController pointer;
-
-    @FXML
-    void setBtnPRINT(ActionEvent event) {
-
-    }
 
     @FXML
     void setBtnREFRESH(ActionEvent event) {

@@ -1,4 +1,5 @@
 package CM.Controllers;
+import CM.Functions.CurrentUser;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.*;
@@ -85,6 +86,9 @@ public class SignInController  implements Initializable {
             Image image = new Image(String.valueOf(this.getClass().getResource("/Assets/images/Glogo.png")));
             MainController mainController = fxmlLoader.getController();
             mainController.setInfo(data.get(0).getUsername(),data.get(0).getDisplayName(),datainfo.get(0).getAuthName());
+
+
+
             stage.getIcons().add(image);
             stage.setTitle("GAMEON : Quản Lý Linh Kiện");
             stage.setScene(new Scene(root));

@@ -1,4 +1,5 @@
 package CM.Controllers;
+import CM.Functions.CurrentUser;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPopup;
 import com.jfoenix.controls.JFXRippler;
@@ -210,11 +211,12 @@ public class MainController extends Application implements Initializable {
         setNode(bill);
     }
 
-    private  String username,displayname,authname;
+    public String username,displayname,authname;
     public void setInfo(String UserName,String DisplayName,String AuthName){
         this.username = UserName;
         this.displayname = DisplayName;
         this.authname = AuthName;
+        CurrentUser currentUser= new CurrentUser(username,displayname,authname);
         lbCurrentUserName.setText(displayname);
         setPermisstion(authname);
     }

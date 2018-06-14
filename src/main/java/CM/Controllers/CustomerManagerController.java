@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 import static CM.Controllers.CustomerController.tabPaneEx;
 
 public class CustomerManagerController implements Initializable {
-    Alert alert;
+
     @FXML
     private JFXTextField txtCustomerID;
 
@@ -47,9 +47,6 @@ public class CustomerManagerController implements Initializable {
 
     @FXML
     private JFXTextField txtCustomerPhone;
-
-    @FXML
-    private JFXButton btnPRINT;
 
     @FXML
     private JFXButton btnSEARCH;

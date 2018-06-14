@@ -76,14 +76,6 @@
                                 </GridPane>
                                 <HBox layoutX="106.0" layoutY="213.0" spacing="10.0">
                                     <children>
-                                        <JFXButton fx:id="btnSEARCH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#setBtnSEARCH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text=" " textFill="WHITE">
-                                            <font>
-                                                <Font name="System Bold" size="15.0" />
-                                            </font>
-                                            <graphic>
-                                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
-                                            </graphic>
-                                        </JFXButton>
                                         <JFXButton fx:id="btnDELETE" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnDELETE" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
                                             <font>
                                                 <Font name="System Bold" size="15.0" />

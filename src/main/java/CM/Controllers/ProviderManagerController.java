@@ -31,7 +31,6 @@ import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ProviderManagerController implements Initializable {
-    Alert alert;
     @FXML
     private JFXTextField txtProviderID;
 

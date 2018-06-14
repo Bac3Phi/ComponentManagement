@@ -12,31 +12,47 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ReportPaymentController">
    <children>
-      <BorderPane>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <AnchorPane prefHeight="788.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="435.0" prefWidth="423.0" styleClass="card-white">
+                  <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="435.0" prefWidth="345.0" styleClass="card-white">
                      <children>
-                        <JFXTextField fx:id="txtPaymentReportId" layoutX="193.0" layoutY="49.0" prefHeight="25.0" prefWidth="180.0" />
-                        <Label layoutX="53.0" layoutY="49.0" prefHeight="25.0" prefWidth="116.0" text="Mã Báo Cáo Thu Chi" />
-                        <Label layoutX="51.0" layoutY="168.0" prefHeight="25.0" prefWidth="116.0" text="Ngày Lập" />
-                        <Label layoutX="51.0" layoutY="213.0" prefHeight="25.0" prefWidth="116.0" text="Loại Báo Cáo" />
-                        <JFXTextField fx:id="txtMonth" layoutX="196.0" layoutY="258.0" prefHeight="25.0" prefWidth="181.0" />
-                        <Label layoutX="52.0" layoutY="257.0" prefHeight="25.0" prefWidth="97.0" text="Tháng/Quý" />
-                        <JFXDatePicker fx:id="dpPublishDate" layoutX="190.0" layoutY="142.0" prefHeight="51.0" prefWidth="186.0" />
-                        <JFXRadioButton fx:id="rdbtnMonth" layoutX="203.0" layoutY="217.0" text="Tháng" />
-                        <JFXRadioButton fx:id="rdbtnQuaterOfYear" layoutX="311.0" layoutY="217.0" text="Quý" />
-                        <Label layoutX="53.0" layoutY="99.0" prefHeight="25.0" prefWidth="74.0" text="Nhân Viên" />
-                        <JFXComboBox fx:id="cbEmployeeName" layoutX="193.0" layoutY="94.0" prefHeight="35.0" prefWidth="183.0" />
-                        <Label layoutX="53.0" layoutY="304.0" prefHeight="25.0" prefWidth="80.0" text="Năm" />
-                        <JFXTextField fx:id="txtYear" layoutX="197.0" layoutY="305.0" prefHeight="25.0" prefWidth="178.0" />
+                        <GridPane alignment="BOTTOM_LEFT" layoutX="34.0" layoutY="47.0" prefHeight="308.0" prefWidth="246.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="txtPaymentReportId" focusColor="#f38945" labelFloat="true" promptText="Mã Báo Cáo Thu Chi" />
+                              <JFXComboBox fx:id="cbEmployeeName" focusColor="#f38945" labelFloat="true" prefWidth="245.0" promptText="Nhân Viên" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpPublishDate" defaultColor="#f38945" prefWidth="244.0" promptText="Ngày Lập" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <JFXRadioButton fx:id="rdbtnMonth" text="Tháng" />
+                                    <JFXRadioButton fx:id="rdbtnQuaterOfYear" text="Quý" />
+                                 </children>
+                              </HBox>
+                              <JFXTextField fx:id="txtMonth" alignment="BOTTOM_LEFT" focusColor="#f38945" labelFloat="true" promptText="Tháng/Quý" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="txtYear" focusColor="#f38945" labelFloat="true" promptText="Năm" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
                         <Pane layoutX="19.0" layoutY="-24.0" prefHeight="51.0" prefWidth="192.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: #f75d5d;">
                            <children>
                               <Label layoutX="36.0" layoutY="8.0" prefHeight="35.0" prefWidth="153.0" text="Báo Cáo Thu Chi" textFill="WHITE">
@@ -46,7 +62,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <HBox layoutX="83.0" layoutY="359.0" spacing="10.0">
+                        <HBox layoutX="63.0" layoutY="376.0" spacing="10.0">
                            <children>
                               <JFXButton fx:id="btnPrint" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setButtonPRINT" prefHeight="35.0" prefWidth="36.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text=" " textFill="WHITE" textOverrun="CLIP">
                                  <font>
@@ -92,7 +108,7 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="499.0" layoutY="56.0" prefHeight="433.0" prefWidth="858.0" styleClass="card-footer">
+                  <AnchorPane layoutX="406.0" layoutY="56.0" prefHeight="433.0" prefWidth="951.0" styleClass="card-footer" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="56.0">
                      <children>
                         <TableView fx:id="tbvReport" prefHeight="238.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
@@ -110,9 +126,9 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="520.0" prefHeight="241.0" prefWidth="579.0" styleClass="card-footer">
+                  <AnchorPane layoutX="30.0" layoutY="520.0" prefHeight="241.0" prefWidth="579.0" styleClass="card-footer" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="520.0">
                      <children>
-                        <TableView fx:id="tbvRevenueDetail" prefHeight="200.0" prefWidth="465.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tbvRevenueDetail" prefHeight="241.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="colRevenueDetailId" prefWidth="113.0" text="Mã Chi Tiết Thu" />
                             <TableColumn fx:id="colCompNameRevenue" minWidth="0.0" prefWidth="222.0" text="Tên Mặt Hàng" />
@@ -124,7 +140,7 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="664.0" layoutY="518.0" prefHeight="243.0" prefWidth="690.0" styleClass="card-footer">
+                  <AnchorPane layoutX="664.0" layoutY="518.0" prefHeight="243.0" prefWidth="690.0" styleClass="card-footer" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="664.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="518.0">
                      <children>
                         <TableView fx:id="tbvCostDetail" prefHeight="200.0" prefWidth="465.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>

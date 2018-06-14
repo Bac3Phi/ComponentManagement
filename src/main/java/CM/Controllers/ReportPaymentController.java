@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Main;
 import CM.Models.*;
@@ -96,6 +97,9 @@ public class ReportPaymentController implements Initializable {
         tbvReport.setEditable(false);
         tbvRevenueDetail.setEditable(false);
         tbvCostDetail.setEditable(false);
+
+        txtPaymentReportId.setEditable(false);
+        txtPaymentReportId.setText(GenerateID.create("BaoCaoThuChi","MaBCTC","BCTC"));
         groupByRaidioButton();
 
         setupTbvReport();
@@ -139,7 +143,7 @@ public class ReportPaymentController implements Initializable {
                 str = "Tháng " + parts[0] + " Năm " + parts[1];
             }
             else str = "Quý " + parts[0] + " Năm " + parts[1];
-             data.add(new ReceiptsAndPaymentsReport(
+            data.add(new ReceiptsAndPaymentsReport(
                     resultSet.getString("MaBCTC"),
                     resultSet.getDate("NgayLap"),
                     resultSet.getInt("TongThu"),
@@ -537,7 +541,7 @@ public class ReportPaymentController implements Initializable {
         rdbtnMonth.setSelected(true);
         txtMonth.setText("");
         txtYear.setText("");
-
+        txtPaymentReportId.setText(GenerateID.create("BaoCaoThuChi","MaBCTC","BCTC"));
         try {
             showData();
         } catch (SQLException e) {
@@ -546,6 +550,8 @@ public class ReportPaymentController implements Initializable {
 
         tbvRevenueDetail.getItems().clear();
         tbvCostDetail.getItems().clear();
+
+
     }
 
     public void setButtonADD(ActionEvent actionEvent) {
@@ -605,7 +611,7 @@ public class ReportPaymentController implements Initializable {
         addHeader("2. Báo Cáo", document);
         addInfo("2.1 Thông Tin Báo Cáo", document);
         addTable(document);
-        
+
         addInfo("2.2 Báo Cáo Chi Tiết Thu", document);
         addTableRecetpts(document);
 
@@ -669,13 +675,13 @@ public class ReportPaymentController implements Initializable {
 
         ReceiptsAndPaymentsReport selectedRow = tbvReport.getSelectionModel().getSelectedItem();
 
-            table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(selectedRow.getEmployeeName()).setTextAlignment(TextAlignment.LEFT));
-            table.addCell(new Cell().add(String.valueOf(selectedRow.getSumReceipts())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(selectedRow.getSumPayments())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(selectedRow.getPublishDate())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(selectedRow.getType()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(selectedRow.getDate()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getEmployeeName()).setTextAlignment(TextAlignment.LEFT));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumReceipts())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumPayments())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getPublishDate())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getType()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getDate()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
 
         document.add(table);
     }

@@ -1,5 +1,6 @@
 package CM.Controllers;
 
+import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
 import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
@@ -51,9 +52,6 @@ public class BillManagerController implements Initializable {
 
     @FXML
     private JFXTextField txtMoney;
-
-    @FXML
-    private JFXButton btnSEARCH;
 
     @FXML
     private JFXButton btnDELETE;
@@ -118,6 +116,9 @@ public class BillManagerController implements Initializable {
         btnDELETE.setDisable(true);
         btnDELETEinfo.setDisable(true);
 
+        txtBillID.setText(GenerateID.create("HOADON", "MaHD", "HD"));
+        txtBillInfoID.setEditable(false);
+        txtBillID.setEditable(false);
         txtBillInfoID.setDisable(true);
         txtQuantities.setDisable(true);
         txtSellingPrice.setDisable(true);
@@ -201,11 +202,6 @@ public class BillManagerController implements Initializable {
         btnREFRESHinfo.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                try {
-                    showDataInfo(txtBillID.getText());
-                }
-                catch (SQLException e) {}
-                catch (IOException ex) {}
                 refreshInfo();
             }
         });
@@ -418,20 +414,29 @@ public class BillManagerController implements Initializable {
 
     //Hàm refresh xóa text
     public void refresh() {
-        txtBillID.setText("");
+        txtBillID.setText(GenerateID.create("HOADON", "MaHD", "HD"));
         txtSumMoney.setText("");
         txtTaxCode.setText("");
         cbbCustomerName.getSelectionModel().select(0);
         cbbEmployeeName.getSelectionModel().select(0);
+        dtPublishDate.setValue(null);
+        try {
+            showData();
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     //Hàm refresh xóa text
     public void refreshInfo() {
-        txtBillInfoID.setText("");
+        txtBillInfoID.setText(GenerateID.create("CHITIETHOADON", "MaCTHD", "CTHD"));
         txtMoney.setText("");
         txtQuantities.setText("");
         txtSellingPrice.setText("");
         cbbComponentName.getSelectionModel().select(0);
+        try {
+            showDataInfo(txtBillID.getText());
+        } catch (SQLException e) {}
+        catch (IOException ex) {}
     }
 
     //lay thong tin du lieu duoc HOADON
@@ -453,7 +458,9 @@ public class BillManagerController implements Initializable {
             if (ten.getCustomerName().matches(selectedRow.getCustomerName()))
                 cbbCustomerName.getSelectionModel().select(ten);
         }
+
         txtBillInfoID.setDisable(false);
+        txtBillInfoID.setText(GenerateID.create("CHITIETHOADON", "MaCTHD", "CTHD"));
         txtQuantities.setDisable(false);
         txtSellingPrice.setDisable(false);
         txtMoney.setDisable(false);
@@ -770,14 +777,6 @@ public class BillManagerController implements Initializable {
         if (btnDELETEinfo.isPressed()) {
             refresh();
         }
-    }
-
-    @FXML
-    public void setBtnSEARCH (ActionEvent event)throws Exception{
-//        deleteData();
-//        if (btnDELETE.isPressed()) {
-//            refresh();
-//        }
     }
 
     public void setCalculateMoney(ActionEvent actionEvent) {

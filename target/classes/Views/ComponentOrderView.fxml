@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.ComponentOrderController">
     <children>
         <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
@@ -56,22 +56,6 @@
                                 </GridPane>
                                 <HBox layoutX="106.0" layoutY="254.0" spacing="10.0">
                                     <children>
-                                        <JFXButton fx:id="btnPRINT" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="35.0" prefWidth="36.0" ripplerFill="#f52020" style="-fx-background-color: #ab70ef;" text=" " textFill="WHITE" textOverrun="CLIP">
-                                            <font>
-                                                <Font name="System Bold" size="15.0" />
-                                            </font>
-                                            <graphic>
-                                                <MaterialDesignIconView fill="WHITE" glyphName="PRINTER" size="18.0" wrappingWidth="18.0" />
-                                            </graphic>
-                                        </JFXButton>
-                                        <JFXButton fx:id="btnSEARCH" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#setBtnSEARCH" prefHeight="35.0" ripplerFill="WHITE" style="-fx-background-color: #57b3ed;" text=" " textFill="WHITE">
-                                            <font>
-                                                <Font name="System Bold" size="15.0" />
-                                            </font>
-                                            <graphic>
-                                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16.00" />
-                                            </graphic>
-                                        </JFXButton>
                                         <JFXButton fx:id="btnDELETE" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#setBtnDELETE" prefHeight="35.0" ripplerFill="#f52020" style="-fx-background-color: #f93f40;" text=" " textFill="WHITE">
                                             <font>
                                                 <Font name="System Bold" size="15.0" />
