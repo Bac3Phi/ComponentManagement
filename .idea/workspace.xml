@@ -1,145 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CM/Functions/CurrentUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/font/times.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/font/timesbd.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml.orig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Assets/font/times.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Assets/font/timesbd.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$8$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/CM/Functions/CurrentUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Views/ReportInventoriesView.fxml.orig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComponentManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ComponentManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database-qllk.mwb.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/BillSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/EmployeesManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/LogInController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ProviderManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ProviderManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Models/ComponentImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Models/ComponentImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/BillSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/BillSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentOrderView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/CustomerManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/CustomerSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/CustomerSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/EmployeesSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ProviderManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ProviderManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ProviderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ProviderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$9$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$9$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/BillSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentImportSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerSearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/DepartmentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/DepartmentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/DepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/DepartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/EmployeesManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/InventoriesReportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/LogInController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/LogInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ProviderManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/SignInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Models/ComponentImport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Models/ComponentImport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/BillSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/BillSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentImportSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentImportSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentOrderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentOrderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentOrderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentOrderView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/CustomerManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/CustomerSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/CustomerSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/EmployeesManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/EmployeesManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/EmployeesSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/EmployeesSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ProviderManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ProviderManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ProviderSearchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ProviderSearchView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ReportInventoriesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -160,7 +22,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1385" />
@@ -253,42 +115,44 @@
       <option name="presentableId" value="Default" />
       <updated>1528976578147</updated>
       <workItem from="1528976586502" duration="22000" />
+      <workItem from="1528976632194" duration="244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22000" />
+    <option name="totallyTimeSpent" value="266000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
