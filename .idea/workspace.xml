@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/SettingExternalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +12,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="638" column="52" lean-forward="true" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
+              <folding>
+                <element signature="e#27450#28673#0" />
+                <element signature="e#28679#29935#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportPaymentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11573">
+              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -51,8 +68,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -76,6 +94,39 @@
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CM" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CM" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -90,7 +141,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,11 +226,12 @@
       <workItem from="1528976586502" duration="22000" />
       <workItem from="1528976632194" duration="244000" />
       <workItem from="1528994217494" duration="587000" />
+      <workItem from="1529025478237" duration="2933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="853000" />
+    <option name="totallyTimeSpent" value="3786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -199,7 +250,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17919463" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1818792" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -220,5 +271,32 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6168">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11573">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="638" column="52" lean-forward="true" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
+          <folding>
+            <element signature="e#27450#28673#0" />
+            <element signature="e#28679#29935#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

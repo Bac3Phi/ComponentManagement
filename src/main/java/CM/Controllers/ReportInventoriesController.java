@@ -2,6 +2,8 @@ package CM.Controllers;
 
 import CM.Functions.GenerateID;
 import CM.Functions.SmileNotification;
+import com.itextpdf.io.font.FontEncoding;
+import com.itextpdf.io.font.PdfEncodings;
 import CM.Main;
 import CM.Models.*;
 import com.itextpdf.io.font.FontConstants;
@@ -26,6 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.util.StringConverter;
+import org.omg.PortableInterceptor.SUCCESSFUL;
 import tray.notification.NotificationType;
 
 import java.awt.event.ActionEvent;
@@ -149,6 +152,11 @@ public class ReportInventoriesController implements Initializable {
     ObservableList<InventoriesReportInfo> datainfo;
     ResultSet resultSet;
 
+    public static final String FONT = "./src/main/resources/Assets/font/times.ttf";
+    public static final String FONT_BOLD = "./src/main/resources/Assets/font/timesbd.ttf";
+    PdfFont font;
+    PdfFont font_bold;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dbConn = new DataProvider();
@@ -223,6 +231,12 @@ public class ReportInventoriesController implements Initializable {
             }
         });
 
+        try {
+            font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
+            font_bold = PdfFontFactory.createFont(FONT_BOLD, PdfEncodings.IDENTITY_H);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -556,6 +570,8 @@ public class ReportInventoriesController implements Initializable {
 
             // Closing the document
             document.close();
+
+            SmileNotification.creatingNotification("Thông Báo","Xuất File thành công!!", NotificationType.SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -574,8 +590,6 @@ public class ReportInventoriesController implements Initializable {
         Paragraph date;
         date = new Paragraph("Tháng: " + cbbMonth.getSelectionModel().getSelectedItem() + "/2018");
 
-        // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
         date.setFont(font);
         date.setFontSize(12);
         date.setTextAlignment(TextAlignment.CENTER);
@@ -587,8 +601,7 @@ public class ReportInventoriesController implements Initializable {
         Paragraph title = new Paragraph("BÁO CÁO HÀNG TỒN");
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-        title.setFont(font);
+        title.setFont(font_bold);
         title.setFontSize(22);
         title.setTextAlignment(TextAlignment.CENTER);
 
@@ -599,7 +612,6 @@ public class ReportInventoriesController implements Initializable {
         Paragraph info = new Paragraph(strinfo);
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
         info.setFont(font);
         info.setFontSize(12);
         info.setTextAlignment(TextAlignment.LEFT);
@@ -609,21 +621,20 @@ public class ReportInventoriesController implements Initializable {
     }
 
     private void addInfo(Document document) throws IOException {
-        addHeader("1. Thông tin", document);
-        addInfo("Mã Báo Cáo: " + txtReportID.getText(), document);
-        addInfo("Tên Nhân Viên: " + cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeName(), document);
-        addInfo("Ngày Lập: " + dtDate.getValue(), document);
+        addHeader("1. Thông tin", document.setFont(font));
+        addInfo("Mã Báo Cáo: " + txtReportID.getText(), document.setFont(font_bold));
+        addInfo("Tên Nhân Viên: " + cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeName(), document.setFont(font_bold));
+        addInfo("Ngày Lập: " + dtDate.getValue(), document.setFont(font_bold));
 
-        addInfo("Loại Báo Cáo: Tháng", document);
-        addInfo("Tháng: " + cbbMonth.getSelectionModel().getSelectedItem() + "\tNăm: 2018", document);
+        addInfo("Loại Báo Cáo: Tháng", document.setFont(font_bold));
+        addInfo("Tháng: " + cbbMonth.getSelectionModel().getSelectedItem() + "\tNăm: 2018", document.setFont(font_bold));
     }
 
     private void addHeader(String strheader, Document document) throws IOException {
         Paragraph header = new Paragraph(strheader);
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-        header.setFont(font);
+        header.setFont(font_bold);
         header.setFontSize(14);
         header.setTextAlignment(TextAlignment.LEFT);
 
@@ -634,23 +645,23 @@ public class ReportInventoriesController implements Initializable {
         float [] pointColumnWidths = {200F, 200F, 200F, 200F, 200F, 200F, 200F};
         Table table = new Table(pointColumnWidths);
 
-        table.addCell(new Cell().add("Mã BCHT").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Ngày lập").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tháng").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tên nhân viên lập").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tổng nhập").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tổng bán").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tổng tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Mã BCHT").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Ngày lập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tháng").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tên nhân viên lập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng nhập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng bán").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
 
         InventoriesReport selectedRow = tbvReport.getSelectionModel().getSelectedItem();
 
-        table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-        table.addCell(new Cell().add(selectedRow.getPublishDate().toString()).setTextAlignment(TextAlignment.LEFT));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getReportMonth())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getEmployeeName())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumImport())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumSell())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumStock())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(selectedRow.getPublishDate().toString()).setTextAlignment(TextAlignment.LEFT).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getReportMonth())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getEmployeeName())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumImport())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumSell())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumStock())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
 
         document.add(table);
     }
@@ -659,20 +670,20 @@ public class ReportInventoriesController implements Initializable {
         float [] pointColumnWidths = {200F, 200F, 200F, 200F, 200F};
         Table table = new Table(pointColumnWidths);
 
-        table.addCell(new Cell().add("Mã Chi Tiết Hàng Tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tên Mặt Hàng").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Lượng Nhập").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Lượng Bán").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Lượng Tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Mã Chi Tiết Hàng Tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tên Mặt Hàng").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Lượng Nhập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Lượng Bán").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Lượng Tồn").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
 
         resultSet = dbConn.getData("SELECT CTBCHT.MaCTBC, MH.TenMH, SUM(CTPN.SoLuong) AS LuongNhapBĐ, SUM(CTHD.SoLuong) AS LuongBan, SUM(MH.SoLuong) AS LuongTon FROM CHITIETBAOCAOHANGTON CTBCHT JOIN MATHANG MH JOIN CHITIETPHIEUNHAP CTPN JOIN CHITIETHOADON CTHD ON CTBCHT.MaMH = MH.MaMH AND CTPN.MaMH = CTBCHT.MaMH AND CTHD.MaMH = CTBCHT.MaMH WHERE MaBCHT = '" + txtReportID.getText() + "'" + "GROUP BY TenMH;");
 
         while (resultSet.next()){
-            table.addCell(new Cell().add(resultSet.getString("MaCTBC")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongNhapBĐ"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongBan"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongTon"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(resultSet.getString("MaCTBC")).setTextAlignment(TextAlignment.LEFT).setFontSize(12)).setFont(font);
+            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12)).setFont(font);
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongNhapBĐ"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12)).setFont(font);
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongBan"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12)).setFont(font);
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("LuongTon"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12)).setFont(font);
         }
 
         document.add(table);
