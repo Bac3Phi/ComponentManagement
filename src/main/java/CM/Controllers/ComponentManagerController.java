@@ -125,6 +125,9 @@ public class ComponentManagerController implements Initializable {
         });
 
         try {
+            setupCbAreaName();
+            setupCbTypeName();
+            setupCbUnit();
             showData();
         }
         catch (IOException io){}

@@ -37,14 +37,14 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <GridPane layoutX="21.0" layoutY="52.0" prefHeight="156.0" prefWidth="423.0">
+                                <GridPane layoutX="21.0" layoutY="52.0" prefHeight="162.0" prefWidth="423.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     </columnConstraints>
                                     <rowConstraints>
                                         <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <HBox prefHeight="45.0" prefWidth="436.0" spacing="20.0">
@@ -55,8 +55,8 @@
                                         </HBox>
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0" GridPane.rowIndex="1">
                                             <children>
-                                                <JFXDatePicker fx:id="dpPublishDate" defaultColor="#f38945" prefHeight="51.0" prefWidth="189.0" promptText="Ngày Nhập" />
-                                                <JFXComboBox fx:id="cbEmployeeName" focusColor="#f38945" labelFloat="true" prefHeight="35.0" prefWidth="211.0" promptText="Nhân Viên" />
+                                                <JFXDatePicker fx:id="dpPublishDate" defaultColor="#f38945" prefWidth="189.0" promptText="Ngày Nhập" />
+                                                <JFXComboBox fx:id="cbEmployeeName" focusColor="#f38945" labelFloat="true" prefWidth="211.0" promptText="Nhân Viên" />
                                             </children>
                                         </HBox>
                                         <JFXTextField fx:id="txtImportComponentAmount" disable="true" focusColor="#ff6e7f" labelFloat="true" prefHeight="25.0" prefWidth="436.0" promptText="Tiền thanh toán" GridPane.rowIndex="2" />
@@ -133,9 +133,9 @@
                                     </columnConstraints>
                                     <rowConstraints>
                                         <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <HBox alignment="BOTTOM_LEFT" spacing="20.0">
@@ -144,9 +144,9 @@
                                                 <JFXTextField fx:id="txtImportComponentInforImportId" disable="true" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Mã Phiếu Nhập" />
                                             </children>
                                         </HBox>
-                                        <HBox alignment="BOTTOM_LEFT" spacing="20.0" GridPane.rowIndex="1">
+                                        <HBox alignment="BOTTOM_LEFT" prefWidth="436.0" spacing="20.0" GridPane.rowIndex="1">
                                             <children>
-                                                <JFXComboBox fx:id="cbComponentName" focusColor="#f38945" labelFloat="true" prefHeight="35.0" prefWidth="194.0" promptText="Tên Mặt Hàng" />
+                                                <JFXComboBox fx:id="cbComponentName" focusColor="#f38945" labelFloat="true" prefWidth="194.0" promptText="Tên Mặt Hàng" />
                                                 <JFXTextField fx:id="txtNote" focusColor="#f38945" labelFloat="true" prefHeight="25.0" prefWidth="228.0" promptText="Ghi Chú" />
                                             </children>
                                         </HBox>

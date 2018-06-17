@@ -1,11 +1,14 @@
 package CM.Controllers;
 
 import CM.Functions.GenerateID;
+import CM.Functions.SmileDialog;
 import CM.Functions.SmileNotification;
 import CM.Models.Customer;
 import CM.Models.DataProvider;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +21,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import tray.notification.NotificationType;
 
 import java.io.IOException;
@@ -33,6 +37,7 @@ import static CM.Controllers.CustomerController.tabPaneEx;
 
 public class CustomerManagerController implements Initializable {
 
+    public StackPane stackPane;
     @FXML
     private JFXTextField txtCustomerID;
 
@@ -331,21 +336,30 @@ public class CustomerManagerController implements Initializable {
         {
             SmileNotification.creatingNotification("Thông báo","Vui lòng chọn dữ liệu",NotificationType.WARNING);
         }
-        String[] dataDelete = {txtCustomerID.getText()};
-        int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG", "MaKH");
-        if (isDeleted > 0) {
-            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thành công",NotificationType.SUCCESS);
+        StringProperty dialogResult = new SimpleStringProperty();
+        dialogResult.addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> obs, String oldValue, String newValue) {
+                // process newValue, the value from the dialog...
+            }
+        });
+
+        if (SmileDialog.create()) {
+            String[] dataDelete = {txtCustomerID.getText()};
+            int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "KHACHHANG", "MaKH");
+            if (isDeleted > 0) {
+                SmileNotification.creatingNotification("Thông báo", "Xóa dữ liệu thành công", NotificationType.SUCCESS);
+            } else {
+                SmileNotification.creatingNotification("Thông báo", "Xóa dữ liệu thất bại", NotificationType.ERROR);
+            }
+            try {
+                showData();
+                refresh();
+            } catch (SQLException e) {
+            } catch (IOException io) {
+            }
         }
-        else
-        {
-            SmileNotification.creatingNotification("Thông báo","Xóa dữ liệu thất bại",NotificationType.ERROR);
-        }
-        try {
-            showData();
-            refresh();
-        }
-        catch (SQLException e){}
-        catch (IOException io) {}
+        else return;
+
     }
 
     @FXML

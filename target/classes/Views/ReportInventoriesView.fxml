@@ -29,7 +29,7 @@
                               <JFXTextField fx:id="txtReportID" focusColor="#f38945" labelFloat="true" promptText="Mã Báo Cáo" />
                               <JFXDatePicker fx:id="dtDate" defaultColor="#f38945" prefHeight="49.0" prefWidth="304.0" promptText="Ngày Nhập" />
                               <JFXComboBox fx:id="cbbMonth" focusColor="#f38945" labelFloat="true" prefHeight="33.0" prefWidth="301.0" promptText="Tháng" />
-                              <JFXComboBox fx:id="cbbEmployeeName" prefHeight="41.0" prefWidth="390.0" promptText="Tên nhân viên" />
+                              <JFXComboBox fx:id="cbbEmployeeName" labelFloat="true" prefHeight="41.0" prefWidth="390.0" promptText="Tên nhân viên" />
                               <JFXTextField fx:id="txtSumImport" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Nhập" />
                               <JFXTextField fx:id="txtSumSell" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Nhập" />
                               <JFXTextField fx:id="txtSumStock" editable="false" focusColor="#f38945" labelFloat="true" promptText="Tổng Tồn" />
