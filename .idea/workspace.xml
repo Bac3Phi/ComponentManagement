@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,16 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="638" column="52" lean-forward="true" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
-              <folding>
-                <element signature="e#27450#28673#0" />
-                <element signature="e#28679#29935#0" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="640" column="29" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -30,7 +26,7 @@
       <file leaf-file-name="ReportPaymentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11573">
+            <state relative-caret-position="96">
               <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
             </state>
           </provider>
@@ -67,81 +63,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CM" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -227,14 +149,25 @@
       <workItem from="1528976632194" duration="244000" />
       <workItem from="1528994217494" duration="587000" />
       <workItem from="1529025478237" duration="2933000" />
+      <workItem from="1529132197163" duration="271000" />
+      <workItem from="1529225451908" duration="724000" />
+      <workItem from="1529247218632" duration="675000" />
+    </task>
+    <task id="LOCAL-00001" summary="còn bị lỗi combobox trong mặt hàng.">
+      <created>1529132271069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529132271069</updated>
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3786000" />
+    <option name="totallyTimeSpent" value="6000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -266,13 +199,52 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15360">
+          <caret line="640" column="29" lean-forward="true" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="638" column="52" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15312">
+          <caret line="638" column="52" lean-forward="true" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6168">
@@ -282,19 +254,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11573">
+        <state relative-caret-position="96">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="638" column="52" lean-forward="true" selection-start-line="638" selection-start-column="52" selection-end-line="638" selection-end-column="52" />
-          <folding>
-            <element signature="e#27450#28673#0" />
-            <element signature="e#28679#29935#0" />
-          </folding>
+        <state relative-caret-position="115">
+          <caret line="640" column="29" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
         </state>
       </provider>
     </entry>
