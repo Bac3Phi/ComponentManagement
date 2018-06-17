@@ -450,7 +450,7 @@ public class ReportInventoriesController implements Initializable {
             id = txtReportID.getText();
             nglap = dtDate.getValue().toString();
             thang = String.valueOf(cbbMonth.getSelectionModel().getSelectedItem());
-            resultSet = dbConn.getData("SELECT MaNV FROM NHANVIEN WHERE TenNV = N'" + cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null) + "';");
+            resultSet = dbConn.getData("SELECT MaNV FROM NHANVIEN WHERE TenNV = N'" + cbbEmployeeName.getSelectionModel().getSelectedItem().getEmployeeName() + "';");
             ObservableList<Employees> ds = FXCollections.observableArrayList();
             while (resultSet.next()) {
                 ds.add(new Employees(
