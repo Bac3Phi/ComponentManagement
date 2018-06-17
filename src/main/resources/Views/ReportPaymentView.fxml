@@ -25,7 +25,7 @@
                <children>
                   <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="435.0" prefWidth="345.0" styleClass="card-white">
                      <children>
-                        <VBox layoutX="22.0" layoutY="59.0" prefHeight="278.0" prefWidth="257.0" spacing="23.0">
+                        <VBox layoutX="31.0" layoutY="45.0" prefHeight="278.0" prefWidth="257.0" spacing="21.0">
                            <children>
                               <JFXTextField fx:id="txtPaymentReportId" focusColor="#f38945" labelFloat="true" promptText="Mã Báo Cáo Thu Chi" />
                               <JFXComboBox fx:id="cbEmployeeName" focusColor="#f38945" labelFloat="true" prefWidth="255.0" promptText="Nhân Viên" />

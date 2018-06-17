@@ -61,8 +61,8 @@
                               </HBox>
                               <HBox alignment="BOTTOM_LEFT" prefHeight="67.0" prefWidth="436.0" spacing="20.0" GridPane.rowIndex="2">
                                  <children>
-                                    <JFXComboBox fx:id="cbbEmployeeName" labelFloat="true" prefWidth="185.0" promptText="Tên nhân viên" />
-                                    <JFXComboBox fx:id="cbbCustomerName" labelFloat="true" prefWidth="239.0" promptText="Tên khách hàng" />
+                                    <JFXComboBox fx:id="cbbEmployeeName" prefWidth="185.0" promptText="Tên nhân viên" />
+                                    <JFXComboBox fx:id="cbbCustomerName" prefWidth="239.0" promptText="Tên khách hàng" />
                                  </children>
                               </HBox>
                                     </children>
@@ -132,7 +132,7 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                                <GridPane layoutX="14.0" layoutY="32.0" prefHeight="252.0" prefWidth="436.0">
+                                <GridPane layoutX="14.0" layoutY="32.0" prefHeight="258.0" prefWidth="436.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     </columnConstraints>

@@ -386,12 +386,13 @@ public class ReportInventoriesController implements Initializable {
 
     //Thêm dữ liệu tổng vào bảng DONDATHANG
     public void insertSumInfo (int month) throws SQLException {
-        String idht = GenerateID.create("CHITIETBAOCAOHANGTON","MaCTBC","CTBC");
-        resultSet = dbConn.getData("SELECT MH.TenMH, MONTH(HD.NgayLap), SUM(CTPN.SoLuong) AS LuongNhapBĐ, SUM(CTHD.SoLuong) AS LuongBan, SUM(MH.SoLuong) AS LuongTon FROM CHITIETPHIEUNHAP CTPN, PHIEUNHAPHANG PN, HOADON HD, CHITIETHOADON CTHD, MATHANG MH WHERE CTPN.MaPN = PN.MaPN AND CTHD.MaHD = HD.MaHD AND CTHD.MaMH = MH.MaMH AND MONTH(PN.NgayLapPhieu) = '" + month + "' AND MONTH(HD.NgayLap) = '" + month + "';");
+        int isInserted = 0;
+        int tongnhap = 0, tongban = 0, tongton = 0;
+        resultSet = dbConn.getData("SELECT MH.TenMH, MONTH(HD.NgayLap), SUM(CTPN.SoLuong) AS LuongNhapBĐ, SUM(CTHD.SoLuong) AS LuongBan, SUM(MH.SoLuong) AS LuongTon FROM CHITIETPHIEUNHAP CTPN, PHIEUNHAPHANG PN, HOADON HD, CHITIETHOADON CTHD, MATHANG MH WHERE CTPN.MaPN = PN.MaPN AND CTHD.MaHD = HD.MaHD AND CTHD.MaMH = MH.MaMH AND MONTH(PN.NgayLapPhieu) = '" + month + "' AND MONTH(HD.NgayLap) = '" + month + "' GROUP BY MH.TenMH;");
         datainfo.removeAll(datainfo);
         while (resultSet.next()) {
             datainfo.add(new InventoriesReportInfo(
-                    idht,
+                    "",
                     resultSet.getString("TenMH"),
                     resultSet.getInt("LuongNhapBĐ"),
                     resultSet.getInt("LuongBan"),
@@ -402,8 +403,9 @@ public class ReportInventoriesController implements Initializable {
         String id = "", mhid = "", nhap = "", ban = "", ton = "", bcid = "";
         for (int i = 0; i < datainfo.size(); i++) {
             try {
-                id = datainfo.get(i).getReportInfoID();
-                resultSet = dbConn.getData("SELECT MaMH, TenMH FROM MATHANG WHERE TenMH = N'" + datainfo.get(i).getComponentName() + "';");
+                id = GenerateID.create("CHITIETBAOCAOHANGTON","MaCTBC","CTBC");
+                String name = datainfo.get(i).getComponentName();
+                resultSet = dbConn.getData("SELECT MaMH, TenMH FROM MATHANG WHERE TenMH = N'" + name + "';");
                 ObservableList<Components> components = FXCollections.observableArrayList();
                 while (resultSet.next()) {
                     components.add(new Components(
@@ -417,25 +419,26 @@ public class ReportInventoriesController implements Initializable {
                 ban = String.valueOf(datainfo.get(i).getSelling());
                 ton = String.valueOf(datainfo.get(i).getStock());
                 bcid = txtReportID.getText();
+                tongnhap += datainfo.get(i).getImport();
+                tongban += datainfo.get(i).getSelling();
+                tongton += datainfo.get(i).getStock();
+                String[] dataInsert = {id, nhap, ban, ton, mhid, bcid};
+                isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETBAOCAOHANGTON");
             }
             catch (NullPointerException e)
             {
                 e.printStackTrace();
             }
         }
-
-        String[] dataInsert = {id, nhap, ban, ton, mhid, bcid};
-        int isInserted = dbConn.ExecuteSQLInsert(dataInsert, "CHITIETBAOCAOHANGTON");
         if (isInserted > 0)
         {
             try{
                 showDataInfo(txtReportID.getText());
-                updateTongLuong();
+                updateTongLuong(tongnhap, tongban, tongton);
                 refresh();
             }
             catch (SQLException e) {}
         }
-
         resultSet.close();
         dbConn.close();
     }
@@ -446,7 +449,7 @@ public class ReportInventoriesController implements Initializable {
         try {
             id = txtReportID.getText();
             nglap = dtDate.getValue().toString();
-            thang = cbbMonth.getValue().toString();
+            thang = String.valueOf(cbbMonth.getSelectionModel().getSelectedItem());
             resultSet = dbConn.getData("SELECT MaNV FROM NHANVIEN WHERE TenNV = N'" + cbbEmployeeName.getSelectionModel().getSelectedItem().equals(null) + "';");
             ObservableList<Employees> ds = FXCollections.observableArrayList();
             while (resultSet.next()) {
@@ -482,7 +485,7 @@ public class ReportInventoriesController implements Initializable {
             SmileNotification.creatingNotification("Thông báo","Cập nhật không thành công ",NotificationType.ERROR);
         }
         try {
-            updateTongLuong();
+            insertSumInfo(cbbMonth.getSelectionModel().getSelectedItem());
             showData();
             refresh();
         }
@@ -490,22 +493,7 @@ public class ReportInventoriesController implements Initializable {
         catch (IOException io) {}
     }
 
-    public void updateTongLuong() throws SQLException{
-        String text = txtReportID.getText();
-        resultSet = dbConn.getData("SELECT BCHT.MaBCHT, SUM(CTBC.LuongNhapBĐ) AS TongNhap, SUM(CTBC.LuongTon) AS TongTon, SUM(CTBC.LuongBan) AS TongBan FROM BAOCAOHANGTON BCHT JOIN CHITIETBAOCAOHANGTON CTBC ON CTBC.MaBCHT = BCHT.MaBCHT WHERE BCHT.MaBCHT = '" + text + "';");
-        ObservableList<InventoriesReport> list = FXCollections.observableArrayList();
-        while (resultSet.next()) {
-            list.add(new InventoriesReport(
-                    resultSet.getString("MaBCHT"),
-                    null,
-                    0,
-                    "",
-                    resultSet.getInt("TongNhap"),
-                    resultSet.getInt("TongTon"),
-                    resultSet.getInt("TongBan")
-            ));
-        }
-
+    public void updateTongLuong(int Import, int sell, int remain) throws SQLException{
         String id = "", nglap = "", thang = "", nvid = "", nhap = "", ban = "", ton = "";
         try {
             id = txtReportID.getText();
@@ -521,9 +509,9 @@ public class ReportInventoriesController implements Initializable {
             }
             nvid = ds.get(0).getEmployeeID();
 
-            nhap = String.valueOf(list.get(0).getSumImport());
-            ton = String.valueOf(list.get(0).getSumStock());
-            ban = String.valueOf(list.get(0).getSumSell());
+            nhap = String.valueOf(Import);
+            ton = String.valueOf(remain);
+            ban = String.valueOf(sell);
             String[] dataUpdate = {id, nglap, thang, nhap, ton, ban, nvid};
             String[] colLabel = {"MaBCHT", "NgayLap", "Thang", "TongNhap", "TongTon", "TongBan", "MaNV"};
             int isUpdated = dbConn.ExecuteSQLUpdate(colLabel, dataUpdate, "BAOCAOHANGTON");

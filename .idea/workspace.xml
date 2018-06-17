@@ -1,46 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CM/Functions/SmileDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/images/smileTeam.png" afterDir="false" />
+    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/CustomerManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/CustomerManagerView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/BillManagerController$8$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ComponentManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/CustomerManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportPaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ComponentImportView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ComponentImportView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/CustomerManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/CustomerManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/ReportPaymentView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,16 +19,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="645" column="37" selection-start-line="645" selection-start-column="37" selection-end-line="645" selection-end-column="37" />
+            <state relative-caret-position="102">
+              <caret line="446" column="29" selection-start-line="446" selection-start-column="29" selection-end-line="446" selection-end-column="29" />
+              <folding>
+                <element signature="e#3904#7129#0" />
+                <element signature="e#7136#8729#0" />
+                <element signature="e#8735#9215#0" />
+                <element signature="e#10310#11175#0" />
+                <element signature="e#11181#13169#0" />
+                <element signature="e#15821#18136#0" />
+                <element signature="e#18142#20448#0" />
+                <element signature="e#20553#21712#0" />
+                <element signature="e#21718#22024#0" />
+                <element signature="e#22030#22361#0" />
+                <element signature="e#22367#22685#0" />
+                <element signature="e#22691#23030#0" />
+                <element signature="e#23036#23658#0" />
+                <element signature="e#23664#23991#0" />
+                <element signature="e#23997#26222#0" />
+                <element signature="e#26228#28320#0" />
+                <element signature="e#28343#29566#0" />
+                <element signature="e#29572#30828#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillManagerView.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComponentImportController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10992">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentManagerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="447" column="29" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
+              <folding>
+                <element signature="e#5097#10945#0" />
+                <element signature="e#10951#11781#0" />
+                <element signature="e#11787#12612#0" />
+                <element signature="e#12618#13495#0" />
+                <element signature="e#13501#14476#0" />
+                <element signature="e#14482#15143#0" />
+                <element signature="e#15149#16438#0" />
+                <element signature="e#16444#18489#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BillManagerView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
           <provider editor-type-id="text-editor" />
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
@@ -90,8 +105,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" />
       </list>
     </option>
   </component>
@@ -132,6 +147,30 @@
               <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ComponentManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CM" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ComponentManagement" type="b2602c69:ProjectViewProjectNode" />
@@ -246,20 +285,22 @@
       <workItem from="1529225451908" duration="724000" />
       <workItem from="1529247218632" duration="675000" />
     </task>
-    <task id="LOCAL-00001" summary="còn bị lỗi combobox trong mặt hàng.">
-      <created>1529132271069</created>
+    <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1529250257027</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1529132271069</updated>
+      <updated>1529250257027</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="736000" />
+    <option name="totallyTimeSpent" value="6817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -275,14 +316,14 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25100672" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,11 +391,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
+          <line>391</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
+          <line>405</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
+          <line>401</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
+          <line>406</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -362,6 +430,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15360">
           <caret line="640" column="29" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
+          <folding>
+            <element signature="e#3904#7129#0" />
+            <element signature="e#7136#8729#0" />
+            <element signature="e#8735#9215#0" />
+            <element signature="e#10310#11175#0" />
+            <element signature="e#11181#13169#0" />
+            <element signature="e#15821#18136#0" />
+            <element signature="e#18142#20448#0" />
+            <element signature="e#20553#21712#0" />
+            <element signature="e#21718#22024#0" />
+            <element signature="e#22030#22361#0" />
+            <element signature="e#22367#22685#0" />
+            <element signature="e#22691#23030#0" />
+            <element signature="e#23036#23658#0" />
+            <element signature="e#23664#23991#0" />
+            <element signature="e#23997#26222#0" />
+            <element signature="e#26228#28320#0" />
+            <element signature="e#28343#29566#0" />
+            <element signature="e#29572#30828#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -477,24 +565,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6168">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="645" column="37" selection-start-line="645" selection-start-column="37" selection-end-line="645" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -505,6 +579,71 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="447" column="29" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
+          <folding>
+            <element signature="e#5097#10945#0" />
+            <element signature="e#10951#11781#0" />
+            <element signature="e#11787#12612#0" />
+            <element signature="e#12618#13495#0" />
+            <element signature="e#13501#14476#0" />
+            <element signature="e#14482#15143#0" />
+            <element signature="e#15149#16438#0" />
+            <element signature="e#16444#18489#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10992">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="446" column="29" selection-start-line="446" selection-start-column="29" selection-end-line="446" selection-end-column="29" />
+          <folding>
+            <element signature="e#3904#7129#0" />
+            <element signature="e#7136#8729#0" />
+            <element signature="e#8735#9215#0" />
+            <element signature="e#10310#11175#0" />
+            <element signature="e#11181#13169#0" />
+            <element signature="e#15821#18136#0" />
+            <element signature="e#18142#20448#0" />
+            <element signature="e#20553#21712#0" />
+            <element signature="e#21718#22024#0" />
+            <element signature="e#22030#22361#0" />
+            <element signature="e#22367#22685#0" />
+            <element signature="e#22691#23030#0" />
+            <element signature="e#23036#23658#0" />
+            <element signature="e#23664#23991#0" />
+            <element signature="e#23997#26222#0" />
+            <element signature="e#26228#28320#0" />
+            <element signature="e#28343#29566#0" />
+            <element signature="e#29572#30828#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
