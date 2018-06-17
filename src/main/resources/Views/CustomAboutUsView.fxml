@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="paneProviderManagement" stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomAboutUsController">
+   <children>
+      <BorderPane prefHeight="788.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="51.0" layoutY="48.0" prefHeight="275.0" prefWidth="419.0" styleClass="card-white">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="25.0" spacing="10.0" styleClass="table-view">
+                           <children>
+                              <ImageView fitHeight="134.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Assets/images/logo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Phần Mềm Quản Lý Linh Kiện GAMEON" />
+                              <Label text="Phiên bản: 1.8.7" />
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label text="Source Code:" />
+                                    <Hyperlink fx:id="hyberLink" accessibleText="https://github.com/Bac3Phi/ComponentManagement" ellipsisString="+" text="github.com/Bac3Phi/ComponentManagement" />
+                                 </children>
+                              </HBox>
+                              <Label text="Cập Nhật: Phiên bản mới nhất" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="547.0" layoutY="48.0" prefHeight="275.0" prefWidth="419.0" styleClass="card-white">
+                     <children>
+                        <VBox layoutX="79.0" layoutY="17.0" spacing="10.0" styleClass="table-view">
+                           <children>
+                              <ImageView fitHeight="134.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Assets/images/smileTeam.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Thành Viên:" />
+                              <Label text="[15520613] Phạm Nhật Phi" />
+                              <Label text="[15520438] Đặng Hoàng Long" />
+                              <Label text="[15520448] Trần Minh Hoàng Long" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

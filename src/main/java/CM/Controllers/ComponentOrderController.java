@@ -103,7 +103,7 @@ public class ComponentOrderController implements Initializable {
         btnDELETEinfo.setDisable(true);
         btnADDinfo.setDisable(true);
         txtOrderID.setText(GenerateID.create("DONDATHANG","MaDDH","DDH")); //DDH001
-        txtOrderInfoID.setText(GenerateID.create("CHITIETDONDATHANG","MaCTDDH","CTDH")); //CTDH001
+        txtOrderInfoID.setText(GenerateID.create("CHITIETDONDATHANG","MaCTDDH","CTDDH")); //CTDDH001
         tbvOrder.setEditable(false);
         tbvOrderInfo.setEditable(false);
         txtQuantities.setDisable(true);
@@ -295,7 +295,7 @@ public class ComponentOrderController implements Initializable {
             if (ten.getProvidersName().matches(selectedRow.getProviderName()))
                 cbbProviderName.getSelectionModel().select(ten);
         }
-        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDH"));
+        txtOrderInfoID.setText(GenerateID.create("ChiTietDonDatHang","MaCTDDH","CTDDH"));
         btnADDinfo.setDisable(false);
     }
 

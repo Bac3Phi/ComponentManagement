@@ -114,7 +114,7 @@ public class MainController extends Application implements Initializable {
     }
 
     private Label lblDash;
-    private AnchorPane component, customer,provider,employee,bill,report,setting;
+    private AnchorPane component, customer,provider,employee,bill,report,setting,custom;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -137,6 +137,7 @@ public class MainController extends Application implements Initializable {
             setting = FXMLLoader.load(getClass().getResource("/Views/SettingView.fxml"));
             bill = FXMLLoader.load(getClass().getResource("/Views/BillView.fxml"));
             report = FXMLLoader.load(getClass().getResource("/Views/ReportView.fxml"));
+            custom =FXMLLoader.load(getClass().getResource("/Views/CustomView.fxml"));
             //set up default node on page load
             setNode(component);
         } catch (IOException ex) {
@@ -241,6 +242,7 @@ public class MainController extends Application implements Initializable {
     }
 
     public void openCustom(ActionEvent actionEvent) {
+        setNode(custom);
     }
 
     public void setbtnRefresh(ActionEvent actionEvent) throws Exception {

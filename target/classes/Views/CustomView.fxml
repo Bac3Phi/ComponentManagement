@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane stylesheets="@../Stytlesheet/default.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CM.Controllers.CustomController">
+    <children>
+        <StackPane prefHeight="825.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXTabPane fx:id="tabPane" styleClass="tab">
+                    <tabs>
+                        <Tab text="Thông Tin Phần Mềm">
+                            <content>
+                                <fx:include source="CustomAboutUsView.fxml" />
+                            </content>
+                        </Tab>
+                        <Tab text="Tùy Chỉnh Cá Nhân">
+                            <content>
+                                <fx:include source="CustomPersonalView.fxml" />
+                            </content>
+                        </Tab>
+                    </tabs>
+                </JFXTabPane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

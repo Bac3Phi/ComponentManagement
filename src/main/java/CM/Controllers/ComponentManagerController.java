@@ -6,6 +6,7 @@ import CM.Models.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import com.sun.javafx.css.Style;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +19,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.util.Callback;
 import javafx.util.StringConverter;
 import tray.notification.NotificationType;
 
@@ -96,13 +99,30 @@ public class ComponentManagerController implements Initializable {
         colUnit.setCellValueFactory(new PropertyValueFactory<>("Unit"));
         colNumOfComp.setCellValueFactory(new PropertyValueFactory<>("NumOfComp"));
 
-        try {
-            setupCbTypeName();
-            setupCbUnit();
-            setupCbAreaName();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        colNumOfComp.setCellFactory(new Callback<TableColumn<Components, String>, TableCell<Components, String>>() {
+            @Override
+            public TableCell<Components, String> call(TableColumn<Components, String> param) {
+                return new TableCell<Components,String>(){
+                    @Override
+                    protected void updateItem(String item,boolean empty){
+                        super.updateItem(item,empty);
+
+                        if(!empty){
+                            setText(item);
+                            int value = Integer.parseInt(item);
+                            if(value<=5){
+                                setTextFill(Color.RED);
+                                setStyle("-fx-font-weight: bold");
+                            }
+                            else setTextFill(Color.BLACK);
+                        }
+                        else setText(null);
+
+
+                    }
+                };
+            }
+        });
 
         try {
             showData();
@@ -359,6 +379,8 @@ public class ComponentManagerController implements Initializable {
             ));
         }
         resultSet.close();
+
+
         //dbConn.close();
     }
 
