@@ -5,6 +5,7 @@ import CM.Functions.SmileNotification;
 import CM.Main;
 import CM.Models.*;
 import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -85,6 +86,11 @@ public class ReportPaymentController implements Initializable {
     ObservableList<CostDetail> dataCostDetail;
     ResultSet resultSet;
 
+    public static final String FONT = "./src/main/resources/Assets/font/times.ttf";
+    public static final String FONT_BOLD = "./src/main/resources/Assets/font/timesbd.ttf";
+    PdfFont font;
+    PdfFont font_bold;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnDelete.setDisable(true);
@@ -107,14 +113,13 @@ public class ReportPaymentController implements Initializable {
         setupCostDetail();
 
         try {
+            font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
+            font_bold = PdfFontFactory.createFont(FONT_BOLD, PdfEncodings.IDENTITY_H);
             setupCbEmployeeName();
-        } catch (SQLException e) {
+            showData();
+        } catch (SQLException e) {} catch (IOException e) {
             e.printStackTrace();
         }
-
-        try {
-            showData();
-        } catch (SQLException e) {}
 
         tbvReport.setItems(data);
         tbvReport.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -602,6 +607,8 @@ public class ReportPaymentController implements Initializable {
 
             // Closing the document
             document.close();
+
+            SmileNotification.creatingNotification("Thông Báo","Xuất File thành công!!", NotificationType.SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -623,18 +630,18 @@ public class ReportPaymentController implements Initializable {
         float [] pointColumnWidths = {200F, 200F, 200F};
         Table table = new Table(pointColumnWidths);
 
-        table.addCell(new Cell().add("Ma Chi Tiet Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Ten Mat Hang").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tong Ban").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Mã Chi Tiết Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tên Mặt Hàng").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng Bán").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
 
         resultSet = dbConn.getData("select MaCTT, TenMH, TongBan\n" +
                 "from CHITIETTHU CTT join MATHANG MH on CTT.MaMH = MH.MaMH\n" +
                 "where MaBCTC = '" + txtPaymentReportId.getText() + "'");
 
         while (resultSet.next()){
-            table.addCell(new Cell().add(resultSet.getString("MaCTT")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongBan"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(resultSet.getString("MaCTT")).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongBan"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
         }
 
         document.add(table);
@@ -644,18 +651,18 @@ public class ReportPaymentController implements Initializable {
         float [] pointColumnWidths = {200F, 200F, 200F};
         Table table = new Table(pointColumnWidths);
 
-        table.addCell(new Cell().add("Ma Chi Tiet Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Ten Mat Hang").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tong Nhap").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Mã Chi Tiết Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tên Mặt Hàng").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng Nhập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
 
         resultSet = dbConn.getData("select MaCTC, TenMH, TongNhap\n" +
                 "from CHITIETCHI CTC join MATHANG MH on CTC.MaMH = MH.MaMH\n" +
                 "where MaBCTC = '" + txtPaymentReportId.getText() + "'");
 
         while (resultSet.next()){
-            table.addCell(new Cell().add(resultSet.getString("MaCTC")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongNhap"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+            table.addCell(new Cell().add(resultSet.getString("MaCTC")).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+            table.addCell(new Cell().add(resultSet.getString("TenMH")).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+            table.addCell(new Cell().add(String.valueOf(resultSet.getLong("TongNhap"))).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
         }
 
         document.add(table);
@@ -665,23 +672,23 @@ public class ReportPaymentController implements Initializable {
         float [] pointColumnWidths = {200F, 200F, 200F, 200F, 200F, 200F, 200F};
         Table table = new Table(pointColumnWidths);
 
-        table.addCell(new Cell().add("Mã BCTC").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Nhân Viên").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tong Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Tong Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Ngay Lap").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Loai Bao Cao").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
-        table.addCell(new Cell().add("Thoi Gian").setTextAlignment(TextAlignment.CENTER).setFontSize(14));
+        table.addCell(new Cell().add("Mã BCTC").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Nhân Viên").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng Thu").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Tổng Chi").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Ngày Lập").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Loại Báo Cáo").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
+        table.addCell(new Cell().add("Thời Gian").setTextAlignment(TextAlignment.CENTER).setFontSize(14).setFont(font_bold));
 
         ReceiptsAndPaymentsReport selectedRow = tbvReport.getSelectionModel().getSelectedItem();
 
-        table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12));
-        table.addCell(new Cell().add(selectedRow.getEmployeeName()).setTextAlignment(TextAlignment.LEFT));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumReceipts())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumPayments())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(String.valueOf(selectedRow.getPublishDate())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(selectedRow.getType()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
-        table.addCell(new Cell().add(selectedRow.getDate()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12));
+        table.addCell(new Cell().add(selectedRow.getReportID()).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(selectedRow.getEmployeeName()).setTextAlignment(TextAlignment.LEFT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumReceipts())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getSumPayments())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(String.valueOf(selectedRow.getPublishDate())).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(selectedRow.getType()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
+        table.addCell(new Cell().add(selectedRow.getDate()).setTextAlignment(TextAlignment.RIGHT).setFontSize(12).setFont(font));
 
         document.add(table);
     }
@@ -706,7 +713,6 @@ public class ReportPaymentController implements Initializable {
         Paragraph info = new Paragraph(strinfo);
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
         info.setFont(font);
         info.setFontSize(12);
         info.setTextAlignment(TextAlignment.LEFT);
@@ -719,8 +725,7 @@ public class ReportPaymentController implements Initializable {
         Paragraph header = new Paragraph(strheader);
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-        header.setFont(font);
+        header.setFont(font_bold);
         header.setFontSize(14);
         header.setTextAlignment(TextAlignment.LEFT);
 
@@ -735,7 +740,6 @@ public class ReportPaymentController implements Initializable {
         else date = new Paragraph("Quý: " + txtMonth.getText() + "/" + txtYear.getText());
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
         date.setFont(font);
         date.setFontSize(12);
         date.setTextAlignment(TextAlignment.CENTER);
@@ -747,8 +751,7 @@ public class ReportPaymentController implements Initializable {
         Paragraph title = new Paragraph("Báo Cáo Thu Chi");
 
         // Setting font of the text
-        PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-        title.setFont(font);
+        title.setFont(font_bold);
         title.setFontSize(22);
         title.setTextAlignment(TextAlignment.CENTER);
 
