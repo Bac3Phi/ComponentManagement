@@ -227,7 +227,7 @@ public class ReportInventoriesController implements Initializable {
         btnDelete.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                deleteData();
+                deleteDataInfo();
             }
         });
 
@@ -680,12 +680,7 @@ public class ReportInventoriesController implements Initializable {
     Alert alert;
     //Delete dữ liệu
     public void deleteData() {
-        if (deleteDataInfo() <= 0) {
-            alert = new Alert(Alert.AlertType.WARNING,
-                    "Cannot delete this row!!!", ButtonType.OK);
-            alert.show();
-        }
-        else if (txtReportID.getText().isEmpty())
+        if (txtReportID.getText().isEmpty())
         {
             alert = new Alert(Alert.AlertType.WARNING,
                     "Please fill in the blank!!!", ButtonType.OK);
@@ -715,18 +710,17 @@ public class ReportInventoriesController implements Initializable {
     }
 
     //Delete dữ liệu
-    public int deleteDataInfo() {
-        int check = 0;
+    public void deleteDataInfo() {
         for (int i = 0; i < datainfo.size(); i++) {
-            if (datainfo.get(i).getReportInfoID().isEmpty())
+            if (txtReportID.getText().isEmpty())
             {
                 alert = new Alert(Alert.AlertType.WARNING,
                         "Cannot delete this row!!!", ButtonType.OK);
                 alert.show();
             }
             else {
-                String[] dataDelete = {datainfo.get(i).getReportInfoID()};
-                int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETBAOCAOHANGTON", "MaCTBC");
+                String[] dataDelete = {txtReportID.getText()};
+                int isDeleted = dbConn.ExecuteSQLDelete(dataDelete, "CHITIETBAOCAOHANGTON", "MaBCHT");
                 if (isDeleted > 0) {
                     alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Data are successfully deleted !!!");
@@ -738,12 +732,11 @@ public class ReportInventoriesController implements Initializable {
                     alert.setContentText("Data are not deleted !!!");
                     alert.show();
                 }
-                check = isDeleted;
                 try {
                     showDataInfo(datainfo.get(i).getReportInfoID());
                 } catch (SQLException e) {}
             }
         }
-        return check;
+        deleteData();
     }
 }

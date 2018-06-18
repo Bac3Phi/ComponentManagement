@@ -422,7 +422,7 @@ public class ComponentOrderController implements Initializable {
         String id = "", soluong = "", ddhid = "", mhid = "";
         try {
             id = txtOrderInfoID.getText();
-            soluong = dtDate.getValue().toString();
+            soluong = txtQuantities.getText();
             ddhid = txtOrderID.getText();
             mhid = cbbComponentName.getSelectionModel().getSelectedItem().getComponentID();
             if (txtOrderInfoID.getText().isEmpty() || cbbComponentName.getSelectionModel().getSelectedItem().equals(null)

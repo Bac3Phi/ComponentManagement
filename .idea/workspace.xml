@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="11b36035-1c55-49d5-bb96-17fe4646f0a7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/qllk-official.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/qllk-official.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportInventoriesView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CM/Controllers/ReportInventoriesController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,30 +18,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReportInventoriesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="446" column="29" selection-start-line="446" selection-start-column="29" selection-end-line="446" selection-end-column="29" />
+            <state relative-caret-position="50">
+              <caret line="714" column="37" selection-start-line="714" selection-start-column="37" selection-end-line="714" selection-end-column="37" />
               <folding>
-                <element signature="e#3904#7129#0" />
                 <element signature="e#7136#8729#0" />
                 <element signature="e#8735#9215#0" />
                 <element signature="e#10310#11175#0" />
                 <element signature="e#11181#13169#0" />
-                <element signature="e#15821#18136#0" />
-                <element signature="e#18142#20448#0" />
-                <element signature="e#20553#21712#0" />
-                <element signature="e#21718#22024#0" />
-                <element signature="e#22030#22361#0" />
-                <element signature="e#22367#22685#0" />
-                <element signature="e#22691#23030#0" />
-                <element signature="e#23036#23658#0" />
-                <element signature="e#23664#23991#0" />
-                <element signature="e#23997#26222#0" />
-                <element signature="e#26228#28320#0" />
-                <element signature="e#28343#29566#0" />
-                <element signature="e#29572#30828#0" />
+                <element signature="e#18503#19999#0" />
+                <element signature="e#20104#21263#0" />
+                <element signature="e#21269#21575#0" />
+                <element signature="e#21581#21912#0" />
+                <element signature="e#21918#22236#0" />
+                <element signature="e#27894#29117#0" />
               </folding>
             </state>
           </provider>
@@ -51,8 +42,17 @@
       <file leaf-file-name="ComponentImportController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10992">
+            <state relative-caret-position="-12720">
               <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentOrderController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="424" column="45" selection-start-line="424" selection-start-column="45" selection-end-line="424" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -60,7 +60,7 @@
       <file leaf-file-name="ComponentManagerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="3408">
               <caret line="447" column="29" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
               <folding>
                 <element signature="e#5097#10945#0" />
@@ -76,28 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillManagerView.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="ReportPaymentView.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
       <file leaf-file-name="ReportPaymentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="984">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="59">
+              <caret line="517" column="23" selection-start-line="517" selection-start-column="16" selection-end-line="517" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>deleted</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,6 +100,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java" />
       </list>
     </option>
   </component>
@@ -130,6 +124,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,9 +186,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,6 +278,7 @@
       <workItem from="1529132197163" duration="271000" />
       <workItem from="1529225451908" duration="724000" />
       <workItem from="1529247218632" duration="675000" />
+      <workItem from="1529284676748" duration="2216000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1529250257027</created>
@@ -292,11 +287,25 @@
       <option name="project" value="LOCAL" />
       <updated>1529250257027</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix bug báo cáo hàng tồn">
+      <created>1529257582767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529257582767</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix bug update báo cáo hàng tồn">
+      <created>1529257766522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529257766522</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6817000" />
+    <option name="totallyTimeSpent" value="9310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -312,73 +321,52 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25100672" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.1818792" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32909605" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.1818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32909605" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
@@ -392,63 +380,89 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Bac3Phi/ComponentManagement&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="fix bug báo cáo hàng tồn" />
+    <MESSAGE value="fix bug update báo cáo hàng tồn" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug update báo cáo hàng tồn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
-          <line>391</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
-          <line>405</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
-          <line>401</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java</url>
-          <line>406</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15360">
-          <caret line="640" column="29" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
+        <state relative-caret-position="11016">
+          <caret line="459" column="13" lean-forward="true" selection-start-line="459" selection-start-column="13" selection-end-line="459" selection-end-column="13" />
           <folding>
-            <element signature="e#3904#7129#0" />
             <element signature="e#7136#8729#0" />
             <element signature="e#8735#9215#0" />
             <element signature="e#10310#11175#0" />
             <element signature="e#11181#13169#0" />
-            <element signature="e#15821#18136#0" />
-            <element signature="e#18142#20448#0" />
-            <element signature="e#20553#21712#0" />
-            <element signature="e#21718#22024#0" />
-            <element signature="e#22030#22361#0" />
-            <element signature="e#22367#22685#0" />
-            <element signature="e#22691#23030#0" />
-            <element signature="e#23036#23658#0" />
-            <element signature="e#23664#23991#0" />
-            <element signature="e#23997#26222#0" />
-            <element signature="e#26228#28320#0" />
-            <element signature="e#28343#29566#0" />
-            <element signature="e#29572#30828#0" />
+            <element signature="e#18503#19999#0" />
+            <element signature="e#20104#21263#0" />
+            <element signature="e#21269#21575#0" />
+            <element signature="e#21581#21912#0" />
+            <element signature="e#21918#22236#0" />
+            <element signature="e#27894#29117#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10728">
+          <caret line="447" column="29" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
+          <folding>
+            <element signature="e#5097#10945#0" />
+            <element signature="e#10951#11781#0" />
+            <element signature="e#11787#12612#0" />
+            <element signature="e#12618#13495#0" />
+            <element signature="e#13501#14476#0" />
+            <element signature="e#14482#15143#0" />
+            <element signature="e#15149#16438#0" />
+            <element signature="e#16444#18489#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15360">
+          <caret line="640" column="29" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="29" />
+          <folding>
+            <element signature="e#7136#8729#0" />
+            <element signature="e#8735#9215#0" />
+            <element signature="e#10310#11175#0" />
+            <element signature="e#11181#13169#0" />
+            <element signature="e#18503#19999#0" />
+            <element signature="e#20104#21263#0" />
+            <element signature="e#21269#21575#0" />
+            <element signature="e#21581#21912#0" />
+            <element signature="e#21918#22236#0" />
+            <element signature="e#27894#29117#0" />
           </folding>
         </state>
       </provider>
@@ -565,20 +579,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Views/ReportPaymentView.fxml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Views/BillManagerView.fxml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/BillManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -596,7 +603,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="3408">
           <caret line="447" column="29" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
           <folding>
             <element signature="e#5097#10945#0" />
@@ -613,35 +620,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentImportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10992">
+        <state relative-caret-position="-12720">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportPaymentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="517" column="23" selection-start-line="517" selection-start-column="16" selection-end-line="517" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ReportInventoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="446" column="29" selection-start-line="446" selection-start-column="29" selection-end-line="446" selection-end-column="29" />
+        <state relative-caret-position="50">
+          <caret line="714" column="37" selection-start-line="714" selection-start-column="37" selection-end-line="714" selection-end-column="37" />
           <folding>
-            <element signature="e#3904#7129#0" />
             <element signature="e#7136#8729#0" />
             <element signature="e#8735#9215#0" />
             <element signature="e#10310#11175#0" />
             <element signature="e#11181#13169#0" />
-            <element signature="e#15821#18136#0" />
-            <element signature="e#18142#20448#0" />
-            <element signature="e#20553#21712#0" />
-            <element signature="e#21718#22024#0" />
-            <element signature="e#22030#22361#0" />
-            <element signature="e#22367#22685#0" />
-            <element signature="e#22691#23030#0" />
-            <element signature="e#23036#23658#0" />
-            <element signature="e#23664#23991#0" />
-            <element signature="e#23997#26222#0" />
-            <element signature="e#26228#28320#0" />
-            <element signature="e#28343#29566#0" />
-            <element signature="e#29572#30828#0" />
+            <element signature="e#18503#19999#0" />
+            <element signature="e#20104#21263#0" />
+            <element signature="e#21269#21575#0" />
+            <element signature="e#21581#21912#0" />
+            <element signature="e#21918#22236#0" />
+            <element signature="e#27894#29117#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CM/Controllers/ComponentOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="424" column="45" selection-start-line="424" selection-start-column="45" selection-end-line="424" selection-end-column="45" />
         </state>
       </provider>
     </entry>
